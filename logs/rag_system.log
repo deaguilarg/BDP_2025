@@ -1,0 +1,128 @@
+2025-05-05 17:54:34 | INFO | Inicializado DocumentEmbedder | {'model': 'all-MiniLM-L6-v2', 'device': 'cpu', 'chunk_size': 512}
+2025-05-05 17:54:34 | ERROR | Error en el procesamiento de documentos | {'error': 'No se encontró el archivo de metadatos'}
+2025-05-05 17:55:47 | INFO | Inicializado DocumentEmbedder | {'model': 'all-MiniLM-L6-v2', 'device': 'cpu', 'chunk_size': 512}
+2025-05-05 17:55:47 | INFO | Operación embedding_generation completada en 0.46 segundos
+2025-05-05 17:55:47 | INFO | Operación embedding_generation completada en 0.41 segundos
+2025-05-05 17:55:48 | INFO | Operación embedding_generation completada en 0.17 segundos
+2025-05-05 17:55:48 | INFO | Operación embedding_generation completada en 0.17 segundos
+2025-05-05 17:55:48 | INFO | Operación embedding_generation completada en 0.16 segundos
+2025-05-05 17:55:48 | INFO | Operación embedding_generation completada en 0.45 segundos
+2025-05-05 17:55:49 | INFO | Operación embedding_generation completada en 0.45 segundos
+2025-05-05 17:55:49 | INFO | Operación embedding_generation completada en 0.16 segundos
+2025-05-05 17:55:49 | INFO | Operación embedding_generation completada en 0.15 segundos
+2025-05-05 17:55:49 | INFO | Operación embedding_generation completada en 0.17 segundos
+2025-05-05 17:55:50 | INFO | Operación embedding_generation completada en 0.47 segundos
+2025-05-05 17:55:50 | INFO | Operación embedding_generation completada en 0.45 segundos
+2025-05-05 17:55:50 | INFO | Operación embedding_generation completada en 0.17 segundos
+2025-05-05 17:55:51 | INFO | Operación embedding_generation completada en 0.17 segundos
+2025-05-05 17:55:51 | INFO | Operación embedding_generation completada en 0.18 segundos
+2025-05-05 17:55:51 | INFO | Operación embedding_generation completada en 0.16 segundos
+2025-05-05 17:55:51 | INFO | Operación embedding_generation completada en 0.16 segundos
+2025-05-05 17:55:52 | INFO | Operación embedding_generation completada en 0.44 segundos
+2025-05-05 17:55:52 | INFO | Operación embedding_generation completada en 0.34 segundos
+2025-05-05 17:55:52 | INFO | Operación embedding_generation completada en 0.22 segundos
+2025-05-05 17:55:52 | INFO | Operación embedding_generation completada en 0.20 segundos
+2025-05-05 17:55:53 | INFO | Operación embedding_generation completada en 0.21 segundos
+2025-05-05 17:55:53 | INFO | Operación embedding_generation completada en 0.17 segundos
+2025-05-05 17:55:53 | INFO | Operación embedding_generation completada en 0.17 segundos
+2025-05-05 17:55:53 | INFO | Operación embedding_generation completada en 0.52 segundos
+2025-05-05 17:55:54 | INFO | Operación embedding_generation completada en 0.20 segundos
+2025-05-05 17:55:54 | INFO | Operación embedding_generation completada en 0.21 segundos
+2025-05-05 17:55:54 | INFO | Operación embedding_generation completada en 0.21 segundos
+2025-05-05 17:55:54 | INFO | Operación embedding_generation completada en 0.16 segundos
+2025-05-05 17:55:54 | INFO | Operación embedding_generation completada en 0.16 segundos
+2025-05-05 17:55:55 | INFO | Operación embedding_generation completada en 0.18 segundos
+2025-05-05 17:55:55 | INFO | Operación embedding_generation completada en 0.15 segundos
+2025-05-05 17:55:55 | INFO | Operación embedding_generation completada en 0.43 segundos
+2025-05-05 17:55:56 | INFO | Operación embedding_generation completada en 0.45 segundos
+2025-05-05 17:55:56 | INFO | Operación embedding_generation completada en 0.19 segundos
+2025-05-05 17:55:56 | INFO | Operación embedding_generation completada en 0.19 segundos
+2025-05-05 17:55:56 | INFO | Operación embedding_generation completada en 0.19 segundos
+2025-05-05 17:55:57 | INFO | Operación embedding_generation completada en 0.53 segundos
+2025-05-05 17:55:57 | INFO | Operación embedding_generation completada en 0.43 segundos
+2025-05-05 17:55:57 | INFO | Operación embedding_generation completada en 0.17 segundos
+2025-05-05 17:55:58 | INFO | Operación embedding_generation completada en 0.20 segundos
+2025-05-05 17:55:58 | INFO | Operación embedding_generation completada en 0.17 segundos
+2025-05-05 17:55:58 | INFO | Operación embedding_generation completada en 0.18 segundos
+2025-05-05 17:55:58 | INFO | Operación embedding_generation completada en 0.17 segundos
+2025-05-05 17:55:58 | WARNING | No se encontró el archivo data\processed\autocar-básico-ipid.txt | 
+2025-05-05 17:55:58 | INFO | Operación embedding_generation completada en 0.20 segundos
+2025-05-05 17:55:58 | INFO | Operación embedding_generation completada en 0.16 segundos
+2025-05-05 17:55:59 | INFO | Operación embedding_generation completada en 0.17 segundos
+2025-05-05 17:55:59 | INFO | Operación embedding_generation completada en 0.17 segundos
+2025-05-05 17:55:59 | INFO | Operación embedding_generation completada en 0.19 segundos
+2025-05-05 17:55:59 | INFO | Operación embedding_generation completada en 0.17 segundos
+2025-05-05 17:55:59 | INFO | Procesamiento completado | {'total_documents': 50}
+2025-05-05 17:56:52 | INFO | Inicializado FAISSIndexBuilder | {'dimension': 384, 'nlist': 100, 'nprobe': 10}
+2025-05-05 17:56:52 | INFO | Operación index_training completada en 0.02 segundos
+2025-05-05 17:56:52 | INFO | Operación index_adding completada en 0.00 segundos
+2025-05-05 17:56:52 | INFO | Índice FAISS guardado | {'path': 'models\\faiss_index\\insurance_docs.index', 'total_vectors': 112}
+2025-05-05 17:56:52 | INFO | Construcción del índice completada | {'total_vectors': 112, 'metadata_path': 'models\\faiss_index\\metadata.json'}
+2025-05-05 17:58:05 | INFO | Inicializado DocumentSearcher | {'model': 'all-MiniLM-L6-v2', 'device': 'cpu', 'top_k': 5}
+2025-05-05 17:58:05 | INFO | Operación query_embedding completada en 0.02 segundos
+2025-05-05 17:58:05 | INFO | Búsqueda completada | {'query': '¿Qué cubre el seguro de todo riesgo para camiones?', 'num_results': 5}
+2025-05-05 17:58:05 | INFO | Operación search completada en 0.03 segundos
+2025-05-05 17:58:22 | INFO | Inicializado DocumentSearcher | {'model': 'all-MiniLM-L6-v2', 'device': 'cpu', 'top_k': 5}
+2025-05-05 17:58:22 | INFO | Operación query_embedding completada en 0.03 segundos
+2025-05-05 17:58:22 | INFO | Búsqueda completada | {'query': '¿Qué cubre el seguro básico para motos?', 'num_results': 5}
+2025-05-05 17:58:22 | INFO | Operación search completada en 0.04 segundos
+2025-05-05 18:07:33 | INFO | Inicializado DocumentEmbedder | {'model': 'paraphrase-multilingual-mpnet-base-v2', 'device': 'cpu', 'chunk_size': 512, 'chunk_overlap': 50}
+2025-05-05 18:07:33 | INFO | Operación embedding_generation completada en 0.49 segundos
+2025-05-05 18:07:34 | INFO | Operación embedding_generation completada en 0.44 segundos
+2025-05-05 18:07:34 | INFO | Operación embedding_generation completada en 0.36 segundos
+2025-05-05 18:07:34 | INFO | Operación embedding_generation completada en 0.35 segundos
+2025-05-05 18:07:35 | INFO | Operación embedding_generation completada en 0.33 segundos
+2025-05-05 18:07:35 | INFO | Operación embedding_generation completada en 0.32 segundos
+2025-05-05 18:07:35 | INFO | Operación embedding_generation completada en 0.36 segundos
+2025-05-05 18:07:36 | INFO | Operación embedding_generation completada en 0.33 segundos
+2025-05-05 18:07:36 | INFO | Operación embedding_generation completada en 0.33 segundos
+2025-05-05 18:07:36 | INFO | Operación embedding_generation completada en 0.32 segundos
+2025-05-05 18:07:37 | INFO | Operación embedding_generation completada en 0.31 segundos
+2025-05-05 18:07:37 | INFO | Operación embedding_generation completada en 0.33 segundos
+2025-05-05 18:07:37 | INFO | Operación embedding_generation completada en 0.35 segundos
+2025-05-05 18:07:38 | INFO | Operación embedding_generation completada en 0.43 segundos
+2025-05-05 18:07:38 | INFO | Operación embedding_generation completada en 0.39 segundos
+2025-05-05 18:07:39 | INFO | Operación embedding_generation completada en 0.38 segundos
+2025-05-05 18:07:39 | INFO | Operación embedding_generation completada en 0.32 segundos
+2025-05-05 18:07:39 | INFO | Operación embedding_generation completada en 0.35 segundos
+2025-05-05 18:07:40 | INFO | Operación embedding_generation completada en 0.33 segundos
+2025-05-05 18:07:40 | INFO | Operación embedding_generation completada en 0.35 segundos
+2025-05-05 18:07:40 | INFO | Operación embedding_generation completada en 0.34 segundos
+2025-05-05 18:07:41 | INFO | Operación embedding_generation completada en 0.39 segundos
+2025-05-05 18:07:41 | INFO | Operación embedding_generation completada en 0.36 segundos
+2025-05-05 18:07:41 | INFO | Operación embedding_generation completada en 0.36 segundos
+2025-05-05 18:07:42 | INFO | Operación embedding_generation completada en 0.48 segundos
+2025-05-05 18:07:42 | INFO | Operación embedding_generation completada en 0.54 segundos
+2025-05-05 18:07:43 | INFO | Operación embedding_generation completada en 0.33 segundos
+2025-05-05 18:07:43 | INFO | Operación embedding_generation completada en 0.33 segundos
+2025-05-05 18:07:43 | INFO | Operación embedding_generation completada en 0.34 segundos
+2025-05-05 18:07:44 | INFO | Operación embedding_generation completada en 0.36 segundos
+2025-05-05 18:07:44 | INFO | Operación embedding_generation completada en 0.31 segundos
+2025-05-05 18:07:44 | INFO | Operación embedding_generation completada en 0.32 segundos
+2025-05-05 18:07:45 | INFO | Operación embedding_generation completada en 0.32 segundos
+2025-05-05 18:07:45 | INFO | Operación embedding_generation completada en 0.33 segundos
+2025-05-05 18:07:46 | INFO | Operación embedding_generation completada en 0.39 segundos
+2025-05-05 18:07:46 | INFO | Operación embedding_generation completada en 0.37 segundos
+2025-05-05 18:07:46 | INFO | Operación embedding_generation completada en 0.36 segundos
+2025-05-05 18:07:47 | INFO | Operación embedding_generation completada en 0.36 segundos
+2025-05-05 18:07:47 | INFO | Operación embedding_generation completada en 0.36 segundos
+2025-05-05 18:07:47 | INFO | Operación embedding_generation completada en 0.32 segundos
+2025-05-05 18:07:48 | INFO | Operación embedding_generation completada en 0.37 segundos
+2025-05-05 18:07:48 | INFO | Operación embedding_generation completada en 0.32 segundos
+2025-05-05 18:07:48 | INFO | Operación embedding_generation completada en 0.33 segundos
+2025-05-05 18:07:49 | INFO | Operación embedding_generation completada en 0.36 segundos
+2025-05-05 18:07:49 | INFO | Operación embedding_generation completada en 0.34 segundos
+2025-05-05 18:07:49 | INFO | Operación embedding_generation completada en 0.34 segundos
+2025-05-05 18:07:50 | INFO | Operación embedding_generation completada en 0.35 segundos
+2025-05-05 18:07:50 | INFO | Operación embedding_generation completada en 0.35 segundos
+2025-05-05 18:07:50 | INFO | Operación embedding_generation completada en 0.36 segundos
+2025-05-05 18:07:51 | INFO | Operación embedding_generation completada en 0.33 segundos
+2025-05-05 18:07:51 | INFO | Operación embedding_generation completada en 0.37 segundos
+2025-05-05 18:07:51 | INFO | Procesamiento completado | {'total_documents': 51}
+2025-05-05 18:08:00 | INFO | Inicializado FAISSIndexBuilder | {'dimension': 384, 'nlist': 100, 'nprobe': 10}
+2025-05-05 18:08:00 | ERROR | Error construyendo el índice | {'error': ''}
+2025-05-05 18:08:23 | INFO | Inicializado FAISSIndexBuilder | {'dimension': 768, 'nlist': 100, 'nprobe': 10}
+2025-05-05 18:08:23 | INFO | Operación index_training completada en 0.01 segundos
+2025-05-05 18:08:23 | INFO | Operación index_adding completada en 0.00 segundos
+2025-05-05 18:08:23 | INFO | Índice FAISS guardado | {'path': 'models\\faiss_index\\insurance_docs.index', 'total_vectors': 102}
+2025-05-05 18:08:23 | INFO | Construcción del índice completada | {'total_vectors': 102, 'metadata_path': 'models\\faiss_index\\metadata.json'}

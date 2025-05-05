@@ -1,0 +1,359 @@
+[
+  {
+    "filename": "turismo-comercial-todo-riesgo-ipid",
+    "tipo_vehiculo": "turismo comercial",
+    "tipo_seguro": "todo riesgo",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "turismo-comercial-todo-riesgo-franquicia-ipid",
+    "tipo_vehiculo": "turismo comercial",
+    "tipo_seguro": "todo riesgo",
+    "franquicia": true,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "turismo-comercial-perdida-total-ipid",
+    "tipo_vehiculo": "turismo comercial",
+    "tipo_seguro": "pérdida total",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "turismo-comercial-basico-robo-ipid",
+    "tipo_vehiculo": "turismo comercial",
+    "tipo_seguro": "básico con robo",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "turismo-comercial-basico-ipid",
+    "tipo_vehiculo": "turismo comercial",
+    "tipo_seguro": "básico",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "semirremolque-todo-riesgo-ipid",
+    "tipo_vehiculo": "semirremolque",
+    "tipo_seguro": "todo riesgo",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "semirremolque-todo-riesgo-franquicia-ipid",
+    "tipo_vehiculo": "semirremolque",
+    "tipo_seguro": "todo riesgo",
+    "franquicia": true,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "semirremolque-perdida-total-ipid",
+    "tipo_vehiculo": "semirremolque",
+    "tipo_seguro": "pérdida total",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "semirremolque-basico-robo-ipid",
+    "tipo_vehiculo": "semirremolque",
+    "tipo_seguro": "básico con robo",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "semirremolque-basico-ipid",
+    "tipo_vehiculo": "semirremolque",
+    "tipo_seguro": "básico",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "remolque-todo-riesgo-ipid",
+    "tipo_vehiculo": "remolque",
+    "tipo_seguro": "todo riesgo",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "remolque-todo-riesgo-franquicia-ipid",
+    "tipo_vehiculo": "remolque",
+    "tipo_seguro": "todo riesgo",
+    "franquicia": true,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "remolque-perdida-total-ipid",
+    "tipo_vehiculo": "remolque",
+    "tipo_seguro": "pérdida total",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "remolque-basico-robo-ipid",
+    "tipo_vehiculo": "remolque",
+    "tipo_seguro": "básico con robo",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "remolque-basico-ipid",
+    "tipo_vehiculo": "remolque",
+    "tipo_seguro": "básico",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "maquinaria-terceros-ipid",
+    "tipo_vehiculo": "maquinaria",
+    "tipo_seguro": "terceros",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "maquinaria-basico-ipid",
+    "tipo_vehiculo": "maquinaria",
+    "tipo_seguro": "básico",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "ipid-tr-con-franquicia",
+    "tipo_vehiculo": "turismo",
+    "tipo_seguro": "todo riesgo",
+    "franquicia": true,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "ipid-optimo",
+    "tipo_vehiculo": "turismo",
+    "tipo_seguro": "óptimo",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "ipid-moto-todo-riesgo-sin-franquicia",
+    "tipo_vehiculo": "motocicleta",
+    "tipo_seguro": "todo riesgo",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "ipid-moto-seguro-franquicia",
+    "tipo_vehiculo": "motocicleta",
+    "tipo_seguro": "todo riesgo",
+    "franquicia": true,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "ipid-moto-seguro-basico",
+    "tipo_vehiculo": "motocicleta",
+    "tipo_seguro": "básico",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "ipid-moto-robo",
+    "tipo_vehiculo": "motocicleta",
+    "tipo_seguro": "básico con robo",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "ipid-moto-perdida-total",
+    "tipo_vehiculo": "motocicleta",
+    "tipo_seguro": "pérdida total",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "ipid-furgoneta-td-sin-franquicia",
+    "tipo_vehiculo": "furgoneta",
+    "tipo_seguro": "todo riesgo",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "ipid-furgoneta-robo-incendio",
+    "tipo_vehiculo": "furgoneta",
+    "tipo_seguro": "básico con robo e incendio",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "ipid-furgoneta-perdida-total",
+    "tipo_vehiculo": "furgoneta",
+    "tipo_seguro": "pérdida total",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "ipid-furgoneta-basico",
+    "tipo_vehiculo": "furgoneta",
+    "tipo_seguro": "básico",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "ipid-extra",
+    "tipo_vehiculo": "turismo",
+    "tipo_seguro": "extra",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "ipid-ciclomotor-seguro-basico",
+    "tipo_vehiculo": "ciclomotor",
+    "tipo_seguro": "básico",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "ipid-basico",
+    "tipo_vehiculo": "turismo",
+    "tipo_seguro": "básico",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "ipid-ampliado",
+    "tipo_vehiculo": "turismo",
+    "tipo_seguro": "ampliado",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "camion-tractor-todo-riesgo-ipid",
+    "tipo_vehiculo": "camión tractor",
+    "tipo_seguro": "todo riesgo",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "camion-tractor-todo-riesgo-franquicia-ipid",
+    "tipo_vehiculo": "camión tractor",
+    "tipo_seguro": "todo riesgo",
+    "franquicia": true,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "camion-tractor-perdida-total-ipid",
+    "tipo_vehiculo": "camión tractor",
+    "tipo_seguro": "pérdida total",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "camion-tractor-basico-robo-ipid",
+    "tipo_vehiculo": "camión tractor",
+    "tipo_seguro": "básico con robo",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "camion-tractor-basico-ipid",
+    "tipo_vehiculo": "camión tractor",
+    "tipo_seguro": "básico",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "camion-todo-riesgo-ipid",
+    "tipo_vehiculo": "camión",
+    "tipo_seguro": "todo riesgo",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "camion-todo-riesgo-franquicia-ipid",
+    "tipo_vehiculo": "camión",
+    "tipo_seguro": "todo riesgo",
+    "franquicia": true,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "camion-perdida-total-ipid",
+    "tipo_vehiculo": "camión",
+    "tipo_seguro": "pérdida total",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "camion-basico-robo-ipid",
+    "tipo_vehiculo": "camión",
+    "tipo_seguro": "básico con robo",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "camion-basico-ipid",
+    "tipo_vehiculo": "camión",
+    "tipo_seguro": "básico",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "autocar-incendio-ipid",
+    "tipo_vehiculo": "autocar",
+    "tipo_seguro": "incendio",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "autocar-danos-estructura-ipid",
+    "tipo_vehiculo": "autocar",
+    "tipo_seguro": "daños estructura",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "autocar-básico-ipid",
+    "tipo_vehiculo": "autocar",
+    "tipo_seguro": "básico",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "auto-plus-tr-sin-franquicia",
+    "tipo_vehiculo": "turismo",
+    "tipo_seguro": "todo riesgo plus",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "auto-plus-terceros",
+    "tipo_vehiculo": "turismo",
+    "tipo_seguro": "terceros plus",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "auto-plus-robo-incendio",
+    "tipo_vehiculo": "turismo",
+    "tipo_seguro": "básico plus con robo e incendio",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "auto-plus-franquicia2",
+    "tipo_vehiculo": "turismo",
+    "tipo_seguro": "todo riesgo plus",
+    "franquicia": true,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "auto-plus-franquicia1",
+    "tipo_vehiculo": "turismo",
+    "tipo_seguro": "todo riesgo plus",
+    "franquicia": true,
+    "fecha_actualizacion": "2024-01-01"
+  },
+  {
+    "filename": "auto-plus-basico",
+    "tipo_vehiculo": "turismo",
+    "tipo_seguro": "básico plus",
+    "franquicia": false,
+    "fecha_actualizacion": "2024-01-01"
+  }
+] 

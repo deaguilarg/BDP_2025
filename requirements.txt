@@ -9,6 +9,7 @@ langdetect==1.0.9
 sentence-transformers==2.2.2
 faiss-gpu==1.7.4
 scikit-learn==1.2.2
+umap-learn==0.5.3
 
 # LLM y generación
 torch==2.0.1

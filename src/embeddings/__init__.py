@@ -1,3 +1,3 @@
 """
-Módulo para la generación y manejo de embeddings.
+Módulo para la generación de embeddings y construcción del índice FAISS.
 """ 

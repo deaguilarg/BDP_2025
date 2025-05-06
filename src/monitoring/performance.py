@@ -1,82 +1,139 @@
 """
-Utilidades para monitorear el rendimiento del sistema.
+Sistema de monitoreo de rendimiento para el RAG de seguros.
 """
 
 import time
-import functools
-from typing import Any, Callable
+import json
 import psutil
-import torch
-from loguru import logger
+import functools
+from pathlib import Path
+from typing import Any, Callable, Dict, Optional
+from datetime import datetime
 
 class PerformanceMonitor:
     """
-    Clase para monitorear el rendimiento del sistema.
+    Monitor de rendimiento para el sistema RAG.
     """
+    
+    def __init__(self, log_dir: str = "logs/performance"):
+        """
+        Inicializa el monitor de rendimiento.
+        
+        Args:
+            log_dir: Directorio para almacenar logs de rendimiento
+        """
+        self.log_dir = Path(log_dir)
+        self.log_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Inicializar contadores
+        self.start_time = time.time()
+        self.metrics: Dict[str, Any] = {
+            "total_queries": 0,
+            "total_processing_time": 0,
+            "avg_response_time": 0,
+            "memory_usage": [],
+            "cpu_usage": []
+        }
+    
+    def log_metrics(self, metrics: Dict[str, Any]) -> None:
+        """
+        Registra métricas de rendimiento.
+        
+        Args:
+            metrics: Diccionario con métricas a registrar
+        """
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        metrics_file = self.log_dir / f"metrics_{timestamp}.json"
+        
+        # Agregar timestamp y métricas del sistema
+        metrics.update({
+            "timestamp": timestamp,
+            "memory_percent": psutil.Process().memory_percent(),
+            "cpu_percent": psutil.Process().cpu_percent()
+        })
+        
+        # Guardar métricas
+        with open(metrics_file, 'w', encoding='utf-8') as f:
+            json.dump(metrics, f, ensure_ascii=False, indent=2)
+        
+        # Actualizar métricas globales
+        self.metrics["memory_usage"].append(metrics["memory_percent"])
+        self.metrics["cpu_usage"].append(metrics["cpu_percent"])
     
     @staticmethod
     def function_timer(operation_name: str) -> Callable:
         """
-        Decorador para medir el tiempo de ejecución de una función.
+        Decorador para medir el tiempo de ejecución de funciones.
         
         Args:
-            operation_name: Nombre de la operación que se está midiendo
+            operation_name: Nombre de la operación para el log
             
         Returns:
             Función decorada
         """
         def decorator(func: Callable) -> Callable:
             @functools.wraps(func)
-            def wrapper(*args: Any, **kwargs: Any) -> Any:
+            def wrapper(*args, **kwargs) -> Any:
                 start_time = time.time()
                 result = func(*args, **kwargs)
-                end_time = time.time()
+                execution_time = time.time() - start_time
                 
-                execution_time = end_time - start_time
-                logger.info(f"Operación {operation_name} completada en {execution_time:.2f} segundos")
+                # Registrar métricas
+                metrics = {
+                    "operation": operation_name,
+                    "execution_time": execution_time,
+                    "success": True
+                }
+                
+                # Si la instancia tiene un monitor, usar ese
+                if hasattr(args[0], "performance_monitor"):
+                    args[0].performance_monitor.log_metrics(metrics)
                 
                 return result
             return wrapper
         return decorator
     
-    @staticmethod
-    def get_gpu_memory_info() -> dict:
+    def get_summary(self) -> Dict[str, Any]:
         """
-        Obtiene información sobre el uso de memoria GPU.
+        Obtiene un resumen de las métricas de rendimiento.
         
         Returns:
-            Diccionario con información de memoria GPU
+            Diccionario con el resumen de métricas
         """
-        if torch.cuda.is_available():
-            gpu_memory = {}
-            for i in range(torch.cuda.device_count()):
-                gpu_memory[f"gpu_{i}"] = {
-                    "total": torch.cuda.get_device_properties(i).total_memory,
-                    "allocated": torch.cuda.memory_allocated(i),
-                    "cached": torch.cuda.memory_reserved(i)
-                }
-            return gpu_memory
-        return {"gpu_available": False}
-    
-    @staticmethod
-    def get_system_metrics() -> dict:
-        """
-        Obtiene métricas del sistema.
+        total_time = time.time() - self.start_time
         
-        Returns:
-            Diccionario con métricas del sistema
-        """
         return {
-            "cpu_percent": psutil.cpu_percent(),
-            "memory_percent": psutil.virtual_memory().percent,
-            "disk_usage": psutil.disk_usage('/').percent,
-            "gpu_info": PerformanceMonitor.get_gpu_memory_info()
+            "total_runtime": total_time,
+            "total_queries": self.metrics["total_queries"],
+            "avg_response_time": (
+                self.metrics["total_processing_time"] / 
+                self.metrics["total_queries"]
+                if self.metrics["total_queries"] > 0 
+                else 0
+            ),
+            "avg_memory_usage": (
+                sum(self.metrics["memory_usage"]) / 
+                len(self.metrics["memory_usage"])
+                if self.metrics["memory_usage"] 
+                else 0
+            ),
+            "avg_cpu_usage": (
+                sum(self.metrics["cpu_usage"]) / 
+                len(self.metrics["cpu_usage"])
+                if self.metrics["cpu_usage"] 
+                else 0
+            )
         }
     
-    @staticmethod
-    def log_system_metrics() -> None:
+    def reset_metrics(self) -> None:
         """
-        Registra las métricas del sistema en el log.
+        Reinicia los contadores de métricas.
         """
-        metrics = PerformanceMonitor.get_system_metrics()
-        logger.info(f"Métricas del sistema: {metrics}") 
+        self.start_time = time.time()
+        self.metrics = {
+            "total_queries": 0,
+            "total_processing_time": 0,
+            "avg_response_time": 0,
+            "memory_usage": [],
+            "cpu_usage": []
+        } 

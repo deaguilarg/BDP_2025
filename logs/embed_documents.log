@@ -1,1 +1,731 @@
 2025-05-05 18:03:19,986 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-05-05 18:28:37,300 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-05-05 18:32:42,674 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-05-05 18:32:45,974 - __main__ - ERROR - Error en la ejecución principal: No se encontró el archivo de metadatos
+2025-05-05 18:34:54,895 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-05-05 18:34:58,551 - __main__ - ERROR - Error en la ejecución principal: No se encontró el archivo de metadatos
+2025-05-05 18:35:16,415 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-05-05 18:38:56,570 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-05-05 18:39:00,407 - __main__ - ERROR - Error en la ejecución principal: Columnas requeridas faltantes en CSV: title, insurer, insurance_type, language
+2025-05-05 18:44:37,839 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-05-05 18:44:41,522 - __main__ - ERROR - Error en la ejecución principal: No se pudieron cargar documentos válidos
+2025-05-05 18:45:20,290 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-05-05 18:45:23,912 - __main__ - ERROR - Error en la ejecución principal: No se pudieron cargar documentos válidos
+2025-05-05 18:45:47,786 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-05-05 18:45:51,451 - __main__ - ERROR - Error en la ejecución principal: No se pudieron cargar documentos válidos
+2025-05-05 18:46:22,195 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-05-05 18:46:26,780 - __main__ - ERROR - Error en la ejecución principal: 'filename'
+2025-05-05 18:46:51,464 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-05-05 18:57:53,151 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-05-05 18:57:56,366 - RAGLogger - INFO - Inicializado DocumentEmbedder
+Metadata: {
+  "model": "paraphrase-multilingual-mpnet-base-v2",
+  "device": "cpu",
+  "chunk_size": 512,
+  "chunk_overlap": 50
+}
+2025-05-05 18:57:56,373 - RAGLogger - INFO - Metadatos cargados exitosamente
+Metadata: {
+  "total_documents": 51,
+  "columns": [
+    "filename",
+    "title",
+    "insurer",
+    "insurance_type",
+    "file_path",
+    "language",
+    "coverage_type",
+    "document_date",
+    "document_version",
+    "num_pages",
+    "keywords"
+  ]
+}
+2025-05-05 18:57:56,378 - RAGLogger - WARNING - Formato de fecha inválido para autocar-danos-estructura-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:57:56,378 - RAGLogger - WARNING - Formato de fecha inválido para autocar-incendio-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:57:56,378 - RAGLogger - WARNING - Formato de fecha inválido para camion-basico-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:57:56,378 - RAGLogger - WARNING - Formato de fecha inválido para camion-basico-robo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:57:56,378 - RAGLogger - WARNING - Formato de fecha inválido para camion-perdida-total-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:57:56,378 - RAGLogger - WARNING - Formato de fecha inválido para camion-todo-riesgo-franquicia-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:57:56,378 - RAGLogger - WARNING - Formato de fecha inválido para camion-todo-riesgo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:57:56,378 - RAGLogger - WARNING - Formato de fecha inválido para camion-tractor-basico-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:57:56,378 - RAGLogger - WARNING - Formato de fecha inválido para camion-tractor-basico-robo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:57:56,378 - RAGLogger - WARNING - Formato de fecha inválido para camion-tractor-perdida-total-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:57:56,378 - RAGLogger - WARNING - Formato de fecha inválido para camion-tractor-todo-riesgo-franquicia-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:57:56,378 - RAGLogger - WARNING - Formato de fecha inválido para camion-tractor-todo-riesgo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:57:56,378 - RAGLogger - WARNING - Formato de fecha inválido para maquinaria-basico-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:57:56,378 - RAGLogger - WARNING - Formato de fecha inválido para maquinaria-terceros-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:57:56,378 - RAGLogger - WARNING - Formato de fecha inválido para remolque-basico-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:57:56,378 - RAGLogger - WARNING - Formato de fecha inválido para remolque-basico-robo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:57:56,378 - RAGLogger - WARNING - Formato de fecha inválido para remolque-perdida-total-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:57:56,378 - RAGLogger - WARNING - Formato de fecha inválido para remolque-todo-riesgo-franquicia-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:57:56,378 - RAGLogger - WARNING - Formato de fecha inválido para remolque-todo-riesgo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:57:56,378 - RAGLogger - WARNING - Formato de fecha inválido para semirremolque-basico-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:57:56,378 - RAGLogger - WARNING - Formato de fecha inválido para semirremolque-basico-robo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:57:56,393 - RAGLogger - WARNING - Formato de fecha inválido para semirremolque-perdida-total-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:57:56,393 - RAGLogger - WARNING - Formato de fecha inválido para semirremolque-todo-riesgo-franquicia-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:57:56,393 - RAGLogger - WARNING - Formato de fecha inválido para semirremolque-todo-riesgo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:57:56,393 - RAGLogger - WARNING - Formato de fecha inválido para turismo-comercial-basico-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:57:56,393 - RAGLogger - WARNING - Formato de fecha inválido para turismo-comercial-basico-robo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:57:56,393 - RAGLogger - WARNING - Formato de fecha inválido para turismo-comercial-perdida-total-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:57:56,393 - RAGLogger - WARNING - Formato de fecha inválido para turismo-comercial-todo-riesgo-franquicia-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:57:56,393 - RAGLogger - WARNING - Formato de fecha inválido para turismo-comercial-todo-riesgo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:59:37,206 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-05-05 18:59:40,895 - RAGLogger - INFO - Inicializado DocumentEmbedder
+Metadata: {
+  "model": "paraphrase-multilingual-mpnet-base-v2",
+  "device": "cpu",
+  "chunk_size": 512,
+  "chunk_overlap": 50
+}
+2025-05-05 18:59:40,903 - RAGLogger - INFO - Metadatos cargados exitosamente
+Metadata: {
+  "total_documents": 51,
+  "columns": [
+    "filename",
+    "title",
+    "insurer",
+    "insurance_type",
+    "file_path",
+    "language",
+    "coverage_type",
+    "document_date",
+    "document_version",
+    "num_pages",
+    "keywords"
+  ]
+}
+2025-05-05 18:59:40,912 - RAGLogger - WARNING - Formato de fecha inválido para autocar-danos-estructura-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:59:40,914 - RAGLogger - WARNING - Formato de fecha inválido para autocar-incendio-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:59:40,914 - RAGLogger - WARNING - Formato de fecha inválido para camion-basico-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:59:40,914 - RAGLogger - WARNING - Formato de fecha inválido para camion-basico-robo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:59:40,915 - RAGLogger - WARNING - Formato de fecha inválido para camion-perdida-total-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:59:40,915 - RAGLogger - WARNING - Formato de fecha inválido para camion-todo-riesgo-franquicia-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:59:40,916 - RAGLogger - WARNING - Formato de fecha inválido para camion-todo-riesgo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:59:40,916 - RAGLogger - WARNING - Formato de fecha inválido para camion-tractor-basico-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:59:40,916 - RAGLogger - WARNING - Formato de fecha inválido para camion-tractor-basico-robo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:59:40,917 - RAGLogger - WARNING - Formato de fecha inválido para camion-tractor-perdida-total-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:59:40,917 - RAGLogger - WARNING - Formato de fecha inválido para camion-tractor-todo-riesgo-franquicia-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:59:40,917 - RAGLogger - WARNING - Formato de fecha inválido para camion-tractor-todo-riesgo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:59:40,917 - RAGLogger - WARNING - Formato de fecha inválido para maquinaria-basico-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:59:40,917 - RAGLogger - WARNING - Formato de fecha inválido para maquinaria-terceros-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:59:40,917 - RAGLogger - WARNING - Formato de fecha inválido para remolque-basico-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:59:40,917 - RAGLogger - WARNING - Formato de fecha inválido para remolque-basico-robo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:59:40,917 - RAGLogger - WARNING - Formato de fecha inválido para remolque-perdida-total-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:59:40,917 - RAGLogger - WARNING - Formato de fecha inválido para remolque-todo-riesgo-franquicia-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:59:40,917 - RAGLogger - WARNING - Formato de fecha inválido para remolque-todo-riesgo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:59:40,917 - RAGLogger - WARNING - Formato de fecha inválido para semirremolque-basico-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:59:40,917 - RAGLogger - WARNING - Formato de fecha inválido para semirremolque-basico-robo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:59:40,917 - RAGLogger - WARNING - Formato de fecha inválido para semirremolque-perdida-total-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:59:40,917 - RAGLogger - WARNING - Formato de fecha inválido para semirremolque-todo-riesgo-franquicia-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:59:40,917 - RAGLogger - WARNING - Formato de fecha inválido para semirremolque-todo-riesgo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:59:40,926 - RAGLogger - WARNING - Formato de fecha inválido para turismo-comercial-basico-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:59:40,927 - RAGLogger - WARNING - Formato de fecha inválido para turismo-comercial-basico-robo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:59:40,928 - RAGLogger - WARNING - Formato de fecha inválido para turismo-comercial-perdida-total-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:59:40,929 - RAGLogger - WARNING - Formato de fecha inválido para turismo-comercial-todo-riesgo-franquicia-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 18:59:40,929 - RAGLogger - WARNING - Formato de fecha inválido para turismo-comercial-todo-riesgo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:09:27,920 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-05-05 19:09:32,308 - RAGLogger - INFO - Inicializado DocumentEmbedder
+Metadata: {
+  "model": "paraphrase-multilingual-mpnet-base-v2",
+  "device": "cpu",
+  "chunk_size": 512,
+  "chunk_overlap": 50
+}
+2025-05-05 19:09:32,326 - RAGLogger - INFO - Metadatos cargados exitosamente
+Metadata: {
+  "total_documents": 51,
+  "columns": [
+    "filename",
+    "title",
+    "insurer",
+    "insurance_type",
+    "file_path",
+    "language",
+    "coverage_type",
+    "document_date",
+    "document_version",
+    "num_pages",
+    "keywords"
+  ]
+}
+2025-05-05 19:09:32,352 - RAGLogger - WARNING - Formato de fecha inválido para autocar-danos-estructura-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:09:32,352 - RAGLogger - WARNING - Formato de fecha inválido para autocar-incendio-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:09:32,365 - RAGLogger - WARNING - Formato de fecha inválido para camion-basico-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:09:32,365 - RAGLogger - WARNING - Formato de fecha inválido para camion-basico-robo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:09:32,365 - RAGLogger - WARNING - Formato de fecha inválido para camion-perdida-total-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:09:32,365 - RAGLogger - WARNING - Formato de fecha inválido para camion-todo-riesgo-franquicia-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:09:32,365 - RAGLogger - WARNING - Formato de fecha inválido para camion-todo-riesgo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:09:32,365 - RAGLogger - WARNING - Formato de fecha inválido para camion-tractor-basico-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:09:32,383 - RAGLogger - WARNING - Formato de fecha inválido para camion-tractor-basico-robo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:09:32,385 - RAGLogger - WARNING - Formato de fecha inválido para camion-tractor-perdida-total-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:09:32,387 - RAGLogger - WARNING - Formato de fecha inválido para camion-tractor-todo-riesgo-franquicia-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:09:32,390 - RAGLogger - WARNING - Formato de fecha inválido para camion-tractor-todo-riesgo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:09:32,407 - RAGLogger - WARNING - Formato de fecha inválido para maquinaria-basico-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:09:32,409 - RAGLogger - WARNING - Formato de fecha inválido para maquinaria-terceros-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:09:32,411 - RAGLogger - WARNING - Formato de fecha inválido para remolque-basico-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:09:32,413 - RAGLogger - WARNING - Formato de fecha inválido para remolque-basico-robo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:09:32,416 - RAGLogger - WARNING - Formato de fecha inválido para remolque-perdida-total-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:09:32,421 - RAGLogger - WARNING - Formato de fecha inválido para remolque-todo-riesgo-franquicia-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:09:32,423 - RAGLogger - WARNING - Formato de fecha inválido para remolque-todo-riesgo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:09:32,425 - RAGLogger - WARNING - Formato de fecha inválido para semirremolque-basico-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:09:32,426 - RAGLogger - WARNING - Formato de fecha inválido para semirremolque-basico-robo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:09:32,428 - RAGLogger - WARNING - Formato de fecha inválido para semirremolque-perdida-total-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:09:32,430 - RAGLogger - WARNING - Formato de fecha inválido para semirremolque-todo-riesgo-franquicia-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:09:32,432 - RAGLogger - WARNING - Formato de fecha inválido para semirremolque-todo-riesgo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:09:32,437 - RAGLogger - WARNING - Formato de fecha inválido para turismo-comercial-basico-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:09:32,437 - RAGLogger - WARNING - Formato de fecha inválido para turismo-comercial-basico-robo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:09:32,437 - RAGLogger - WARNING - Formato de fecha inválido para turismo-comercial-perdida-total-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:09:32,450 - RAGLogger - WARNING - Formato de fecha inválido para turismo-comercial-todo-riesgo-franquicia-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:09:32,460 - RAGLogger - WARNING - Formato de fecha inválido para turismo-comercial-todo-riesgo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:13:50,746 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-05-05 19:13:55,407 - RAGLogger - INFO - Inicializado DocumentEmbedder
+Metadata: {
+  "model": "paraphrase-multilingual-mpnet-base-v2",
+  "device": "cpu",
+  "chunk_size": 512,
+  "chunk_overlap": 50
+}
+2025-05-05 19:13:55,443 - RAGLogger - INFO - Metadatos cargados exitosamente
+Metadata: {
+  "total_documents": 51,
+  "columns": [
+    "filename",
+    "title",
+    "insurer",
+    "insurance_type",
+    "file_path",
+    "language",
+    "coverage_type",
+    "document_date",
+    "document_version",
+    "num_pages",
+    "keywords"
+  ]
+}
+2025-05-05 19:13:55,482 - RAGLogger - WARNING - Formato de fecha inválido para autocar-danos-estructura-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:13:55,484 - RAGLogger - WARNING - Formato de fecha inválido para autocar-incendio-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:13:55,485 - RAGLogger - WARNING - Formato de fecha inválido para camion-basico-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:13:55,485 - RAGLogger - WARNING - Formato de fecha inválido para camion-basico-robo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:13:55,485 - RAGLogger - WARNING - Formato de fecha inválido para camion-perdida-total-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:13:55,493 - RAGLogger - WARNING - Formato de fecha inválido para camion-todo-riesgo-franquicia-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:13:55,495 - RAGLogger - WARNING - Formato de fecha inválido para camion-todo-riesgo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:13:55,498 - RAGLogger - WARNING - Formato de fecha inválido para camion-tractor-basico-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:13:55,499 - RAGLogger - WARNING - Formato de fecha inválido para camion-tractor-basico-robo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:13:55,505 - RAGLogger - WARNING - Formato de fecha inválido para camion-tractor-perdida-total-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:13:55,506 - RAGLogger - WARNING - Formato de fecha inválido para camion-tractor-todo-riesgo-franquicia-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:13:55,506 - RAGLogger - WARNING - Formato de fecha inválido para camion-tractor-todo-riesgo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:13:55,518 - RAGLogger - WARNING - Formato de fecha inválido para maquinaria-basico-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:13:55,525 - RAGLogger - WARNING - Formato de fecha inválido para maquinaria-terceros-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:13:55,527 - RAGLogger - WARNING - Formato de fecha inválido para remolque-basico-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:13:55,528 - RAGLogger - WARNING - Formato de fecha inválido para remolque-basico-robo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:13:55,528 - RAGLogger - WARNING - Formato de fecha inválido para remolque-perdida-total-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:13:55,532 - RAGLogger - WARNING - Formato de fecha inválido para remolque-todo-riesgo-franquicia-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:13:55,535 - RAGLogger - WARNING - Formato de fecha inválido para remolque-todo-riesgo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:13:55,537 - RAGLogger - WARNING - Formato de fecha inválido para semirremolque-basico-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:13:55,540 - RAGLogger - WARNING - Formato de fecha inválido para semirremolque-basico-robo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:13:55,541 - RAGLogger - WARNING - Formato de fecha inválido para semirremolque-perdida-total-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:13:55,543 - RAGLogger - WARNING - Formato de fecha inválido para semirremolque-todo-riesgo-franquicia-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:13:55,544 - RAGLogger - WARNING - Formato de fecha inválido para semirremolque-todo-riesgo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:13:55,547 - RAGLogger - WARNING - Formato de fecha inválido para turismo-comercial-basico-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:13:55,550 - RAGLogger - WARNING - Formato de fecha inválido para turismo-comercial-basico-robo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:13:55,551 - RAGLogger - WARNING - Formato de fecha inválido para turismo-comercial-perdida-total-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:13:55,555 - RAGLogger - WARNING - Formato de fecha inválido para turismo-comercial-todo-riesgo-franquicia-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:13:55,557 - RAGLogger - WARNING - Formato de fecha inválido para turismo-comercial-todo-riesgo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-05 19:14:13,960 - RAGLogger - INFO - Archivo processed_documents.json generado exitosamente
+Metadata: {
+  "total_documents": 51
+}
+2025-05-06 08:21:39,070 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-05-06 08:21:44,408 - RAGLogger - INFO - Inicializado DocumentEmbedder
+Metadata: {
+  "model": "paraphrase-multilingual-mpnet-base-v2",
+  "device": "cpu",
+  "chunk_size": 512,
+  "chunk_overlap": 50
+}
+2025-05-06 08:21:44,430 - RAGLogger - INFO - Metadatos cargados exitosamente
+Metadata: {
+  "total_documents": 51,
+  "columns": [
+    "filename",
+    "title",
+    "insurer",
+    "insurance_type",
+    "file_path",
+    "language",
+    "coverage_type",
+    "document_date",
+    "document_version",
+    "num_pages",
+    "keywords"
+  ]
+}
+2025-05-06 08:21:44,460 - RAGLogger - WARNING - Formato de fecha inválido para autocar-danos-estructura-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-06 08:21:44,468 - RAGLogger - WARNING - Formato de fecha inválido para autocar-incendio-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-06 08:21:44,468 - RAGLogger - WARNING - Formato de fecha inválido para camion-basico-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-06 08:21:44,468 - RAGLogger - WARNING - Formato de fecha inválido para camion-basico-robo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-06 08:21:44,468 - RAGLogger - WARNING - Formato de fecha inválido para camion-perdida-total-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-06 08:21:44,476 - RAGLogger - WARNING - Formato de fecha inválido para camion-todo-riesgo-franquicia-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-06 08:21:44,476 - RAGLogger - WARNING - Formato de fecha inválido para camion-todo-riesgo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-06 08:21:44,476 - RAGLogger - WARNING - Formato de fecha inválido para camion-tractor-basico-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-06 08:21:44,476 - RAGLogger - WARNING - Formato de fecha inválido para camion-tractor-basico-robo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-06 08:21:44,484 - RAGLogger - WARNING - Formato de fecha inválido para camion-tractor-perdida-total-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-06 08:21:44,484 - RAGLogger - WARNING - Formato de fecha inválido para camion-tractor-todo-riesgo-franquicia-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-06 08:21:44,484 - RAGLogger - WARNING - Formato de fecha inválido para camion-tractor-todo-riesgo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-06 08:21:44,492 - RAGLogger - WARNING - Formato de fecha inválido para maquinaria-basico-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-06 08:21:44,500 - RAGLogger - WARNING - Formato de fecha inválido para maquinaria-terceros-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-06 08:21:44,500 - RAGLogger - WARNING - Formato de fecha inválido para remolque-basico-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-06 08:21:44,500 - RAGLogger - WARNING - Formato de fecha inválido para remolque-basico-robo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-06 08:21:44,500 - RAGLogger - WARNING - Formato de fecha inválido para remolque-perdida-total-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-06 08:21:44,508 - RAGLogger - WARNING - Formato de fecha inválido para remolque-todo-riesgo-franquicia-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-06 08:21:44,508 - RAGLogger - WARNING - Formato de fecha inválido para remolque-todo-riesgo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-06 08:21:44,508 - RAGLogger - WARNING - Formato de fecha inválido para semirremolque-basico-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-06 08:21:44,515 - RAGLogger - WARNING - Formato de fecha inválido para semirremolque-basico-robo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-06 08:21:44,515 - RAGLogger - WARNING - Formato de fecha inválido para semirremolque-perdida-total-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-06 08:21:44,515 - RAGLogger - WARNING - Formato de fecha inválido para semirremolque-todo-riesgo-franquicia-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-06 08:21:44,515 - RAGLogger - WARNING - Formato de fecha inválido para semirremolque-todo-riesgo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-06 08:21:44,523 - RAGLogger - WARNING - Formato de fecha inválido para turismo-comercial-basico-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-06 08:21:44,523 - RAGLogger - WARNING - Formato de fecha inválido para turismo-comercial-basico-robo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-06 08:21:44,523 - RAGLogger - WARNING - Formato de fecha inválido para turismo-comercial-perdida-total-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-06 08:21:44,523 - RAGLogger - WARNING - Formato de fecha inválido para turismo-comercial-todo-riesgo-franquicia-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-06 08:21:44,523 - RAGLogger - WARNING - Formato de fecha inválido para turismo-comercial-todo-riesgo-ipid
+Metadata: {
+  "date": NaN
+}
+2025-05-06 08:22:00,579 - RAGLogger - INFO - Archivo processed_documents.json generado exitosamente
+Metadata: {
+  "total_documents": 51
+}

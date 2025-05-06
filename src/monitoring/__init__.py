@@ -1,3 +1,3 @@
 """
-Módulo para monitoreo y logging del sistema.
+Módulo para el monitoreo y logging del sistema.
 """ 

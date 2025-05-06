@@ -5,8 +5,10 @@ Script para generar embeddings de documentos de seguros.
 import os
 import json
 import logging
+import pandas as pd
 from pathlib import Path
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
+from datetime import datetime
 import numpy as np
 import torch
 from sentence_transformers import SentenceTransformer
@@ -30,6 +32,25 @@ class DocumentEmbedder:
     """
     Clase para generar embeddings de documentos de seguros.
     """
+    
+    # Campos requeridos según el esquema
+    REQUIRED_METADATA_FIELDS = [
+        'filename',
+        'title',
+        'insurer',
+        'insurance_type',
+        'file_path',
+        'language'
+    ]
+    
+    # Campos recomendados según el esquema
+    RECOMMENDED_METADATA_FIELDS = [
+        'coverage_type',
+        'document_date',
+        'document_version',
+        'num_pages',
+        'keywords'
+    ]
     
     def __init__(
         self,
@@ -71,9 +92,73 @@ class DocumentEmbedder:
             chunk_overlap=chunk_overlap
         )
     
+    def validate_metadata(self, metadata: Dict[str, Any], filename: str) -> Dict[str, Any]:
+        """
+        Valida y normaliza los metadatos según el esquema definido.
+        
+        Args:
+            metadata: Diccionario de metadatos
+            filename: Nombre del archivo para logging
+            
+        Returns:
+            Diccionario de metadatos validado y normalizado
+        """
+        # Verificar campos requeridos
+        missing_fields = [
+            field for field in self.REQUIRED_METADATA_FIELDS 
+            if field not in metadata or not metadata[field]
+        ]
+        
+        # Agregar filename si no está presente
+        if 'filename' not in metadata:
+            metadata['filename'] = f"{filename}.pdf"
+            if 'filename' in missing_fields:
+                missing_fields.remove('filename')
+        
+        if missing_fields:
+            self.logger.warning(
+                f"Campos requeridos faltantes para {filename}",
+                missing_fields=missing_fields
+            )
+            raise ValueError(f"Campos requeridos faltantes: {', '.join(missing_fields)}")
+        
+        # Normalizar campos
+        normalized = metadata.copy()
+        
+        # Normalizar fecha si existe
+        if 'document_date' in normalized:
+            try:
+                date = datetime.strptime(normalized['document_date'], '%Y-%m-%d')
+                normalized['document_date'] = date.strftime('%Y-%m-%d')
+            except (ValueError, TypeError):
+                self.logger.warning(
+                    f"Formato de fecha inválido para {filename}",
+                    date=normalized.get('document_date')
+                )
+                normalized['document_date'] = None
+        
+        # Normalizar keywords si existen
+        if 'keywords' in normalized:
+            if isinstance(normalized['keywords'], str):
+                normalized['keywords'] = [
+                    k.strip() for k in normalized['keywords'].split(';')
+                    if k.strip()
+                ]
+            elif not isinstance(normalized['keywords'], list):
+                normalized['keywords'] = []
+        
+        # Normalizar num_pages a entero
+        if 'num_pages' in normalized:
+            try:
+                normalized['num_pages'] = int(normalized['num_pages'])
+            except (ValueError, TypeError):
+                normalized['num_pages'] = None
+        
+        return normalized
+    
     def load_documents(self, data_dir: str = "data/processed") -> List[Dict[str, Any]]:
         """
-        Carga los documentos procesados.
+        Carga los documentos procesados y sus metadatos.
         
         Args:
             data_dir: Directorio con los documentos procesados
@@ -85,32 +170,84 @@ class DocumentEmbedder:
         documents = []
         
         # Cargar metadatos
-        metadata_path = Path("data/metadata/metadata.csv")
+        metadata_path = Path("data/metadata/document_metadata.csv")
         if not metadata_path.exists():
             raise FileNotFoundError("No se encontró el archivo de metadatos")
         
-        # Procesar cada archivo de texto
-        for txt_file in data_path.glob("*.txt"):
-            try:
-                with open(txt_file, 'r', encoding='utf-8') as f:
-                    text = f.read()
-                
-                # Buscar metadatos correspondientes
-                filename = txt_file.stem
-                
-                documents.append({
-                    "filename": filename,
-                    "text": text,
-                    "metadata": {}  # Se completará con los metadatos
-                })
-                
-            except Exception as e:
-                self.logger.warning(
-                    f"No se pudo procesar el archivo {txt_file}",
-                    error=str(e)
+        try:
+            # Cargar metadatos desde CSV
+            metadata_df = pd.read_csv(metadata_path)
+            
+            # Validar columnas requeridas
+            missing_columns = [
+                field for field in self.REQUIRED_METADATA_FIELDS 
+                if field not in metadata_df.columns
+            ]
+            
+            if missing_columns:
+                raise ValueError(
+                    f"Columnas requeridas faltantes en CSV: {', '.join(missing_columns)}"
                 )
-        
-        return documents
+            
+            # Convertir a diccionario usando filename como índice
+            metadata_dict = metadata_df.set_index('filename').to_dict('index')
+            
+            self.logger.info(
+                "Metadatos cargados exitosamente",
+                total_documents=len(metadata_dict),
+                columns=list(metadata_df.columns)
+            )
+            
+            # Procesar cada archivo de texto
+            for txt_file in data_path.glob("*.txt"):
+                # Obtener el nombre base sin extensión
+                base_name = txt_file.stem
+                
+                # Buscar el metadato correspondiente (reemplazando .pdf por .txt)
+                metadata_key = f"{base_name}.pdf"
+                
+                if metadata_key not in metadata_dict:
+                    self.logger.warning(
+                        f"No se encontraron metadatos para {base_name}"
+                    )
+                    continue
+                
+                try:
+                    # Leer el contenido del archivo
+                    with open(txt_file, 'r', encoding='utf-8') as f:
+                        text = f.read()
+                    
+                    # Obtener y validar metadatos
+                    metadata = metadata_dict[metadata_key]
+                    metadata = self.validate_metadata(metadata, base_name)
+                    
+                    # Actualizar la ruta del archivo
+                    metadata['file_path'] = str(txt_file)
+                    
+                    # Agregar documento a la lista
+                    documents.append({
+                        'text': text,
+                        'metadata': metadata
+                    })
+                    
+                except Exception as e:
+                    self.logger.error(
+                        f"Error procesando {base_name}",
+                        error=str(e)
+                    )
+                    continue
+            
+            if not documents:
+                raise ValueError("No se pudieron cargar documentos válidos")
+            
+            return documents
+            
+        except Exception as e:
+            self.logger.error(
+                "Error cargando metadatos",
+                error=str(e)
+            )
+            raise
     
     def chunk_text(self, text: str) -> List[str]:
         """
@@ -153,41 +290,69 @@ class DocumentEmbedder:
     
     def process_documents(self) -> None:
         """
-        Procesa todos los documentos y genera sus embeddings.
+        Procesa los documentos para generar embeddings.
         """
         try:
             # Cargar documentos
             documents = self.load_documents()
             
+            # Lista para almacenar todos los documentos procesados
+            processed_documents = []
+            
             # Procesar cada documento
-            processed_docs = []
-            
             for doc in tqdm(documents, desc="Procesando documentos"):
-                # Dividir en chunks
-                chunks = self.chunk_text(doc["text"])
+                try:
+                    # Dividir texto en chunks
+                    chunks = self.chunk_text(doc['text'])
+                    
+                    # Generar embeddings
+                    embeddings = self.generate_embeddings(chunks)
+                    
+                    # Guardar embeddings
+                    output_file = Path("data/embeddings") / f"{doc['metadata']['filename']}.npy"
+                    output_file.parent.mkdir(parents=True, exist_ok=True)
+                    
+                    # Guardar embeddings como array de numpy
+                    np.save(output_file, embeddings)
+                    
+                    # Guardar metadatos individuales
+                    metadata_file = Path("data/embeddings") / f"{doc['metadata']['filename']}.json"
+                    with open(metadata_file, 'w', encoding='utf-8') as f:
+                        json.dump({
+                            "filename": doc['metadata']['filename'],
+                            "num_chunks": len(chunks),
+                            "embedding_dim": embeddings.shape[1],
+                            "metadata": doc['metadata']
+                        }, f, ensure_ascii=False, indent=2)
+                    
+                    # Agregar documento a la lista de procesados
+                    processed_documents.append({
+                        "filename": doc['metadata']['filename'],
+                        "metadata": doc['metadata'],
+                        "num_chunks": len(chunks),
+                        "embedding_dim": embeddings.shape[1]
+                    })
+                        
+                except Exception as e:
+                    self.logger.error(
+                        f"Error procesando documento {doc['metadata'].get('filename', 'desconocido')}",
+                        error=str(e)
+                    )
+                    continue
+            
+            # Guardar archivo processed_documents.json
+            if processed_documents:
+                output_dir = Path("models")
+                output_dir.mkdir(parents=True, exist_ok=True)
                 
-                # Generar embeddings
-                embeddings = self.generate_embeddings(chunks)
+                with open(output_dir / "processed_documents.json", 'w', encoding='utf-8') as f:
+                    json.dump(processed_documents, f, ensure_ascii=False, indent=2)
                 
-                processed_docs.append({
-                    "filename": doc["filename"],
-                    "chunks": chunks,
-                    "embeddings": embeddings.tolist(),
-                    "metadata": doc["metadata"]
-                })
-            
-            # Guardar resultados
-            output_path = Path("models/processed_documents.json")
-            output_path.parent.mkdir(parents=True, exist_ok=True)
-            
-            with open(output_path, 'w', encoding='utf-8') as f:
-                json.dump(processed_docs, f, ensure_ascii=False, indent=2)
-            
-            self.logger.info(
-                "Procesamiento completado",
-                total_documents=len(processed_docs)
-            )
-            
+                self.logger.info(
+                    "Archivo processed_documents.json generado exitosamente",
+                    total_documents=len(processed_documents)
+                )
+                
         except Exception as e:
             self.logger.error(
                 "Error procesando documentos",

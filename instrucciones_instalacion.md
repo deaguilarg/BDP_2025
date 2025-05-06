@@ -127,7 +127,7 @@ python src/embeddings/index_builder.py
 
 ### Iniciar la Interfaz Streamlit
 ```bash
-streamlit run app/streamlit_app.py
+python -m streamlit run app/streamlit_app.py
 ```
 La aplicación estará disponible en `http://localhost:8501` por defecto.
 

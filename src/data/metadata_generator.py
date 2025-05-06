@@ -22,6 +22,25 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 class MetadataGenerator:
+    # Campos requeridos según el esquema
+    REQUIRED_FIELDS = [
+        'filename',
+        'title',
+        'insurer',
+        'insurance_type',
+        'file_path',
+        'language'
+    ]
+    
+    # Campos recomendados según el esquema
+    RECOMMENDED_FIELDS = [
+        'coverage_type',
+        'document_date',
+        'document_version',
+        'num_pages',
+        'keywords'
+    ]
+    
     def __init__(self, processed_dir: str = 'data/processed', metadata_dir: str = 'data/metadata'):
         """
         Inicializa el generador de metadatos.
@@ -43,10 +62,11 @@ class MetadataGenerator:
         
         # Patrones para identificar información
         self.patterns = {
-            'aseguradora': r'(?i)(mapfre|axa|allianz|generali|zurich|liberty|reale|helvetia|pelayo|mutua\s+madrileña)',
-            'tipo_seguro': r'(?i)(vida|hogar|auto(?:móvil)?|salud|decesos|responsabilidad\s+civil|multirriesgo)',
-            'coberturas': r'(?i)(robo|incendio|accidente|fallecimiento|invalidez|asistencia|daños|responsabilidad)',
-            'fecha': r'(?i)(\d{1,2}[-/]\d{1,2}[-/]\d{2,4}|\d{1,2}\s+(?:de\s+)?(?:enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)\s+(?:de\s+)?\d{2,4})'
+            'insurer': r'(?i)(mapfre|axa|allianz|generali|zurich|liberty|reale|helvetia|pelayo|mutua\s+madrileña)',
+            'insurance_type': r'(?i)(vida|hogar|auto(?:móvil)?|salud|decesos|responsabilidad\s+civil|multirriesgo)',
+            'coverage_type': r'(?i)(básico|premium|todo\s+riesgo|completo|estándar)',
+            'document_date': r'(?i)(\d{1,2}[-/]\d{1,2}[-/]\d{2,4}|\d{1,2}\s+(?:de\s+)?(?:enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)\s+(?:de\s+)?\d{2,4})',
+            'document_version': r'(?i)(?:v|versión|version)\s*(\d+(?:\.\d+)*|\d{4}/\d{2})'
         }
         
         # Palabras comunes que no deben ser consideradas como entidades
@@ -185,6 +205,119 @@ class MetadataGenerator:
         
         return {k: sorted(list(set(v))) for k, v in entities.items()}
 
+    def extract_title(self, text: str) -> str:
+        """
+        Extrae el título del documento.
+        
+        Args:
+            text: Texto del documento
+            
+        Returns:
+            Título extraído
+        """
+        # Buscar patrones comunes de títulos en documentos de seguros
+        title_patterns = [
+            r'(?i)condiciones\s+(?:generales|particulares)\s+(?:del\s+)?seguro\s+(?:de\s+)?[^\n]+',
+            r'(?i)póliza\s+(?:de\s+)?seguro\s+(?:de\s+)?[^\n]+',
+            r'(?i)contrato\s+(?:de\s+)?seguro\s+(?:de\s+)?[^\n]+'
+        ]
+        
+        for pattern in title_patterns:
+            match = re.search(pattern, text[:1000])  # Buscar en los primeros 1000 caracteres
+            if match:
+                return match.group().strip()
+        
+        # Si no se encuentra un título específico, usar el nombre del archivo
+        return "Documento de Seguro"
+
+    def extract_insurer(self, text: str) -> str:
+        """
+        Extrae la aseguradora del documento.
+        
+        Args:
+            text: Texto del documento
+            
+        Returns:
+            Nombre de la aseguradora
+        """
+        matches = self.find_pattern_matches(text, self.patterns['insurer'])
+        return matches[0] if matches else "Desconocida"
+
+    def extract_insurance_type(self, text: str) -> str:
+        """
+        Extrae el tipo de seguro del documento.
+        
+        Args:
+            text: Texto del documento
+            
+        Returns:
+            Tipo de seguro
+        """
+        matches = self.find_pattern_matches(text, self.patterns['insurance_type'])
+        return matches[0] if matches else "No especificado"
+
+    def extract_coverage_type(self, text: str) -> str:
+        """
+        Extrae el tipo de cobertura del documento.
+        
+        Args:
+            text: Texto del documento
+            
+        Returns:
+            Tipo de cobertura
+        """
+        matches = self.find_pattern_matches(text, self.patterns['coverage_type'])
+        return matches[0] if matches else "No especificado"
+
+    def extract_document_date(self, text: str) -> str:
+        """
+        Extrae la fecha del documento.
+        
+        Args:
+            text: Texto del documento
+            
+        Returns:
+            Fecha en formato YYYY-MM-DD
+        """
+        matches = self.find_pattern_matches(text, self.patterns['document_date'])
+        if matches:
+            try:
+                # Intentar convertir la fecha a formato estándar
+                date_str = matches[0]
+                if '/' in date_str or '-' in date_str:
+                    day, month, year = re.split(r'[/-]', date_str)
+                    if len(year) == 2:
+                        year = '20' + year
+                    return f"{year}-{month.zfill(2)}-{day.zfill(2)}"
+                else:
+                    # Manejar fechas en formato texto
+                    months = {
+                        'enero': '01', 'febrero': '02', 'marzo': '03', 'abril': '04',
+                        'mayo': '05', 'junio': '06', 'julio': '07', 'agosto': '08',
+                        'septiembre': '09', 'octubre': '10', 'noviembre': '11', 'diciembre': '12'
+                    }
+                    for month_name, month_num in months.items():
+                        if month_name in date_str.lower():
+                            day = re.search(r'\d{1,2}', date_str).group()
+                            year = re.search(r'\d{4}', date_str).group()
+                            return f"{year}-{month_num}-{day.zfill(2)}"
+            except Exception as e:
+                logger.warning(f"Error procesando fecha: {str(e)}")
+        return None
+
+    def extract_document_version(self, text: str) -> str:
+        """
+        Extrae la versión del documento.
+        
+        Args:
+            text: Texto del documento
+            
+        Returns:
+            Versión del documento
+        """
+        matches = self.find_pattern_matches(text, self.patterns['document_version'])
+        return matches[0] if matches else "No especificada"
+
     def extract_keywords(self, text: str, min_freq: int = 2) -> List[str]:
         """
         Extrae palabras clave del texto.
@@ -222,7 +355,7 @@ class MetadataGenerator:
 
     def generate_metadata(self, text_path: Path) -> Dict:
         """
-        Genera metadatos para un documento.
+        Genera metadatos para un documento según el esquema especificado.
         
         Args:
             text_path: Ruta al archivo de texto
@@ -233,33 +366,58 @@ class MetadataGenerator:
         try:
             text = text_path.read_text(encoding='utf-8')
             
-            # Metadatos básicos
+            # Extraer información del nombre del archivo
+            filename = text_path.stem
+            parts = filename.split('-')
+            
+            # Determinar tipo de seguro y cobertura basado en el nombre del archivo
+            insurance_type = None
+            coverage_type = None
+            
+            if 'ipid' in filename:
+                insurance_type = 'IPID'
+                if 'basico' in filename:
+                    coverage_type = 'Básico'
+                elif 'ampliado' in filename:
+                    coverage_type = 'Ampliado'
+                elif 'optimo' in filename:
+                    coverage_type = 'Óptimo'
+                elif 'extra' in filename:
+                    coverage_type = 'Extra'
+            elif 'auto-plus' in filename:
+                insurance_type = 'Auto'
+                if 'basico' in filename:
+                    coverage_type = 'Básico'
+                elif 'terceros' in filename:
+                    coverage_type = 'Terceros'
+                elif 'robo-incendio' in filename:
+                    coverage_type = 'Robo e Incendio'
+            elif 'camion' in filename or 'furgoneta' in filename or 'remolque' in filename:
+                insurance_type = 'Transporte'
+                if 'basico' in filename:
+                    coverage_type = 'Básico'
+                elif 'todo-riesgo' in filename:
+                    coverage_type = 'Todo Riesgo'
+                elif 'perdida-total' in filename:
+                    coverage_type = 'Pérdida Total'
+            
+            # Generar metadatos requeridos
             metadata = {
-                'filename': text_path.stem + '.pdf',
+                'filename': filename + '.pdf',
+                'title': self.extract_title(text),
+                'insurer': 'IPID',  # Por defecto IPID
+                'insurance_type': insurance_type or 'No especificado',
                 'file_path': str(text_path),
-                'creation_date': datetime.fromtimestamp(text_path.stat().st_ctime).isoformat(),
-                'last_modified': datetime.fromtimestamp(text_path.stat().st_mtime).isoformat(),
-                'file_size': text_path.stat().st_size,
-                'num_chars': len(text),
-                'num_words': len(text.split()),
-                'metadata_generation_date': datetime.now().isoformat()
+                'language': 'es'  # Por defecto en español
             }
             
-            # Extraer información usando patrones
+            # Generar metadatos recomendados
             metadata.update({
-                'aseguradoras': self.find_pattern_matches(text, self.patterns['aseguradora']),
-                'tipos_seguro': self.find_pattern_matches(text, self.patterns['tipo_seguro']),
-                'coberturas': self.find_pattern_matches(text, self.patterns['coberturas']),
-                'fechas': self.find_pattern_matches(text, self.patterns['fecha'])
-            })
-            
-            # Extraer entidades y palabras clave
-            entities = self.extract_entities(text[:10000])  # Limitar a primeros 10000 caracteres
-            metadata.update({
-                'organizaciones': entities['ORG'],
-                'personas': entities['PER'],
-                'ubicaciones': entities['LOC'],
-                'palabras_clave': self.extract_keywords(text[:10000])
+                'coverage_type': coverage_type or 'No especificado',
+                'document_date': self.extract_document_date(text),
+                'document_version': self.extract_document_version(text),
+                'num_pages': None,  # Requeriría análisis del PDF original
+                'keywords': ';'.join(self.extract_keywords(text))
             })
             
             return metadata
@@ -316,34 +474,17 @@ def main():
             print("\nResumen de la generación de metadatos:")
             print(f"Total de documentos procesados: {len(metadata_df)}")
             print("\nEstadísticas de campos encontrados:")
-            print(f"Documentos con aseguradoras identificadas: {metadata_df['aseguradoras'].apply(bool).sum()}")
-            print(f"Documentos con tipos de seguro identificados: {metadata_df['tipos_seguro'].apply(bool).sum()}")
-            print(f"Documentos con coberturas identificadas: {metadata_df['coberturas'].apply(bool).sum()}")
-            print(f"Documentos con fechas encontradas: {metadata_df['fechas'].apply(bool).sum()}")
+            print(f"Documentos con aseguradoras identificadas: {metadata_df['insurer'].notna().sum()}")
+            print(f"Documentos con tipos de seguro identificados: {metadata_df['insurance_type'].notna().sum()}")
+            print(f"Documentos con tipos de cobertura identificados: {metadata_df['coverage_type'].notna().sum()}")
+            print(f"Documentos con fechas encontradas: {metadata_df['document_date'].notna().sum()}")
             
             # Mostrar ejemplos de palabras clave más comunes
-            all_keywords = [kw for keywords in metadata_df['palabras_clave'] for kw in keywords]
+            all_keywords = [kw for keywords in metadata_df['keywords'] for kw in keywords.split(';')]
             if all_keywords:
                 keyword_freq = pd.Series(all_keywords).value_counts()
                 print("\nPalabras clave más frecuentes:")
                 print(keyword_freq.head())
-            
-            # Mostrar ejemplos de entidades encontradas
-            print("\nEjemplos de entidades encontradas:")
-            print("\nOrganizaciones (primeros 5 documentos):")
-            for orgs in metadata_df['organizaciones'].head():
-                if orgs:
-                    print(f"- {', '.join(orgs)}")
-            
-            print("\nPersonas (primeros 5 documentos):")
-            for pers in metadata_df['personas'].head():
-                if pers:
-                    print(f"- {', '.join(pers)}")
-            
-            print("\nUbicaciones (primeros 5 documentos):")
-            for locs in metadata_df['ubicaciones'].head():
-                if locs:
-                    print(f"- {', '.join(locs)}")
     
     except Exception as e:
         logger.error(f"Error en la ejecución principal: {str(e)}")

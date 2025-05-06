@@ -1,0 +1,88 @@
+2025-05-05 19:05:58,059 - __main__ - INFO - Iniciando aplicación Streamlit...
+2025-05-05 19:05:58,072 - __main__ - ERROR - Error ejecutando Streamlit: Command 'streamlit run app/streamlit_app.py' returned non-zero exit status 1.
+2025-05-05 19:06:10,236 - __main__ - INFO - Iniciando aplicación Streamlit...
+2025-05-05 19:08:52,963 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-05-05 19:08:58,590 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device: cpu
+2025-05-05 19:08:58,590 - RAGLogger - INFO - Índice FAISS cargado exitosamente
+Metadata: {
+  "index_file": "models\\faiss_index\\faiss_index_20250505_185958.bin",
+  "mapping_file": "models\\faiss_index\\id_mapping_20250505_185958.json",
+  "num_vectors": 102
+}
+2025-05-05 19:08:58,680 - __main__ - WARNING - No se encontraron metadatos válidos en los documentos
+2025-05-05 19:09:19,088 - __main__ - INFO - Aplicación detenida por el usuario
+2025-05-05 19:11:30,435 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-05-05 19:11:34,005 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device: cpu
+2025-05-05 19:11:34,072 - RAGLogger - INFO - Índice FAISS cargado exitosamente
+Metadata: {
+  "index_file": "models\\faiss_index\\faiss_index_20250505_191103.bin",
+  "mapping_file": "models\\faiss_index\\id_mapping_20250505_191103.json",
+  "num_vectors": 102
+}
+2025-05-05 19:11:34,149 - __main__ - WARNING - No se encontraron metadatos válidos en los documentos
+2025-05-05 19:15:40,164 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-05-05 19:15:44,076 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device: cpu
+2025-05-05 19:15:44,076 - RAGLogger - INFO - Índice FAISS cargado exitosamente
+Metadata: {
+  "index_file": "models\\faiss_index\\faiss_index_20250505_191103.bin",
+  "mapping_file": "models\\faiss_index\\id_mapping_20250505_191103.json",
+  "num_vectors": 102
+}
+2025-05-05 19:15:44,101 - __main__ - INFO - Metadatos cargados exitosamente. Campos encontrados: ['title', 'insurer', 'insurance_type', 'file_path', 'language', 'coverage_type', 'document_date', 'document_version', 'num_pages', 'keywords', 'filename']
+2025-05-05 19:16:07,101 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "¿Cuáles son las exclusiones del seguro de auto?",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-05 19:16:07,958 - RAGLogger - INFO - Búsqueda realizada
+Metadata: {
+  "query": "¿Cuáles son las exclusiones del seguro de auto?",
+  "num_results": 5,
+  "filters": {}
+}
+2025-05-05 19:16:39,819 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "¿Cuáles son las exclusiones del seguro de auto?",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-05 19:16:39,843 - RAGLogger - INFO - Búsqueda realizada
+Metadata: {
+  "query": "¿Cuáles son las exclusiones del seguro de auto?",
+  "num_results": 5,
+  "filters": {}
+}
+2025-05-06 08:16:38,533 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-05-06 08:16:44,841 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device: cpu
+2025-05-06 08:16:44,841 - RAGLogger - INFO - Índice FAISS cargado exitosamente
+Metadata: {
+  "index_file": "models\\faiss_index\\faiss_index_20250505_191103.bin",
+  "mapping_file": "models\\faiss_index\\id_mapping_20250505_191103.json",
+  "num_vectors": 102
+}
+2025-05-06 08:16:45,091 - __main__ - INFO - Metadatos cargados exitosamente. Campos encontrados: ['title', 'insurer', 'insurance_type', 'file_path', 'language', 'coverage_type', 'document_date', 'document_version', 'num_pages', 'keywords', 'filename']
+2025-05-06 08:17:31,818 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Qué cubren los seguros de moto?",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-06 08:17:32,453 - RAGLogger - INFO - Búsqueda realizada
+Metadata: {
+  "query": "Qué cubren los seguros de moto?",
+  "num_results": 5,
+  "filters": {}
+}
+2025-05-06 08:36:40,829 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Qué cubren los seguros de moto?",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-06 08:36:40,862 - RAGLogger - INFO - Búsqueda realizada
+Metadata: {
+  "query": "Qué cubren los seguros de moto?",
+  "num_results": 5,
+  "filters": {}
+}

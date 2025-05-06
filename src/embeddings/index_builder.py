@@ -1,192 +1,244 @@
 """
-Script para construir y guardar el índice FAISS.
+Construcción y gestión del índice FAISS para embeddings de documentos.
 """
 
-import os
 import json
 import logging
-from pathlib import Path
-from typing import List, Dict, Any, Tuple
 import numpy as np
 import faiss
-import torch
-from tqdm import tqdm
+from pathlib import Path
+from typing import Dict, List, Optional, Tuple
+from datetime import datetime
 
 from src.monitoring.logger import RAGLogger
 from src.monitoring.performance import PerformanceMonitor
 
-# Configuración del logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler('logs/index_builder.log'),
-        logging.StreamHandler()
-    ]
-)
-logger = logging.getLogger(__name__)
-
 class FAISSIndexBuilder:
     """
-    Clase para construir y guardar el índice FAISS.
+    Constructor y gestor del índice FAISS.
     """
     
     def __init__(
         self,
-        models_dir: str = "models",
+        embeddings_dir: str = "data/embeddings",
         index_dir: str = "models/faiss_index",
-        dimension: int = 768,  # Dimensión de los embeddings de MPNet
-        nlist: int = 100,      # Número de clusters para IVF
-        nprobe: int = 10       # Número de clusters a explorar durante la búsqueda
+        dimension: int = 768,  # Dimensión por defecto para mpnet
+        index_type: str = "flat"  # Tipo de índice: flat, ivf, hnsw
     ):
         """
-        Inicializa el constructor del índice FAISS.
+        Inicializa el constructor del índice.
         
         Args:
-            models_dir: Directorio con los embeddings
-            index_dir: Directorio donde se guardará el índice
+            embeddings_dir: Directorio con los embeddings
+            index_dir: Directorio para guardar el índice
             dimension: Dimensión de los embeddings
-            nlist: Número de clusters para IVF
-            nprobe: Número de clusters a explorar durante la búsqueda
+            index_type: Tipo de índice FAISS a construir
         """
-        self.models_dir = Path(models_dir)
+        self.embeddings_dir = Path(embeddings_dir)
         self.index_dir = Path(index_dir)
         self.index_dir.mkdir(parents=True, exist_ok=True)
         
         self.dimension = dimension
-        self.nlist = nlist
-        self.nprobe = nprobe
+        self.index_type = index_type
         
         # Inicializar logger y monitor
         self.logger = RAGLogger()
         self.performance_monitor = PerformanceMonitor()
         
-        # Crear índice FAISS
-        quantizer = faiss.IndexFlatL2(dimension)
-        self.index = faiss.IndexIVFFlat(quantizer, dimension, nlist)
-        
-        self.logger.info(
-            "Inicializado FAISSIndexBuilder",
-            dimension=dimension,
-            nlist=nlist,
-            nprobe=nprobe
-        )
+        # Mapeo de IDs a metadatos
+        self.id_to_metadata: Dict[int, Dict] = {}
+        self.current_id = 0
     
-    def load_embeddings(self) -> Tuple[np.ndarray, List[Dict[str, Any]]]:
+    def _create_index(self) -> faiss.Index:
         """
-        Carga los embeddings y metadatos desde el archivo JSON.
+        Crea un índice FAISS según el tipo especificado.
+        
+        Returns:
+            Índice FAISS inicializado
+        """
+        if self.index_type == "flat":
+            # Índice plano (búsqueda exhaustiva)
+            return faiss.IndexFlatIP(self.dimension)
+        
+        elif self.index_type == "ivf":
+            # Índice IVF con cuantización
+            nlist = max(4, self.current_id // 39)  # ~39 vectores por cluster
+            quantizer = faiss.IndexFlatIP(self.dimension)
+            return faiss.IndexIVFFlat(quantizer, self.dimension, nlist)
+        
+        elif self.index_type == "hnsw":
+            # Índice HNSW para búsqueda aproximada rápida
+            return faiss.IndexHNSWFlat(self.dimension, 32)  # 32 conexiones por nodo
+        
+        else:
+            raise ValueError(f"Tipo de índice no soportado: {self.index_type}")
+    
+    @PerformanceMonitor.function_timer("load_embeddings")
+    def load_embeddings(self) -> Tuple[np.ndarray, List[Dict]]:
+        """
+        Carga los embeddings y sus metadatos.
         
         Returns:
             Tupla con matriz de embeddings y lista de metadatos
         """
-        embeddings_path = self.models_dir / "processed_documents.json"
-        
-        if not embeddings_path.exists():
-            raise FileNotFoundError("No se encontró el archivo de embeddings")
-        
-        with open(embeddings_path, 'r', encoding='utf-8') as f:
-            documents = json.load(f)
-        
-        # Extraer embeddings y metadatos
         all_embeddings = []
         all_metadata = []
         
-        for doc in documents:
-            embeddings = doc["embeddings"]
-            metadata = {
-                "filename": doc["filename"],
-                "chunk_index": len(all_embeddings),
-                "text": doc["chunks"][0],  # Texto del chunk
-                "metadata": doc["metadata"]  # Metadatos del documento
-            }
-            
-            all_embeddings.extend(embeddings)
-            all_metadata.extend([metadata] * len(embeddings))
+        # Cargar cada archivo de embeddings
+        for emb_file in self.embeddings_dir.glob("*.npy"):
+            try:
+                # Cargar embeddings
+                embeddings = np.load(emb_file)
+                
+                # Cargar metadatos correspondientes
+                metadata_file = emb_file.with_suffix(".json")
+                if not metadata_file.exists():
+                    self.logger.warning(
+                        f"No se encontró archivo de metadatos para {emb_file}"
+                    )
+                    continue
+                
+                with open(metadata_file, 'r', encoding='utf-8') as f:
+                    metadata = json.load(f)
+                
+                # Agregar embeddings y metadatos
+                all_embeddings.append(embeddings)
+                
+                # Crear entrada de metadatos para cada embedding
+                num_embeddings = len(embeddings)
+                for i in range(num_embeddings):
+                    chunk_metadata = metadata.copy()
+                    chunk_metadata.update({
+                        "chunk_index": i,
+                        "total_chunks": num_embeddings
+                    })
+                    all_metadata.append(chunk_metadata)
+                
+            except Exception as e:
+                self.logger.error(
+                    f"Error cargando embeddings de {emb_file}",
+                    error=str(e)
+                )
+                continue
         
-        return np.array(all_embeddings, dtype=np.float32), all_metadata
-    
-    @PerformanceMonitor.function_timer("index_training")
-    def train_index(self, embeddings: np.ndarray) -> None:
-        """
-        Entrena el índice FAISS con los embeddings.
+        if not all_embeddings:
+            raise ValueError("No se encontraron embeddings válidos")
         
-        Args:
-            embeddings: Matriz de embeddings
-        """
-        if not self.index.is_trained:
-            self.index.train(embeddings)
-            self.index.nprobe = self.nprobe
-    
-    @PerformanceMonitor.function_timer("index_adding")
-    def add_to_index(self, embeddings: np.ndarray) -> None:
-        """
-        Añade los embeddings al índice.
+        # Concatenar todos los embeddings
+        embeddings_matrix = np.vstack(all_embeddings)
         
-        Args:
-            embeddings: Matriz de embeddings
-        """
-        self.index.add(embeddings)
-    
-    def save_index(self) -> None:
-        """
-        Guarda el índice FAISS y los metadatos.
-        """
-        # Guardar índice
-        index_path = self.index_dir / "insurance_docs.index"
-        faiss.write_index(self.index, str(index_path))
+        # Verificar dimensiones
+        if embeddings_matrix.shape[1] != self.dimension:
+            raise ValueError(
+                f"Dimensión de embeddings ({embeddings_matrix.shape[1]}) "
+                f"no coincide con la esperada ({self.dimension})"
+            )
         
-        self.logger.info(
-            "Índice FAISS guardado",
-            path=str(index_path),
-            total_vectors=self.index.ntotal
-        )
+        return embeddings_matrix, all_metadata
     
+    @PerformanceMonitor.function_timer("build_index")
     def build_index(self) -> None:
         """
-        Construye el índice FAISS con los embeddings.
+        Construye el índice FAISS con los embeddings disponibles.
         """
         try:
-            # Cargar embeddings
+            # Cargar embeddings y metadatos
             embeddings, metadata = self.load_embeddings()
             
-            # Entrenar índice
-            self.train_index(embeddings)
+            # Crear índice
+            index = self._create_index()
             
-            # Añadir vectores
-            self.add_to_index(embeddings)
+            # Entrenar si es necesario (IVF)
+            if isinstance(index, faiss.IndexIVFFlat):
+                index.train(embeddings)
             
-            # Guardar índice y metadatos
-            self.save_index()
+            # Agregar vectores al índice
+            index.add(embeddings)
             
-            # Guardar metadatos
-            metadata_path = self.index_dir / "metadata.json"
-            with open(metadata_path, 'w', encoding='utf-8') as f:
-                json.dump(metadata, f, ensure_ascii=False, indent=2)
+            # Actualizar mapeo de IDs
+            for i, meta in enumerate(metadata):
+                self.id_to_metadata[i] = meta
+            
+            self.current_id = len(metadata)
+            
+            # Guardar índice
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            index_file = self.index_dir / f"faiss_index_{timestamp}.bin"
+            faiss.write_index(index, str(index_file))
+            
+            # Guardar mapeo de IDs
+            mapping_file = self.index_dir / f"id_mapping_{timestamp}.json"
+            with open(mapping_file, 'w', encoding='utf-8') as f:
+                json.dump(self.id_to_metadata, f, ensure_ascii=False, indent=2)
             
             self.logger.info(
-                "Construcción del índice completada",
-                total_vectors=self.index.ntotal,
-                metadata_path=str(metadata_path)
+                "Índice FAISS construido exitosamente",
+                index_file=str(index_file),
+                mapping_file=str(mapping_file),
+                num_vectors=self.current_id,
+                index_type=self.index_type
             )
             
         except Exception as e:
             self.logger.error(
-                "Error construyendo el índice",
+                "Error construyendo índice FAISS",
                 error=str(e)
             )
             raise
+    
+    def load_index(
+        self,
+        index_file: Optional[str] = None,
+        mapping_file: Optional[str] = None
+    ) -> Tuple[faiss.Index, Dict[int, Dict]]:
+        """
+        Carga un índice FAISS existente y su mapeo de IDs.
+        
+        Args:
+            index_file: Ruta al archivo del índice
+            mapping_file: Ruta al archivo de mapeo
+            
+        Returns:
+            Tupla con el índice y el mapeo de IDs
+        """
+        # Si no se especifican archivos, usar los más recientes
+        if not index_file or not mapping_file:
+            index_files = list(self.index_dir.glob("faiss_index_*.bin"))
+            mapping_files = list(self.index_dir.glob("id_mapping_*.json"))
+            
+            if not index_files or not mapping_files:
+                raise FileNotFoundError("No se encontraron archivos de índice")
+            
+            index_file = str(sorted(index_files)[-1])
+            mapping_file = str(sorted(mapping_files)[-1])
+        
+        # Cargar índice
+        index = faiss.read_index(index_file)
+        
+        # Cargar mapeo
+        with open(mapping_file, 'r', encoding='utf-8') as f:
+            id_mapping = json.load(f)
+        
+        self.logger.info(
+            "Índice FAISS cargado exitosamente",
+            index_file=index_file,
+            mapping_file=mapping_file,
+            num_vectors=len(id_mapping)
+        )
+        
+        return index, id_mapping
 
 def main():
     """Función principal para construir el índice"""
     try:
-        # Inicializar builder
+        # Inicializar constructor
         builder = FAISSIndexBuilder()
         
         # Construir índice
         builder.build_index()
         
     except Exception as e:
-        logger.error(f"Error en la ejecución principal: {str(e)}")
+        logging.error(f"Error en la ejecución principal: {str(e)}")
         raise
 
 if __name__ == "__main__":

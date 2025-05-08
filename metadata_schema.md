@@ -7,7 +7,7 @@ La correcta estructura de metadatos es esencial para un sistema RAG eficiente. A
 Se recomienda usar formato CSV para los metadatos, con la siguiente estructura:
 
 ```csv
-filename,title,insurer,insurance_type,coverage_type,document_date,document_version,file_path,num_pages,language,keywords
+filename,producto,insurance_type,file_path,coverage_type,num_pages,keywords
 ```
 
 ## Campos de Metadatos
@@ -16,31 +16,13 @@ filename,title,insurer,insurance_type,coverage_type,document_date,document_versi
 
 | Campo | Descripción | Tipo | Ejemplo |
 |-------|-------------|------|---------|
-| `filename` | Nombre del archivo PDF | string | `poliza_hogar_mapfre_2023.pdf` |
-| `title` | Título descriptivo del documento | string | `Condiciones Generales Seguro de Hogar` |
-| `insurer` | Compañía aseguradora | string | `Mapfre` |
-| `insurance_type` | Tipo principal de seguro | string | `Hogar`, `Vida`, `Salud`, `Auto`, `Responsabilidad Civil` |
-| `file_path` | Ruta relativa al archivo | string | `data/raw/poliza_hogar_mapfre_2023.pdf` |
-| `language` | Idioma del documento | string | `es` |
-
-### Campos Recomendados
-
-| Campo | Descripción | Tipo | Ejemplo |
-|-------|-------------|------|---------|
-| `coverage_type` | Subtipos o coberturas específicas | string | `Básico`, `Premium`, `Todo Riesgo` |
-| `document_date` | Fecha del documento (YYYY-MM-DD) | date | `2023-09-15` |
-| `document_version` | Versión del documento | string | `v2.1`, `2023/01` |
-| `num_pages` | Número de páginas | integer | `42` |
+| `filename` | Nombre del archivo PDF | string | `auto-plus-basico.pdf` |
+| `producto` | Nombre del producto de seguro | string | `Automóviles PLUS Básico` |
+| `insurance_type` | Tipo principal de seguro | string | `Hogar`, `Vida`, `Salud`, `Automóvil`, `Responsabilidad Civil`, `Accidentes`, `Accidentes` |
+| `file_path` | Ruta relativa al archivo | string | `data/raw/auto-plus-basico.pdf` |
+| `coverage_type` | Subtipos o coberturas específicas | string | `Básico`, `Premium`, `Todo Riesgo`, `Básico con daños`, `Pérdida total`, `Todo riesgo con franquicia`|
+| `num_pages` | Número de páginas | integer | `2` |
 | `keywords` | Palabras clave separadas por punto y coma | string | `incendio;robo;responsabilidad;terceros` |
-
-### Campos Opcionales (según necesidades específicas)
-
-| Campo | Descripción | Tipo | Ejemplo |
-|-------|-------------|------|---------|
-| `section_type` | Tipo de sección del documento | string | `Condiciones Generales`, `Anexo`, `Exclusiones` |
-| `target_audience` | Público objetivo | string | `Particular`, `Empresa`, `Autónomo` |
-| `document_id` | Identificador único del documento | string | `POL-HG-2023-0042` |
-| `legal_jurisdiction` | Jurisdicción legal aplicable | string | `España`, `México`, `Colombia` |
 
 ## Script de Generación Automática
 
@@ -50,14 +32,6 @@ El script `src/data/metadata_generator.py` generará automáticamente estos meta
 2. **Análisis de patrones**: Para detectar tipo de seguro, compañía, etc.
 3. **Procesamiento de lenguaje natural**: Para extraer keywords y clasificar documentos
 
-## Ejemplo de Archivo de Metadatos
-
-```csv
-filename,title,insurer,insurance_type,coverage_type,document_date,document_version,file_path,num_pages,language,keywords
-poliza_hogar_mapfre_2023.pdf,Condiciones Generales Seguro de Hogar,Mapfre,Hogar,Premium,2023-09-15,v3.2,data/raw/poliza_hogar_mapfre_2023.pdf,48,es,incendio;robo;responsabilidad;terceros
-seguro_auto_axa_2023.pdf,Póliza de Seguro de Automóvil,AXA,Auto,Todo Riesgo,2023-05-10,2023/02,data/raw/seguro_auto_axa_2023.pdf,52,es,colisión;robo;asistencia;cristales
-seguro_salud_sanitas_2023.pdf,Condiciones Particulares Seguro de Salud,Sanitas,Salud,Completo,2023-01-20,v1.0,data/raw/seguro_salud_sanitas_2023.pdf,36,es,hospitalización;consultas;pruebas;especialistas
-```
 
 ## Integración con el Sistema RAG
 

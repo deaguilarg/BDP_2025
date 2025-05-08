@@ -86,3 +86,103 @@ Metadata: {
   "num_results": 5,
   "filters": {}
 }
+2025-05-08 17:12:04,917 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-08 17:12:04,917 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-05-08 17:12:11,242 - RAGLogger - INFO - Índice FAISS cargado exitosamente
+Metadata: {
+  "index_file": "models\\faiss_index\\faiss_index_20250505_191103.bin",
+  "mapping_file": "models\\faiss_index\\id_mapping_20250505_191103.json",
+  "num_vectors": 102
+}
+2025-05-08 17:12:11,843 - __main__ - INFO - Metadatos cargados exitosamente. Campos encontrados: ['filename', 'producto', 'insurance_type', 'file_path', 'coverage_type', 'num_pages', 'keywords']
+2025-05-08 17:12:40,470 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "¿Qué cubre el seguro de motocicleta?",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-08 17:12:41,037 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-05-08 17:12:41,037 - RAGLogger - INFO - Error en answer_generator: Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Metadata: {
+  "error": true,
+  "component": "answer_generator",
+  "context": {
+    "query": "¿Qué cubre el seguro de motocicleta?",
+    "num_context_docs": 5
+  }
+}
+2025-05-08 17:12:41,058 - RAGLogger - ERROR - Error en la interfaz
+Metadata: {
+  "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+  "query": "¿Qué cubre el seguro de motocicleta?"
+}
+2025-05-08 17:14:01,726 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "¿Qué cubre el seguro de motocicleta?",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-08 17:14:01,938 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-05-08 17:14:01,938 - RAGLogger - INFO - Error en answer_generator: Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Metadata: {
+  "error": true,
+  "component": "answer_generator",
+  "context": {
+    "query": "¿Qué cubre el seguro de motocicleta?",
+    "num_context_docs": 5
+  }
+}
+2025-05-08 17:14:01,953 - RAGLogger - ERROR - Error en la interfaz
+Metadata: {
+  "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+  "query": "¿Qué cubre el seguro de motocicleta?"
+}
+2025-05-08 17:14:12,704 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "¿Qué cubre el seguro de motocicleta?",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-08 17:14:12,899 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-05-08 17:14:12,908 - RAGLogger - INFO - Error en answer_generator: Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Metadata: {
+  "error": true,
+  "component": "answer_generator",
+  "context": {
+    "query": "¿Qué cubre el seguro de motocicleta?",
+    "num_context_docs": 5
+  }
+}
+2025-05-08 17:14:12,917 - RAGLogger - ERROR - Error en la interfaz
+Metadata: {
+  "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+  "query": "¿Qué cubre el seguro de motocicleta?"
+}
+2025-05-08 17:18:46,665 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-08 17:18:46,665 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-05-08 17:18:49,791 - RAGLogger - INFO - Índice FAISS cargado exitosamente
+Metadata: {
+  "index_file": "models\\faiss_index\\faiss_index_20250505_191103.bin",
+  "mapping_file": "models\\faiss_index\\id_mapping_20250505_191103.json",
+  "num_vectors": 102
+}
+2025-05-08 17:18:50,343 - __main__ - INFO - Metadatos cargados exitosamente. Campos encontrados: ['filename', 'producto', 'insurance_type', 'file_path', 'coverage_type', 'num_pages', 'keywords']
+2025-05-08 17:19:08,634 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Qué cubre el seguro de motocicletas ???",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-08 17:19:11,264 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 17:19:11,264 - RAGLogger - INFO - Consulta registrada
+Metadata: {
+  "query_file": "logs\\user_queries\\query_20250508_171911.json",
+  "query_length": 39,
+  "response_length": 656
+}
+2025-05-08 17:19:11,864 - RAGLogger - INFO - Consulta procesada
+Metadata: {
+  "query": "Qué cubre el seguro de motocicletas ???",
+  "num_results": 5,
+  "filters": {}
+}

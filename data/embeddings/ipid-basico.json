@@ -1,0 +1,18 @@
+[
+    {
+        "text": "El seguro IPID Básico es un seguro de accidentes personales que proporciona cobertura económica en caso de fallecimiento o invalidez permanente por accidente. Este seguro está diseñado para garantizar la protección financiera del asegurado y sus beneficiarios.",
+        "metadata": {
+            "producto": "IPID Básico",
+            "insurance_type": "Accidentes",
+            "coverage_type": "Básico"
+        }
+    },
+    {
+        "text": "El seguro cubre: 1) Fallecimiento por accidente con una suma asegurada de hasta 50.000€. 2) Invalidez permanente por accidente con una suma asegurada de hasta 50.000€. 3) Gastos médicos por accidente hasta 6.000€. 4) Asistencia en viaje incluida.",
+        "metadata": {
+            "producto": "IPID Básico",
+            "insurance_type": "Accidentes",
+            "coverage_type": "Básico"
+        }
+    }
+]

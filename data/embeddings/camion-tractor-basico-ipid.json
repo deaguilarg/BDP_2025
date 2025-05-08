@@ -1,0 +1,44 @@
+{
+  "filename": "camion-tractor-basico-ipid",
+  "num_chunks": 4,
+  "embedding_dim": 768,
+  "metadata": {
+    "filename": "camion-tractor-basico-ipid",
+    "producto": "ALLIANZ CAMIÓN BÁSICO",
+    "insurance_type": "Automóvil",
+    "file_path": "data\\processed\\camion-tractor-basico-ipid.txt",
+    "coverage_type": "Básico",
+    "num_pages": NaN,
+    "keywords": "accesorio;accidente;actuación;actual;adelanto;aeropuerto;alcance;alcohólico;allianz;aminorar;animal;anticipación;anual;armadas;asegurador;aseguradora;asegurar;asesoramiento;asistencia;automático;automóvil;autorización;baremo;bebida;bien;brevedad;básico;calamidad;camión;carga;carrera;carta;carácter;caso;catastrófico;causar;cinegético;circulación;circunstancia;ciudad;civil;cobertura;colisión;comerc;compañía;compensación;complementario;completo;comprobar;comunicación;comunicar;concurso;condición;conducción;conducir;conductor;conjunto;consecuencia;consistir;consorcio;contenido;contractual;contratación;contratar;contratar él;contrato;convenio;cooperar;corporal;correctamente;correcto;cristal;cualquiera;cubierto;cubrir;custodia;cuán;dato;daño;deber;debidamente;defensa;delito;desaparición;determina;diario;dirección;disponer;disponible;dispuesto;documento;droga;duración;económico;efecto;efectuar;elección;emisión;empezar;entidad;entrenamiento;error;escrito;espacio;españa;español;especial;estupefaciente;euro;europeo;euros;expoliación;extraordinario;facilitar;fenómeno;finalizar;firmante;fondo;forma;formalización;formalizado;fracción;fuerzas;físico;garantía;gasto;general;gibraltar;guerra;hurto;incendio;indemnización;información;inmediatamente;inscritar;interior;invalidez;jurídico;leer;libre;luna;marino;material;medio;mes;mienza;millón;modificación;momento;motivo;muertir;multa;máximo;mónaco;nacional;naturaleza;necesario;notificando él;número;obligación;obligatorio;ocurrencia;oficina;omisión;oponer;oportuno;pagar;pago;participación;particular;país;pensión;permanente;permiso;persona;plazo;posible;precontractual;prima;producir;producto;propietario;prorrogar;psicotrópico;póliza;realizar;reaseguro;recinto;reclamación;rectificación;registro;regulación;relativo;remolcaje;remolque;rescate;rescin;respectar;responsabilidad;respuesta;resto;restricción;retirada;retirar;riesgo;robo;rotura;salvamento;sanitario;seguro;semirremolqu;signatario;siguiente;siniestro;situación;socorro;soler;solicitar;solicitud;sometido;subsidio;sucesivo;sufrido;sustancia;terrorismo;tipo;tomador;tráfico;técnico;uso;valor;vaticano;vehícu;vehículo;vence;vencimiento;veraz;verde;viaje;vigor;voluntariamente;voluntario"
+  },
+  "chunks": [
+    {
+      "text": "en Qué consiste este tipo De seguro?\nEn el seguro de automóviles existe una garantía de contratación obligatoria, que cubre la responsabilidad del\nconductor del vehículo por los daños que cause a las personas o en los bienes con motivo de la circulación.\nTambién se pueden contratar otras garantías voluntariamente como la rotura de Lunas, el Robo del vehículo, los Daños\ndel vehículo, etc., que son garantías del seguro voluntario del automóvil. Otros seguros que también suelen contratarse\njunto al seguro del automóvil, son los de asistencia en viaje y el seguro de defensa jurídica.\n¿",
+      "section": "consiste",
+      "section_title": "en Qué consiste este tipo De seguro",
+      "start_position": 448,
+      "end_position": 1036
+    },
+    {
+      "text": "Qué se asegura?\nResponsabilidad Civil Complementaria.\nIndemnización de daños.\nReclamación de daños.\nAccidentes corporales del conductor.\nMuerte 18.000 euros.\nInvalidez Física permanente: Según\nBaremo. Hasta 30.000 euros.\nGastos sanitarios: 100 de los mismos,\nhasta 6.000 euros.\nAsistencia a personas y al vehículo.\nAsesoramiento por multas de tráfico.\nRotura de Cristales.\nRetirada permiso de conducir.\nResponsabilidad civil de la Carga.\nsu Mas asegura Das:\nResponsabilidad civil obligatoria (Según ley).\nResponsabilidad civil Complementaria (hasta\n50 Millones de euros).\n\nIndemnización de daños (100 del valor de\nvehículo y sus accesorios como máximo por\nsiniestro hasta 30.000 euros).\n\nReclamación de daños (100 de adelantos\nhasta 30.000 euros).\n\nDirección técnica y jurídica (100, si es de\nlibre elección hasta 1.500 euros).\n\nAsistencia tanto a vehículos como a personas.\nHasta 1.500 euros para euros para el\nconjunto de las coberturas de remolcaje y\nrescate.\n\nRetirada permiso de conducir (subsidio diario\n30 como máximo 10.950 euros).\n\nResponsabilidad civil de la Carga\n(hasta 150.000 euros).\n¿Qué no está asegura Do?\nSituaciones de carácter catastrófico\n(Guerra, Calamidad nacional).\n\nSituaciones de carácter extraordinario\n(fenómenos de la naturaleza, terrorismo,\nactuaciones Fuerzas Armadas).\n\nConducción bajo los efectos de drogas,\nestupefacientes, bebidas alcohólicas o\nsustancias psicotrópicas.\n\nParticipación en carreras, concursos y en sus\nentrenamientos.\n\nCirculación por el interior del recinto de\naeropuertos.\n\nLa conducción del vehículo sin el oportuno\npermiso o autorización del propietario salvo\npara: Cualquier persona que pueda tener el\nvehículo en su custodia en el caso de la RC\nComplementaria.\n\nLos daños materiales sufridos en el vehículo\ndurante la desaparición total por robo, hurto\no expoliación.\n\nDelito de omisión del deber de socorro.\nRiesgos del CCS (consorcio de compensación\nde seguros.\n¿",
+      "section": "asegurado",
+      "section_title": "Qué se asegura",
+      "start_position": 1036,
+      "end_position": 2958
+    },
+    {
+      "text": "existen restricciones en lo Que\nrespecta a la cobertura?\n!\nAccidentes corporales del conductor y\nretirada del permiso de conducir en\nRemolques y Semirremolques.\n!\nRotura de cristales en Remolques y\nSemirremolques.\n!\nRobo, Incendio y Fenómenos de la\nNaturaleza.\n!\nColisión con animales cinegéticos.\n!\nDaños propios al vehículo.\n!\nRC de la Carga en los siguientes usos:\n¿Dón De estoy cubierto?\nEn España y en el resto de los países del Espacio Económico Europeo. En Ciudad del Vaticano, Mónaco,\nSan Marino y Gibraltar. Además, en los países firmantes del Convenio Complementario entre las oficinas\nNacionales del 12 XII 1973 y países signatarios del Convenio Tipo Inter-Bureaux (Carta Verde).\n¿",
+      "section": "restricciones",
+      "section_title": "existen restricciones en lo Que\nrespecta a la cobertura",
+      "start_position": 2958,
+      "end_position": 3650
+    },
+    {
+      "text": "cuáles son Mis obligaciones?\nFacilitar los datos necesarios para la emisión de la póliza, éstos deberán ser correctos, veraces y actuales\na fin de poder asegurar correctamente el riesgo.\nLeer y comprobar lo dispuesto en la póliza y dispone del plazo de un mes para solicitar que la\nrectificación de los posibles errores.\nPagar las primas. Sólo si se ha pagado la prima, el contrato estará debidamente formalizado y en vigor y\nlos siniestros que se produzcan a partir de ese momento tendrán cobertura.\nComunicar en la mayor brevedad cualquier modificación que se produzca en el contenido de las\nrespuestas que, antes de la contratación de la póliza hizo el Tomador del Seguro en la Solicitud.\nComunicar al Asegurador la ocurrencia del siniestro, sus circunstancias y consecuencias inmediatamente\ny, como máximo, en el plazo de 7 días. Además, deberán poner todos los medios a su alcance para\naminorar las consecuencias del mismo, cooperando al salvamento de personas y bienes.\n¿cuán Do y có Mo tengo Que efectuar los pagos?\nEl pago se realizará mediante cualquiera de los medios de pago disponibles de la compañía el día de la\nformalización del contrato y del mismo modo en los sucesivos vencimientos y o fracciones de pago.\n¿cuán Do co Mienza y finaliza la cobertura?\nLa cobertura empieza el día de la formalización del contrato. La duración del contrato será anual y\ndetermina en las condiciones particulares de la póliza. Cada año, salvo casos especiales, la póliza vence y\nse prorroga de forma automática, a menos que el tomador se oponga notificándolo al Asegurador, al\nmenos, un mes de anticipación al vencimiento o al menos que el Asegurador se oponga notificándolo al\ntomador, al menos, dos meses de anticipación al vencimiento.\n¿có Mo pue Do rescin Dir el contrato?\nMediante comunicación escrita a la Aseguradora, al menos, con un mes de anticipación al vencimiento.",
+      "section": "obligaciones",
+      "section_title": "cuáles son Mis obligaciones",
+      "start_position": 3650,
+      "end_position": 5524
+    }
+  ]
+}

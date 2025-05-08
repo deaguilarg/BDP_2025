@@ -1,5 +1,6 @@
 import os
 import logging
+import re
 from pathlib import Path
 from datetime import datetime
 from typing import Dict, List, Optional, Tuple
@@ -9,6 +10,7 @@ import PyPDF2
 import pdfplumber
 import spacy
 from tqdm import tqdm
+import fitz  # PyMuPDF
 
 # Configuración del logging
 logging.basicConfig(
@@ -41,9 +43,68 @@ class PDFExtractor:
             logger.error("No se pudo cargar el modelo de spaCy. Asegúrate de haberlo instalado.")
             raise
 
+    def clean_text(self, text: str) -> str:
+        """
+        Limpia el texto extraído del PDF preservando los retornos de carro.
+        
+        Args:
+            text: Texto a limpiar
+            
+        Returns:
+            Texto limpio
+        """
+        # Normalizar retornos de carro
+        text = text.replace('\r\n', '\n').replace('\r', '\n')
+        
+        # Dividir el texto en líneas para procesarlas individualmente
+        lines = text.split('\n')
+        cleaned_lines = []
+        
+        for line in lines:
+            # Reemplazar caracteres especiales manteniendo puntuación básica
+            line = re.sub(r'[^\w\sáéíóúÁÉÍÓÚñÑ.,;:¿?¡!()\-]', ' ', line)
+            
+            # Corregir palabras separadas incorrectamente
+            line = re.sub(r'([a-záéíóúñ])\s+([A-ZÁÉÍÓÚÑ])', r'\1\2', line)
+            
+            # Corregir palabras unidas incorrectamente
+            line = re.sub(r'([a-záéíóúñ])([A-ZÁÉÍÓÚÑ])', r'\1 \2', line)
+            
+            # Corregir números y símbolos
+            line = re.sub(r'(\d)([A-Za-záéíóúÁÉÍÓÚñÑ])', r'\1 \2', line)
+            line = re.sub(r'([A-Za-záéíóúÁÉÍÓÚñÑ])(\d)', r'\1 \2', line)
+            
+            # Eliminar espacios múltiples
+            line = re.sub(r'[ \t]+', ' ', line)
+            
+            # Corregir espacios alrededor de puntuación
+            line = re.sub(r'\s+([.,;:¿?¡!])', r'\1', line)
+            line = re.sub(r'([.,;:¿?¡!])\s+', r'\1 ', line)
+            
+            # Corregir espacios en paréntesis
+            line = re.sub(r'\(\s+', '(', line)
+            line = re.sub(r'\s+\)', ')', line)
+            
+            # Corregir espacios en guiones
+            line = re.sub(r'\s+-\s+', '-', line)
+            
+            # Corregir espacios en números y símbolos de moneda
+            line = re.sub(r'(\d+)\s*([€$])\s*(\d*)', r'\1\2\3', line)
+            
+            # Agregar la línea limpia
+            cleaned_lines.append(line.strip())
+        
+        # Unir las líneas con retornos de carro
+        text = '\n'.join(cleaned_lines)
+        
+        # Eliminar líneas vacías múltiples
+        text = re.sub(r'\n\s*\n\s*\n+', '\n\n', text)
+        
+        return text.strip()
+
     def extract_text_from_pdf(self, pdf_path: Path) -> Tuple[str, Dict]:
         """
-        Extrae el texto de un archivo PDF usando múltiples métodos.
+        Extrae el texto de un archivo PDF usando PyMuPDF (fitz) y lógica de bloques para separar columnas y eliminar pies de página.
         
         Args:
             pdf_path: Ruta al archivo PDF
@@ -54,48 +115,49 @@ class PDFExtractor:
         metadata = {
             'filename': pdf_path.name,
             'extraction_date': datetime.now().isoformat(),
-            'extraction_method': None,
+            'extraction_method': 'pymupdf_blocks',
             'num_pages': 0,
             'language': None,
             'success': False,
             'error': None
         }
-        
         text = ""
-        
         try:
-            # Primer intento con PyPDF2
-            with open(pdf_path, 'rb') as file:
-                reader = PyPDF2.PdfReader(file)
-                metadata['num_pages'] = len(reader.pages)
-                
-                for page in reader.pages:
-                    text += page.extract_text() + "\n"
-                
-            # Si el texto está vacío o tiene muy poco contenido, intentar con pdfplumber
-            if len(text.strip()) < 100:
-                with pdfplumber.open(pdf_path) as pdf:
-                    text = ""
-                    for page in pdf.pages:
-                        text += page.extract_text() + "\n"
-                    metadata['extraction_method'] = 'pdfplumber'
-            else:
-                metadata['extraction_method'] = 'PyPDF2'
-            
+            doc = fitz.open(str(pdf_path))
+            metadata['num_pages'] = doc.page_count
+            for page in doc:
+                blocks = page.get_text("blocks")
+                page_height = page.rect.height
+                page_width = page.rect.width
+                margin_bottom = 70
+                clean_blocks = []
+                for block in blocks:
+                    if block[1] < page_height - margin_bottom:
+                        block_text = block[4].strip()
+                        if block_text and not block_text.lower().startswith("<image"):
+                            clean_blocks.append(block)
+                # Separar columnas
+                left_col = [b for b in clean_blocks if b[0] < page_width / 2]
+                right_col = [b for b in clean_blocks if b[0] >= page_width / 2]
+                left_col_sorted = sorted(left_col, key=lambda b: (b[1], b[0]))
+                right_col_sorted = sorted(right_col, key=lambda b: (b[1], b[0]))
+                sorted_blocks = left_col_sorted + right_col_sorted
+                page_text = "\n".join(block[4].strip() for block in sorted_blocks if block[4].strip())
+                text += page_text + "\n"
+            # Limpiar el texto extraído
+            text = self.clean_text(text)
             # Detectar idioma
             if text.strip():
-                doc = self.nlp(text[:1000])  # Usar solo los primeros 1000 caracteres
-                metadata['language'] = doc.lang_
+                doc_spacy = self.nlp(text[:1000])
+                metadata['language'] = doc_spacy.lang_
                 metadata['success'] = True
             else:
                 metadata['error'] = "No se pudo extraer texto del PDF"
-                
         except Exception as e:
             metadata['error'] = str(e)
             logger.error(f"Error procesando {pdf_path}: {str(e)}")
             return "", metadata
-            
-        return text.strip(), metadata
+        return text, metadata
 
     def process_all_pdfs(self) -> pd.DataFrame:
         """

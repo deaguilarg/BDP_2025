@@ -1923,3 +1923,1411 @@ Metadata: {
   "num_results": 5,
   "filters": {}
 }
+2025-05-06 16:06:31,843 - RAGLogger - INFO - Inicializado DocumentEmbedder
+Metadata: {
+  "model": "paraphrase-multilingual-mpnet-base-v2",
+  "device": "cpu",
+  "chunk_size": 512,
+  "chunk_overlap": 50
+}
+2025-05-06 16:06:31,869 - RAGLogger - ERROR - Error cargando metadatos
+Metadata: {
+  "error": "Columnas requeridas faltantes en CSV: producto"
+}
+2025-05-06 16:06:31,871 - RAGLogger - ERROR - Error procesando documentos
+Metadata: {
+  "error": "Columnas requeridas faltantes en CSV: producto"
+}
+2025-05-06 16:11:12,005 - RAGLogger - INFO - Inicializado DocumentEmbedder
+Metadata: {
+  "model": "paraphrase-multilingual-mpnet-base-v2",
+  "device": "cpu",
+  "chunk_size": 512,
+  "chunk_overlap": 50
+}
+2025-05-06 16:11:12,013 - RAGLogger - ERROR - Error cargando metadatos
+Metadata: {
+  "error": "Columnas requeridas faltantes en CSV: producto"
+}
+2025-05-06 16:11:12,023 - RAGLogger - ERROR - Error procesando documentos
+Metadata: {
+  "error": "Columnas requeridas faltantes en CSV: producto"
+}
+2025-05-06 16:11:44,228 - RAGLogger - INFO - Inicializado DocumentEmbedder
+Metadata: {
+  "model": "paraphrase-multilingual-mpnet-base-v2",
+  "device": "cpu",
+  "chunk_size": 512,
+  "chunk_overlap": 50
+}
+2025-05-06 16:11:44,241 - RAGLogger - INFO - Metadatos cargados exitosamente
+Metadata: {
+  "total_documents": 51,
+  "columns": [
+    "filename",
+    "producto",
+    "insurance_type",
+    "file_path",
+    "coverage_type",
+    "num_pages",
+    "keywords",
+    "title",
+    "insurer",
+    "document_date",
+    "document_version",
+    "language"
+  ]
+}
+2025-05-06 16:11:44,249 - RAGLogger - WARNING - Campos requeridos faltantes para auto-plus-basico
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,252 - RAGLogger - ERROR - Error procesando auto-plus-basico
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,254 - RAGLogger - WARNING - Campos requeridos faltantes para auto-plus-franquicia1
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,257 - RAGLogger - ERROR - Error procesando auto-plus-franquicia1
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,258 - RAGLogger - WARNING - Campos requeridos faltantes para auto-plus-franquicia2
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,260 - RAGLogger - ERROR - Error procesando auto-plus-franquicia2
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,262 - RAGLogger - WARNING - Campos requeridos faltantes para auto-plus-robo-incendio
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,265 - RAGLogger - ERROR - Error procesando auto-plus-robo-incendio
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,267 - RAGLogger - WARNING - Campos requeridos faltantes para auto-plus-terceros
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,271 - RAGLogger - ERROR - Error procesando auto-plus-terceros
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,273 - RAGLogger - WARNING - Campos requeridos faltantes para auto-plus-tr-sin-franquicia
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,275 - RAGLogger - ERROR - Error procesando auto-plus-tr-sin-franquicia
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,358 - RAGLogger - WARNING - Campos requeridos faltantes para autocar-danos-estructura-ipid
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,364 - RAGLogger - ERROR - Error procesando autocar-danos-estructura-ipid
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,369 - RAGLogger - WARNING - Campos requeridos faltantes para autocar-incendio-ipid
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,372 - RAGLogger - ERROR - Error procesando autocar-incendio-ipid
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,373 - RAGLogger - WARNING - Campos requeridos faltantes para camion-basico-ipid
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,376 - RAGLogger - ERROR - Error procesando camion-basico-ipid
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,378 - RAGLogger - WARNING - Campos requeridos faltantes para camion-basico-robo-ipid
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,379 - RAGLogger - ERROR - Error procesando camion-basico-robo-ipid
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,383 - RAGLogger - WARNING - Campos requeridos faltantes para camion-perdida-total-ipid
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,386 - RAGLogger - ERROR - Error procesando camion-perdida-total-ipid
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,387 - RAGLogger - WARNING - Campos requeridos faltantes para camion-todo-riesgo-franquicia-ipid
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,388 - RAGLogger - ERROR - Error procesando camion-todo-riesgo-franquicia-ipid
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,390 - RAGLogger - WARNING - Campos requeridos faltantes para camion-todo-riesgo-ipid
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,391 - RAGLogger - ERROR - Error procesando camion-todo-riesgo-ipid
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,394 - RAGLogger - WARNING - Campos requeridos faltantes para camion-tractor-basico-ipid
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,396 - RAGLogger - ERROR - Error procesando camion-tractor-basico-ipid
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,399 - RAGLogger - WARNING - Campos requeridos faltantes para camion-tractor-basico-robo-ipid
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,401 - RAGLogger - ERROR - Error procesando camion-tractor-basico-robo-ipid
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,403 - RAGLogger - WARNING - Campos requeridos faltantes para camion-tractor-perdida-total-ipid
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,405 - RAGLogger - ERROR - Error procesando camion-tractor-perdida-total-ipid
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,406 - RAGLogger - WARNING - Campos requeridos faltantes para camion-tractor-todo-riesgo-franquicia-ipid
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,409 - RAGLogger - ERROR - Error procesando camion-tractor-todo-riesgo-franquicia-ipid
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,411 - RAGLogger - WARNING - Campos requeridos faltantes para camion-tractor-todo-riesgo-ipid
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,411 - RAGLogger - ERROR - Error procesando camion-tractor-todo-riesgo-ipid
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,411 - RAGLogger - WARNING - Campos requeridos faltantes para ipid-ampliado
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,417 - RAGLogger - ERROR - Error procesando ipid-ampliado
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,417 - RAGLogger - WARNING - Campos requeridos faltantes para ipid-basico
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,417 - RAGLogger - ERROR - Error procesando ipid-basico
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,417 - RAGLogger - WARNING - Campos requeridos faltantes para ipid-ciclomotor-seguro-basico
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,417 - RAGLogger - ERROR - Error procesando ipid-ciclomotor-seguro-basico
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,417 - RAGLogger - WARNING - Campos requeridos faltantes para ipid-extra
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,428 - RAGLogger - ERROR - Error procesando ipid-extra
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,430 - RAGLogger - WARNING - Campos requeridos faltantes para ipid-furgoneta-basico
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,433 - RAGLogger - ERROR - Error procesando ipid-furgoneta-basico
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,433 - RAGLogger - WARNING - Campos requeridos faltantes para ipid-furgoneta-perdida-total
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,433 - RAGLogger - ERROR - Error procesando ipid-furgoneta-perdida-total
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,438 - RAGLogger - WARNING - Campos requeridos faltantes para ipid-furgoneta-robo-incendio
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,438 - RAGLogger - ERROR - Error procesando ipid-furgoneta-robo-incendio
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,438 - RAGLogger - WARNING - Campos requeridos faltantes para ipid-furgoneta-td-sin-franquicia
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,443 - RAGLogger - ERROR - Error procesando ipid-furgoneta-td-sin-franquicia
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,446 - RAGLogger - WARNING - Campos requeridos faltantes para ipid-moto-perdida-total
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,449 - RAGLogger - ERROR - Error procesando ipid-moto-perdida-total
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,451 - RAGLogger - WARNING - Campos requeridos faltantes para ipid-moto-robo
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,452 - RAGLogger - ERROR - Error procesando ipid-moto-robo
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,454 - RAGLogger - WARNING - Campos requeridos faltantes para ipid-moto-seguro-basico
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,456 - RAGLogger - ERROR - Error procesando ipid-moto-seguro-basico
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,457 - RAGLogger - WARNING - Campos requeridos faltantes para ipid-moto-seguro-franquicia
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,458 - RAGLogger - ERROR - Error procesando ipid-moto-seguro-franquicia
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,458 - RAGLogger - WARNING - Campos requeridos faltantes para ipid-moto-todo-riesgo-sin-franquicia
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,462 - RAGLogger - ERROR - Error procesando ipid-moto-todo-riesgo-sin-franquicia
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,465 - RAGLogger - WARNING - Campos requeridos faltantes para ipid-optimo
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,467 - RAGLogger - ERROR - Error procesando ipid-optimo
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,469 - RAGLogger - WARNING - Campos requeridos faltantes para ipid-tr-con-franquicia
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,470 - RAGLogger - ERROR - Error procesando ipid-tr-con-franquicia
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,471 - RAGLogger - WARNING - Campos requeridos faltantes para maquinaria-basico-ipid
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,471 - RAGLogger - ERROR - Error procesando maquinaria-basico-ipid
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,471 - RAGLogger - WARNING - Campos requeridos faltantes para maquinaria-terceros-ipid
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,477 - RAGLogger - ERROR - Error procesando maquinaria-terceros-ipid
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,480 - RAGLogger - WARNING - Campos requeridos faltantes para remolque-basico-ipid
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,483 - RAGLogger - ERROR - Error procesando remolque-basico-ipid
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,484 - RAGLogger - WARNING - Campos requeridos faltantes para remolque-basico-robo-ipid
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,486 - RAGLogger - ERROR - Error procesando remolque-basico-robo-ipid
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,488 - RAGLogger - WARNING - Campos requeridos faltantes para remolque-perdida-total-ipid
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,489 - RAGLogger - ERROR - Error procesando remolque-perdida-total-ipid
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,491 - RAGLogger - WARNING - Campos requeridos faltantes para remolque-todo-riesgo-franquicia-ipid
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,491 - RAGLogger - ERROR - Error procesando remolque-todo-riesgo-franquicia-ipid
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,496 - RAGLogger - WARNING - Campos requeridos faltantes para remolque-todo-riesgo-ipid
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,498 - RAGLogger - ERROR - Error procesando remolque-todo-riesgo-ipid
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,500 - RAGLogger - WARNING - Campos requeridos faltantes para semirremolque-basico-ipid
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,502 - RAGLogger - ERROR - Error procesando semirremolque-basico-ipid
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,503 - RAGLogger - WARNING - Campos requeridos faltantes para semirremolque-basico-robo-ipid
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,505 - RAGLogger - ERROR - Error procesando semirremolque-basico-robo-ipid
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,507 - RAGLogger - WARNING - Campos requeridos faltantes para semirremolque-perdida-total-ipid
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,509 - RAGLogger - ERROR - Error procesando semirremolque-perdida-total-ipid
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,511 - RAGLogger - WARNING - Campos requeridos faltantes para semirremolque-todo-riesgo-franquicia-ipid
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,513 - RAGLogger - ERROR - Error procesando semirremolque-todo-riesgo-franquicia-ipid
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,516 - RAGLogger - WARNING - Campos requeridos faltantes para semirremolque-todo-riesgo-ipid
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,517 - RAGLogger - ERROR - Error procesando semirremolque-todo-riesgo-ipid
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,519 - RAGLogger - WARNING - Campos requeridos faltantes para turismo-comercial-basico-ipid
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,520 - RAGLogger - ERROR - Error procesando turismo-comercial-basico-ipid
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,520 - RAGLogger - WARNING - Campos requeridos faltantes para turismo-comercial-basico-robo-ipid
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,520 - RAGLogger - ERROR - Error procesando turismo-comercial-basico-robo-ipid
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,520 - RAGLogger - WARNING - Campos requeridos faltantes para turismo-comercial-perdida-total-ipid
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,527 - RAGLogger - ERROR - Error procesando turismo-comercial-perdida-total-ipid
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,530 - RAGLogger - WARNING - Campos requeridos faltantes para turismo-comercial-todo-riesgo-franquicia-ipid
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,532 - RAGLogger - ERROR - Error procesando turismo-comercial-todo-riesgo-franquicia-ipid
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,534 - RAGLogger - WARNING - Campos requeridos faltantes para turismo-comercial-todo-riesgo-ipid
+Metadata: {
+  "missing_fields": [
+    "filename"
+  ]
+}
+2025-05-06 16:11:44,534 - RAGLogger - ERROR - Error procesando turismo-comercial-todo-riesgo-ipid
+Metadata: {
+  "error": "Campos requeridos faltantes: filename"
+}
+2025-05-06 16:11:44,538 - RAGLogger - ERROR - Error cargando metadatos
+Metadata: {
+  "error": "No se pudieron cargar documentos válidos"
+}
+2025-05-06 16:11:44,538 - RAGLogger - ERROR - Error procesando documentos
+Metadata: {
+  "error": "No se pudieron cargar documentos válidos"
+}
+2025-05-06 16:12:19,867 - RAGLogger - INFO - Inicializado DocumentEmbedder
+Metadata: {
+  "model": "paraphrase-multilingual-mpnet-base-v2",
+  "device": "cpu",
+  "chunk_size": 512,
+  "chunk_overlap": 50
+}
+2025-05-06 16:12:19,882 - RAGLogger - INFO - Metadatos cargados exitosamente
+Metadata: {
+  "total_documents": 51,
+  "columns": [
+    "filename",
+    "producto",
+    "insurance_type",
+    "file_path",
+    "coverage_type",
+    "num_pages",
+    "keywords",
+    "title",
+    "insurer",
+    "document_date",
+    "document_version",
+    "language"
+  ]
+}
+2025-05-06 16:12:19,899 - RAGLogger - WARNING - No se encontraron metadatos para auto-plus-basico.pdf
+2025-05-06 16:12:19,899 - RAGLogger - WARNING - No se encontraron metadatos para auto-plus-franquicia1.pdf
+2025-05-06 16:12:19,899 - RAGLogger - WARNING - No se encontraron metadatos para auto-plus-franquicia2.pdf
+2025-05-06 16:12:19,899 - RAGLogger - WARNING - No se encontraron metadatos para auto-plus-robo-incendio.pdf
+2025-05-06 16:12:19,903 - RAGLogger - WARNING - No se encontraron metadatos para auto-plus-terceros.pdf
+2025-05-06 16:12:19,904 - RAGLogger - WARNING - No se encontraron metadatos para auto-plus-tr-sin-franquicia.pdf
+2025-05-06 16:12:19,918 - RAGLogger - WARNING - No se encontraron metadatos para autocar-danos-estructura-ipid.pdf
+2025-05-06 16:12:19,918 - RAGLogger - WARNING - No se encontraron metadatos para autocar-incendio-ipid.pdf
+2025-05-06 16:12:19,919 - RAGLogger - WARNING - No se encontraron metadatos para camion-basico-ipid.pdf
+2025-05-06 16:12:19,919 - RAGLogger - WARNING - No se encontraron metadatos para camion-basico-robo-ipid.pdf
+2025-05-06 16:12:19,920 - RAGLogger - WARNING - No se encontraron metadatos para camion-perdida-total-ipid.pdf
+2025-05-06 16:12:19,920 - RAGLogger - WARNING - No se encontraron metadatos para camion-todo-riesgo-franquicia-ipid.pdf
+2025-05-06 16:12:19,921 - RAGLogger - WARNING - No se encontraron metadatos para camion-todo-riesgo-ipid.pdf
+2025-05-06 16:12:19,922 - RAGLogger - WARNING - No se encontraron metadatos para camion-tractor-basico-ipid.pdf
+2025-05-06 16:12:19,922 - RAGLogger - WARNING - No se encontraron metadatos para camion-tractor-basico-robo-ipid.pdf
+2025-05-06 16:12:19,923 - RAGLogger - WARNING - No se encontraron metadatos para camion-tractor-perdida-total-ipid.pdf
+2025-05-06 16:12:19,923 - RAGLogger - WARNING - No se encontraron metadatos para camion-tractor-todo-riesgo-franquicia-ipid.pdf
+2025-05-06 16:12:19,924 - RAGLogger - WARNING - No se encontraron metadatos para camion-tractor-todo-riesgo-ipid.pdf
+2025-05-06 16:12:19,924 - RAGLogger - WARNING - No se encontraron metadatos para ipid-ampliado.pdf
+2025-05-06 16:12:19,925 - RAGLogger - WARNING - No se encontraron metadatos para ipid-basico.pdf
+2025-05-06 16:12:19,925 - RAGLogger - WARNING - No se encontraron metadatos para ipid-ciclomotor-seguro-basico.pdf
+2025-05-06 16:12:19,926 - RAGLogger - WARNING - No se encontraron metadatos para ipid-extra.pdf
+2025-05-06 16:12:19,926 - RAGLogger - WARNING - No se encontraron metadatos para ipid-furgoneta-basico.pdf
+2025-05-06 16:12:19,927 - RAGLogger - WARNING - No se encontraron metadatos para ipid-furgoneta-perdida-total.pdf
+2025-05-06 16:12:19,927 - RAGLogger - WARNING - No se encontraron metadatos para ipid-furgoneta-robo-incendio.pdf
+2025-05-06 16:12:19,928 - RAGLogger - WARNING - No se encontraron metadatos para ipid-furgoneta-td-sin-franquicia.pdf
+2025-05-06 16:12:19,929 - RAGLogger - WARNING - No se encontraron metadatos para ipid-moto-perdida-total.pdf
+2025-05-06 16:12:19,929 - RAGLogger - WARNING - No se encontraron metadatos para ipid-moto-robo.pdf
+2025-05-06 16:12:19,929 - RAGLogger - WARNING - No se encontraron metadatos para ipid-moto-seguro-basico.pdf
+2025-05-06 16:12:19,929 - RAGLogger - WARNING - No se encontraron metadatos para ipid-moto-seguro-franquicia.pdf
+2025-05-06 16:12:19,929 - RAGLogger - WARNING - No se encontraron metadatos para ipid-moto-todo-riesgo-sin-franquicia.pdf
+2025-05-06 16:12:19,929 - RAGLogger - WARNING - No se encontraron metadatos para ipid-optimo.pdf
+2025-05-06 16:12:19,929 - RAGLogger - WARNING - No se encontraron metadatos para ipid-tr-con-franquicia.pdf
+2025-05-06 16:12:19,929 - RAGLogger - WARNING - No se encontraron metadatos para maquinaria-basico-ipid.pdf
+2025-05-06 16:12:19,929 - RAGLogger - WARNING - No se encontraron metadatos para maquinaria-terceros-ipid.pdf
+2025-05-06 16:12:19,929 - RAGLogger - WARNING - No se encontraron metadatos para remolque-basico-ipid.pdf
+2025-05-06 16:12:19,929 - RAGLogger - WARNING - No se encontraron metadatos para remolque-basico-robo-ipid.pdf
+2025-05-06 16:12:19,929 - RAGLogger - WARNING - No se encontraron metadatos para remolque-perdida-total-ipid.pdf
+2025-05-06 16:12:19,929 - RAGLogger - WARNING - No se encontraron metadatos para remolque-todo-riesgo-franquicia-ipid.pdf
+2025-05-06 16:12:19,929 - RAGLogger - WARNING - No se encontraron metadatos para remolque-todo-riesgo-ipid.pdf
+2025-05-06 16:12:19,929 - RAGLogger - WARNING - No se encontraron metadatos para semirremolque-basico-ipid.pdf
+2025-05-06 16:12:19,929 - RAGLogger - WARNING - No se encontraron metadatos para semirremolque-basico-robo-ipid.pdf
+2025-05-06 16:12:19,929 - RAGLogger - WARNING - No se encontraron metadatos para semirremolque-perdida-total-ipid.pdf
+2025-05-06 16:12:19,929 - RAGLogger - WARNING - No se encontraron metadatos para semirremolque-todo-riesgo-franquicia-ipid.pdf
+2025-05-06 16:12:19,929 - RAGLogger - WARNING - No se encontraron metadatos para semirremolque-todo-riesgo-ipid.pdf
+2025-05-06 16:12:19,929 - RAGLogger - WARNING - No se encontraron metadatos para turismo-comercial-basico-ipid.pdf
+2025-05-06 16:12:19,929 - RAGLogger - WARNING - No se encontraron metadatos para turismo-comercial-basico-robo-ipid.pdf
+2025-05-06 16:12:19,943 - RAGLogger - WARNING - No se encontraron metadatos para turismo-comercial-perdida-total-ipid.pdf
+2025-05-06 16:12:19,944 - RAGLogger - WARNING - No se encontraron metadatos para turismo-comercial-todo-riesgo-franquicia-ipid.pdf
+2025-05-06 16:12:19,944 - RAGLogger - WARNING - No se encontraron metadatos para turismo-comercial-todo-riesgo-ipid.pdf
+2025-05-06 16:12:19,945 - RAGLogger - ERROR - Error cargando metadatos
+Metadata: {
+  "error": "No se pudieron cargar documentos válidos"
+}
+2025-05-06 16:12:19,946 - RAGLogger - ERROR - Error procesando documentos
+Metadata: {
+  "error": "No se pudieron cargar documentos válidos"
+}
+2025-05-06 16:13:13,867 - RAGLogger - INFO - Inicializado DocumentEmbedder
+Metadata: {
+  "model": "paraphrase-multilingual-mpnet-base-v2",
+  "device": "cpu",
+  "chunk_size": 512,
+  "chunk_overlap": 50
+}
+2025-05-06 16:13:13,879 - RAGLogger - INFO - Metadatos cargados exitosamente
+Metadata: {
+  "total_documents": 51,
+  "columns": [
+    "filename",
+    "producto",
+    "insurance_type",
+    "file_path",
+    "coverage_type",
+    "num_pages",
+    "keywords",
+    "title",
+    "insurer",
+    "document_date",
+    "document_version",
+    "language"
+  ]
+}
+2025-05-06 16:13:13,887 - RAGLogger - WARNING - No se encontraron metadatos para auto-plus-basico.pdf
+2025-05-06 16:13:13,887 - RAGLogger - WARNING - No se encontraron metadatos para auto-plus-franquicia1.pdf
+2025-05-06 16:13:13,888 - RAGLogger - WARNING - No se encontraron metadatos para auto-plus-franquicia2.pdf
+2025-05-06 16:13:13,890 - RAGLogger - WARNING - No se encontraron metadatos para auto-plus-robo-incendio.pdf
+2025-05-06 16:13:13,890 - RAGLogger - WARNING - No se encontraron metadatos para auto-plus-terceros.pdf
+2025-05-06 16:13:13,890 - RAGLogger - WARNING - No se encontraron metadatos para auto-plus-tr-sin-franquicia.pdf
+2025-05-06 16:13:13,901 - RAGLogger - WARNING - No se encontraron metadatos para autocar-danos-estructura-ipid.pdf
+2025-05-06 16:13:13,901 - RAGLogger - WARNING - No se encontraron metadatos para autocar-incendio-ipid.pdf
+2025-05-06 16:13:13,901 - RAGLogger - WARNING - No se encontraron metadatos para camion-basico-ipid.pdf
+2025-05-06 16:13:13,901 - RAGLogger - WARNING - No se encontraron metadatos para camion-basico-robo-ipid.pdf
+2025-05-06 16:13:13,906 - RAGLogger - WARNING - No se encontraron metadatos para camion-perdida-total-ipid.pdf
+2025-05-06 16:13:13,907 - RAGLogger - WARNING - No se encontraron metadatos para camion-todo-riesgo-franquicia-ipid.pdf
+2025-05-06 16:13:13,908 - RAGLogger - WARNING - No se encontraron metadatos para camion-todo-riesgo-ipid.pdf
+2025-05-06 16:13:13,908 - RAGLogger - WARNING - No se encontraron metadatos para camion-tractor-basico-ipid.pdf
+2025-05-06 16:13:13,909 - RAGLogger - WARNING - No se encontraron metadatos para camion-tractor-basico-robo-ipid.pdf
+2025-05-06 16:13:13,909 - RAGLogger - WARNING - No se encontraron metadatos para camion-tractor-perdida-total-ipid.pdf
+2025-05-06 16:13:13,910 - RAGLogger - WARNING - No se encontraron metadatos para camion-tractor-todo-riesgo-franquicia-ipid.pdf
+2025-05-06 16:13:13,910 - RAGLogger - WARNING - No se encontraron metadatos para camion-tractor-todo-riesgo-ipid.pdf
+2025-05-06 16:13:13,911 - RAGLogger - WARNING - No se encontraron metadatos para ipid-ampliado.pdf
+2025-05-06 16:13:13,911 - RAGLogger - WARNING - No se encontraron metadatos para ipid-basico.pdf
+2025-05-06 16:13:13,911 - RAGLogger - WARNING - No se encontraron metadatos para ipid-ciclomotor-seguro-basico.pdf
+2025-05-06 16:13:13,912 - RAGLogger - WARNING - No se encontraron metadatos para ipid-extra.pdf
+2025-05-06 16:13:13,912 - RAGLogger - WARNING - No se encontraron metadatos para ipid-furgoneta-basico.pdf
+2025-05-06 16:13:13,913 - RAGLogger - WARNING - No se encontraron metadatos para ipid-furgoneta-perdida-total.pdf
+2025-05-06 16:13:13,913 - RAGLogger - WARNING - No se encontraron metadatos para ipid-furgoneta-robo-incendio.pdf
+2025-05-06 16:13:13,914 - RAGLogger - WARNING - No se encontraron metadatos para ipid-furgoneta-td-sin-franquicia.pdf
+2025-05-06 16:13:13,914 - RAGLogger - WARNING - No se encontraron metadatos para ipid-moto-perdida-total.pdf
+2025-05-06 16:13:13,914 - RAGLogger - WARNING - No se encontraron metadatos para ipid-moto-robo.pdf
+2025-05-06 16:13:13,914 - RAGLogger - WARNING - No se encontraron metadatos para ipid-moto-seguro-basico.pdf
+2025-05-06 16:13:13,914 - RAGLogger - WARNING - No se encontraron metadatos para ipid-moto-seguro-franquicia.pdf
+2025-05-06 16:13:13,914 - RAGLogger - WARNING - No se encontraron metadatos para ipid-moto-todo-riesgo-sin-franquicia.pdf
+2025-05-06 16:13:13,919 - RAGLogger - WARNING - No se encontraron metadatos para ipid-optimo.pdf
+2025-05-06 16:13:13,919 - RAGLogger - WARNING - No se encontraron metadatos para ipid-tr-con-franquicia.pdf
+2025-05-06 16:13:13,920 - RAGLogger - WARNING - No se encontraron metadatos para maquinaria-basico-ipid.pdf
+2025-05-06 16:13:13,920 - RAGLogger - WARNING - No se encontraron metadatos para maquinaria-terceros-ipid.pdf
+2025-05-06 16:13:13,921 - RAGLogger - WARNING - No se encontraron metadatos para remolque-basico-ipid.pdf
+2025-05-06 16:13:13,921 - RAGLogger - WARNING - No se encontraron metadatos para remolque-basico-robo-ipid.pdf
+2025-05-06 16:13:13,921 - RAGLogger - WARNING - No se encontraron metadatos para remolque-perdida-total-ipid.pdf
+2025-05-06 16:13:13,922 - RAGLogger - WARNING - No se encontraron metadatos para remolque-todo-riesgo-franquicia-ipid.pdf
+2025-05-06 16:13:13,923 - RAGLogger - WARNING - No se encontraron metadatos para remolque-todo-riesgo-ipid.pdf
+2025-05-06 16:13:13,923 - RAGLogger - WARNING - No se encontraron metadatos para semirremolque-basico-ipid.pdf
+2025-05-06 16:13:13,923 - RAGLogger - WARNING - No se encontraron metadatos para semirremolque-basico-robo-ipid.pdf
+2025-05-06 16:13:13,923 - RAGLogger - WARNING - No se encontraron metadatos para semirremolque-perdida-total-ipid.pdf
+2025-05-06 16:13:13,923 - RAGLogger - WARNING - No se encontraron metadatos para semirremolque-todo-riesgo-franquicia-ipid.pdf
+2025-05-06 16:13:13,927 - RAGLogger - WARNING - No se encontraron metadatos para semirremolque-todo-riesgo-ipid.pdf
+2025-05-06 16:13:13,927 - RAGLogger - WARNING - No se encontraron metadatos para turismo-comercial-basico-ipid.pdf
+2025-05-06 16:13:13,928 - RAGLogger - WARNING - No se encontraron metadatos para turismo-comercial-basico-robo-ipid.pdf
+2025-05-06 16:13:13,928 - RAGLogger - WARNING - No se encontraron metadatos para turismo-comercial-perdida-total-ipid.pdf
+2025-05-06 16:13:13,929 - RAGLogger - WARNING - No se encontraron metadatos para turismo-comercial-todo-riesgo-franquicia-ipid.pdf
+2025-05-06 16:13:13,929 - RAGLogger - WARNING - No se encontraron metadatos para turismo-comercial-todo-riesgo-ipid.pdf
+2025-05-06 16:13:13,930 - RAGLogger - ERROR - Error procesando documentos
+Metadata: {
+  "error": "No se pudieron cargar documentos válidos"
+}
+2025-05-06 16:13:52,328 - RAGLogger - INFO - Inicializado DocumentEmbedder
+Metadata: {
+  "model": "paraphrase-multilingual-mpnet-base-v2",
+  "device": "cpu",
+  "chunk_size": 512,
+  "chunk_overlap": 50
+}
+2025-05-06 16:13:52,343 - RAGLogger - INFO - Metadatos cargados exitosamente
+Metadata: {
+  "total_documents": 51,
+  "columns": [
+    "filename",
+    "producto",
+    "insurance_type",
+    "file_path",
+    "coverage_type",
+    "num_pages",
+    "keywords",
+    "title",
+    "insurer",
+    "document_date",
+    "document_version",
+    "language"
+  ]
+}
+2025-05-06 16:14:37,448 - RAGLogger - INFO - Archivo processed_documents.json generado exitosamente
+Metadata: {
+  "total_documents": 51
+}
+2025-05-06 16:52:43,531 - RAGLogger - INFO - Inicializado DocumentEmbedder
+Metadata: {
+  "model": "paraphrase-multilingual-mpnet-base-v2",
+  "device": "cpu",
+  "chunk_size": 512,
+  "chunk_overlap": 50
+}
+2025-05-06 16:52:43,563 - RAGLogger - INFO - Metadatos cargados exitosamente
+Metadata: {
+  "total_documents": 51,
+  "columns": [
+    "filename",
+    "producto",
+    "insurance_type",
+    "file_path",
+    "coverage_type",
+    "num_pages",
+    "keywords",
+    "chunks"
+  ]
+}
+2025-05-06 16:52:43,572 - RAGLogger - INFO - Ignorando archivo de glosario: GLOSARIO DE TÉRMINOS DE SEGUROS.txt
+2025-05-06 16:53:33,186 - RAGLogger - INFO - Archivo processed_documents.json generado exitosamente
+Metadata: {
+  "total_documents": 51
+}
+2025-05-06 16:59:01,438 - RAGLogger - INFO - Inicializado DocumentEmbedder
+Metadata: {
+  "model": "paraphrase-multilingual-mpnet-base-v2",
+  "device": "cpu",
+  "chunk_size": 512,
+  "chunk_overlap": 50
+}
+2025-05-06 16:59:01,456 - RAGLogger - INFO - Metadatos cargados exitosamente
+Metadata: {
+  "total_documents": 51,
+  "columns": [
+    "filename",
+    "producto",
+    "insurance_type",
+    "file_path",
+    "coverage_type",
+    "num_pages",
+    "keywords",
+    "chunks"
+  ]
+}
+2025-05-06 16:59:01,467 - RAGLogger - INFO - Ignorando archivo de glosario: GLOSARIO DE TÉRMINOS DE SEGUROS.txt
+2025-05-06 16:59:50,712 - RAGLogger - INFO - Archivo processed_documents.json generado exitosamente
+Metadata: {
+  "total_documents": 51
+}
+2025-05-06 17:48:07,295 - RAGLogger - INFO - Inicializado DocumentEmbedder
+Metadata: {
+  "model": "paraphrase-multilingual-mpnet-base-v2",
+  "device": "cpu",
+  "chunk_size": 512,
+  "chunk_overlap": 50
+}
+2025-05-06 17:48:07,324 - RAGLogger - INFO - Metadatos cargados exitosamente
+Metadata: {
+  "total_documents": 51,
+  "columns": [
+    "filename",
+    "producto",
+    "insurance_type",
+    "file_path",
+    "coverage_type",
+    "num_pages",
+    "keywords",
+    "chunks"
+  ]
+}
+2025-05-06 17:48:07,330 - RAGLogger - INFO - Ignorando archivo de glosario: GLOSARIO DE TÉRMINOS DE SEGUROS.txt
+2025-05-06 17:49:09,087 - RAGLogger - INFO - Archivo processed_documents.json generado exitosamente
+Metadata: {
+  "total_documents": 51
+}
+2025-05-06 18:06:54,217 - RAGLogger - INFO - Inicializado DocumentEmbedder
+Metadata: {
+  "model": "paraphrase-multilingual-mpnet-base-v2",
+  "device": "cpu",
+  "chunk_size": 512,
+  "chunk_overlap": 50
+}
+2025-05-06 18:06:54,245 - RAGLogger - INFO - Metadatos cargados exitosamente
+Metadata: {
+  "total_documents": 51,
+  "columns": [
+    "filename",
+    "producto",
+    "insurance_type",
+    "file_path",
+    "coverage_type",
+    "num_pages",
+    "keywords",
+    "chunks"
+  ]
+}
+2025-05-06 18:06:54,255 - RAGLogger - INFO - Ignorando archivo de glosario: GLOSARIO DE TÉRMINOS DE SEGUROS.txt
+2025-05-06 18:07:46,444 - RAGLogger - INFO - Archivo processed_documents.json generado exitosamente
+Metadata: {
+  "total_documents": 51
+}
+2025-05-06 18:10:19,173 - RAGLogger - INFO - Índice FAISS cargado exitosamente
+Metadata: {
+  "index_file": "models\\faiss_index\\faiss_index_20250505_191103.bin",
+  "mapping_file": "models\\faiss_index\\id_mapping_20250505_191103.json",
+  "num_vectors": 102
+}
+2025-05-08 16:33:32,579 - RAGLogger - INFO - Error en answer_generator: Error code: 403 - {'error': {'message': 'You are not allowed to sample from this model', 'type': 'invalid_request_error', 'param': None, 'code': None}}
+Metadata: {
+  "error": true,
+  "component": "answer_generator",
+  "context": {
+    "query": "¿Qué cubre un seguro de auto?",
+    "num_context_docs": 1
+  }
+}
+2025-05-08 16:36:34,314 - RAGLogger - INFO - Error en answer_generator: Error code: 403 - {'error': {'message': 'You are not allowed to sample from this model', 'type': 'invalid_request_error', 'param': None, 'code': None}}
+Metadata: {
+  "error": true,
+  "component": "answer_generator",
+  "context": {
+    "query": "¿Qué cubre un seguro de auto?",
+    "num_context_docs": 1
+  }
+}
+2025-05-08 16:37:01,264 - RAGLogger - INFO - Error en answer_generator: Error code: 403 - {'error': {'message': 'You are not allowed to sample from this model', 'type': 'invalid_request_error', 'param': None, 'code': None}}
+Metadata: {
+  "error": true,
+  "component": "answer_generator",
+  "context": {
+    "query": "¿Qué cubre un seguro de auto?",
+    "num_context_docs": 1
+  }
+}
+2025-05-08 16:40:40,401 - RAGLogger - INFO - Error en answer_generator: 'answer_generation'
+Metadata: {
+  "error": true,
+  "component": "answer_generator",
+  "context": {
+    "query": "¿Qué cubre un seguro de auto?",
+    "num_context_docs": 1
+  }
+}
+2025-05-08 16:44:04,404 - RAGLogger - INFO - Consulta registrada
+Metadata: {
+  "query_file": "logs\\user_queries\\query_20250508_164404.json",
+  "query_length": 29,
+  "response_length": 178
+}
+2025-05-08 17:12:11,242 - RAGLogger - INFO - Índice FAISS cargado exitosamente
+Metadata: {
+  "index_file": "models\\faiss_index\\faiss_index_20250505_191103.bin",
+  "mapping_file": "models\\faiss_index\\id_mapping_20250505_191103.json",
+  "num_vectors": 102
+}
+2025-05-08 17:12:40,470 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "¿Qué cubre el seguro de motocicleta?",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-08 17:12:40,470 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "¿Qué cubre el seguro de motocicleta?",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-08 17:12:40,470 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "¿Qué cubre el seguro de motocicleta?",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-08 17:12:40,470 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "¿Qué cubre el seguro de motocicleta?",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-08 17:12:40,470 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "¿Qué cubre el seguro de motocicleta?",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-08 17:12:41,037 - RAGLogger - INFO - Error en answer_generator: Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Metadata: {
+  "error": true,
+  "component": "answer_generator",
+  "context": {
+    "query": "¿Qué cubre el seguro de motocicleta?",
+    "num_context_docs": 5
+  }
+}
+2025-05-08 17:12:41,037 - RAGLogger - INFO - Error en answer_generator: Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Metadata: {
+  "error": true,
+  "component": "answer_generator",
+  "context": {
+    "query": "¿Qué cubre el seguro de motocicleta?",
+    "num_context_docs": 5
+  }
+}
+2025-05-08 17:12:41,037 - RAGLogger - INFO - Error en answer_generator: Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Metadata: {
+  "error": true,
+  "component": "answer_generator",
+  "context": {
+    "query": "¿Qué cubre el seguro de motocicleta?",
+    "num_context_docs": 5
+  }
+}
+2025-05-08 17:12:41,037 - RAGLogger - INFO - Error en answer_generator: Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Metadata: {
+  "error": true,
+  "component": "answer_generator",
+  "context": {
+    "query": "¿Qué cubre el seguro de motocicleta?",
+    "num_context_docs": 5
+  }
+}
+2025-05-08 17:12:41,037 - RAGLogger - INFO - Error en answer_generator: Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Metadata: {
+  "error": true,
+  "component": "answer_generator",
+  "context": {
+    "query": "¿Qué cubre el seguro de motocicleta?",
+    "num_context_docs": 5
+  }
+}
+2025-05-08 17:12:41,058 - RAGLogger - ERROR - Error en la interfaz
+Metadata: {
+  "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+  "query": "¿Qué cubre el seguro de motocicleta?"
+}
+2025-05-08 17:12:41,058 - RAGLogger - ERROR - Error en la interfaz
+Metadata: {
+  "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+  "query": "¿Qué cubre el seguro de motocicleta?"
+}
+2025-05-08 17:12:41,058 - RAGLogger - ERROR - Error en la interfaz
+Metadata: {
+  "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+  "query": "¿Qué cubre el seguro de motocicleta?"
+}
+2025-05-08 17:12:41,058 - RAGLogger - ERROR - Error en la interfaz
+Metadata: {
+  "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+  "query": "¿Qué cubre el seguro de motocicleta?"
+}
+2025-05-08 17:12:41,058 - RAGLogger - ERROR - Error en la interfaz
+Metadata: {
+  "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+  "query": "¿Qué cubre el seguro de motocicleta?"
+}
+2025-05-08 17:14:01,726 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "¿Qué cubre el seguro de motocicleta?",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-08 17:14:01,726 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "¿Qué cubre el seguro de motocicleta?",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-08 17:14:01,726 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "¿Qué cubre el seguro de motocicleta?",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-08 17:14:01,726 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "¿Qué cubre el seguro de motocicleta?",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-08 17:14:01,726 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "¿Qué cubre el seguro de motocicleta?",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-08 17:14:01,726 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "¿Qué cubre el seguro de motocicleta?",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-08 17:14:01,938 - RAGLogger - INFO - Error en answer_generator: Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Metadata: {
+  "error": true,
+  "component": "answer_generator",
+  "context": {
+    "query": "¿Qué cubre el seguro de motocicleta?",
+    "num_context_docs": 5
+  }
+}
+2025-05-08 17:14:01,938 - RAGLogger - INFO - Error en answer_generator: Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Metadata: {
+  "error": true,
+  "component": "answer_generator",
+  "context": {
+    "query": "¿Qué cubre el seguro de motocicleta?",
+    "num_context_docs": 5
+  }
+}
+2025-05-08 17:14:01,938 - RAGLogger - INFO - Error en answer_generator: Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Metadata: {
+  "error": true,
+  "component": "answer_generator",
+  "context": {
+    "query": "¿Qué cubre el seguro de motocicleta?",
+    "num_context_docs": 5
+  }
+}
+2025-05-08 17:14:01,938 - RAGLogger - INFO - Error en answer_generator: Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Metadata: {
+  "error": true,
+  "component": "answer_generator",
+  "context": {
+    "query": "¿Qué cubre el seguro de motocicleta?",
+    "num_context_docs": 5
+  }
+}
+2025-05-08 17:14:01,938 - RAGLogger - INFO - Error en answer_generator: Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Metadata: {
+  "error": true,
+  "component": "answer_generator",
+  "context": {
+    "query": "¿Qué cubre el seguro de motocicleta?",
+    "num_context_docs": 5
+  }
+}
+2025-05-08 17:14:01,938 - RAGLogger - INFO - Error en answer_generator: Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Metadata: {
+  "error": true,
+  "component": "answer_generator",
+  "context": {
+    "query": "¿Qué cubre el seguro de motocicleta?",
+    "num_context_docs": 5
+  }
+}
+2025-05-08 17:14:01,953 - RAGLogger - ERROR - Error en la interfaz
+Metadata: {
+  "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+  "query": "¿Qué cubre el seguro de motocicleta?"
+}
+2025-05-08 17:14:01,953 - RAGLogger - ERROR - Error en la interfaz
+Metadata: {
+  "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+  "query": "¿Qué cubre el seguro de motocicleta?"
+}
+2025-05-08 17:14:01,953 - RAGLogger - ERROR - Error en la interfaz
+Metadata: {
+  "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+  "query": "¿Qué cubre el seguro de motocicleta?"
+}
+2025-05-08 17:14:01,953 - RAGLogger - ERROR - Error en la interfaz
+Metadata: {
+  "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+  "query": "¿Qué cubre el seguro de motocicleta?"
+}
+2025-05-08 17:14:01,953 - RAGLogger - ERROR - Error en la interfaz
+Metadata: {
+  "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+  "query": "¿Qué cubre el seguro de motocicleta?"
+}
+2025-05-08 17:14:01,953 - RAGLogger - ERROR - Error en la interfaz
+Metadata: {
+  "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+  "query": "¿Qué cubre el seguro de motocicleta?"
+}
+2025-05-08 17:14:12,704 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "¿Qué cubre el seguro de motocicleta?",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-08 17:14:12,704 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "¿Qué cubre el seguro de motocicleta?",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-08 17:14:12,704 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "¿Qué cubre el seguro de motocicleta?",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-08 17:14:12,704 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "¿Qué cubre el seguro de motocicleta?",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-08 17:14:12,704 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "¿Qué cubre el seguro de motocicleta?",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-08 17:14:12,704 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "¿Qué cubre el seguro de motocicleta?",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-08 17:14:12,704 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "¿Qué cubre el seguro de motocicleta?",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-08 17:14:12,704 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "¿Qué cubre el seguro de motocicleta?",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-08 17:14:12,704 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "¿Qué cubre el seguro de motocicleta?",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-08 17:14:12,908 - RAGLogger - INFO - Error en answer_generator: Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Metadata: {
+  "error": true,
+  "component": "answer_generator",
+  "context": {
+    "query": "¿Qué cubre el seguro de motocicleta?",
+    "num_context_docs": 5
+  }
+}
+2025-05-08 17:14:12,908 - RAGLogger - INFO - Error en answer_generator: Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Metadata: {
+  "error": true,
+  "component": "answer_generator",
+  "context": {
+    "query": "¿Qué cubre el seguro de motocicleta?",
+    "num_context_docs": 5
+  }
+}
+2025-05-08 17:14:12,908 - RAGLogger - INFO - Error en answer_generator: Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Metadata: {
+  "error": true,
+  "component": "answer_generator",
+  "context": {
+    "query": "¿Qué cubre el seguro de motocicleta?",
+    "num_context_docs": 5
+  }
+}
+2025-05-08 17:14:12,908 - RAGLogger - INFO - Error en answer_generator: Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Metadata: {
+  "error": true,
+  "component": "answer_generator",
+  "context": {
+    "query": "¿Qué cubre el seguro de motocicleta?",
+    "num_context_docs": 5
+  }
+}
+2025-05-08 17:14:12,908 - RAGLogger - INFO - Error en answer_generator: Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Metadata: {
+  "error": true,
+  "component": "answer_generator",
+  "context": {
+    "query": "¿Qué cubre el seguro de motocicleta?",
+    "num_context_docs": 5
+  }
+}
+2025-05-08 17:14:12,908 - RAGLogger - INFO - Error en answer_generator: Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Metadata: {
+  "error": true,
+  "component": "answer_generator",
+  "context": {
+    "query": "¿Qué cubre el seguro de motocicleta?",
+    "num_context_docs": 5
+  }
+}
+2025-05-08 17:14:12,908 - RAGLogger - INFO - Error en answer_generator: Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Metadata: {
+  "error": true,
+  "component": "answer_generator",
+  "context": {
+    "query": "¿Qué cubre el seguro de motocicleta?",
+    "num_context_docs": 5
+  }
+}
+2025-05-08 17:14:12,908 - RAGLogger - INFO - Error en answer_generator: Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Metadata: {
+  "error": true,
+  "component": "answer_generator",
+  "context": {
+    "query": "¿Qué cubre el seguro de motocicleta?",
+    "num_context_docs": 5
+  }
+}
+2025-05-08 17:14:12,908 - RAGLogger - INFO - Error en answer_generator: Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Metadata: {
+  "error": true,
+  "component": "answer_generator",
+  "context": {
+    "query": "¿Qué cubre el seguro de motocicleta?",
+    "num_context_docs": 5
+  }
+}
+2025-05-08 17:14:12,917 - RAGLogger - ERROR - Error en la interfaz
+Metadata: {
+  "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+  "query": "¿Qué cubre el seguro de motocicleta?"
+}
+2025-05-08 17:14:12,917 - RAGLogger - ERROR - Error en la interfaz
+Metadata: {
+  "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+  "query": "¿Qué cubre el seguro de motocicleta?"
+}
+2025-05-08 17:14:12,917 - RAGLogger - ERROR - Error en la interfaz
+Metadata: {
+  "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+  "query": "¿Qué cubre el seguro de motocicleta?"
+}
+2025-05-08 17:14:12,917 - RAGLogger - ERROR - Error en la interfaz
+Metadata: {
+  "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+  "query": "¿Qué cubre el seguro de motocicleta?"
+}
+2025-05-08 17:14:12,917 - RAGLogger - ERROR - Error en la interfaz
+Metadata: {
+  "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+  "query": "¿Qué cubre el seguro de motocicleta?"
+}
+2025-05-08 17:14:12,917 - RAGLogger - ERROR - Error en la interfaz
+Metadata: {
+  "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+  "query": "¿Qué cubre el seguro de motocicleta?"
+}
+2025-05-08 17:14:12,917 - RAGLogger - ERROR - Error en la interfaz
+Metadata: {
+  "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+  "query": "¿Qué cubre el seguro de motocicleta?"
+}
+2025-05-08 17:14:12,917 - RAGLogger - ERROR - Error en la interfaz
+Metadata: {
+  "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+  "query": "¿Qué cubre el seguro de motocicleta?"
+}
+2025-05-08 17:14:12,917 - RAGLogger - ERROR - Error en la interfaz
+Metadata: {
+  "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: tu-clave*****aqui. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+  "query": "¿Qué cubre el seguro de motocicleta?"
+}
+2025-05-08 17:18:49,791 - RAGLogger - INFO - Índice FAISS cargado exitosamente
+Metadata: {
+  "index_file": "models\\faiss_index\\faiss_index_20250505_191103.bin",
+  "mapping_file": "models\\faiss_index\\id_mapping_20250505_191103.json",
+  "num_vectors": 102
+}
+2025-05-08 17:19:08,634 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Qué cubre el seguro de motocicletas ???",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-08 17:19:08,634 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Qué cubre el seguro de motocicletas ???",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-08 17:19:08,634 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Qué cubre el seguro de motocicletas ???",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-08 17:19:08,634 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Qué cubre el seguro de motocicletas ???",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-08 17:19:08,634 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Qué cubre el seguro de motocicletas ???",
+  "num_results": 5,
+  "filters": null
+}
+2025-05-08 17:19:11,264 - RAGLogger - INFO - Consulta registrada
+Metadata: {
+  "query_file": "logs\\user_queries\\query_20250508_171911.json",
+  "query_length": 39,
+  "response_length": 656
+}
+2025-05-08 17:19:11,264 - RAGLogger - INFO - Consulta registrada
+Metadata: {
+  "query_file": "logs\\user_queries\\query_20250508_171911.json",
+  "query_length": 39,
+  "response_length": 656
+}
+2025-05-08 17:19:11,264 - RAGLogger - INFO - Consulta registrada
+Metadata: {
+  "query_file": "logs\\user_queries\\query_20250508_171911.json",
+  "query_length": 39,
+  "response_length": 656
+}
+2025-05-08 17:19:11,264 - RAGLogger - INFO - Consulta registrada
+Metadata: {
+  "query_file": "logs\\user_queries\\query_20250508_171911.json",
+  "query_length": 39,
+  "response_length": 656
+}
+2025-05-08 17:19:11,264 - RAGLogger - INFO - Consulta registrada
+Metadata: {
+  "query_file": "logs\\user_queries\\query_20250508_171911.json",
+  "query_length": 39,
+  "response_length": 656
+}
+2025-05-08 17:19:11,864 - RAGLogger - INFO - Consulta procesada
+Metadata: {
+  "query": "Qué cubre el seguro de motocicletas ???",
+  "num_results": 5,
+  "filters": {}
+}
+2025-05-08 17:19:11,864 - RAGLogger - INFO - Consulta procesada
+Metadata: {
+  "query": "Qué cubre el seguro de motocicletas ???",
+  "num_results": 5,
+  "filters": {}
+}
+2025-05-08 17:19:11,864 - RAGLogger - INFO - Consulta procesada
+Metadata: {
+  "query": "Qué cubre el seguro de motocicletas ???",
+  "num_results": 5,
+  "filters": {}
+}
+2025-05-08 17:19:11,864 - RAGLogger - INFO - Consulta procesada
+Metadata: {
+  "query": "Qué cubre el seguro de motocicletas ???",
+  "num_results": 5,
+  "filters": {}
+}
+2025-05-08 17:19:11,864 - RAGLogger - INFO - Consulta procesada
+Metadata: {
+  "query": "Qué cubre el seguro de motocicletas ???",
+  "num_results": 5,
+  "filters": {}
+}

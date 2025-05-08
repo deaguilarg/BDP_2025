@@ -9,8 +9,21 @@ from pathlib import Path
 import json
 from typing import Dict, Any, List
 import logging
+import os
+from dotenv import load_dotenv
+
+# Cargar variables de entorno desde .env
+load_dotenv()
+
+# Verificar la clave API
+api_key = os.getenv("OPENAI_API_KEY")
+if not api_key:
+    raise ValueError("No se encontró la variable de entorno OPENAI_API_KEY")
+if not api_key.startswith("sk-"):
+    raise ValueError("La clave API no tiene el formato correcto. Debe comenzar con 'sk-'")
 
 from src.retrieval.search_engine import SearchEngine
+from src.generation.answer_generator import AnswerGenerator
 from src.monitoring.logger import RAGLogger
 
 # Configuración del logging
@@ -26,8 +39,8 @@ logger = logging.getLogger(__name__)
 
 # Configuración de la página
 st.set_page_config(
-    page_title="Buscador de Documentos de Seguros",
-    page_icon="🔍",
+    page_title="Asistente de Seguros Allianz",
+    page_icon="🛡️",
     layout="wide"
 )
 
@@ -61,20 +74,36 @@ st.markdown("""
         margin-right: 0.5rem;
         font-size: 0.8rem;
     }
+    .answer-box {
+        background-color: #e8f4ff;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        margin: 1rem 0;
+        border-left: 5px solid #0066cc;
+    }
+    .disclaimer {
+        font-size: 0.8rem;
+        color: #666;
+        font-style: italic;
+        margin-top: 1rem;
+        padding: 0.5rem;
+        background-color: #f8f9fa;
+        border-radius: 0.3rem;
+    }
 </style>
 """, unsafe_allow_html=True)
 
 @st.cache_resource
-def load_searcher() -> SearchEngine:
+def load_components():
     """
-    Carga el motor de búsqueda (cacheado).
+    Carga los componentes necesarios (cacheado).
     """
     try:
-        return SearchEngine()
+        return SearchEngine(), AnswerGenerator(api_key=api_key)
     except Exception as e:
-        logger.error(f"Error al cargar el motor de búsqueda: {str(e)}")
-        st.error("Error al cargar el motor de búsqueda. Por favor, verifique que el índice FAISS existe.")
-        return None
+        logger.error(f"Error al cargar los componentes: {str(e)}")
+        st.error("Error al cargar los componentes. Por favor, verifique la configuración.")
+        return None, None
 
 @st.cache_data
 def load_metadata_options() -> Dict[str, List[str]]:
@@ -130,7 +159,7 @@ def load_metadata_options() -> Dict[str, List[str]]:
         st.error(f"Error al cargar los metadatos: {str(e)}")
         return {}
 
-def render_result_card(result: Dict[str, Any], searcher: SearchEngine) -> None:
+def render_result_card(result: Dict[str, Any]) -> None:
     """
     Renderiza una tarjeta de resultado.
     """
@@ -149,20 +178,35 @@ def render_result_card(result: Dict[str, Any], searcher: SearchEngine) -> None:
         </div>
         """, unsafe_allow_html=True)
 
+def render_answer(answer: str) -> None:
+    """
+    Renderiza la respuesta del asistente.
+    """
+    st.markdown(f"""
+    <div class="answer-box">
+        {answer}
+        <div class="disclaimer">
+            Esta recomendación está destinada a ayudar a los asesores de Allianz y es solo para fines informativos. 
+            Los clientes deben consultar los términos completos de la póliza o consultar con un representante de Allianz 
+            para obtener una cotización personalizada.
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
 def main():
     """Función principal de la aplicación Streamlit"""
     
     # Título y descripción
-    st.title("🔍 Buscador de Documentos de Seguros")
+    st.title("🛡️ Asistente de Seguros Allianz")
     st.markdown("""
-    Busca información específica en la base de documentos de seguros.
-    Utiliza lenguaje natural para hacer tus consultas.
+    Bienvenido al Asistente de Seguros de Allianz. Este sistema te ayudará a encontrar información específica 
+    y generar recomendaciones personalizadas para tus clientes.
     """)
     
     # Inicializar componentes
-    searcher = load_searcher()
-    if searcher is None:
-        st.error("No se pudo inicializar el motor de búsqueda. Por favor, verifique que el índice FAISS existe.")
+    searcher, answer_generator = load_components()
+    if searcher is None or answer_generator is None:
+        st.error("No se pudieron inicializar los componentes. Por favor, verifique la configuración.")
         return
         
     metadata_options = load_metadata_options()
@@ -179,8 +223,8 @@ def main():
     
     # Barra de búsqueda
     query = st.text_input(
-        "¿Qué información buscas?",
-        placeholder="Ejemplo: ¿Qué cubre el seguro de hogar en caso de robo?"
+        "¿Qué información necesitas para tu cliente?",
+        placeholder="Ejemplo: ¿Qué cubre el seguro de motocicleta en caso de robo?"
     )
     
     # Filtros de búsqueda
@@ -200,49 +244,57 @@ def main():
     
     # Número de resultados
     num_results = st.slider(
-        "Número de resultados",
+        "Número de documentos a consultar",
         min_value=1,
         max_value=20,
         value=5
     )
     
     # Botón de búsqueda
-    if st.button("Buscar", type="primary"):
+    if st.button("Obtener Recomendación", type="primary"):
         if query:
             try:
-                with st.spinner("Buscando documentos relevantes..."):
+                with st.spinner("Buscando información relevante..."):
                     # Realizar búsqueda
                     results = searcher.search(
                         query=query,
                         filters=filter_params if filter_params else None
                     )
                     
-                    # Mostrar resultados
                     if results:
-                        st.markdown(f"### 📄 Resultados encontrados: {len(results)}")
+                        # Generar respuesta
+                        response = answer_generator.generate_answer(
+                            query=query,
+                            context_docs=results[:num_results]
+                        )
                         
-                        # Renderizar tarjetas de resultados
+                        # Mostrar respuesta
+                        st.markdown("### 💡 Recomendación")
+                        render_answer(response)
+                        
+                        # Mostrar documentos utilizados
+                        st.markdown("### 📄 Documentos consultados")
                         for result in results[:num_results]:
-                            render_result_card(result, searcher)
+                            render_result_card(result)
                             
-                        # Gráfico de scores
+                        # Gráfico de relevancia
                         scores_df = pd.DataFrame({
                             'Documento': [r['metadata'].get('filename', 'Desconocido') for r in results[:num_results]],
-                            'Score': [r['score'] for r in results[:num_results]]
+                            'Relevancia': [r['score'] for r in results[:num_results]]
                         })
                         
                         fig = go.Figure(data=[
                             go.Bar(
                                 x=scores_df['Documento'],
-                                y=scores_df['Score'],
+                                y=scores_df['Relevancia'],
                                 marker_color='#0066cc'
                             )
                         ])
                         
                         fig.update_layout(
-                            title="Relevancia de los resultados",
+                            title="Relevancia de los documentos consultados",
                             xaxis_title="Documento",
-                            yaxis_title="Score",
+                            yaxis_title="Score de Relevancia",
                             showlegend=False
                         )
                         
@@ -253,40 +305,40 @@ def main():
                     
                     # Registrar búsqueda
                     logger.info(
-                        "Búsqueda realizada",
+                        "Consulta procesada",
                         query=query,
                         num_results=len(results),
                         filters=filter_params
                     )
                     
             except Exception as e:
-                st.error(f"Error al realizar la búsqueda: {str(e)}")
+                st.error(f"Error al procesar la consulta: {str(e)}")
                 logger.error(
                     "Error en la interfaz",
                     error=str(e),
                     query=query
                 )
         else:
-            st.warning("Por favor, ingresa una consulta para buscar.")
+            st.warning("Por favor, ingresa una consulta para obtener una recomendación.")
     
     # Información adicional
     with st.sidebar:
         st.markdown("### 📖 Guía de uso")
         st.markdown("""
-        1. Escribe tu pregunta en la barra de búsqueda
-        2. Usa los filtros para refinar los resultados
-        3. Ajusta el número de resultados a mostrar
-        4. Haz clic en "Buscar"
+        1. Escribe la consulta de tu cliente
+        2. Usa los filtros para refinar la búsqueda
+        3. Ajusta el número de documentos a consultar
+        4. Haz clic en "Obtener Recomendación"
         
-        **Tipos de preguntas sugeridas:**
-        - ¿Qué cubre el seguro de hogar?
-        - ¿Cuáles son las exclusiones del seguro de auto?
-        - ¿Cómo funciona el seguro de vida?
+        **Tipos de consultas sugeridas:**
+        - ¿Qué cubre el seguro de motocicleta?
+        - ¿Cuáles son las exclusiones del seguro de comunidad?
+        - ¿Cómo funciona la cobertura de responsabilidad civil?
         """)
         
         st.markdown("### 🔍 Estadísticas")
         st.metric(
-            "Documentos indexados",
+            "Documentos disponibles",
             len(metadata_options.get('filename', []))
         )
 

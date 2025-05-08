@@ -1,0 +1,18 @@
+{
+  "timestamp": "20250508_164404",
+  "query": "¿Qué cubre un seguro de auto?",
+  "response": "Un seguro de auto cubre daños materiales y personales causados por accidentes de tránsito. Además, incluye cobertura de responsabilidad civil, daños a terceros y asistencia vial.",
+  "metadata": {
+    "retrieved_docs": [
+      {
+        "text": "El seguro de auto cubre daños materiales y personales causados por accidentes de tránsito. Incluye cobertura de responsabilidad civil, daños a terceros y asistencia vial.",
+        "metadata": {
+          "producto": "Seguro de Auto",
+          "insurance_type": "Auto",
+          "coverage_type": "Completo"
+        }
+      }
+    ],
+    "response_time": 1.2842729091644287
+  }
+}

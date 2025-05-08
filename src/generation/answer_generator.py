@@ -1,23 +1,27 @@
 """
-Generación de respuestas usando el modelo de lenguaje.
+Generación de respuestas usando el modelo de OpenAI.
 """
 
 import json
+import time
+import os
 from pathlib import Path
 from typing import Dict, List, Optional
-from transformers import AutoModelForCausalLM, AutoTokenizer
+import openai
+from openai import OpenAI
 
 from src.monitoring.logger import RAGLogger
 from src.monitoring.performance import PerformanceMonitor
 
 class AnswerGenerator:
     """
-    Generador de respuestas para consultas sobre seguros.
+    Generador de respuestas para consultas sobre seguros usando OpenAI.
     """
     
     def __init__(
         self,
-        model_name: str = "AtlaAI/Selene-1-Mini-Llama-3.1-8B",
+        api_key: str,
+        model_name: str = "gpt-3.5-turbo",
         max_length: int = 512,
         temperature: float = 0.7
     ):
@@ -25,18 +29,14 @@ class AnswerGenerator:
         Inicializa el generador de respuestas.
         
         Args:
-            model_name: Nombre del modelo de lenguaje
+            api_key: Clave API de OpenAI
+            model_name: Nombre del modelo de OpenAI (debe ser un modelo de chat)
             max_length: Longitud máxima de la respuesta
             temperature: Temperatura para la generación
         """
-        # Cargar modelo y tokenizer
-        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
-        self.model = AutoModelForCausalLM.from_pretrained(
-            model_name,
-            device_map="auto",
-            load_in_8bit=True  # Optimización para memoria limitada
-        )
-        
+        # Configurar cliente de OpenAI
+        self.client = OpenAI(api_key=api_key)
+        self.model_name = model_name
         self.max_length = max_length
         self.temperature = temperature
         
@@ -57,11 +57,11 @@ class AnswerGenerator:
         context = "Contexto relevante:\n\n"
         
         for i, doc in enumerate(context_docs, 1):
-            metadata = doc["metadata"]
+            metadata = doc.get("metadata", {})
             context += f"Documento {i}:\n"
-            context += f"Título: {metadata.get('title', 'No especificado')}\n"
-            context += f"Aseguradora: {metadata.get('insurer', 'No especificada')}\n"
+            context += f"Producto: {metadata.get('producto', 'No especificado')}\n"
             context += f"Tipo de seguro: {metadata.get('insurance_type', 'No especificado')}\n"
+            context += f"Tipo de cobertura: {metadata.get('coverage_type', 'No especificado')}\n"
             context += f"Texto: {doc.get('text', '')}\n\n"
         
         return context
@@ -81,17 +81,26 @@ class AnswerGenerator:
         context = self._format_context(context_docs)
         
         # Construir prompt
-        prompt = f"""Por favor, responde la siguiente pregunta sobre seguros basándote únicamente en la información proporcionada en el contexto. Si la información no es suficiente para responder, indícalo claramente.
+        prompt = f"""Eres un asistente de seguros impulsado por IA específicamente creado para apoyar a los asesores de Allianz. Tu rol es proporcionar recomendaciones de seguros claras, precisas, concisas y personalizadas (inicialmente para seguros de Motocicleta y Comunidad).
+
+Sigue estas instrucciones:
+
+1. Declara claramente tu rol: "Como Asistente de Seguros de Allianz, mi recomendación es..."
+2. Usa respuestas estructuradas, concisas y relevantes (máximo 100 palabras).
+3. Basa tus respuestas exclusivamente en el contexto proporcionado; si es insuficiente, indícalo claramente.
+4. Sugiere preguntas de seguimiento accionables que los asesores deberían hacer a los clientes para recomendaciones más precisas.
+5. Mantén un tono profesional pero amigable apropiado para asesores de Allianz.
+6. Reconoce claramente si careces de información para proporcionar una respuesta precisa.
+7. Incluye el siguiente descargo de responsabilidad en todas las respuestas:
+
+"Esta recomendación está destinada a ayudar a los asesores de Allianz y es solo para fines informativos. Los clientes deben consultar los términos completos de la póliza o consultar con un representante de Allianz para obtener una cotización personalizada."
 
 {context}
 
-Pregunta: {query}
-
-Respuesta:"""
+Pregunta: {query}"""
         
         return prompt
     
-    @PerformanceMonitor.function_timer("answer_generation")
     def generate_answer(
         self,
         query: str,
@@ -100,7 +109,7 @@ Respuesta:"""
         temperature: Optional[float] = None
     ) -> str:
         """
-        Genera una respuesta para la consulta.
+        Genera una respuesta para la consulta usando OpenAI.
         
         Args:
             query: Consulta del usuario
@@ -115,49 +124,72 @@ Respuesta:"""
             # Construir prompt
             prompt = self._build_prompt(query, context_docs)
             
-            # Tokenizar
-            inputs = self.tokenizer(
-                prompt,
-                return_tensors="pt",
-                truncation=True,
-                max_length=self.max_length
-            ).to(self.model.device)
+            # Medir tiempo de ejecución
+            start_time = time.time()
             
-            # Generar respuesta
-            outputs = self.model.generate(
-                **inputs,
-                max_length=max_length or self.max_length,
+            # Generar respuesta usando OpenAI
+            response = self.client.chat.completions.create(
+                model=self.model_name,
+                messages=[
+                    {"role": "system", "content": "Eres un asistente experto en seguros que responde preguntas basándose únicamente en la información proporcionada."},
+                    {"role": "user", "content": prompt}
+                ],
+                max_tokens=max_length or self.max_length,
                 temperature=temperature or self.temperature,
-                do_sample=True,
                 top_p=0.9,
-                top_k=50,
-                num_return_sequences=1,
-                pad_token_id=self.tokenizer.eos_token_id
+                frequency_penalty=0.0,
+                presence_penalty=0.0
             )
             
-            # Decodificar respuesta
-            response = self.tokenizer.decode(
-                outputs[0],
-                skip_special_tokens=True
+            # Calcular tiempo de ejecución
+            execution_time = time.time() - start_time
+            
+            # Registrar métricas
+            self.performance_monitor.log_metrics({
+                "operation": "answer_generation",
+                "execution_time": execution_time,
+                "success": True
+            })
+            
+            # Extraer respuesta
+            answer = response.choices[0].message.content.strip()
+            
+            # Registrar la generación con información detallada de los chunks
+            self.logger.log_query(
+                query=query,
+                response=answer,
+                metadata={
+                    "retrieved_docs": [
+                        {
+                            "text": doc.get("text", ""),
+                            "metadata": doc.get("metadata", {}),
+                            "relevance_score": doc.get("score", 0.0)
+                        }
+                        for doc in context_docs
+                    ],
+                    "response_time": execution_time,
+                    "num_chunks_used": len(context_docs),
+                    "chunks_details": [
+                        {
+                            "chunk_id": i,
+                            "producto": doc.get("metadata", {}).get("producto", "No especificado"),
+                            "insurance_type": doc.get("metadata", {}).get("insurance_type", "No especificado"),
+                            "coverage_type": doc.get("metadata", {}).get("coverage_type", "No especificado")
+                        }
+                        for i, doc in enumerate(context_docs, 1)
+                    ]
+                }
             )
             
-            # Extraer solo la respuesta (después de "Respuesta:")
-            response = response.split("Respuesta:")[-1].strip()
-            
-            self.logger.info(
-                "Respuesta generada exitosamente",
-                query_length=len(query),
-                response_length=len(response),
-                num_context_docs=len(context_docs)
-            )
-            
-            return response
+            return answer
             
         except Exception as e:
-            self.logger.error(
-                "Error generando respuesta",
-                query=query,
-                error=str(e)
+            # Registrar error usando el método info con nivel de error
+            self.logger.info(
+                f"Error en answer_generator: {str(e)}",
+                error=True,
+                component="answer_generator",
+                context={"query": query, "num_context_docs": len(context_docs)}
             )
             raise
     
@@ -186,7 +218,8 @@ Respuesta:"""
             conversation_data = {
                 "query": query,
                 "response": response,
-                "context_documents": context_docs
+                "context_documents": context_docs,
+                "timestamp": time.strftime("%Y-%m-%d %H:%M:%S")
             }
             
             # Guardar conversación
@@ -202,8 +235,50 @@ Respuesta:"""
             )
             
         except Exception as e:
-            self.logger.error(
-                "Error guardando conversación",
-                error=str(e)
+            # Registrar error usando el método info con nivel de error
+            self.logger.info(
+                f"Error al guardar conversación: {str(e)}",
+                error=True,
+                component="answer_generator",
+                context={"query": query}
             )
-            # No levantar excepción para no interrumpir el flujo principal 
+
+def main():
+    """
+    Función principal para probar el generador de respuestas.
+    """
+    # Obtener clave API de OpenAI
+    api_key = os.getenv("OPENAI_API_KEY")
+    if not api_key:
+        raise ValueError("Por favor, configura la variable de entorno OPENAI_API_KEY")
+    
+    # Crear instancia del generador
+    generator = AnswerGenerator(api_key=api_key)
+    
+    # Datos de prueba
+    query = "¿Qué cubre un seguro de motocicleta?"
+    context_docs = [
+        {
+            "text": "El seguro de motocicleta cubre daños materiales y personales causados por accidentes de tránsito. Incluye cobertura de responsabilidad civil, daños a terceros, asistencia vial y robo total.",
+            "metadata": {
+                "producto": "Seguro de Motocicleta",
+                "insurance_type": "Motocicleta",
+                "coverage_type": "Completo"
+            }
+        }
+    ]
+    
+    try:
+        # Generar respuesta
+        response = generator.generate_answer(query, context_docs)
+        print("\nPregunta:", query)
+        print("\nRespuesta:", response)
+        
+        # Guardar conversación
+        generator.save_conversation(query, response, context_docs)
+        
+    except Exception as e:
+        print("\nError al generar respuesta:", str(e))
+
+if __name__ == "__main__":
+    main() 

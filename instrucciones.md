@@ -67,7 +67,7 @@ rag-seguros/
    - Lógica para ranking y filtrado de resultados
 
 4. **Implementación del Generador de Respuestas**:
-   - Integración del modelo AtlaAI/Selene-1-Mini-Llama-3.1-8B
+   - Integración del modelo text-embedding-3-small
    - Diseño del prompt para generar respuestas precisas en español
    - Optimización para tiempos de respuesta menores a 30 segundos
 
@@ -102,16 +102,31 @@ rag-seguros/
 - Optimizar configuración para NVIDIA GTX 1050
 
 ### 2. Procesamiento de Documentos
-- Implementar extracción de texto desde PDFs de seguros en español
-- Desarrollar script para generación automática de metadatos de documentos
-- Dividir documentos en chunks apropiados para embeddings
-- Implementar control de calidad para verificar la extracción correcta
+- Implementar extracción de texto desde PDFs de seguros en español. Considerar que hay tildes.
+- Eliminar caracteres extraños, más alla de letras, números, espacios en blanco, retornos de carro y letras con tildes.
+- Desarrollar script para generación automática de metadatos de documentos. La metadata debe seguir el esquema propuesto en el markdown de metadata.
+- El nombre del producto se encontrará en el documento "Producto: {producto}"
+
+### 2.1 Chunking
+- Dividir documentos en chunks apropiados para embeddings:
+El programa debe identificar las siguientes secciones dentro de cada pdf:
+1.- En qué consiste este tipo de seguro
+2.- Qué se asegura
+3.- Qué no está asegurado
+4.- sumas aseguradas
+5.- existen restricciones en lo que respecta a la cobertura
+6.- Dónde estoy cubierto
+7.- cuáles son mis obligaciones
+8.- cuándo y cómo tengo que efectuar los pagos
+9.- cuándo comienza y finaliza la cobertura
+10.- cómo puedo rescindir el contrato
+Si se encuentra una de estas secciones se debe crear un chunk con este nombre y con el contenido que hay hasta la siguiente sección
 
 ### 3. Sistema de Embeddings
 - Implementar el modelo "paraphrase-multilingual-mpnet-base-v2" para embeddings
 - Generar embeddings para todos los chunks de documentos
 - Crear y optimizar el índice FAISS para búsqueda rápida
-- Establecer parámetros de similitud adecuados para español
+- Establecer parámetros de similitud adecuados para español, considerando tildes
 
 ### 4. Motor de Búsqueda
 - Desarrollar funciones para buscar documentos relevantes

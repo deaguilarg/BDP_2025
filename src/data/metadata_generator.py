@@ -25,20 +25,21 @@ class MetadataGenerator:
     # Campos requeridos según el esquema
     REQUIRED_FIELDS = [
         'filename',
-        'title',
-        'insurer',
+        'producto',
         'insurance_type',
         'file_path',
-        'language'
+        'coverage_type',
+        'num_pages',
+        'keywords'
     ]
     
     # Campos recomendados según el esquema
     RECOMMENDED_FIELDS = [
-        'coverage_type',
+        'title',
+        'insurer',
         'document_date',
         'document_version',
-        'num_pages',
-        'keywords'
+        'language'
     ]
     
     def __init__(self, processed_dir: str = 'data/processed', metadata_dir: str = 'data/metadata'):
@@ -60,13 +61,25 @@ class MetadataGenerator:
             logger.error("No se pudo cargar el modelo de spaCy")
             raise
         
-        # Patrones para identificar información
+        # Patrones para identificar información según el esquema
         self.patterns = {
-            'insurer': r'(?i)(mapfre|axa|allianz|generali|zurich|liberty|reale|helvetia|pelayo|mutua\s+madrileña)',
-            'insurance_type': r'(?i)(vida|hogar|auto(?:móvil)?|salud|decesos|responsabilidad\s+civil|multirriesgo)',
-            'coverage_type': r'(?i)(básico|premium|todo\s+riesgo|completo|estándar)',
-            'document_date': r'(?i)(\d{1,2}[-/]\d{1,2}[-/]\d{2,4}|\d{1,2}\s+(?:de\s+)?(?:enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)\s+(?:de\s+)?\d{2,4})',
-            'document_version': r'(?i)(?:v|versión|version)\s*(\d+(?:\.\d+)*|\d{4}/\d{2})'
+            'producto': r'(?i)Producto:\s*([^\n]+)',
+            'insurance_type': r'(?i)(hogar|vida|salud|auto(?:móvil)?|responsabilidad\s+civil|accidentes)',
+            'coverage_type': r'(?i)(básico|premium|todo\s+riesgo|básico\s+con\s+daños|pérdida\s+total|todo\s+riesgo\s+con\s+franquicia)'
+        }
+        
+        # Secciones específicas para chunking según las instrucciones
+        self.sections = {
+            'consiste': r'(?i)en\s+qué\s+consiste\s+este\s+tipo\s+de\s+seguro',
+            'asegurado': r'(?i)qué\s+se\s+asegura',
+            'no_asegurado': r'(?i)qué\s+no\s+está\s+asegurado',
+            'sumas': r'(?i)sumas\s+aseguradas',
+            'restricciones': r'(?i)existen\s+restricciones\s+en\s+lo\s+que\s+respecta\s+a\s+la\s+cobertura',
+            'cobertura': r'(?i)dónde\s+estoy\s+cubierto',
+            'obligaciones': r'(?i)cuáles\s+son\s+mis\s+obligaciones',
+            'pagos': r'(?i)cuándo\s+y\s+cómo\s+tengo\s+que\s+efectuar\s+los\s+pagos',
+            'vigencia': r'(?i)cuándo\s+comienza\s+y\s+finaliza\s+la\s+cobertura',
+            'rescindir': r'(?i)cómo\s+puedo\s+rescindir\s+el\s+contrato'
         }
         
         # Palabras comunes que no deben ser consideradas como entidades
@@ -240,7 +253,7 @@ class MetadataGenerator:
         Returns:
             Nombre de la aseguradora
         """
-        matches = self.find_pattern_matches(text, self.patterns['insurer'])
+        matches = self.find_pattern_matches(text, self.patterns['insurance_type'])
         return matches[0] if matches else "Desconocida"
 
     def extract_insurance_type(self, text: str) -> str:
@@ -253,8 +266,15 @@ class MetadataGenerator:
         Returns:
             Tipo de seguro
         """
-        matches = self.find_pattern_matches(text, self.patterns['insurance_type'])
-        return matches[0] if matches else "No especificado"
+        matches = re.findall(self.patterns['insurance_type'], text)
+        if matches:
+            insurance_type = matches[0].lower()
+            if 'auto' in insurance_type:
+                return 'Automóvil'
+            elif 'responsabilidad' in insurance_type:
+                return 'Responsabilidad Civil'
+            return insurance_type.capitalize()
+        return "No especificado"
 
     def extract_coverage_type(self, text: str) -> str:
         """
@@ -266,8 +286,19 @@ class MetadataGenerator:
         Returns:
             Tipo de cobertura
         """
-        matches = self.find_pattern_matches(text, self.patterns['coverage_type'])
-        return matches[0] if matches else "No especificado"
+        matches = re.findall(self.patterns['coverage_type'], text)
+        if matches:
+            coverage_type = matches[0].lower()
+            if 'todo riesgo' in coverage_type:
+                return 'Todo Riesgo'
+            elif 'básico con daños' in coverage_type:
+                return 'Básico con daños'
+            elif 'pérdida total' in coverage_type:
+                return 'Pérdida total'
+            elif 'todo riesgo con franquicia' in coverage_type:
+                return 'Todo riesgo con franquicia'
+            return coverage_type.capitalize()
+        return "No especificado"
 
     def extract_document_date(self, text: str) -> str:
         """
@@ -318,26 +349,25 @@ class MetadataGenerator:
         matches = self.find_pattern_matches(text, self.patterns['document_version'])
         return matches[0] if matches else "No especificada"
 
-    def extract_keywords(self, text: str, min_freq: int = 2) -> List[str]:
+    def extract_keywords(self, text: str) -> List[str]:
         """
         Extrae palabras clave del texto.
         
         Args:
             text: Texto del documento
-            min_freq: Frecuencia mínima para considerar una palabra como clave
             
         Returns:
             Lista de palabras clave
         """
         doc = self.nlp(text.lower())
-        word_freq = {}
+        keywords = []
         
         for token in doc:
-            if not token.is_stop and not token.is_punct and token.is_alpha:
-                word_freq[token.lemma_] = word_freq.get(token.lemma_, 0) + 1
+            if (not token.is_stop and not token.is_punct and token.is_alpha and
+                len(token.text) > 3):
+                keywords.append(token.lemma_)
         
-        keywords = [word for word, freq in word_freq.items() if freq >= min_freq]
-        return sorted(keywords)
+        return sorted(list(set(keywords)))
 
     def find_pattern_matches(self, text: str, pattern: str) -> List[str]:
         """
@@ -353,6 +383,61 @@ class MetadataGenerator:
         matches = re.finditer(pattern, text)
         return sorted(list(set(match.group() for match in matches)))
 
+    def extract_producto(self, text: str) -> str:
+        """
+        Extrae el producto del documento.
+        
+        Args:
+            text: Texto del documento
+            
+        Returns:
+            Producto extraído
+        """
+        pattern = self.patterns['producto']
+        matches = re.findall(pattern, text)
+        if matches:
+            return matches[0].strip()
+        return "No especificado"
+
+    def extract_chunks(self, text: str) -> Dict[str, str]:
+        """
+        Extrae las secciones específicas del documento según las instrucciones.
+        
+        Args:
+            text: Texto del documento
+            
+        Returns:
+            Dict con las secciones encontradas
+        """
+        chunks = {}
+        current_section = None
+        current_content = []
+        
+        # Dividir el texto en líneas
+        lines = text.split('\n')
+        
+        for line in lines:
+            # Verificar si la línea contiene el inicio de una nueva sección
+            for section_name, pattern in self.sections.items():
+                if re.search(pattern, line, re.IGNORECASE):
+                    # Si ya teníamos una sección, guardarla
+                    if current_section:
+                        chunks[current_section] = '\n'.join(current_content).strip()
+                    # Iniciar nueva sección
+                    current_section = section_name
+                    current_content = [line]
+                    break
+            else:
+                # Si no es inicio de sección, agregar a la sección actual
+                if current_section:
+                    current_content.append(line)
+        
+        # Guardar la última sección
+        if current_section:
+            chunks[current_section] = '\n'.join(current_content).strip()
+        
+        return chunks
+
     def generate_metadata(self, text_path: Path) -> Dict:
         """
         Genera metadatos para un documento según el esquema especificado.
@@ -365,60 +450,24 @@ class MetadataGenerator:
         """
         try:
             text = text_path.read_text(encoding='utf-8')
-            
-            # Extraer información del nombre del archivo
             filename = text_path.stem
-            parts = filename.split('-')
             
-            # Determinar tipo de seguro y cobertura basado en el nombre del archivo
-            insurance_type = None
-            coverage_type = None
-            
-            if 'ipid' in filename:
-                insurance_type = 'IPID'
-                if 'basico' in filename:
-                    coverage_type = 'Básico'
-                elif 'ampliado' in filename:
-                    coverage_type = 'Ampliado'
-                elif 'optimo' in filename:
-                    coverage_type = 'Óptimo'
-                elif 'extra' in filename:
-                    coverage_type = 'Extra'
-            elif 'auto-plus' in filename:
-                insurance_type = 'Auto'
-                if 'basico' in filename:
-                    coverage_type = 'Básico'
-                elif 'terceros' in filename:
-                    coverage_type = 'Terceros'
-                elif 'robo-incendio' in filename:
-                    coverage_type = 'Robo e Incendio'
-            elif 'camion' in filename or 'furgoneta' in filename or 'remolque' in filename:
-                insurance_type = 'Transporte'
-                if 'basico' in filename:
-                    coverage_type = 'Básico'
-                elif 'todo-riesgo' in filename:
-                    coverage_type = 'Todo Riesgo'
-                elif 'perdida-total' in filename:
-                    coverage_type = 'Pérdida Total'
+            # Extraer chunks del documento
+            chunks = self.extract_chunks(text)
             
             # Generar metadatos requeridos
             metadata = {
                 'filename': filename + '.pdf',
-                'title': self.extract_title(text),
-                'insurer': 'IPID',  # Por defecto IPID
-                'insurance_type': insurance_type or 'No especificado',
+                'producto': self.extract_producto(text),
+                'insurance_type': self.extract_insurance_type(text),
                 'file_path': str(text_path),
-                'language': 'es'  # Por defecto en español
+                'coverage_type': self.extract_coverage_type(text),
+                'num_pages': None,  # Se obtendrá del PDF original
+                'keywords': ';'.join(self.extract_keywords(text))
             }
             
-            # Generar metadatos recomendados
-            metadata.update({
-                'coverage_type': coverage_type or 'No especificado',
-                'document_date': self.extract_document_date(text),
-                'document_version': self.extract_document_version(text),
-                'num_pages': None,  # Requeriría análisis del PDF original
-                'keywords': ';'.join(self.extract_keywords(text))
-            })
+            # Agregar chunks como metadatos adicionales
+            metadata['chunks'] = chunks
             
             return metadata
             
@@ -441,24 +490,25 @@ class MetadataGenerator:
             return pd.DataFrame()
         
         for text_path in tqdm(text_files, desc="Generando metadatos"):
+            if text_path.stem + '.pdf' == "GLOSARIO DE TÉRMINOS DE SEGUROS.pdf":
+                logger.info(f"Ignorando archivo de glosario: {text_path.name}")
+                continue
+                
             metadata = self.generate_metadata(text_path)
             if metadata:
                 all_metadata.append(metadata)
         
-        # Crear DataFrame
         df_metadata = pd.DataFrame(all_metadata)
         
-        # Guardar metadatos en CSV y JSON
         if not df_metadata.empty:
-            # CSV para análisis
-            df_metadata.to_csv(self.metadata_dir / 'document_metadata.csv', index=False)
+            # Guardar metadatos en CSV
+            df_metadata.to_csv(self.metadata_dir / 'metadata.csv', index=False)
             
-            # JSON para mantener las estructuras de lista
-            metadata_json = df_metadata.to_dict(orient='records')
-            with open(self.metadata_dir / 'document_metadata.json', 'w', encoding='utf-8') as f:
-                json.dump(metadata_json, f, ensure_ascii=False, indent=2)
+            # Guardar chunks en JSON separado
+            chunks_data = {row['filename']: row['chunks'] for _, row in df_metadata.iterrows()}
+            with open(self.metadata_dir / 'chunks.json', 'w', encoding='utf-8') as f:
+                json.dump(chunks_data, f, ensure_ascii=False, indent=2)
             
-            # Resumen del proceso
             logger.info(f"Proceso completado: {len(df_metadata)} documentos procesados")
             
         return df_metadata
@@ -470,21 +520,11 @@ def main():
         metadata_df = generator.process_all_documents()
         
         if not metadata_df.empty:
-            # Mostrar resumen
             print("\nResumen de la generación de metadatos:")
             print(f"Total de documentos procesados: {len(metadata_df)}")
             print("\nEstadísticas de campos encontrados:")
-            print(f"Documentos con aseguradoras identificadas: {metadata_df['insurer'].notna().sum()}")
             print(f"Documentos con tipos de seguro identificados: {metadata_df['insurance_type'].notna().sum()}")
             print(f"Documentos con tipos de cobertura identificados: {metadata_df['coverage_type'].notna().sum()}")
-            print(f"Documentos con fechas encontradas: {metadata_df['document_date'].notna().sum()}")
-            
-            # Mostrar ejemplos de palabras clave más comunes
-            all_keywords = [kw for keywords in metadata_df['keywords'] for kw in keywords.split(';')]
-            if all_keywords:
-                keyword_freq = pd.Series(all_keywords).value_counts()
-                print("\nPalabras clave más frecuentes:")
-                print(keyword_freq.head())
     
     except Exception as e:
         logger.error(f"Error en la ejecución principal: {str(e)}")

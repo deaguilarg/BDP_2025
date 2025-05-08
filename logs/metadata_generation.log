@@ -5,3 +5,16 @@
 2025-05-05 17:35:27,151 - __main__ - INFO - Proceso completado: 51 documentos procesados
 2025-05-05 18:44:28,626 - __main__ - INFO - Proceso completado: 51 documentos procesados
 2025-05-05 18:45:12,631 - __main__ - INFO - Proceso completado: 51 documentos procesados
+2025-05-06 16:04:59,732 - __main__ - ERROR - Error en la ejecución principal: [Errno 13] Permission denied: 'data\\metadata\\document_metadata.csv'
+2025-05-06 16:05:20,008 - __main__ - ERROR - Error en la ejecución principal: [Errno 13] Permission denied: 'data\\metadata\\document_metadata.csv'
+2025-05-06 16:05:53,079 - __main__ - INFO - Proceso completado: 51 documentos procesados
+2025-05-06 16:08:16,460 - __main__ - INFO - Proceso completado: 51 documentos procesados
+2025-05-06 16:10:54,557 - __main__ - INFO - Proceso completado: 51 documentos procesados
+2025-05-06 16:38:53,448 - __main__ - INFO - Ignorando archivo de glosario: GLOSARIO DE TÉRMINOS DE SEGUROS.txt
+2025-05-06 16:38:57,007 - __main__ - INFO - Proceso completado: 51 documentos procesados
+2025-05-06 16:50:02,063 - __main__ - INFO - Ignorando archivo de glosario: GLOSARIO DE TÉRMINOS DE SEGUROS.txt
+2025-05-06 16:50:05,316 - __main__ - INFO - Proceso completado: 51 documentos procesados
+2025-05-06 17:47:39,340 - __main__ - INFO - Ignorando archivo de glosario: GLOSARIO DE TÉRMINOS DE SEGUROS.txt
+2025-05-06 17:47:43,181 - __main__ - INFO - Proceso completado: 51 documentos procesados
+2025-05-06 18:06:34,451 - __main__ - INFO - Ignorando archivo de glosario: GLOSARIO DE TÉRMINOS DE SEGUROS.txt
+2025-05-06 18:06:38,818 - __main__ - INFO - Proceso completado: 51 documentos procesados

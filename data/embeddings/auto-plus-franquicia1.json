@@ -1,0 +1,86 @@
+{
+  "filename": "auto-plus-franquicia1",
+  "num_chunks": 10,
+  "embedding_dim": 768,
+  "metadata": {
+    "filename": "auto-plus-franquicia1",
+    "producto": "Automóviles PLUS Todo riesgo con franquicia 1",
+    "insurance_type": "Automóvil",
+    "file_path": "data\\processed\\auto-plus-franquicia1.txt",
+    "coverage_type": "Todo Riesgo",
+    "num_pages": NaN,
+    "keywords": "accidente;acción;actual;adaptar;adelanto;aeropuerto;alcance;alcohol;allianz;aminorar;animal;antelación;anticipación;arinpro;asegurado;asegurador;aseguradora;asegurar;asesoramiento;asistencia;atentamente;automático;automóvil;autorización;bien;brevedad;carrera;carta;caso;causar;centrosdesignado;cinegético;circulación;circunstancia;ciudad;civil;cobertura;colisión;comenzar;comisión;compañía;complementario;completo;comprobar;comunicación;comunicar;concurso;condición;conducción;conducir;conductor;consecuencia;consistir;contenido;contractual;contratación;contratar;contratar él;contrato;convenio;cooperar;corporal;correctamente;correcto;correspondiente;coste;cristal;cualquiera;cubierto;cubrir;curso;custodia;dato;daño;deber;debidamente;defensa;delito;determinar;diario;dicho;dirección;disponible;documento;drogar;duración;económico;efecto;efectuar;elección;emisión;empezar;entidad;entrenamiento;error;escrito;espacio;españa;español;especial;estupefaciente;euro;europeo;euros;excelente;facilitar;fenómeno;finalizar;firmante;fondo;forma;formalización;formalizado;fracción;franquicia;función;físico;garantía;gasto;general;gibraltar;haber;impedir;incendio;indemnización;información;inmediatamente;inscritar;invalidez;jurídico;leer;libre;luna;marino;medio;mes;millón;modificación;momento;motivo;muerte;multa;máximo;mónaco;nacional;naturaleza;necesario;notificar él;número;obligación;obligatorio;ocurrencia;oficina;omisión;oponer;oportuno;pagar;pago;parcial;participación;particular;país;pedir;pensión;permanente;permiso;persona;plazo;plus;precontractual;prima;producir;producto;propietario;prorroga;prorrogar;psicotrópico;puerto;pérdida;póliza;realizar;reaseguro;reclamación;rectificación;recuperación;registro;regulación;relativo;remolcaje;renovación;repar;rescindir;respectar;responsabilidad;respuesta;resto;restricción;restringido;retirar;riesgo;robo;rotura;salvamento;sanitario;seguro;servicio;signatario;siniestro;situación;socorro;soler;sometido;subsidio;sucesivo;suma;sustancia;sustitución;taller;tipo;tomador;tráfico;técnico;término;valor;vaticano;vehículo;vence;vencimiento;veraz;verde;viaje;vigencia;vigor;voluntariamente;voluntario;zona"
+  },
+  "chunks": [
+    {
+      "text": "EN QUÉ CONSISTE ESTE TIPO DE SEGURO?\nEn el seguro de automóviles existe una garantía de contratación obligatoria, que cubre la responsabilidad del conductor del vehículo por los daños\nque cause a las personas o en los bienes con motivo de la circulación.\nTambién se pueden contratar otras garantías voluntariamente como la rotura de Lunas, el Robo del vehículo, los Daños del vehículo, etc., que son\ngarantías del seguro voluntario del automóvil. Otros seguros que también suelen contratarse junto al seguro del automóvil, son los de asistencia en\nviaje y el seguro de defensa jurídica.\n¿",
+      "section": "consiste",
+      "section_title": "EN QUÉ CONSISTE ESTE TIPO DE SEGURO",
+      "start_position": 465,
+      "end_position": 1053
+    },
+    {
+      "text": "QUÉ SE ASEGURA?\nResponsabilidad Civil Obligatoria.\nResponsabilidad Civil Complementaria.\nIndemnización de daños.\nReclamación de daños.\nAccidentes corporales del conductor.\n- Muerte: 100.000 euro.\n- Invalidez Física Permanente: 100.000 euros.\n- Gastos Sanitarios: 100 de los mismos, hasta 6.000 en\ncentrosdesignados por el Asegurado.\n28-09-2018 13:05:01 02012010228530 TF 22 CI 39 ARINPRO 0 9510278 T.E:000 VC:000 CAP:000 T.C:A\nAsistencia a personas y al vehículo.\nAsesoramiento por multas de tráfico.\nRotura de Cristales.\nRetirada permiso de conducir y pérdida de vigencia.\nVehículo de sustitución y servicios excelentes.\nRobo.\nIncendio.\nFenómenos de la Naturaleza.\nColisión con animales cinegéticos.\nDaños propios al vehículo CON franquicia.",
+      "section": "asegurado",
+      "section_title": "QUÉ SE ASEGURA",
+      "start_position": 1053,
+      "end_position": 1796
+    },
+    {
+      "text": "Sumas Aseguradas\nResponsabilidad Civil Obligatoria (Según ley).\nResponsabilidad Civil Complementaria (50 millones de euros).\nIndemnización de daños (100 valor vehículo).\nReclamación de daños (100 adelantos hasta 50.000 euros).\nDirección técnica y jurídica (100, si libre elección 1.500 euros).\nRetirada permiso de conducir y pérdida de vigencia (Subsidio\ndiario 50 euros y coste curso recuperación parcial hasta 500 y\ntotal hasta 1.000 euros).\nRobo, Incendio, Fenómenos de la Naturaleza y Colisión con\nanimales cinegéticos (100 valor vehículo).\nDaños propios al vehículo CON franquicia (100 valor vehículo).\n¿",
+      "section": "sumas",
+      "section_title": "Sumas Aseguradas",
+      "start_position": 1796,
+      "end_position": 2405
+    },
+    {
+      "text": "QUÉ NO ESTÁ ASEGURADO?\nConducción bajo los efectos del alcohol, drogas\nestupefacientes o sustancias psicotrópicas.\nParticipación en carreras, concursos y en sus\nentrenamientos.\nCirculación en zonas restringidas de los puertos y\naeropuertos.\nEl remolcaje del vehículo cuando se hayan realizado\nmodificaciones técnicas que lo impidan.\nLa conducción del vehículo sin el oportuno permiso o\nautorización del propietario salvo para:\n- Cualquier persona que pueda tener el vehículo en su\ncustodia en el caso de la RC Complementaria.\nComisión del delito de omisión de socorro.\n¿",
+      "section": "no_asegurado",
+      "section_title": "QUÉ NO ESTÁ ASEGURADO",
+      "start_position": 2405,
+      "end_position": 2975
+    },
+    {
+      "text": "EXISTEN RESTRICCIONES EN LO QUE RESPECTA A\nLA COBERTURA?\n! Las franquicias pueden ir de 200 a 700 euros en función del\nvehículo asegurado en póliza y de 160 a 560 euros en\nfunción del vehículo asegurado en póliza si se repara en\ntalleres de la Red Allianz.\n¿",
+      "section": "restricciones",
+      "section_title": "EXISTEN RESTRICCIONES EN LO QUE RESPECTA A\nLA COBERTURA",
+      "start_position": 2975,
+      "end_position": 3233
+    },
+    {
+      "text": "DÓNDE ESTOY CUBIERTO?\nEn España y en el resto de los países del Espacio Económico Europeo.\nEn Ciudad del Vaticano, Mónaco, San Marino y Gibraltar.\nAdemás, en los países firmantes del Convenio Complementario entre las oficinas Nacionales del 12 XII 1973 y países signatarios del\nConvenio Tipo Inter-Bureaux (Carta Verde).\n¿",
+      "section": "cobertura",
+      "section_title": "DÓNDE ESTOY CUBIERTO",
+      "start_position": 3233,
+      "end_position": 3555
+    },
+    {
+      "text": "CUÁLES SON MIS OBLIGACIONES?\nFacilitar los datos necesarios para la emisión de la póliza, éstos deberán ser actuales, correctos y veraces a fin de poder asegurar\ncorrectamente el riesgo.\nLeer y comprobar atentamente los términos y condiciones de la póliza y, en caso de errores, pedir en el plazo de un mes la rectificación de\nlos mismos.\nPagar las primas. Sólo si se ha pagado la prima, el contrato estará debidamente formalizado y en vigor y los siniestros que se produzcan a\npartir de ese momento tendrán cobertura.\nComunicar a la mayor brevedad cualquier modificación que se produzca en el contenido de las respuestas y adaptar la póliza a la nueva\nsituación mediante las acciones correspondientes.\nComunicar la ocurrencia del siniestro, sus circunstancias y consecuencias inmediatamente y, como máximo, en el plazo de 7 días. Además,\ndeberán poner todos los medios a su alcance para aminorar las consecuencias del mismo, cooperando al salvamento de personas y bienes.\n¿",
+      "section": "obligaciones",
+      "section_title": "CUÁLES SON MIS OBLIGACIONES",
+      "start_position": 3555,
+      "end_position": 4529
+    },
+    {
+      "text": "CUÁNDO Y CÓMO TENGO QUE EFECTUAR LOS PAGOS?\nEl pago se realizará mediante cualquiera de los medios de pago disponibles de la compañía el día de la formalización del contrato y del\nmismo modo en los sucesivos vencimientos y o fracciones de pago.\n¿",
+      "section": "pagos",
+      "section_title": "CUÁNDO Y CÓMO TENGO QUE EFECTUAR LOS PAGOS",
+      "start_position": 4529,
+      "end_position": 4775
+    },
+    {
+      "text": "CUÁNDO COMIENZA Y FINALIZA LA COBERTURA?\nLa cobertura empieza el día de la formalización del contrato. La duración del contrato se determina en las Condiciones Particulares de la\npóliza. Cada año, salvo casos especiales, la póliza vence y se prorroga de forma automática. Si el Tomador se opone a dicha prorroga\ndeberá notificárlo al Asegurador al menos un mes de anticipación al vencimiento. Si el Asegurador se opone a la renovación deberá\nnotificárlo al Tomador del seguro al menos con dos meses de antelación.\n¿",
+      "section": "vigencia",
+      "section_title": "CUÁNDO COMIENZA Y FINALIZA LA COBERTURA",
+      "start_position": 4775,
+      "end_position": 5290
+    },
+    {
+      "text": "CÓMO PUEDO RESCINDIR EL CONTRATO?\nMediante comunicación escrita a la Aseguradora, al menos, con un mes de anticipación al vencimiento.",
+      "section": "rescindir",
+      "section_title": "CÓMO PUEDO RESCINDIR EL CONTRATO",
+      "start_position": 5290,
+      "end_position": 5424
+    }
+  ]
+}

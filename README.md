@@ -1,73 +1,89 @@
-# Sistema RAG para Documentos de Seguros
+# Sistema RAG para Documentos de Seguros Allianz
 
-## Requisitos del Sistema
-- Python 3.9 o superior
-- Git (opcional)
-- 8GB de espacio libre
-- RAM: mínimo 8GB, ideal 16GB+
-- GPU NVIDIA GTX 1050 (4GB VRAM)
+Sistema de Retrieval-Augmented Generation (RAG) para responder preguntas sobre documentos de seguros de Allianz, utilizando embeddings, indexación FAISS y modelos de lenguaje.
+
+## Características
+
+- 🔍 Búsqueda semántica en documentos de seguros
+- 🤖 Generación de respuestas precisas en español
+- 📊 Interfaz web intuitiva con Streamlit
+- 📝 Sistema de logging y monitoreo
+- 🔄 Integración con OpenAI API
+
+## Requisitos
+
+- Python 3.9+
+- OpenAI API Key
 
 ## Instalación
 
-1. Clonar el repositorio (opcional):
+1. Clonar el repositorio:
 ```bash
-git clone https://github.com/tu-usuario/rag-seguros.git
-cd rag-seguros
+git clone https://github.com/tu-usuario/BDP_2025.git
+cd BDP_2025
 ```
 
-2. Ejecutar el script de configuración:
+2. Crear y activar entorno virtual:
 ```bash
-setup.bat
+python -m venv venv
+.\venv\Scripts\activate  # Windows
+source venv/bin/activate  # Linux/Mac
 ```
 
-3. Copiar y configurar variables de entorno:
+3. Instalar dependencias:
 ```bash
-copy .env.example .env
+pip install -r requirements.txt
 ```
-Edita el archivo `.env` con los valores apropiados para tu sistema.
+
+4. Configurar variables de entorno:
+Crear archivo `.env` en la raíz del proyecto:
+```
+OPENAI_API_KEY=tu-clave-api-aqui
+```
 
 ## Estructura del Proyecto
 
 ```
-rag-seguros/
-├── data/
-│   ├── raw/                  # PDFs de documentos de seguros originales
-│   ├── processed/            # Texto extraído de los PDFs
-│   └── metadata/             # Archivo de metadatos de los documentos
-├── models/                   # Directorio para almacenar modelos y embeddings
-│   └── faiss_index/          # Índice FAISS generado
-├── src/                      # Código fuente del proyecto
-├── app/                      # Aplicación Streamlit
-├── logs/                     # Logs del sistema
-├── visualizations/           # Visualizaciones generadas
-└── notebooks/                # Jupyter notebooks para experimentación
-```
-
-## Configuración de GPU
-
-El sistema está configurado para usar una GPU NVIDIA GTX 1050 con 4GB de VRAM. Las variables relevantes en el archivo `.env` son:
-
-```
-USE_GPU=true
-GPU_DEVICE=0
-MAX_GPU_MEMORY=4G
+insurance-rag/
+├── app/                    # Interfaz de usuario Streamlit
+├── data/                   # Documentos y metadatos
+├── models/                 # Modelos y embeddings
+├── src/                    # Código fuente
+│   ├── data/              # Procesamiento de datos
+│   ├── embeddings/        # Generación de embeddings
+│   ├── retrieval/         # Motor de búsqueda
+│   ├── generation/        # Generación de respuestas
+│   └── monitoring/        # Sistema de logging
+├── logs/                  # Registros del sistema
+└── visualizations/        # Gráficos y reportes
 ```
 
 ## Uso
 
-1. Coloca tus documentos PDF en el directorio `data/raw/`
-2. Ejecuta el script de extracción de texto:
+1. Iniciar la aplicación:
 ```bash
-python src/data/extract_text.py
-```
-3. Inicia la aplicación Streamlit:
-```bash
-streamlit run app/streamlit_app.py
+python -m streamlit run app/streamlit_app.py
 ```
 
-## Notas Importantes
+2. Acceder a la interfaz web en `http://localhost:8501`
 
-- El sistema está optimizado para documentos en español
-- Los tiempos de respuesta están configurados para ser menores a 30 segundos
-- El sistema de logging se implementará en fases
-- No hay requisitos específicos de seguridad en esta fase 
+3. Realizar consultas sobre documentos de seguros
+
+## Desarrollo
+
+- `src/`: Contiene el código fuente del sistema RAG
+- `app/`: Interfaz de usuario con Streamlit
+- `data/`: Documentos de seguros y metadatos
+- `models/`: Modelos y embeddings generados
+
+## Monitoreo
+
+El sistema incluye:
+- Logging detallado de consultas
+- Métricas de rendimiento
+- Visualizaciones de uso
+- Reportes de calidad
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más detalles. 

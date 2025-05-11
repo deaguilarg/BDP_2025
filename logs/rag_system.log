@@ -3331,3 +3331,493 @@ Metadata: {
   "num_results": 5,
   "filters": {}
 }
+2025-05-11 11:36:56,574 - RAGLogger - INFO - Índice FAISS cargado exitosamente
+Metadata: {
+  "index_file": "models\\faiss_index\\faiss_index_20250505_191103.bin",
+  "mapping_file": "models\\faiss_index\\id_mapping_20250505_191103.json",
+  "num_vectors": 102
+}
+2025-05-11 11:41:10,209 - RAGLogger - INFO - Índice FAISS cargado exitosamente
+Metadata: {
+  "index_file": "models\\faiss_index\\faiss_index_20250505_191103.bin",
+  "mapping_file": "models\\faiss_index\\id_mapping_20250505_191103.json",
+  "num_vectors": 102
+}
+2025-05-11 11:43:45,593 - RAGLogger - INFO - Índice FAISS cargado exitosamente
+Metadata: {
+  "index_file": "models\\faiss_index\\faiss_index_20250505_191103.bin",
+  "mapping_file": "models\\faiss_index\\id_mapping_20250505_191103.json",
+  "num_vectors": 102
+}
+2025-05-11 11:51:26,173 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:51:26,173 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:51:26,173 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:51:26,173 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:51:26,173 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:51:26,173 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:51:26,173 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:51:26,173 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:51:26,173 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:51:26,173 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:51:26,173 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:51:26,173 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:51:26,173 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:51:26,173 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:51:26,173 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:51:26,173 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:56:12,386 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:56:12,386 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:56:12,386 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:56:12,386 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:56:12,386 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:56:12,386 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:56:12,386 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:56:12,386 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:56:12,386 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:56:12,386 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:56:12,386 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:56:12,386 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:56:12,386 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:56:12,386 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:56:12,386 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:56:12,386 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:56:12,386 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:56:12,386 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Coberturas básicas de moto",
+  "num_results": 10,
+  "filters": {
+    "coverage_type": [
+      "Pérdida total"
+    ]
+  }
+}
+2025-05-11 11:56:46,890 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "coberturas de moto",
+  "num_results": 10,
+  "filters": null
+}
+2025-05-11 11:56:46,890 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "coberturas de moto",
+  "num_results": 10,
+  "filters": null
+}
+2025-05-11 11:56:46,890 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "coberturas de moto",
+  "num_results": 10,
+  "filters": null
+}
+2025-05-11 11:56:46,890 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "coberturas de moto",
+  "num_results": 10,
+  "filters": null
+}
+2025-05-11 11:56:46,890 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "coberturas de moto",
+  "num_results": 10,
+  "filters": null
+}
+2025-05-11 11:56:46,890 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "coberturas de moto",
+  "num_results": 10,
+  "filters": null
+}
+2025-05-11 11:56:46,890 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "coberturas de moto",
+  "num_results": 10,
+  "filters": null
+}
+2025-05-11 11:56:46,890 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "coberturas de moto",
+  "num_results": 10,
+  "filters": null
+}
+2025-05-11 11:56:46,890 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "coberturas de moto",
+  "num_results": 10,
+  "filters": null
+}
+2025-05-11 11:56:46,890 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "coberturas de moto",
+  "num_results": 10,
+  "filters": null
+}
+2025-05-11 11:56:46,890 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "coberturas de moto",
+  "num_results": 10,
+  "filters": null
+}
+2025-05-11 11:56:46,890 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "coberturas de moto",
+  "num_results": 10,
+  "filters": null
+}
+2025-05-11 11:56:46,890 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "coberturas de moto",
+  "num_results": 10,
+  "filters": null
+}
+2025-05-11 11:56:46,890 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "coberturas de moto",
+  "num_results": 10,
+  "filters": null
+}
+2025-05-11 11:56:46,890 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "coberturas de moto",
+  "num_results": 10,
+  "filters": null
+}
+2025-05-11 11:56:46,890 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "coberturas de moto",
+  "num_results": 10,
+  "filters": null
+}
+2025-05-11 11:56:46,890 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "coberturas de moto",
+  "num_results": 10,
+  "filters": null
+}
+2025-05-11 11:56:46,890 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "coberturas de moto",
+  "num_results": 10,
+  "filters": null
+}
+2025-05-11 11:56:46,890 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "coberturas de moto",
+  "num_results": 10,
+  "filters": null
+}
+2025-05-11 11:56:46,890 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "coberturas de moto",
+  "num_results": 10,
+  "filters": null
+}
+2025-05-11 11:56:46,890 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "coberturas de moto",
+  "num_results": 10,
+  "filters": null
+}
+2025-05-11 11:56:46,890 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "coberturas de moto",
+  "num_results": 10,
+  "filters": null
+}

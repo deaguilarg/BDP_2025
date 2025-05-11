@@ -17,6 +17,7 @@ load_dotenv()
 
 # Verificar la clave API
 api_key = os.getenv("OPENAI_API_KEY")
+api_key = "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"
 if not api_key:
     raise ValueError("No se encontró la variable de entorno OPENAI_API_KEY")
 if not api_key.startswith("sk-"):

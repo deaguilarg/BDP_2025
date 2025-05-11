@@ -97,26 +97,65 @@ def load_embeddings_data() -> Tuple[np.ndarray, List[Dict[str, Any]]]:
             # Cargar embeddings
             embeddings = np.load(npy_file)
             
+            # Verificar que embeddings sea un array numpy
+            if not isinstance(embeddings, np.ndarray):
+                st.warning(f"El archivo {npy_file.name} no contiene un array numpy válido")
+                continue
+                
+            # Asegurarnos de que embeddings tenga la forma correcta
+            if len(embeddings.shape) == 1:
+                embeddings = embeddings.reshape(1, -1)
+            
             # Cargar metadatos correspondientes
             metadata_file = npy_file.with_suffix('.json')
             if metadata_file.exists():
                 with open(metadata_file, 'r', encoding='utf-8') as f:
                     doc_metadata = json.load(f)
                 
-                # Obtener metadatos generales
-                filename = doc_metadata['filename']
-                general_metadata = metadata_dict.get(filename, {})
-                
-                # Combinar metadatos
-                combined_metadata = {**general_metadata, **doc_metadata['metadata']}
-                
-                # Agregar embeddings y metadatos
-                all_embeddings.extend(embeddings)
-                all_metadata.extend([{
-                    'filename': filename,
-                    'chunk': f"Chunk {i+1}",
-                    'metadata': combined_metadata
-                } for i in range(len(embeddings))])
+                # Manejar tanto listas como diccionarios en el JSON
+                if isinstance(doc_metadata, list):
+                    # Si es una lista, asumimos que cada elemento tiene su propio texto y metadatos
+                    for i, chunk_data in enumerate(doc_metadata):
+                        if i >= len(embeddings):
+                            break
+                            
+                        chunk_metadata = chunk_data.get('metadata', {})
+                        if not isinstance(chunk_metadata, dict):
+                            chunk_metadata = {}
+                            
+                        # Obtener metadatos generales
+                        filename = npy_file.stem
+                        general_metadata = metadata_dict.get(filename, {})
+                        
+                        # Combinar metadatos
+                        combined_metadata = {**general_metadata, **chunk_metadata}
+                        
+                        all_embeddings.append(embeddings[i])
+                        all_metadata.append({
+                            'filename': filename,
+                            'chunk': f"Chunk {i+1}",
+                            'metadata': combined_metadata
+                        })
+                elif isinstance(doc_metadata, dict):
+                    # Si es un diccionario, usamos el formato anterior
+                    filename = doc_metadata.get('filename', npy_file.stem)
+                    general_metadata = metadata_dict.get(filename, {})
+                    doc_metadata_dict = doc_metadata.get('metadata', {})
+                    if not isinstance(doc_metadata_dict, dict):
+                        doc_metadata_dict = {}
+                    
+                    combined_metadata = {**general_metadata, **doc_metadata_dict}
+                    
+                    for i in range(len(embeddings)):
+                        all_embeddings.append(embeddings[i])
+                        all_metadata.append({
+                            'filename': filename,
+                            'chunk': f"Chunk {i+1}",
+                            'metadata': combined_metadata
+                        })
+                else:
+                    st.warning(f"El archivo {metadata_file.name} no tiene un formato JSON válido")
+                    continue
                 
         except Exception as e:
             st.warning(f"Error cargando {npy_file.name}: {str(e)}")
@@ -183,6 +222,10 @@ def render_result_card(result: Dict[str, Any]) -> None:
     """
     Renderiza una tarjeta de resultado con información detallada.
     """
+    # Intentar obtener el texto del chunk
+    chunk_text = result.get('text', '')
+    if not chunk_text:
+        chunk_text = result.get('metadata', {}).get('text', '')
     with st.container():
         st.markdown(f"""
         <div class="result-card">
@@ -195,7 +238,7 @@ def render_result_card(result: Dict[str, Any]) -> None:
                           for k, v in result['metadata'].items() if v])}
             </div>
             <div class="chunk-viewer" style="margin: 1rem 0;">
-                {result.get('text', '')}
+                {chunk_text}
             </div>
         </div>
         """, unsafe_allow_html=True)
@@ -315,12 +358,25 @@ def main():
             col1, col2 = st.columns(2)
             
             filter_params = {}
-            for i, (key, values) in enumerate(set((k, v) for m in metadata for k, v in m['metadata'].items() if v)):
+            # Crear un conjunto de claves únicas de metadatos
+            unique_metadata_keys = sorted(set(
+                k for m in metadata 
+                for k in m['metadata'].keys() 
+                if m['metadata'].get(k) is not None
+            ))
+            
+            for i, key in enumerate(unique_metadata_keys):
                 with col1 if i % 2 == 0 else col2:
+                    # Obtener todos los valores únicos para esta clave
+                    unique_values = sorted(set(
+                        str(m['metadata'].get(key)) 
+                        for m in metadata 
+                        if m['metadata'].get(key) is not None
+                    ))
                     selected = st.multiselect(
                         f"Filtrar por {key}",
-                        options=sorted(set(str(v) for m in metadata if m['metadata'].get(key) == v)),
-                        key=f"filter_{key}"
+                        options=unique_values,
+                        key=f"filter_{key}_{i}"  # Hacemos la clave única añadiendo el índice
                     )
                     if selected:
                         filter_params[key] = selected

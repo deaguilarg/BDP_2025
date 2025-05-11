@@ -186,3 +186,12 @@ Metadata: {
   "num_results": 5,
   "filters": {}
 }
+2025-05-11 11:36:52,824 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-11 11:36:52,824 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-05-11 11:36:56,574 - RAGLogger - INFO - Índice FAISS cargado exitosamente
+Metadata: {
+  "index_file": "models\\faiss_index\\faiss_index_20250505_191103.bin",
+  "mapping_file": "models\\faiss_index\\id_mapping_20250505_191103.json",
+  "num_vectors": 102
+}
+2025-05-11 11:36:57,524 - __main__ - INFO - Metadatos cargados exitosamente. Campos encontrados: ['filename', 'producto', 'insurance_type', 'file_path', 'coverage_type', 'num_pages', 'keywords']

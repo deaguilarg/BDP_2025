@@ -18,23 +18,22 @@ Reclamación de daños.
 Accidentes corporales del conductor.
 - Muerte: 3.000 euros.
 - Invalidez Física Permanente: 9.000 euros.
-- Gastos Sanitarios: 100 de los mismos durante 2 años,
+- Gastos Sanitarios: 100% de los mismos durante 2 años,
 Máx. 3.000.
 Asistencia a personas y al vehículo.
 Asesoramiento por multas de tráfico.
 Retirada permiso de conducir y pérdida de vigencia.
 Suma Asegurada:
-01-10-2018 10:34:37 02012010123430 drpc 18 ALDEPRO 0 9510278
 Responsabilidad Civil Obligatoria (Según ley).
 Responsabilidad Civil Complementaria (50 millones de euros).
-Indemnización de daños (100 valor vehículo).
-Reclamación de daños (100 adelantos hasta 30.000 euros).
-Dirección técnica y jurídica (100, si libre elección 1.500 euros).
+Indemnización de daños (100% valor vehículo).
+Reclamación de daños (100% adelantos hasta 30.000 euros).
+Dirección técnica y jurídica (100%, si libre elección 1.500 euros).
 Retirada permiso de conducir y pérdida de vigencia: subsidio
-diario de 12 y coste curso recuperación parcial 250 y total
-hasta 500.
-Si contratación Robo, Incendio, Fenónemenos de la Naturaleza
-y o Daños propios (100 valor vehículo).
+diario de 12 euros y coste curso recuperación parcial 250 euros y total
+hasta 500 euros.
+Si contratación Robo, Incendio, Fenómenos de la Naturaleza
+y/o Daños propios (100% valor vehículo).
 ¿QUÉ NO ESTÁ ASEGURADO?
 Conducción bajo los efectos del alcohol, drogas,
 estupefacientes o sustancias psicotrópicas.
@@ -52,20 +51,20 @@ Riesgos del CCS (consorcio de compensación de seguros).
 Comisión del delito de omisión de socorro.
 ¿EXISTEN RESTRICCIONES EN LO QUE RESPECTA A
 LA COBERTURA?
-! Daños propios.
-! Robo, Incendio y Fenómenos de la Naturaleza.
-! Equipaje y efectos personales.
+Daños propios.
+Robo, Incendio y Fenómenos de la Naturaleza.
+Equipaje y efectos personales.
 ¿DÓNDE ESTOY CUBIERTO?
 En España y en el resto de los países del Espacio Económico Europeo.
 En Ciudad del Vaticano, Mónaco, San Marino y Gibraltar.
-Además, en los países firmantes del Convenio Complementario entre las oficinas Nacionales del 12 XII 1973 y países signatarios del
+Además, en los países firmantes del Convenio Complementario entre las oficinas Nacionales del 12/XII/1973 y países signatarios del
 Convenio Tipo Inter-Bureaux (Carta Verde).
 ¿CUÁLES SON MIS OBLIGACIONES?
-Facilitar los datos necesarios para la emisión de la póliza, éstos deberán ser actuales, correctos y veraces a fin de poder asegurar
+Facilitar los datos necesarios para la emisión de la póliza, estos deberán ser actuales, correctos y veraces a fin de poder asegurar
 correctamente el riesgo.
 Leer y comprobar atentamente los términos y condiciones de la póliza y, en caso de errores, pedir en el plazo de un mes la rectificación de
 los mismos.
-Pagar las primas. Sólo si se ha pagado la prima, el contrato estará debidamente formalizado y en vigor y los siniestros que se produzcan a
+Pagar las primas. Solo si se ha pagado la prima, el contrato estará debidamente formalizado y en vigor y los siniestros que se produzcan a
 partir de ese momento tendrán cobertura.
 Comunicar a la mayor brevedad cualquier modificación que se produzca en el contenido de las respuestas y adaptar la póliza a la nueva
 situación mediante las acciones correspondientes.
@@ -73,11 +72,11 @@ Comunicar la ocurrencia del siniestro, sus circunstancias y consecuencias inmedi
 deberán poner todos los medios a su alcance para aminorar las consecuencias del mismo, cooperando al salvamento de personas y bienes.
 ¿CUÁNDO Y CÓMO TENGO QUE EFECTUAR LOS PAGOS?
 El pago se realizará mediante cualquiera de los medios de pago disponibles de la compañía el día de la formalización del contrato y del
-mismo modo en los sucesivos vencimientos y o fracciones de pago.
+mismo modo en los sucesivos vencimientos y/o fracciones de pago.
 ¿CUÁNDO COMIENZA Y FINALIZA LA COBERTURA?
 La cobertura empieza el día de la formalización del contrato. La duración del contrato se determina en las Condiciones Particulares de la
-póliza. Cada año, salvo casos especiales, la póliza vence y se prorroga de forma automática. Si el Tomador se opone a dicha prorroga
-deberá notificárlo al Asegurador al menos un mes de anticipación al vencimiento. Si el Asegurador se opone a la renovación deberá
-notificárlo al Tomador del seguro al menos con dos meses de antelación.
+póliza. Cada año, salvo casos especiales, la póliza vence y se prorroga de forma automática. Si el Tomador se opone a dicha prórroga
+deberá notificarlo al Asegurador al menos con un mes de anticipación al vencimiento. Si el Asegurador se opone a la renovación deberá
+notificarlo al Tomador del seguro al menos con dos meses de antelación.
 ¿CÓMO PUEDO RESCINDIR EL CONTRATO?
 Mediante comunicación escrita a la Aseguradora, al menos, con un mes de anticipación al vencimiento.

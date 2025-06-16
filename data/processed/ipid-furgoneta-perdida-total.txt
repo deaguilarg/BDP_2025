@@ -18,9 +18,8 @@ Reclamación de daños.
 Accidentes corporales del conductor.
 - Muerte: 50.000 euros.
 - Invalidez Física Permanente: Según Baremo. Hasta
-31-01-2020 10:29:52 0201201015631 TF 22 CI 39 PA 035360 5620095 T.E:000 VC:000 CAP:010 T.C:A
 100.000 euros.
-- Gastos Sanitarios: 100 de los mismos, hasta 6.000 euros.
+- Gastos Sanitarios: 100% de los mismos, hasta 6.000 euros.
 Asistencia a personas y al vehículo.
 Asesoramiento por multas de tráfico.
 Rotura de Cristales.
@@ -34,19 +33,19 @@ Sumas Aseguradas
 Responsabilidad Civil Obligatoria (Según ley).
 Responsabilidad Civil Complementaria (hasta 50 millones de
 euros).
-Indemnización de daños (100 valor vehículo y sus accesorios).
-Reclamación de daños (100 adelantos hasta 30.000 euros).
-Dirección técnica y jurídica (100, si libre elección 1.500 euros).
+Indemnización de daños (100% valor vehículo y sus accesorios).
+Reclamación de daños (100% adelantos hasta 30.000 euros).
+Dirección técnica y jurídica (100%, si libre elección 1.500 euros).
 Asistencia tanto a vehículos como a personas.
 Hasta 1.500 euros para la carga.
 Retirada permiso de conducir y pérdida de vigencia (Subsidio
-diario 30 como máximo de 12 meses, coste recuperación
+diario 30 euros como máximo de 12 meses, coste recuperación
 parcial hasta 250 euros y total hasta 500 euros).
-Asesoramiento por multas de tráfico (100 servicios prestados).
-Rotura de Cristales (100 del valor de reparación, reposición o
+Asesoramiento por multas de tráfico (100% servicios prestados).
+Rotura de Cristales (100% del valor de reparación, reposición o
 indemnización de los cristales).
-Responsabilidad civil de la Carga.(hasta 300.000 euros).
-Robo, Incendio y Fenómenos de la naturaleza.(100 del valor
+Responsabilidad civil de la Carga (hasta 300.000 euros).
+Robo, Incendio y Fenómenos de la naturaleza (100% del valor
 indemnizable que sufra el vehículo y sus accesorios o su
 reposición).
 ¿QUÉ NO ESTÁ ASEGURADO?
@@ -68,18 +67,18 @@ Riesgos del CCS (consorcio de compensación de seguros).
 Delito de omisión del deber de socorro.
 ¿EXISTEN RESTRICCIONES EN LO QUE RESPECTA A
 LA COBERTURA?
-! Daños propios al vehículo.
+Daños propios al vehículo.
 ¿DÓNDE ESTOY CUBIERTO?
 En España y en el resto de los países del Espacio Económico Europeo.
 En Ciudad del Vaticano, Mónaco, San Marino y Gibraltar.
-Además, en los países firmantes del Convenio Complementario entre las oficinas Nacionales del 12 XII 1973 y países signatarios del
+Además, en los países firmantes del Convenio Complementario entre las oficinas Nacionales del 12/XII/1973 y países signatarios del
 Convenio Tipo Inter-Bureaux (Carta Verde).
 ¿CUÁLES SON MIS OBLIGACIONES?
-Facilitar los datos necesarios para la emisión de la póliza, éstos deberán ser actuales, correctos y veraces a fin de poder asegurar
+Facilitar los datos necesarios para la emisión de la póliza, estos deberán ser actuales, correctos y veraces a fin de poder asegurar
 correctamente el riesgo.
 Leer y comprobar atentamente los términos y condiciones de la póliza y, en caso de errores, pedir en el plazo de un mes la rectificación de
 los mismos.
-Pagar las primas. Sólo si se ha pagado la prima, el contrato estará debidamente formalizado y en vigor y los siniestros que se produzcan a
+Pagar las primas. Solo si se ha pagado la prima, el contrato estará debidamente formalizado y en vigor y los siniestros que se produzcan a
 partir de ese momento tendrán cobertura.
 Comunicar a la mayor brevedad cualquier modificación que se produzca en el contenido de las respuestas y adaptar la póliza a la nueva
 situación mediante las acciones correspondientes.
@@ -87,7 +86,7 @@ Comunicar la ocurrencia del siniestro, sus circunstancias y consecuencias inmedi
 deberán poner todos los medios a su alcance para aminorar las consecuencias del mismo, cooperando al salvamento de personas y bienes.
 ¿CUÁNDO Y CÓMO TENGO QUE EFECTUAR LOS PAGOS?
 El pago se realizará mediante cualquiera de los medios de pago disponibles de la compañía el día de la formalización del contrato y del
-mismo modo en los sucesivos vencimientos y o fracciones de pago.
+mismo modo en los sucesivos vencimientos y/o fracciones de pago.
 ¿CUÁNDO COMIENZA Y FINALIZA LA COBERTURA?
 La cobertura empieza el día de la formalización del contrato. La duración del contrato se determina en las Condiciones Particulares de la
 póliza. Cada año, salvo casos especiales, la póliza vence y se prorroga de forma automática. Si el Tomador se opone a dicha prórroga

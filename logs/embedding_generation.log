@@ -1,3 +1,0 @@
-2025-05-05 17:54:28,984 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
-2025-05-05 17:54:34,039 - __main__ - ERROR - Error en la ejecución principal: No se encontró el archivo de metadatos
-2025-05-05 17:55:46,491 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2

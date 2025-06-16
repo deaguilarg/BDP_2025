@@ -195,3 +195,59 @@ Metadata: {
   "num_vectors": 102
 }
 2025-05-11 11:36:57,524 - __main__ - INFO - Metadatos cargados exitosamente. Campos encontrados: ['filename', 'producto', 'insurance_type', 'file_path', 'coverage_type', 'num_pages', 'keywords']
+2025-06-16 15:45:55,809 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-06-16 15:45:55,809 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-06-16 15:46:02,209 - RAGLogger - INFO - Índice FAISS cargado exitosamente
+Metadata: {
+  "index_file": "models\\faiss_index\\faiss_index_20250505_191103.bin",
+  "mapping_file": "models\\faiss_index\\id_mapping_20250505_191103.json",
+  "num_vectors": 102
+}
+2025-06-16 15:46:03,293 - __main__ - INFO - Metadatos cargados exitosamente. Campos encontrados: ['filename', 'producto', 'insurance_type', 'file_path', 'coverage_type', 'num_pages', 'keywords']
+2025-06-16 15:46:56,747 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Qué diferencia tienen los seguros de auto???",
+  "num_results": 5,
+  "filters": null
+}
+2025-06-16 15:47:02,563 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 15:47:02,580 - RAGLogger - INFO - Consulta registrada
+Metadata: {
+  "query_file": "logs\\user_queries\\query_20250616_154702.json",
+  "query_length": 44,
+  "response_length": 770
+}
+2025-06-16 15:47:03,514 - RAGLogger - INFO - Consulta procesada
+Metadata: {
+  "query": "Qué diferencia tienen los seguros de auto???",
+  "num_results": 5,
+  "filters": {}
+}
+2025-06-16 15:53:54,473 - RAGLogger - INFO - Búsqueda completada
+Metadata: {
+  "query": "Qué puedo hacer con esta herramienta?",
+  "num_results": 5,
+  "filters": null
+}
+2025-06-16 15:53:56,538 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 15:53:56,538 - RAGLogger - INFO - Consulta registrada
+Metadata: {
+  "query_file": "logs\\user_queries\\query_20250616_155356.json",
+  "query_length": 37,
+  "response_length": 714
+}
+2025-06-16 15:53:56,615 - RAGLogger - INFO - Consulta procesada
+Metadata: {
+  "query": "Qué puedo hacer con esta herramienta?",
+  "num_results": 5,
+  "filters": {}
+}
+2025-06-16 15:54:43,379 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-06-16 15:54:43,379 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-06-16 15:54:46,422 - RAGLogger - INFO - Índice FAISS cargado exitosamente
+Metadata: {
+  "index_file": "models\\faiss_index\\faiss_index_20250505_191103.bin",
+  "mapping_file": "models\\faiss_index\\id_mapping_20250505_191103.json",
+  "num_vectors": 102
+}
+2025-06-16 15:54:47,022 - __main__ - INFO - Metadatos cargados exitosamente. Campos encontrados: ['filename', 'producto', 'insurance_type', 'file_path', 'coverage_type', 'num_pages', 'keywords']

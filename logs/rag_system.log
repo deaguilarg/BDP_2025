@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2025-06-16 15:46:02,209 - RAGLogger - INFO - Índice FAISS cargado exitosamente
 Metadata: {
   "index_file": "models\\faiss_index\\faiss_index_20250505_191103.bin",
@@ -244,3 +245,5 @@ Metadata: {
   "mapping_file": "models\\faiss_index\\id_mapping_20250505_191103.json",
   "num_vectors": 102
 }
+=======
+>>>>>>> 8802924c9ce1789030e7e4711a26c37cd10fbaac

@@ -17,11 +17,14 @@ load_dotenv()
 
 # Verificar la clave API
 api_key = os.getenv("OPENAI_API_KEY")
-api_key = ""
 if not api_key:
-    raise ValueError("No se encontró la variable de entorno OPENAI_API_KEY")
+    st.error("❌ No se encontró la variable de entorno OPENAI_API_KEY")
+    st.info("💡 Crea un archivo .env en la raíz del proyecto con: OPENAI_API_KEY=tu-clave-aqui")
+    st.stop()
+
 if not api_key.startswith("sk-"):
-    raise ValueError("La clave API no tiene el formato correcto. Debe comenzar con 'sk-'")
+    st.error("❌ La clave API no tiene el formato correcto. Debe comenzar con 'sk-'")
+    st.stop()
 
 from src.retrieval.search_engine import SearchEngine
 from src.generation.answer_generator import AnswerGenerator

@@ -25,7 +25,6 @@ if not api_key.startswith("sk-"):
 
 from src.retrieval.search_engine import SearchEngine
 from src.generation.answer_generator import AnswerGenerator
-from src.monitoring.logger import RAGLogger
 
 # Configuración del logging
 logging.basicConfig(
@@ -211,7 +210,6 @@ def main():
         return
         
     metadata_options = load_metadata_options()
-    logger = RAGLogger()
     
     if not metadata_options:
         st.error("""
@@ -259,8 +257,12 @@ def main():
                     # Realizar búsqueda
                     results = searcher.search(
                         query=query,
-                        filters=filter_params if filter_params else None
+                        top_k=num_results * 2  # Buscar más para filtrado
                     )
+                    
+                    # Aplicar filtros si se especificaron
+                    if filter_params:
+                        results = searcher.filter_by_metadata(results, filter_params)
                     
                     if results:
                         # Generar respuesta
@@ -305,20 +307,11 @@ def main():
                         st.warning("No se encontraron documentos relevantes para tu consulta.")
                     
                     # Registrar búsqueda
-                    logger.info(
-                        "Consulta procesada",
-                        query=query,
-                        num_results=len(results),
-                        filters=filter_params
-                    )
+                    logger.info(f"Consulta procesada: '{query}', Resultados: {len(results)}, Filtros: {filter_params}")
                     
             except Exception as e:
                 st.error(f"Error al procesar la consulta: {str(e)}")
-                logger.error(
-                    "Error en la interfaz",
-                    error=str(e),
-                    query=query
-                )
+                logger.error(f"Error en la interfaz: {str(e)}, Query: {query}")
         else:
             st.warning("Por favor, ingresa una consulta para obtener una recomendación.")
     

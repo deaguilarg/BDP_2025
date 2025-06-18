@@ -1,0 +1,65 @@
+🛡️ ASISTENTE DE SEGUROS ALLIANZ - INSTRUCCIONES RÁPIDAS
+
+================================================================================
+INSTALACIÓN EN 3 PASOS:
+================================================================================
+
+1. INSTALAR PYTHON:
+   - Ve a: https://python.org/downloads/
+   - Descarga Python 3.9 o superior
+   - ⚠️ IMPORTANTE: Durante la instalación, marca "Add Python to PATH"
+
+2. INSTALAR EL ASISTENTE:
+   - Haz doble clic en: instalar.bat
+   - Espera a que termine (puede tomar 5-10 minutos)
+
+3. CONFIGURAR API:
+   - Obtén tu clave API de OpenAI (pide ayuda a TI)
+   - Crea un archivo llamado ".env" 
+   - Dentro del archivo escribe: OPENAI_API_KEY=tu-clave-aqui
+
+================================================================================
+USO DIARIO:
+================================================================================
+
+1. Haz doble clic en: iniciar.bat
+2. Se abrirá tu navegador web automáticamente
+3. ¡Haz preguntas sobre seguros!
+
+Ejemplos de preguntas:
+- "¿Qué cubre el seguro de moto en caso de robo?"
+- "¿Cuáles son las exclusiones del seguro de hogar?"
+- "¿Cuánto cuesta el seguro básico para furgonetas?"
+
+================================================================================
+SOLUCIÓN DE PROBLEMAS:
+================================================================================
+
+❌ "No se encuentra Python"
+   → Reinstala Python y marca "Add to PATH"
+   → Reinicia tu computadora
+
+❌ "API Key no válida"
+   → Verifica el archivo .env
+   → Contacta a TI para una nueva clave
+
+❌ "Puerto ocupado"
+   → El sistema buscará otro puerto automáticamente
+   → Si persiste, reinicia tu computadora
+
+❌ Cualquier otro error
+   → Contacta al equipo técnico
+   → Incluye el mensaje de error exacto
+
+================================================================================
+CONTACTO:
+================================================================================
+
+Para soporte técnico:
+- Incluye siempre el mensaje de error completo
+- Indica qué estabas haciendo cuando ocurrió el error
+- Menciona si es la primera vez que usas el sistema
+
+================================================================================
+
+¡Listo! Ya puedes usar el Asistente de Seguros Allianz 🚀 

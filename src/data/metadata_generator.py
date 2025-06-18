@@ -457,7 +457,7 @@ class MetadataGenerator:
             
             # Generar metadatos requeridos
             metadata = {
-                'filename': filename + '.pdf',
+                'filename': filename + '.txt',
                 'producto': self.extract_producto(text),
                 'insurance_type': self.extract_insurance_type(text),
                 'file_path': str(text_path),
@@ -490,10 +490,6 @@ class MetadataGenerator:
             return pd.DataFrame()
         
         for text_path in tqdm(text_files, desc="Generando metadatos"):
-            if text_path.stem + '.pdf' == "GLOSARIO DE TÉRMINOS DE SEGUROS.pdf":
-                logger.info(f"Ignorando archivo de glosario: {text_path.name}")
-                continue
-                
             metadata = self.generate_metadata(text_path)
             if metadata:
                 all_metadata.append(metadata)

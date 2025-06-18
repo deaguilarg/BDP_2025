@@ -16,7 +16,6 @@ from tqdm import tqdm
 import re
 import unicodedata
 
-from src.monitoring.logger import RAGLogger
 from src.monitoring.performance import PerformanceMonitor
 
 # Configuración del logging
@@ -98,16 +97,11 @@ class DocumentEmbedder:
         self.chunk_overlap = chunk_overlap
         
         # Inicializar logger y monitor
-        self.logger = RAGLogger()
+        self.logger = logging.getLogger("DocumentEmbedder")
+        self.logger.setLevel(logging.INFO)
         self.performance_monitor = PerformanceMonitor()
         
-        self.logger.info(
-            "Inicializado DocumentEmbedder",
-            model=model_name,
-            device=self.device,
-            chunk_size=chunk_size,
-            chunk_overlap=chunk_overlap
-        )
+        self.logger.info(f"Inicializado DocumentEmbedder - Model: {model_name}, Device: {self.device}, Chunk size: {chunk_size}")
     
     def validate_metadata(self, metadata: Dict[str, Any], filename: str) -> Dict[str, Any]:
         """
@@ -127,10 +121,7 @@ class DocumentEmbedder:
         ]
         
         if missing_fields:
-            self.logger.warning(
-                f"Campos requeridos faltantes para {filename}",
-                missing_fields=missing_fields
-            )
+            self.logger.warning(f"Campos requeridos faltantes para {filename}: {missing_fields}")
             
             # Manejar campos faltantes
             for field in missing_fields:
@@ -225,11 +216,7 @@ class DocumentEmbedder:
             metadata = row.to_dict()
             metadata_dict[filename] = metadata
             
-        self.logger.info(
-            "Metadatos cargados exitosamente",
-            total_documents=len(metadata_dict),
-            columns=list(metadata_df.columns)
-        )
+        self.logger.info(f"Metadatos cargados exitosamente - Total documentos: {len(metadata_dict)}, Columnas: {list(metadata_df.columns)}")
         
         # Procesar cada archivo de texto
         documents = []
@@ -237,29 +224,24 @@ class DocumentEmbedder:
         
         for txt_file in data_path.glob("*.txt"):
             # Obtener el nombre base sin extensión
-            base_name = txt_file.stem + '.pdf'
+            txt_base_name = txt_file.stem + '.txt'
             
             # Normalizar el nombre del archivo
-            normalized_base_name = self.normalize_filename(base_name)
+            normalized_txt_name = self.normalize_filename(txt_base_name)
             
-            # Ignorar el archivo del glosario
-            if base_name == "GLOSARIO DE TÉRMINOS DE SEGUROS.pdf":
-                self.logger.info(f"Ignorando archivo de glosario: {txt_file.name}")
-                continue
+
                 
             # Buscar metadatos normalizando el nombre del archivo
             metadata = None
             for filename, meta in metadata_dict.items():
-                if self.normalize_filename(filename) == normalized_base_name:
+                if self.normalize_filename(filename) == normalized_txt_name:
                     metadata = meta.copy()
                     # Usar solo el nombre base sin extensión
                     metadata['filename'] = Path(metadata['filename']).stem
                     break
             
             if not metadata:
-                self.logger.warning(
-                    f"No se encontraron metadatos para {base_name}"
-                )
+                self.logger.warning(f"No se encontraron metadatos para {txt_base_name}")
                 continue
                 
             # Leer contenido del archivo
@@ -267,10 +249,7 @@ class DocumentEmbedder:
                 with open(txt_file, 'r', encoding='utf-8') as f:
                     content = f.read()
             except Exception as e:
-                self.logger.error(
-                    f"Error leyendo archivo {txt_file}",
-                    error=str(e)
-                )
+                self.logger.error(f"Error leyendo archivo {txt_file}: {str(e)}")
                 continue
                 
             # Crear documento con contenido y metadatos
@@ -411,13 +390,9 @@ class DocumentEmbedder:
                         "embedding_dim": embeddings.shape[1],
                         "sections": [chunk['section'] for chunk in chunks]
                     })
-            
-        except Exception as e:
-            self.logger.error(
-                        "Error procesando documento",
-                        filename=doc['metadata'].get('filename', 'desconocido'),
-                error=str(e)
-            )
+                    
+                except Exception as e:
+                    self.logger.error(f"Error procesando documento {doc['metadata'].get('filename', 'desconocido')}: {str(e)}")
                     continue
                 
             # Guardar archivo processed_documents.json
@@ -426,18 +401,12 @@ class DocumentEmbedder:
                 output_dir.mkdir(parents=True, exist_ok=True)
                 
                 with open(output_dir / "processed_documents.json", 'w', encoding='utf-8') as f:
-                json.dump(processed_documents, f, ensure_ascii=False, indent=2)
+                    json.dump(processed_documents, f, ensure_ascii=False, indent=2)
             
-            self.logger.info(
-                    "Archivo processed_documents.json generado exitosamente",
-                total_documents=len(processed_documents)
-            )
+                self.logger.info(f"Archivo processed_documents.json generado exitosamente - Total documentos: {len(processed_documents)}")
             
         except Exception as e:
-            self.logger.error(
-                "Error procesando documentos",
-                error=str(e)
-            )
+            self.logger.error(f"Error procesando documentos: {str(e)}")
             raise
 
 def main():

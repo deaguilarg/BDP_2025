@@ -5,12 +5,12 @@ Generación de respuestas usando el modelo de OpenAI.
 import json
 import time
 import os
+import logging
 from pathlib import Path
 from typing import Dict, List, Optional
 import openai
 from openai import OpenAI
 
-from src.monitoring.logger import RAGLogger
 from src.monitoring.performance import PerformanceMonitor
 
 class AnswerGenerator:
@@ -40,8 +40,11 @@ class AnswerGenerator:
         self.max_length = max_length
         self.temperature = temperature
         
-        # Inicializar logger y monitor
-        self.logger = RAGLogger()
+        # Configurar logging simple
+        self.logger = logging.getLogger("AnswerGenerator")
+        self.logger.setLevel(logging.INFO)
+        
+        # Inicializar monitor de rendimiento
         self.performance_monitor = PerformanceMonitor()
     
     def _format_context(self, context_docs: List[Dict]) -> str:
@@ -100,6 +103,7 @@ Pregunta: {query}"""
         
         return prompt
     
+    @PerformanceMonitor.function_timer("answer_generation")
     def generate_answer(
         self,
         query: str,
@@ -143,54 +147,24 @@ Pregunta: {query}"""
             # Calcular tiempo de ejecución
             execution_time = time.time() - start_time
             
-            # Registrar métricas
-            self.performance_monitor.log_metrics({
-                "operation": "answer_generation",
-                "execution_time": execution_time,
-                "success": True
-            })
-            
             # Extraer respuesta
             answer = response.choices[0].message.content.strip()
             
-            # Registrar la generación con información detallada de los chunks
-            self.logger.log_query(
-                query=query,
-                response=answer,
-                metadata={
-                    "retrieved_docs": [
-                        {
-                            "text": doc.get("text", ""),
-                            "metadata": doc.get("metadata", {}),
-                            "relevance_score": doc.get("score", 0.0)
-                        }
-                        for doc in context_docs
-                    ],
-                    "response_time": execution_time,
-                    "num_chunks_used": len(context_docs),
-                    "chunks_details": [
-                        {
-                            "chunk_id": i,
-                            "producto": doc.get("metadata", {}).get("producto", "No especificado"),
-                            "insurance_type": doc.get("metadata", {}).get("insurance_type", "No especificado"),
-                            "coverage_type": doc.get("metadata", {}).get("coverage_type", "No especificado")
-                        }
-                        for i, doc in enumerate(context_docs, 1)
-                    ]
-                }
+            # Log simple y seguro
+            self.logger.info(
+                f"Respuesta generada para consulta: '{query}' | "
+                f"Tiempo: {execution_time:.3f}s | "
+                f"Documentos: {len(context_docs)} | "
+                f"Longitud respuesta: {len(answer)} chars"
             )
             
             return answer
             
         except Exception as e:
-            # Registrar error usando el método info con nivel de error
-            self.logger.info(
-                f"Error en answer_generator: {str(e)}",
-                error=True,
-                component="answer_generator",
-                context={"query": query, "num_context_docs": len(context_docs)}
-            )
-            raise
+            # Log de error simple
+            error_msg = f"Error en answer_generator: {str(e)}"
+            self.logger.error(error_msg)
+            raise Exception(error_msg)
     
     def save_conversation(
         self,

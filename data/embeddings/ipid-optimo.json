@@ -9,7 +9,7 @@
     "file_path": "data\\processed\\ipid-optimo.txt",
     "coverage_type": "No especificado",
     "num_pages": NaN,
-    "keywords": "absoluto;accidente;acción;actividad;acto;actuación;actual;adaptar;aeronave;aeronáutico;aerostación;ajena;alcance;allianz;alpinismo;aminorar;angina;antelación;anterioridad;anticipación;anualidad;anulado;aportar;armadas;asegurado;asegurador;aseguradora;asegurar;atentamente;automovilismo;automáticamente;año;barranquismo;bien;brevedad;capital;característica;caso;causa;cerebral;cero;circulación;circunstancia;cobertura;cobrar;comenzar;compañía;competición;completo;comprobar;comunicación;comunicar;condición;consecuencia;consistir;contaminación;contenido;contractual;contratación;contratado;contrato;cooperar;corporal;correctamente;correcto;correspondiente;cualquiera;cubierto;cubrir;cuerpo;cumplimentado;cumplir;cuyo;dato;deber;debidamente;decidir;declaración;definido;delto;deporte;derecho;derivado;derivar;derrame;descrita;desistimiento;dicho;dirección;disponible;distancia;documento;doloroso;droga;duración;económico;efecto;efectuar;elevado;embriagado;emisión;enfermedad;entidad;entrada;epidemia;error;escalado;escrito;espacio;español;especial;espeleología;esquí;estricto;estupefaciente;europeo;euros;externo;facilitar;fallecimiento;fenómeno;fijar;finalización;finalizar;firma;fondo;formalización;formalizado;fracción;fuerza;físico;garantía;general;hora;infarto;información;inicio;inmediatamente;inscritar;integridad;intencionado;intencionalidad;invalidez;leer;lesión;medio;mes;miocardio;modificación;momento;motonáutico;motor;motorismo;muerte;mundo;máximo;naturaleza;necesario;notificar él;notoriamente;número;obligación;ocasionado;ocurrencia;ocurrido;oponer;origen;pagar;pago;paracaidismo;pasajero;país;pecho;pedir;peligorsidad;pensión;permanente;persona;período;pista;plazo;precontractual;preexistencia;preguntado;prescrito;prima;producir;producto;prorroga;prorrogar;práctica;puenting;póliza;público;quedar;radioactivo;rafting;realizar;reaseguro;recreativo;rectificación;registro;regulación;relativo;renovación;rescindir;respectar;respuesta;resto;restricción;riesgo;salud;salvamento;seguridad;seguro;similar;siniestro;situación;sometido;sucesivo;suma;súbita;temporal;terrorismo;tipo;tomador;toreo;transporte;término;tóxico;veinticuatro;vence;vencimiento;veraz;verazmente;vida;vigor;violento;voluntariamente;vuelo;óptimo"
+    "keywords": "absoluto;accidente;acción;actividad;acto;actuación;actual;adaptar;aeronave;aeronáutico;aerostación;ajena;alcance;allianz;alpinismo;aminorar;angina;antelación;anterioridad;anticipación;anualidad;anulado;aportar;armadas;asegurado;asegurador;aseguradora;asegurar;atentamente;automovilismo;automáticamente;año;barranquismo;bien;brevedad;capital;característica;caso;causa;cerebral;cero;circulación;circunstancia;cobertura;cobrar;comenzar;compañía;competición;completo;comprobar;comunicación;comunicar;condición;consecuencia;consistir;contaminación;contenido;contractual;contratación;contratado;contrato;cooperar;corporal;correctamente;correcto;correspondiente;cualquiera;cubierto;cubrir;cuerpo;cumplimentado;cumplir;cuyo;dato;deber;debidamente;decidir;declaración;definido;delto;deporte;derecho;derivado;derivar;derrame;descrita;desistimiento;dicho;dirección;disponible;distancia;documento;doloroso;droga;duración;económico;efecto;efectuar;elevado;embriagado;emisión;enfermedad;entidad;entrada;epidemia;error;escalado;escrito;espacio;español;especial;espeleología;esquí;estricto;estupefaciente;europeo;euros;externo;facilitar;fallecimiento;fenómeno;fijar;finalización;finalizar;firma;fondo;formalización;formalizado;fracción;fuerza;físico;garantía;general;hora;infarto;información;inicio;inmediatamente;inscritar;integridad;intencionado;intencionalidad;invalidez;leer;lesión;medio;mes;miocardio;modificación;momento;motonáutico;motor;motorismo;muerte;mundo;máximo;naturaleza;necesario;notificar él;notoriamente;número;obligación;ocasionado;ocurrencia;ocurrido;oponer;origen;pagar;pago;paracaidismo;pasajero;país;pecho;pedir;peligrosidad;pensión;permanente;persona;período;pista;plazo;precontractual;preexistencia;preguntado;prescrito;prima;producir;producto;prorrogar;práctica;prórroga;puenting;póliza;público;quedar;radioactivo;rafting;realizar;reaseguro;recreativo;rectificación;registro;regulación;relativo;renovación;rescindir;respectar;respuesta;resto;restricción;riesgo;salud;salvamento;seguridad;seguro;similar;siniestro;situación;sometido;sucesivo;suma;súbita;temporal;terrorismo;tipo;tomador;toreo;transporte;término;tóxico;veinticuatro;vence;vencimiento;veraz;verazmente;vida;vigor;violento;voluntariamente;vuelo;óptimo"
   },
   "chunks": [
     {
@@ -27,60 +27,60 @@
       "end_position": 956
     },
     {
-      "text": "Sumas aseguradas\nCobertura por el Capital contratado (Capital de 30.000 a\n300.000 euros).\n16-01-2019 16:10:28 02012010211430 TF 22 CI 39 PA 117610 6222043 T.E:000 VC:000 CAP:000 T.C:A\n¿",
+      "text": "Sumas aseguradas\nCobertura por el Capital contratado (Capital de 30.000 a\n300.000 euros).\n\n¿",
       "section": "sumas",
       "section_title": "Sumas aseguradas",
       "start_position": 956,
-      "end_position": 1141
+      "end_position": 1048
     },
     {
-      "text": "QUÉ NO ESTÁ ASEGURADO?\nFallecimiento e Invalidez por Enfermedad.\nLos siniestros ocasionados por fenómenos de la naturaleza,\nterrorismo y actuaciones de las Fuerzas Armadas y cuerpos\nde Seguridad, epidemias, contaminación radioactiva, así\ncomo los ocasionados a consecuencia de un acto\nintencionado y o doloroso por parte del Asegurado.\nEl pago de cualquier capital en caso que el asegurado\ndecidiera poner fin a su vida voluntariamente.\nAccidentes ocurridos con anterioridad a la entrada en vigor\ndel seguro.\nFallecimiento e Invalidez como consecuencia de la práctica\npor el Asegurado de: automovilismo, motorismo,\nmotonáutica de competición, toreo, alpinismo, escalada,\nesquí fuera pista, espeleología, puenting, rafting,\nbarranquismo, paracaidismo, vuelo sin motor, vuelo delta,\naerostación y aeronáutica y cualquier deporte o actividad\nrecreativa de características similares a las descritas o cuya\npeligorsidad sea notoriamente elevada.\nAccidentes ocasionados por estar embriagado o bajo el\nefecto de drogas, tóxicos o estupefacientes no prescritos.\nAccidentes en cualquier tipo de aeronave de uso no estricto\npara el transporte público de pasajeros.\nLos accidentes derivados de las preexistencias preguntadas\nen la Declaración de Salud.\nDerrames cerebrales, infarto de miocardio, angina de\npecho y sus consecuencias.\n¿",
+      "text": "QUÉ NO ESTÁ ASEGURADO?\nFallecimiento e Invalidez por Enfermedad.\nLos siniestros ocasionados por fenómenos de la naturaleza,\nterrorismo y actuaciones de las Fuerzas Armadas y cuerpos\nde Seguridad, epidemias, contaminación radioactiva, así\ncomo los ocasionados a consecuencia de un acto\nintencionado y/o doloroso por parte del Asegurado.\nEl pago de cualquier capital en caso que el asegurado\ndecidiera poner fin a su vida voluntariamente.\nAccidentes ocurridos con anterioridad a la entrada en vigor\ndel seguro.\nFallecimiento e Invalidez como consecuencia de la práctica\npor el Asegurado de: automovilismo, motorismo,\nmotonáutica de competición, toreo, alpinismo, escalada,\nesquí fuera pista, espeleología, puenting, rafting,\nbarranquismo, paracaidismo, vuelo sin motor, vuelo delta,\naerostación y aeronáutica y cualquier deporte o actividad\nrecreativa de características similares a las descritas o cuya\npeligrosidad sea notoriamente elevada.\nAccidentes ocasionados por estar embriagado o bajo el\nefecto de drogas, tóxicos o estupefacientes no prescritos.\nAccidentes en cualquier tipo de aeronave de uso no estricto\npara el transporte público de pasajeros.\nLos accidentes derivados de las preexistencias preguntadas\nen la Declaración de Salud.\nDerrames cerebrales, infarto de miocardio, angina de\npecho y sus consecuencias.\n¿",
       "section": "no_asegurado",
       "section_title": "QUÉ NO ESTÁ ASEGURADO",
-      "start_position": 1141,
-      "end_position": 2464
+      "start_position": 1048,
+      "end_position": 2371
     },
     {
-      "text": "EXISTEN RESTRICCIONES EN LO QUE RESPECTA A\nLA COBERTURA?\n! Duración de las coberturas:\nFallecimiento hasta 80 años.\nResto de coberturas hasta 67 años.\n¿",
+      "text": "EXISTEN RESTRICCIONES EN LO QUE RESPECTA A\nLA COBERTURA?\nDuración de las coberturas:\nFallecimiento hasta 80 años.\nResto de coberturas hasta 67 años.\n¿",
       "section": "restricciones",
       "section_title": "EXISTEN RESTRICCIONES EN LO QUE RESPECTA A\nLA COBERTURA",
-      "start_position": 2464,
-      "end_position": 2616
+      "start_position": 2371,
+      "end_position": 2521
     },
     {
       "text": "DÓNDE ESTOY CUBIERTO?\nFallecimiento por accidente y accidente circulación: Todo el mundo.\nInvalidez Permanente y Absoluta por accidente y accidente circulación: Cualquier País de Espacio económico europeo.\n¿",
       "section": "cobertura",
       "section_title": "DÓNDE ESTOY CUBIERTO",
-      "start_position": 2616,
-      "end_position": 2823
+      "start_position": 2521,
+      "end_position": 2728
     },
     {
-      "text": "CUÁLES SON MIS OBLIGACIONES?\nAportar la declaración de salud verazmente cumplimentada.\nFacilitar los datos necesarios para la emisión de la póliza, éstos deberán ser actuales, correctos y veraces a fin de poder asegurar\ncorrectamente el riesgo.\nLeer y comprobar atentamente los términos y condiciones de la póliza y, en caso de errores, pedir en el plazo de un mes la rectificación de\nlos mismos.\nPagar las primas. Sólo si se ha pagado la prima, el contrato estará debidamente formalizado y en vigor y los siniestros que se produzcan a\npartir de ese momento tendrán cobertura.\nComunicar a la mayor brevedad cualquier modificación que se produzca en el contenido de las respuestas y adaptar la póliza a la nueva\nsituación mediante las acciones correspondientes.\nComunicar la ocurrencia del siniestro, sus circunstancias y consecuencias inmediatamente y, como máximo, en el plazo de 7 días. Además,\ndeberán poner todos los medios a su alcance para aminorar las consecuencias del mismo, cooperando al salvamento de personas y bienes.\n¿",
+      "text": "CUÁLES SON MIS OBLIGACIONES?\nAportar la declaración de salud verazmente cumplimentada.\nFacilitar los datos necesarios para la emisión de la póliza, estos deberán ser actuales, correctos y veraces a fin de poder asegurar\ncorrectamente el riesgo.\nLeer y comprobar atentamente los términos y condiciones de la póliza y, en caso de errores, pedir en el plazo de un mes la rectificación de\nlos mismos.\nPagar las primas. Solo si se ha pagado la prima, el contrato estará debidamente formalizado y en vigor y los siniestros que se produzcan a\npartir de ese momento tendrán cobertura.\nComunicar a la mayor brevedad cualquier modificación que se produzca en el contenido de las respuestas y adaptar la póliza a la nueva\nsituación mediante las acciones correspondientes.\nComunicar la ocurrencia del siniestro, sus circunstancias y consecuencias inmediatamente y, como máximo, en el plazo de 7 días. Además,\ndeberán poner todos los medios a su alcance para aminorar las consecuencias del mismo, cooperando al salvamento de personas y bienes.\n¿",
       "section": "obligaciones",
       "section_title": "CUÁLES SON MIS OBLIGACIONES",
-      "start_position": 2823,
-      "end_position": 3855
+      "start_position": 2728,
+      "end_position": 3760
     },
     {
-      "text": "CUÁNDO Y CÓMO TENGO QUE EFECTUAR LOS PAGOS?\nEl pago se realizará mediante cualquiera de los medios de pago disponibles de la compañía el día de la formalización del contrato y del\nmismo modo en los sucesivos vencimientos y o fracciones de pago.\n¿",
+      "text": "CUÁNDO Y CÓMO TENGO QUE EFECTUAR LOS PAGOS?\nEl pago se realizará mediante cualquiera de los medios de pago disponibles de la compañía el día de la formalización del contrato y del\nmismo modo en los sucesivos vencimientos y/o fracciones de pago.\n¿",
       "section": "pagos",
       "section_title": "CUÁNDO Y CÓMO TENGO QUE EFECTUAR LOS PAGOS",
-      "start_position": 3855,
-      "end_position": 4101
+      "start_position": 3760,
+      "end_position": 4006
     },
     {
-      "text": "CUÁNDO COMIENZA Y FINALIZA LA COBERTURA?\nLa duración del contrato se fija desde las cero horas del día del inicio del período de cobertura, hasta las veinticuatro horas del día de su\nfinalización. Cada año, salvo casos especiales, la póliza vence y se prorroga automáticamente hasta, como máximo el fin de la anualidad en\nque el Asegurado cumpla los 67 años, excepto para el Fallecimiento por Accidente que está cubierta como máximo hasta el fin de la\nanualidad en que el Asegurado cumpla los 80 años. Una vez se cobra el capital asegurado por la garantía de invalidez permanente y\nabsoluta o fallecimiento la póliza queda anulada. Si el Tomador se opone a dicha prorroga deberá notificarlo al Asegurador al menos con\nun mes de anticipación al vencimiento. Si el Asegurador se opone a la renovación deberá notificarlo al Tomador del seguro al menos con\ndos meses de antelación.\n¿",
+      "text": "CUÁNDO COMIENZA Y FINALIZA LA COBERTURA?\nLa duración del contrato se fija desde las cero horas del día del inicio del período de cobertura, hasta las veinticuatro horas del día de su\nfinalización. Cada año, salvo casos especiales, la póliza vence y se prorroga automáticamente hasta, como máximo el fin de la anualidad en\nque el Asegurado cumpla los 67 años, excepto para el Fallecimiento por Accidente que está cubierta como máximo hasta el fin de la\nanualidad en que el Asegurado cumpla los 80 años. Una vez se cobra el capital asegurado por la garantía de invalidez permanente y\nabsoluta o fallecimiento la póliza queda anulada. Si el Tomador se opone a dicha prórroga deberá notificarlo al Asegurador al menos con\nun mes de anticipación al vencimiento. Si el Asegurador se opone a la renovación deberá notificarlo al Tomador del seguro al menos con\ndos meses de antelación.\n¿",
       "section": "vigencia",
       "section_title": "CUÁNDO COMIENZA Y FINALIZA LA COBERTURA",
-      "start_position": 4101,
-      "end_position": 4980
+      "start_position": 4006,
+      "end_position": 4885
     },
     {
       "text": "CÓMO PUEDO RESCINDIR EL CONTRATO?\nMediante comunicación escrita a la Aseguradora, al menos, con un mes de anticipación al vencimiento.\nDerecho de desistimiento, plazo de 14 días desde la firma del contrato en el caso de que la contratación sea a distancia.",
       "section": "rescindir",
       "section_title": "CÓMO PUEDO RESCINDIR EL CONTRATO",
-      "start_position": 4980,
-      "end_position": 5236
+      "start_position": 4885,
+      "end_position": 5141
     }
   ]
 }

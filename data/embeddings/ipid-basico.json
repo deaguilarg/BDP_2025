@@ -1,18 +1,86 @@
-[
+{
+  "filename": "ipid-basico",
+  "num_chunks": 10,
+  "embedding_dim": 768,
+  "metadata": {
+    "filename": "ipid-basico",
+    "producto": "Accidentes Básico",
+    "insurance_type": "Accidentes",
+    "file_path": "data\\processed\\ipid-basico.txt",
+    "coverage_type": "Básico",
+    "num_pages": NaN,
+    "keywords": "absoluto;accidente;acción;actividad;acto;actuación;actual;adaptar;aeronave;aeronáutico;aerostación;ajena;alcance;allianz;aminorar;angín;antelación;anterioridad;anticipación;anualidad;anulado;aportar;armadas;asegurado;asegurador;aseguradora;asegurar;atentamente;automovilismo;automáticamente;año;bien;brevedad;básico;capital;característica;caso;causa;cerebral;cero;circunstancia;cobertura;cobrar;comenzar;compañía;competición;completo;comprobar;comunicación;comunicar;condición;consecuencia;consistir;contaminación;contenido;contractual;contratación;contratado;contrato;cooperar;corporal;correctamente;correcto;correspondiente;cualquiera;cubierto;cubrir;cuerpo;cumplimentado;cumplir;cuyo;dato;deber;debidamente;decidir;declaración;definido;delto;deporte;derecho;derivado;derivar;derrame;descrita;desistimiento;dicho;dirección;disponible;distancia;documento;doloroso;droga;duración;económico;efecto;efectuar;elevado;embriagado;emisión;enfermedad;entidad;entrada;epidemia;error;escrito;espacio;español;especial;estricto;estupefaciente;europeo;euros;externo;facilitar;fallecimiento;fenómeno;fijar;finalización;finalizar;firma;fondo;formalización;formalizado;fracción;fuerza;físico;garantía;general;hora;infarto;información;inicio;inmediatamente;inscritar;integridad;intencionado;intencionalidad;invalidez;leer;lesión;medio;mes;miocardio;modificación;momento;motonáutico;motor;motorismo;muerte;mundo;máximo;naturaleza;necesario;notificar él;notoriamente;número;obligación;ocasionado;ocurrencia;ocurrido;oponer;origen;pagar;pago;paracaidismo;pasajero;país;pecho;pedir;peligrosidad;pensión;permanente;persona;período;plazo;precontractual;preexistencia;preguntado;prescrito;prima;producir;producto;prorrogar;práctica;prórroga;póliza;público;quedar;radioactivo;realizar;reaseguro;recreativo;rectificación;registro;regulación;relativo;renovación;rescindir;respectar;respuesta;resto;restricción;riesgo;salud;salvamento;seguridad;seguro;similar;siniestro;situación;sometido;sucesivo;suma;súbita;temporal;terrorismo;tipo;tomador;transporte;término;tóxico;veinticuatro;vence;vencimiento;veraz;verazmente;vida;vigor;violento;voluntariamente;vuelo"
+  },
+  "chunks": [
     {
-        "text": "El seguro IPID Básico es un seguro de accidentes personales que proporciona cobertura económica en caso de fallecimiento o invalidez permanente por accidente. Este seguro está diseñado para garantizar la protección financiera del asegurado y sus beneficiarios.",
-        "metadata": {
-            "producto": "IPID Básico",
-            "insurance_type": "Accidentes",
-            "coverage_type": "Básico"
-        }
+      "text": "EN QUÉ CONSISTE ESTE TIPO DE SEGURO?\nEs el seguro que cubre los riesgos de la integridad física del asegurado cuando su origen es un accidente, definido como lesión corporal que deriva de\nuna causa violenta, súbita, externa y ajena a la intencionalidad del asegurado que produce invalidez temporal o permanente o muerte.\n¿",
+      "section": "consiste",
+      "section_title": "EN QUÉ CONSISTE ESTE TIPO DE SEGURO",
+      "start_position": 436,
+      "end_position": 758
     },
     {
-        "text": "El seguro cubre: 1) Fallecimiento por accidente con una suma asegurada de hasta 50.000€. 2) Invalidez permanente por accidente con una suma asegurada de hasta 50.000€. 3) Gastos médicos por accidente hasta 6.000€. 4) Asistencia en viaje incluida.",
-        "metadata": {
-            "producto": "IPID Básico",
-            "insurance_type": "Accidentes",
-            "coverage_type": "Básico"
-        }
+      "text": "QUÉ SE ASEGURA?\nFallecimiento por accidente.\nInvalidez Permanente y Absoluta por accidente.",
+      "section": "asegurado",
+      "section_title": "QUÉ SE ASEGURA",
+      "start_position": 758,
+      "end_position": 850
+    },
+    {
+      "text": "Sumas aseguradas\nCobertura por el Capital contratado (Capital de 30.000 a\n300.000 euros).\n\n¿",
+      "section": "sumas",
+      "section_title": "Sumas aseguradas",
+      "start_position": 850,
+      "end_position": 942
+    },
+    {
+      "text": "QUÉ NO ESTÁ ASEGURADO?\nFallecimiento e Invalidez por Enfermedad.\nLos siniestros ocasionados por fenómenos de la naturaleza,\nterrorismo y actuaciones de las Fuerzas Armadas y cuerpos\nde Seguridad, epidemias, contaminación radioactiva, así\ncomo los ocasionados a consecuencia de un acto\nintencionado y/o doloroso por parte del Asegurado.\nEl pago de cualquier capital en caso que el asegurado\ndecidiera poner fin a su vida voluntariamente.\nAccidentes ocurridos con anterioridad a la entrada en vigor\ndel seguro.\nFallecimiento e Invalidez como consecuencia de la práctica\npor el Asegurado de: automovilismo, motorismo,\nmotonáutica de competición, paracaidismo, vuelo sin motor,\nvuelo delta, aerostación y aeronáutica y cualquier deporte o\nactividad recreativa de características similares a las descritas\no cuya peligrosidad sea notoriamente elevada.\nAccidentes ocasionados por estar embriagado o bajo el\nefecto de drogas, tóxicos o estupefacientes no prescritos.\nAccidentes en cualquier tipo de aeronave de uso no estricto\npara el transporte público de pasajeros.\nLos accidentes derivados de las preexistencias preguntadas\nen la Declaración de Salud.\nDerrames cerebrales, infarto de miocardio, angina de pecho\ny sus consecuencias.\n¿",
+      "section": "no_asegurado",
+      "section_title": "QUÉ NO ESTÁ ASEGURADO",
+      "start_position": 942,
+      "end_position": 2171
+    },
+    {
+      "text": "EXISTEN RESTRICCIONES EN LO QUE RESPECTA A\nLA COBERTURA?\nDuración de las coberturas:\nFallecimiento hasta 80 años.\nResto de coberturas hasta 67 años.\n¿",
+      "section": "restricciones",
+      "section_title": "EXISTEN RESTRICCIONES EN LO QUE RESPECTA A\nLA COBERTURA",
+      "start_position": 2171,
+      "end_position": 2321
+    },
+    {
+      "text": "DÓNDE ESTOY CUBIERTO?\nFallecimiento por accidente: Todo el mundo.\nInvalidez Permanente y Absoluta por accidente: Cualquier País de Espacio económico europeo.\n¿",
+      "section": "cobertura",
+      "section_title": "DÓNDE ESTOY CUBIERTO",
+      "start_position": 2321,
+      "end_position": 2480
+    },
+    {
+      "text": "CUÁLES SON MIS OBLIGACIONES?\nAportar la declaración de salud verazmente cumplimentada.\nFacilitar los datos necesarios para la emisión de la póliza, estos deberán ser actuales, correctos y veraces a fin de poder asegurar\ncorrectamente el riesgo.\nLeer y comprobar atentamente los términos y condiciones de la póliza y, en caso de errores, pedir en el plazo de un mes la rectificación de\nlos mismos.\nPagar las primas. Solo si se ha pagado la prima, el contrato estará debidamente formalizado y en vigor y los siniestros que se produzcan a\npartir de ese momento tendrán cobertura.\nComunicar a la mayor brevedad cualquier modificación que se produzca en el contenido de las respuestas y adaptar la póliza a la nueva\nsituación mediante las acciones correspondientes.\nComunicar la ocurrencia del siniestro, sus circunstancias y consecuencias inmediatamente y, como máximo, en el plazo de 7 días. Además,\ndeberán poner todos los medios a su alcance para aminorar las consecuencias del mismo, cooperando al salvamento de personas y bienes.\n¿",
+      "section": "obligaciones",
+      "section_title": "CUÁLES SON MIS OBLIGACIONES",
+      "start_position": 2480,
+      "end_position": 3512
+    },
+    {
+      "text": "CUÁNDO Y CÓMO TENGO QUE EFECTUAR LOS PAGOS?\nEl pago se realizará mediante cualquiera de los medios de pago disponibles de la compañía el día de la formalización del contrato y del\nmismo modo en los sucesivos vencimientos y/o fracciones de pago.\n¿",
+      "section": "pagos",
+      "section_title": "CUÁNDO Y CÓMO TENGO QUE EFECTUAR LOS PAGOS",
+      "start_position": 3512,
+      "end_position": 3758
+    },
+    {
+      "text": "CUÁNDO COMIENZA Y FINALIZA LA COBERTURA?\nLa duración del contrato se fija desde las cero horas del día del inicio del período de cobertura, hasta las veinticuatro horas del día de su\nfinalización. Cada año, salvo casos especiales, la póliza vence y se prorroga automáticamente hasta, como máximo el fin de la anualidad en\nque el Asegurado cumpla los 67 años, excepto para el Fallecimiento por Accidente que está cubierta como máximo hasta el fin de la\nanualidad en que el Asegurado cumpla los 80 años. Una vez se cobra el capital asegurado por la garantía de invalidez permanente y\nabsoluta o fallecimiento la póliza queda anulada. Si el Tomador se opone a dicha prórroga deberá notificarlo al Asegurador al menos con\nun mes de anticipación al vencimiento. Si el Asegurador se opone a la renovación deberá notificarlo al Tomador del seguro al menos con\ndos meses de antelación.\n¿",
+      "section": "vigencia",
+      "section_title": "CUÁNDO COMIENZA Y FINALIZA LA COBERTURA",
+      "start_position": 3758,
+      "end_position": 4637
+    },
+    {
+      "text": "CÓMO PUEDO RESCINDIR EL CONTRATO?\nMediante comunicación escrita a la Aseguradora, al menos, con un mes de anticipación al vencimiento.\nDerecho de desistimiento, plazo de 14 días desde la firma del contrato en el caso de que la contratación sea a distancia.",
+      "section": "rescindir",
+      "section_title": "CÓMO PUEDO RESCINDIR EL CONTRATO",
+      "start_position": 4637,
+      "end_position": 4893
     }
-]
+  ]
+}

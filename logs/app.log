@@ -1,0 +1,153 @@
+2025-06-16 16:33:48,383 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-06-16 16:33:48,383 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-06-16 16:33:51,583 - __main__ - ERROR - Error al cargar los componentes: '\n  "start_time"'
+2025-06-16 16:43:53,250 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-06-16 16:43:53,251 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-06-16 16:43:57,075 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750106637.0758328
+2025-06-16 16:43:57,082 - app.streamlit_app - ERROR - Error al cargar los componentes: '\n  "error"'
+2025-06-16 16:44:20,218 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-06-16 16:44:20,218 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-06-16 16:44:25,385 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750106665.3854952
+2025-06-16 16:44:25,385 - app.streamlit_app - ERROR - Error al cargar los componentes: '\n  "error"'
+2025-06-16 16:46:44,555 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-06-16 16:46:44,556 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-06-16 16:46:48,046 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750106808.0458376
+2025-06-16 16:46:48,051 - SearchEngine - INFO - Índice FAISS cargado: models\faiss_index\faiss_index_20250505_191103.bin, Mapping: models\faiss_index\id_mapping_20250505_191103.json, Vectores: 102
+2025-06-16 16:46:48,646 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750106808.6467957
+2025-06-16 16:46:48,652 - __main__ - INFO - Metadatos cargados exitosamente. Campos encontrados: ['filename', 'producto', 'insurance_type', 'file_path', 'coverage_type', 'num_pages', 'keywords']
+2025-06-16 16:46:54,009 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.167s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 16:46:54,009 - SearchEngine - INFO - Búsqueda completada: 'Cuáles son las coberturas del seguro de moto?', Resultados: 5, Filtros: None
+2025-06-16 16:46:54,025 - PerformanceMonitor - INFO - Component: query | Operation: search | Duration: 0.167s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 16:46:54,025 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.182s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 16:46:56,194 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 16:46:56,194 - __main__ - ERROR - Error en la interfaz: '\n  "error"', Query: Cuáles son las coberturas del seguro de moto?
+2025-06-16 16:48:27,353 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-06-16 16:48:27,353 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-06-16 16:48:31,365 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750106911.3657238
+2025-06-16 16:48:31,365 - SearchEngine - INFO - Índice FAISS cargado: models\faiss_index\faiss_index_20250505_191103.bin, Mapping: models\faiss_index\id_mapping_20250505_191103.json, Vectores: 102
+2025-06-16 16:48:32,070 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750106912.070616
+2025-06-16 16:48:32,075 - __main__ - INFO - Metadatos cargados exitosamente. Campos encontrados: ['filename', 'producto', 'insurance_type', 'file_path', 'coverage_type', 'num_pages', 'keywords']
+2025-06-16 16:48:39,264 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.144s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 16:48:39,265 - SearchEngine - INFO - Búsqueda completada: 'Cuáles son las coberturas del seguro de moto?', Resultados: 5, Filtros: None
+2025-06-16 16:48:39,265 - PerformanceMonitor - INFO - Component: query | Operation: search | Duration: 0.161s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 16:48:39,269 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.161s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 16:48:43,716 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 16:48:43,732 - __main__ - ERROR - Error en la interfaz: '\n  "error"', Query: Cuáles son las coberturas del seguro de moto?
+2025-06-16 16:50:58,108 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-06-16 16:50:58,108 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-06-16 16:51:02,113 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750107062.1128175
+2025-06-16 16:51:02,123 - SearchEngine - INFO - Índice FAISS cargado: models\faiss_index\faiss_index_20250505_191103.bin, Mapping: models\faiss_index\id_mapping_20250505_191103.json, Vectores: 102
+2025-06-16 16:51:03,040 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750107063.0404036
+2025-06-16 16:51:03,058 - __main__ - INFO - Metadatos cargados exitosamente. Campos encontrados: ['filename', 'producto', 'insurance_type', 'file_path', 'coverage_type', 'num_pages', 'keywords']
+2025-06-16 16:51:09,062 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.379s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 16:51:09,065 - SearchEngine - INFO - Búsqueda completada: 'Cuáles son las coberturas del seguro de moto?', Resultados: 5, Filtros: None
+2025-06-16 16:51:09,067 - PerformanceMonitor - INFO - Component: query | Operation: search | Duration: 0.400s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 16:51:09,068 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.402s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 16:51:12,775 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 16:51:12,775 - AnswerGenerator - INFO - Respuesta generada para consulta: 'Cuáles son las coberturas del seguro de moto?' | Tiempo: 3.706s | Documentos: 5 | Longitud respuesta: 838 chars
+2025-06-16 16:51:12,791 - PerformanceMonitor - INFO - Component: answer_generation | Operation: generate_answer | Duration: 3.721s | Memory: 6.5% | CPU: 0.0%
+2025-06-16 16:51:13,001 - __main__ - INFO - Consulta procesada: 'Cuáles son las coberturas del seguro de moto?', Resultados: 5, Filtros: {}
+2025-06-16 17:10:48,640 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-06-16 17:10:48,640 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-06-16 17:10:52,489 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750108252.4893434
+2025-06-16 17:10:52,505 - SearchEngine - INFO - Índice FAISS cargado: models\faiss_index\faiss_index_20250616_170445.bin, Mapping: models\faiss_index\id_mapping_20250616_170445.json, Vectores: 260
+2025-06-16 17:10:53,079 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750108253.079718
+2025-06-16 17:10:53,084 - __main__ - INFO - Metadatos cargados exitosamente. Campos encontrados: ['filename', 'producto', 'insurance_type', 'file_path', 'coverage_type', 'num_pages', 'keywords']
+2025-06-16 17:10:58,952 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.157s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 17:10:58,953 - SearchEngine - INFO - Query: 'Cuáles son las coberturas del seguro de moto?' - Distancias obtenidas: [4.7330923 4.7330923 4.7330923 4.7330923 4.476413 ]
+2025-06-16 17:10:58,953 - SearchEngine - INFO - Query: 'Cuáles son las coberturas del seguro de moto?' - Índices obtenidos: [215 120 101  91 170]
+2025-06-16 17:10:58,954 - SearchEngine - INFO - Documento: ipid-tr-con-franquicia | Distancia: 4.733 | Score: 0.000
+2025-06-16 17:10:58,954 - SearchEngine - INFO - Documento: ipid-furgoneta-basico | Distancia: 4.733 | Score: 0.000
+2025-06-16 17:10:58,955 - SearchEngine - INFO - Documento: ipid-ciclomotor-seguro-basico | Distancia: 4.733 | Score: 0.000
+2025-06-16 17:10:58,955 - SearchEngine - INFO - Documento: ipid-ampliado | Distancia: 4.733 | Score: 0.000
+2025-06-16 17:10:58,956 - SearchEngine - INFO - Documento: ipid-moto-robo | Distancia: 4.476 | Score: 0.000
+2025-06-16 17:10:58,956 - SearchEngine - INFO - Documento: ipid-moto-perdida-total | Distancia: 4.476 | Score: 0.000
+2025-06-16 17:10:58,957 - SearchEngine - INFO - Documento: ipid-furgoneta-td-sin-franquicia | Distancia: 4.476 | Score: 0.000
+2025-06-16 17:10:58,957 - SearchEngine - INFO - Documento: ipid-furgoneta-robo-incendio | Distancia: 4.476 | Score: 0.000
+2025-06-16 17:10:58,957 - SearchEngine - INFO - Documento: ipid-furgoneta-perdida-total | Distancia: 4.476 | Score: 0.000
+2025-06-16 17:10:58,958 - SearchEngine - INFO - Documento: ipid-extra | Distancia: 4.476 | Score: 0.000
+2025-06-16 17:10:58,958 - SearchEngine - INFO - Documento: auto-plus-tr-sin-franquicia | Distancia: 4.476 | Score: 0.000
+2025-06-16 17:10:58,959 - SearchEngine - INFO - Documento: auto-plus-terceros | Distancia: 4.476 | Score: 0.000
+2025-06-16 17:10:58,959 - SearchEngine - INFO - Documento: auto-plus-robo-incendio | Distancia: 4.476 | Score: 0.000
+2025-06-16 17:10:58,960 - SearchEngine - INFO - Documento: auto-plus-franquicia2 | Distancia: 4.476 | Score: 0.000
+2025-06-16 17:10:58,960 - SearchEngine - INFO - Documento: auto-plus-franquicia1 | Distancia: 4.476 | Score: 0.000
+2025-06-16 17:10:58,960 - SearchEngine - WARNING - No se encontraron documentos relevantes para: 'Cuáles son las coberturas del seguro de moto?'
+2025-06-16 17:10:58,962 - SearchEngine - INFO - Documentos con keywords relacionadas: ['ipid-ciclomotor-seguro-basico', 'ipid-ciclomotor-seguro-basico', 'ipid-ciclomotor-seguro-basico', 'ipid-ciclomotor-seguro-basico', 'ipid-ciclomotor-seguro-basico']
+2025-06-16 17:10:58,963 - PerformanceMonitor - INFO - Component: query | Operation: search | Duration: 0.170s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 17:10:58,963 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.171s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 17:10:58,965 - __main__ - INFO - Consulta procesada: 'Cuáles son las coberturas del seguro de moto?', Resultados: 0, Filtros: {}
+2025-06-16 17:11:04,001 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.091s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 17:11:04,002 - SearchEngine - INFO - Query: 'Cuáles son las coberturas del seguro de moto?' - Distancias obtenidas: [4.7330923 4.7330923 4.7330923 4.7330923 4.476413 ]
+2025-06-16 17:11:04,003 - SearchEngine - INFO - Query: 'Cuáles son las coberturas del seguro de moto?' - Índices obtenidos: [215 120 101  91 170]
+2025-06-16 17:11:04,003 - SearchEngine - INFO - Documento: ipid-tr-con-franquicia | Distancia: 4.733 | Score: 0.000
+2025-06-16 17:11:04,004 - SearchEngine - INFO - Documento: ipid-furgoneta-basico | Distancia: 4.733 | Score: 0.000
+2025-06-16 17:11:04,004 - SearchEngine - INFO - Documento: ipid-ciclomotor-seguro-basico | Distancia: 4.733 | Score: 0.000
+2025-06-16 17:11:04,005 - SearchEngine - INFO - Documento: ipid-ampliado | Distancia: 4.733 | Score: 0.000
+2025-06-16 17:11:04,006 - SearchEngine - INFO - Documento: ipid-moto-robo | Distancia: 4.476 | Score: 0.000
+2025-06-16 17:11:04,007 - SearchEngine - INFO - Documento: ipid-moto-perdida-total | Distancia: 4.476 | Score: 0.000
+2025-06-16 17:11:04,007 - SearchEngine - INFO - Documento: ipid-furgoneta-td-sin-franquicia | Distancia: 4.476 | Score: 0.000
+2025-06-16 17:11:04,008 - SearchEngine - INFO - Documento: ipid-furgoneta-robo-incendio | Distancia: 4.476 | Score: 0.000
+2025-06-16 17:11:04,008 - SearchEngine - INFO - Documento: ipid-furgoneta-perdida-total | Distancia: 4.476 | Score: 0.000
+2025-06-16 17:11:04,009 - SearchEngine - INFO - Documento: ipid-extra | Distancia: 4.476 | Score: 0.000
+2025-06-16 17:11:04,010 - SearchEngine - INFO - Documento: auto-plus-tr-sin-franquicia | Distancia: 4.476 | Score: 0.000
+2025-06-16 17:11:04,010 - SearchEngine - INFO - Documento: auto-plus-terceros | Distancia: 4.476 | Score: 0.000
+2025-06-16 17:11:04,011 - SearchEngine - INFO - Documento: auto-plus-robo-incendio | Distancia: 4.476 | Score: 0.000
+2025-06-16 17:11:04,011 - SearchEngine - INFO - Documento: auto-plus-franquicia2 | Distancia: 4.476 | Score: 0.000
+2025-06-16 17:11:04,012 - SearchEngine - INFO - Documento: auto-plus-franquicia1 | Distancia: 4.476 | Score: 0.000
+2025-06-16 17:11:04,012 - SearchEngine - WARNING - No se encontraron documentos relevantes para: 'Cuáles son las coberturas del seguro de moto?'
+2025-06-16 17:11:04,014 - SearchEngine - INFO - Documentos con keywords relacionadas: ['ipid-ciclomotor-seguro-basico', 'ipid-ciclomotor-seguro-basico', 'ipid-ciclomotor-seguro-basico', 'ipid-ciclomotor-seguro-basico', 'ipid-ciclomotor-seguro-basico']
+2025-06-16 17:11:04,015 - PerformanceMonitor - INFO - Component: query | Operation: search | Duration: 0.106s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 17:11:04,015 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.106s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 17:11:04,017 - __main__ - INFO - Consulta procesada: 'Cuáles son las coberturas del seguro de moto?', Resultados: 0, Filtros: {}
+2025-06-16 17:31:30,034 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-06-16 17:31:30,035 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-06-16 17:31:33,319 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750109493.3197906
+2025-06-16 17:31:33,342 - SearchEngine - INFO - Índice FAISS cargado: models\faiss_index\faiss_index_20250616_172746.bin, Mapping: models\faiss_index\id_mapping_20250616_172746.json, Vectores: 504
+2025-06-16 17:31:33,934 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750109493.934496
+2025-06-16 17:31:33,941 - __main__ - INFO - Metadatos cargados exitosamente. Campos encontrados: ['filename', 'producto', 'insurance_type', 'file_path', 'coverage_type', 'num_pages', 'keywords']
+2025-06-16 17:31:43,158 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.155s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 17:31:43,158 - SearchEngine - INFO - Query: 'Cuáles son las coberturas del seguro de moto?' - Distancias obtenidas: [0.7245915 0.7245915 0.7245915 0.7245915 0.7245915]
+2025-06-16 17:31:43,158 - SearchEngine - INFO - Query: 'Cuáles son las coberturas del seguro de moto?' - Índices obtenidos: [354 180 170 160 150]
+2025-06-16 17:31:43,158 - SearchEngine - INFO - Documento: remolque-basico-ipid | Distancia: 0.725 | Score: 0.638
+2025-06-16 17:31:43,158 - SearchEngine - INFO - Documento: camion-tractor-todo-riesgo-ipid | Distancia: 0.725 | Score: 0.638
+2025-06-16 17:31:43,165 - SearchEngine - INFO - Documento: camion-tractor-todo-riesgo-franquicia-ipid | Distancia: 0.725 | Score: 0.638
+2025-06-16 17:31:43,166 - SearchEngine - INFO - Documento: camion-tractor-perdida-total-ipid | Distancia: 0.725 | Score: 0.638
+2025-06-16 17:31:43,166 - SearchEngine - INFO - Documento: camion-tractor-basico-robo-ipid | Distancia: 0.725 | Score: 0.638
+2025-06-16 17:31:43,166 - SearchEngine - INFO - Búsqueda exitosa: 'Cuáles son las coberturas del seguro de moto?' encontró 5 documentos relevantes
+2025-06-16 17:31:43,167 - SearchEngine - INFO -   1. remolque-basico-ipid (Score: 0.638)
+2025-06-16 17:31:43,167 - SearchEngine - INFO -   2. camion-tractor-todo-riesgo-ipid (Score: 0.638)
+2025-06-16 17:31:43,168 - SearchEngine - INFO -   3. camion-tractor-todo-riesgo-franquicia-ipid (Score: 0.638)
+2025-06-16 17:31:43,168 - PerformanceMonitor - INFO - Component: query | Operation: search | Duration: 0.166s | Memory: 6.5% | CPU: 0.0%
+2025-06-16 17:31:43,169 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.167s | Memory: 6.5% | CPU: 0.0%
+2025-06-16 17:31:47,091 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 17:31:47,091 - AnswerGenerator - INFO - Respuesta generada para consulta: 'Cuáles son las coberturas del seguro de moto?' | Tiempo: 3.921s | Documentos: 5 | Longitud respuesta: 1041 chars
+2025-06-16 17:31:47,091 - PerformanceMonitor - INFO - Component: answer_generation | Operation: generate_answer | Duration: 3.921s | Memory: 6.5% | CPU: 0.0%
+2025-06-16 17:31:47,250 - __main__ - INFO - Consulta procesada: 'Cuáles son las coberturas del seguro de moto?', Resultados: 5, Filtros: {}
+2025-06-16 19:00:45,000 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-06-16 19:00:45,001 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-06-16 19:00:48,390 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750114848.3905423
+2025-06-16 19:00:48,412 - SearchEngine - INFO - Índice FAISS cargado: models\faiss_index\faiss_index_20250616_180809.bin, Mapping: models\faiss_index\id_mapping_20250616_180809.json, Vectores: 504
+2025-06-16 19:00:49,021 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750114849.0219483
+2025-06-16 19:00:49,024 - __main__ - INFO - Metadatos cargados exitosamente. Campos encontrados: ['filename', 'producto', 'insurance_type', 'file_path', 'coverage_type', 'num_pages', 'keywords']
+2025-06-16 19:01:23,396 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.000s | Memory: 4.4% | CPU: 0.0% - ERROR: SearchEngine.search() got an unexpected keyword argument 'filters'
+2025-06-16 19:01:23,399 - __main__ - ERROR - Error en la interfaz: SearchEngine.search() got an unexpected keyword argument 'filters', Query: qué son los deducibles?
+2025-06-18 15:27:50,931 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-06-18 15:27:50,931 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-06-18 15:27:58,501 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750274878.5010703
+2025-06-18 15:27:58,566 - SearchEngine - INFO - Índice FAISS cargado: models\faiss_index\faiss_index_20250616_180809.bin, Mapping: models\faiss_index\id_mapping_20250616_180809.json, Vectores: 504
+2025-06-18 15:27:59,956 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750274879.9567506
+2025-06-18 15:27:59,997 - __main__ - INFO - Metadatos cargados exitosamente. Campos encontrados: ['filename', 'producto', 'insurance_type', 'file_path', 'coverage_type', 'num_pages', 'keywords']
+2025-06-18 15:47:16,004 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.160s | Memory: 6.4% | CPU: 0.0%
+2025-06-18 15:47:16,004 - SearchEngine - INFO - Búsqueda completada: query='Cuáles son las coberturas del seguro de moto?', candidates=6, filtered=6, vehicle_types=['moto', 'ciclomotor']
+2025-06-18 15:47:16,012 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.176s | Memory: 6.4% | CPU: 0.0%
+2025-06-18 15:47:21,356 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-18 15:47:21,356 - AnswerGenerator - INFO - Respuesta generada para consulta: 'Cuáles son las coberturas del seguro de moto?' | Tiempo: 5.344s | Documentos: 5 | Longitud respuesta: 952 chars
+2025-06-18 15:47:21,356 - PerformanceMonitor - INFO - Component: answer_generation | Operation: generate_answer | Duration: 5.344s | Memory: 6.4% | CPU: 0.0%
+2025-06-18 15:47:21,960 - __main__ - INFO - Consulta procesada: 'Cuáles son las coberturas del seguro de moto?', Resultados: 6, Filtros: {}
+2025-06-18 15:48:29,309 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.128s | Memory: 6.5% | CPU: 0.0%
+2025-06-18 15:48:29,309 - SearchEngine - INFO - Búsqueda completada: query='Cuáles son las coberturas del seguro de moto? considera un uso diario y exhaustivo', candidates=11, filtered=11, vehicle_types=['moto', 'ciclomotor']
+2025-06-18 15:48:29,309 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.128s | Memory: 6.5% | CPU: 0.0%
+2025-06-18 15:48:36,834 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-18 15:48:36,834 - AnswerGenerator - INFO - Respuesta generada para consulta: 'Cuáles son las coberturas del seguro de moto? considera un uso diario y exhaustivo' | Tiempo: 7.525s | Documentos: 10 | Longitud respuesta: 1440 chars
+2025-06-18 15:48:36,834 - PerformanceMonitor - INFO - Component: answer_generation | Operation: generate_answer | Duration: 7.525s | Memory: 6.5% | CPU: 0.0%
+2025-06-18 15:48:36,858 - __main__ - INFO - Consulta procesada: 'Cuáles son las coberturas del seguro de moto? considera un uso diario y exhaustivo', Resultados: 11, Filtros: {}

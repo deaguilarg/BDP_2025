@@ -1,6 +1,6 @@
 {
   "filename": "camion-tractor-todo-riesgo-franquicia-ipid",
-  "num_chunks": 1,
+  "num_chunks": 10,
   "embedding_dim": 768,
   "metadata": {
     "filename": "camion-tractor-todo-riesgo-franquicia-ipid",
@@ -9,15 +9,78 @@
     "file_path": "data\\processed\\camion-tractor-todo-riesgo-franquicia-ipid.txt",
     "coverage_type": "Todo Riesgo",
     "num_pages": NaN,
-    "keywords": "accesorio;accidente;acción;actuación;actual;adaptar;adelanto;aeropuerto;alcance;alcohólico;allianz;aminorar;animal;anticipación;anual;armadas;arrastre;asegurador;aseguradora;asegurar;asesoramiento;asistencia;atropello;automático;automóvil;autorización;baremo;bebida;bien;brevedad;calamidad;camión;cantidad;carga;carrera;carta;carácter;caso;catastrófico;causar;cción;cinegética;circulación;circunstancia;ciudad;civil;ción;cobertura;colisión;comerc;compañía;compensación;complementario;completo;comprobar;comunicación;comunicar;concurso;condición;conducción;conducir;conductor;conjunto;consecuencia;consistir;consorcio;contenido;contractual;contratación;contratar;contratar él;contrato;convenio;cooperar;corporal;correctamente;correcto;correspondiente;cristal;ctuar;cualquiera;cuantía;cubierto;cubrir;custodia;cuán;dato;daño;deber;debidamente;defensa;delito;depender;desaparición;determina;diario;dirección;disponer;disponible;dispuesto;documento;doméstico;droga;duración;económico;efecto;elección;emisión;empezar;entidad;entrenamiento;equipaje;error;escrito;espacio;españa;español;especial;especie;estupefaciente;euro;europeo;euros;expoliación;extraordinario;facilitar;fenómeno;finalizar;firmante;fondo;forma;formalización;formalizado;fracción;franquicia;fuerzas;físico;garantía;gasto;general;gibraltar;grúa;guerra;hurto;incendio;indemnizable;indemnización;información;inmediatamente;inscritar;interior;invalidez;jurídico;leer;libre;luna;límite;marino;material;medio;mes;mienza;millón;modificación;momento;motivo;muertir;multa;máximo;mónaco;nacional;naturaleza;necesario;notificando él;número;obligar;obligatorio;ocurrencia;oficina;omisión;oponer;oportuno;pagar;pago;participación;particular;país;pensión;perdido;permanente;permiso;persona;personal;plazo;posible;precontractual;prima;producir;producto;propietario;prorrogar;psicotrópico;póliza;realizar;reaseguro;recinto;reclamación;rectificación;registro;regulación;relativo;remolcaje;remolque;reposición;rescate;responsabilidad;respuesta;resto;restri;retirada;retirar;riesgo;robar;robo;rotura;salvamento;sanitario;seguro;semirremolqu;signatario;siguiente;siniestro;situación;socorro;soler;solicitar;sometido;subsidio;sucesivo;sufrido;sufrir;sustancia;terrorismo;tipo;tomador;tractor;tráfico;técnico;uso;valor;vaticano;vehícu;vehículo;vence;vencimiento;veraz;verde;viaje;vigencia;vigor;voluntariamente;voluntario"
+    "keywords": "accesorio;accidente;acción;actuación;actual;adaptar;adelanto;aeropuerto;alcance;alcohólico;allianz;aminorar;animal;anticipación;anual;armadas;arrastre;asegurado;asegurador;aseguradora;asegurar;asesoramiento;asistencia;atropello;automático;automóvil;autorización;baremo;bebida;bien;brevedad;calamidad;camión;cantidad;carga;carrera;carta;carácter;caso;catastrófico;causar;cinegética;circulación;circunstancia;ciudad;civil;cobertura;colisión;comenzar;comercial;compañía;compensación;complementario;completo;comprobar;comunicación;comunicar;concurso;condición;conducción;conducir;conductor;conjunto;consecuencia;consistir;consorcio;contenido;contractual;contratación;contratar;contratar él;contrato;convenio;cooperar;corporal;correctamente;correcto;correspondiente;cristal;cualquiera;cuantía;cubierto;cubrir;custodia;dato;daño;deber;debidamente;defensa;delito;depender;desaparición;determina;diario;dirección;disponer;disponible;dispuesto;documento;doméstico;droga;duración;económico;efecto;efectuar;elección;emisión;empezar;entidad;entrenamiento;equipaje;error;escrito;espacio;españa;español;especial;especie;estupefaciente;europeo;euros;expoliación;extraordinario;facilitar;fenómeno;finalizar;firmante;fondo;forma;formalización;formalizado;fracción;franquicia;fuerzas;físico;garantía;gasto;general;gibraltar;grúa;guerra;hurto;incendio;indemnizable;indemnización;información;inmediatamente;inscritar;interior;invalidez;jurídico;leer;libre;luna;límite;marino;material;medio;mes;millón;modificación;momento;motivo;muertir;multa;máximo;mónaco;nacional;naturaleza;necesario;notificando él;número;obligación;obligatorio;ocurrencia;oficina;omisión;oponer;oportuno;pagar;pago;participación;particular;país;pensión;permanente;permiso;persona;personal;plazo;posible;precontractual;prima;producir;producto;propietario;prorrogar;psicotrópico;pérdida;póliza;realizar;reaseguro;recinto;reclamación;rectificación;registro;regulación;relativo;remolcaje;remolque;reposición;rescate;rescindir;respectar;responsabilidad;respuesta;resto;restricción;retirada;retirar;riesgo;robar;robo;rotura;salvamento;sanitario;seguro;semirremolqu;signatario;siguiente;siniestro;situación;socorro;soler;solicitar;sometido;subsidio;sucesivo;sufrido;sufrir;suma;sustancia;terrorismo;tipo;tomador;tractor;tráfico;técnico;uso;valor;vaticano;vehículo;vence;vencimiento;veraz;verde;viaje;vigencia;vigor;voluntariamente;voluntario"
   },
   "chunks": [
     {
-      "text": "Qué se asegura?\nResponsabilidad Civil Obligatoria.\nResponsabilidad Civil Complementaria.\nIndemnización de daños.\nReclamación de daños.\nAccidentes corporales del conductor.\nMuerte 18.000 euros.\nInvalidez Física permanente: Según\nBaremo. Hasta 30.000 euros.\nGastos sanitarios: 100 de los mismos,\nhasta 6.000 euros.\nAsistencia a personas y al vehículo.\nAsesoramiento por multas de tráfico.\nRotura de Cristales.\nRetirada permiso de conducir.\nResponsabilidad civil de la Carga.\nRobo, Incendio y Fenómenos de la\nnaturaleza.\n\nDaños colisión por atropello a especies\ncinegéticas y animales domésticos.\n\nDaños Propios.\nsu Mas asegura Das:\nResponsabilidad civil obligatoria (Según ley).\nResponsabilidad civil Complementaria (hasta\n50 Millones de euros).\n\nIndemnización de daños (100 del valor de\nvehículo y sus accesorios como máximo por\nsiniestro hasta 30.000 euros).\n\nReclamación de daños (100 de adelantos\nhasta 30.000 euros).\n\nDirección técnica y jurídica (100, si es de libre\nelección hasta 1.500 euros).\n\nAsistencia tanto a vehículos como a personas.\nHasta 1.500 euros para euros para el conjunto\nde las coberturas de remolcaje y rescate).\n\nRetirada permiso de conducir y perdida de\nvigencia (subsidio diario 30 como máximo\n10.950 euros).\n\nResponsabilidad civil de la Carga (hasta\n150.000 euros).\nRobo, Incendio y Fenómenos de la naturaleza.\n(100 del valor indemnizable que sufra el\nvehículo y sus accesorios o su reposición).\n\nDaños Propios. (El 100 del valor de los\nequipajes y efectos personales, con el límite de\n300,00 euros por persona y, en conjunto, 600,00\neuros por siniestro. La cantidad de 30,00 euros\npor día de subsidio y, como máximo, 870,00\neuros en total).\n¿Qué no está asegura Do?\nSituaciones de carácter catastrófico (Guerra,\nCalamidad nacional).\n\nSituaciones de carácter extraordinario\n(fenómenos de la naturaleza, terrorismo,\nactuaciones Fuerzas Armadas).\n\nConducción bajo los efectos de drogas,\nestupefacientes, bebidas alcohólicas o\nsustancias psicotrópicas.\n\nParticipación en carreras, concursos y en sus\nentrenamientos.\n\nCirculación por el interior del recinto de\naeropuertos.\n\nLa conducción del vehículo sin el oportuno\npermiso o autorización del propietario salvo\npara: Cualquier persona que pueda tener el\nvehículo en su custodia en el caso de la RC\nComplementaria.\n\nLos daños materiales sufridos en el vehículo\ndurante la desaparición total por robo, hurto o\nexpoliación.\n\nDelito de omisión del deber de socorro.\nRiesgos del CCS (consorcio de compensación\nde seguros.\n¿existen restri CCiones en lo Que res Pe Cta a la Cobertura?\n!\nAccidentes corporales del conductor y\nretirada del permiso de conducir en\nRemolques y Semirremolques.\n!\nRotura de cristales en Remolques y\nSemirremolques.\n¿Dón De estoy Cubierto?\nEn España y en el resto de los países del Espacio Económico Europeo. En Ciudad del Vaticano, Mónaco,\nSan Marino y Gibraltar. Además, en los países firmantes del Convenio Complementario entre las oficinas\nNacionales del 12 XII 1973 y países signatarios del Convenio Tipo Inter-Bureaux (Carta Verde).\n¿Cuáles son Mis obliga Ciones?\nFacilitar los datos necesarios para la emisión de la póliza, éstos deberán ser correctos, veraces y actuales\na fin de poder asegurar correctamente el riesgo.\nLeer y comprobar lo dispuesto en la póliza y dispone del plazo de un mes para solicitar que la\nrectificación de los posibles errores.\nPagar las primas. Sólo si se ha pagado la prima, el contrato estará debidamente formalizado y en vigor y\nlos siniestros que se produzcan a partir de ese momento tendrán cobertura.\nComunicar en la mayor brevedad cualquier modificación que se produzca en el contenido de las\nrespuestas y adaptar la póliza a la nueva situación mediante las acciones correspondientes.\nComunicar al Asegurador la ocurrencia del siniestro, sus circunstancias y consecuencias inmediatamente\ny, como máximo, en el plazo de 7 días. Además, deberán poner todos los medios a su alcance para\naminorar las consecuencias del mismo, cooperando al salvamento de personas y bienes.\n¿Cuán Do y Có Mo tengo Que efe Ctuar los Pagos?\nEl pago se realizará mediante cualquiera de los medios de pago disponibles de la compañía el día de la\nformalización del contrato y del mismo modo en los sucesivos vencimientos y o fracciones de pago.\n¿Cuán Do Co Mienza y finaliza la Cobertura?\nLa cobertura empieza el día de la formalización del contrato. La duración del contrato será anual y\ndetermina en las condiciones particulares la póliza. Cada año, salvo casos especiales, la póliza vence y se\nprorroga de forma automática, a menos que el tomador se oponga notificándolo al Asegurador, al menos,\nun mes de anticipación al vencimiento o al menos que el Asegurador se oponga notificándolo al tomador,\nal menos, dos meses de anticipación al vencimiento.\n¿Có Mo Pue Do res Cin Dir el Contrato?\nMediante comunicación escrita a la Aseguradora, al menos, con un mes de anticipación al vencimiento.\n!\nRC de la Carga en los siguientes usos:\nCamiones Tractores.\nGrúa para arrastre de vehículo.\n!\nLa franquicia es aproximadamente el 3 del valor del\nvehículo, por lo que su cuantía depende de este.",
+      "text": "En qué consiste este tipo de seguro?\nEn el seguro de automóviles existe una garantía de contratación obligatoria, que cubre la responsabilidad del\nconductor del vehículo por los daños que cause a las personas o en los bienes con motivo de la circulación.\nTambién se pueden contratar otras garantías voluntariamente como la rotura de Lunas, el Robo del vehículo, los Daños\ndel vehículo, etc., que son garantías del seguro voluntario del automóvil. Otros seguros que también suelen contratarse\njunto al seguro del automóvil, son los de asistencia en viaje y el seguro de defensa jurídica.\n¿",
+      "section": "consiste",
+      "section_title": "En qué consiste este tipo de seguro",
+      "start_position": 467,
+      "end_position": 1055
+    },
+    {
+      "text": "Qué se asegura?\nResponsabilidad Civil Obligatoria.\nResponsabilidad Civil Complementaria.\nIndemnización de daños.\nReclamación de daños.\nAccidentes corporales del conductor.\nMuerte 18.000 euros.\nInvalidez Física permanente: Según\nBaremo. Hasta 30.000 euros.\nGastos sanitarios: 100% de los mismos,\nhasta 6.000 euros.\nAsistencia a personas y al vehículo.\nAsesoramiento por multas de tráfico.\nRotura de Cristales.\nRetirada permiso de conducir.\nResponsabilidad civil de la carga.\nRobo, Incendio y Fenómenos de la\nnaturaleza.\n\nDaños colisión por atropello a especies\ncinegéticas y animales domésticos.\n\nDaños Propios.",
       "section": "asegurado",
       "section_title": "Qué se asegura",
-      "start_position": 1057,
-      "end_position": 6155
+      "start_position": 1055,
+      "end_position": 1666
+    },
+    {
+      "text": "Sumas aseguradas:\nResponsabilidad civil obligatoria (Según ley).\nResponsabilidad civil Complementaria (hasta\n50 millones de euros).\n\nIndemnización de daños (100% del valor de\nvehículo y sus accesorios como máximo por\nsiniestro hasta 30.000 euros).\n\nReclamación de daños (100% de adelantos\nhasta 30.000 euros).\n\nDirección técnica y jurídica (100%, si es de libre\nelección hasta 1.500 euros).\n\nAsistencia tanto a vehículos como a personas.\nHasta 1.500 euros para el conjunto\nde las coberturas de remolcaje y rescate.\n\nRetirada permiso de conducir y pérdida de\nvigencia (subsidio diario 30 euros como máximo\n10.950 euros).\n\nResponsabilidad civil de la carga (hasta\n150.000 euros).\nRobo, Incendio y Fenómenos de la naturaleza\n(100% del valor indemnizable que sufra el\nvehículo y sus accesorios o su reposición).\n\nDaños Propios. (El 100% del valor de los\nequipajes y efectos personales, con el límite de\n300,00 euros por persona y, en conjunto, 600,00\neuros por siniestro. La cantidad de 30,00 euros\npor día de subsidio y, como máximo, 870,00\neuros en total).\n¿",
+      "section": "sumas",
+      "section_title": "Sumas aseguradas",
+      "start_position": 1666,
+      "end_position": 2722
+    },
+    {
+      "text": "Qué no está asegurado?\nSituaciones de carácter catastrófico (Guerra,\nCalamidad nacional).\n\nSituaciones de carácter extraordinario\n(fenómenos de la naturaleza, terrorismo,\nactuaciones Fuerzas Armadas).\n\nConducción bajo los efectos de drogas,\nestupefacientes, bebidas alcohólicas o\nsustancias psicotrópicas.\n\nParticipación en carreras, concursos y en sus\nentrenamientos.\n\nCirculación por el interior del recinto de\naeropuertos.\n\nLa conducción del vehículo sin el oportuno\npermiso o autorización del propietario salvo\npara: Cualquier persona que pueda tener el\nvehículo en su custodia en el caso de la RC\nComplementaria.\n\nLos daños materiales sufridos en el vehículo\ndurante la desaparición total por robo, hurto o\nexpoliación.\n\nDelito de omisión del deber de socorro.\nRiesgos del CCS (consorcio de compensación\nde seguros).\n¿",
+      "section": "no_asegurado",
+      "section_title": "Qué no está asegurado",
+      "start_position": 2722,
+      "end_position": 3545
+    },
+    {
+      "text": "Existen restricciones en lo que respecta a la cobertura?\nAccidentes corporales del conductor y\nretirada del permiso de conducir en\nRemolques y Semirremolques.\nRotura de cristales en Remolques y\nSemirremolques.\nRC de la carga en los siguientes usos:\nCamiones Tractores.\nGrúa para arrastre de vehículo.\nLa franquicia es aproximadamente el 3% del valor del\nvehículo, por lo que su cuantía depende de este.\n¿",
+      "section": "restricciones",
+      "section_title": "Existen restricciones en lo que respecta a la cobertura",
+      "start_position": 3545,
+      "end_position": 3949
+    },
+    {
+      "text": "Dónde estoy cubierto?\nEn España y en el resto de los países del Espacio Económico Europeo. En Ciudad del Vaticano, Mónaco,\nSan Marino y Gibraltar. Además, en los países firmantes del Convenio Complementario entre las oficinas\nNacionales del 12/XII/1973 y países signatarios del Convenio Tipo Inter-Bureaux (Carta Verde).\n¿",
+      "section": "cobertura",
+      "section_title": "Dónde estoy cubierto",
+      "start_position": 3949,
+      "end_position": 4271
+    },
+    {
+      "text": "Cuáles son mis obligaciones?\nFacilitar los datos necesarios para la emisión de la póliza, estos deberán ser correctos, veraces y actuales\na fin de poder asegurar correctamente el riesgo.\nLeer y comprobar lo dispuesto en la póliza y dispone del plazo de un mes para solicitar la\nrectificación de los posibles errores.\nPagar las primas. Solo si se ha pagado la prima, el contrato estará debidamente formalizado y en vigor y\nlos siniestros que se produzcan a partir de ese momento tendrán cobertura.\nComunicar a la mayor brevedad cualquier modificación que se produzca en el contenido de las\nrespuestas y adaptar la póliza a la nueva situación mediante las acciones correspondientes.\nComunicar al Asegurador la ocurrencia del siniestro, sus circunstancias y consecuencias inmediatamente\ny, como máximo, en el plazo de 7 días. Además, deberán poner todos los medios a su alcance para\naminorar las consecuencias del mismo, cooperando al salvamento de personas y bienes.\n¿",
+      "section": "obligaciones",
+      "section_title": "Cuáles son mis obligaciones",
+      "start_position": 4271,
+      "end_position": 5237
+    },
+    {
+      "text": "Cuándo y cómo tengo que efectuar los pagos?\nEl pago se realizará mediante cualquiera de los medios de pago disponibles de la compañía el día de la\nformalización del contrato y del mismo modo en los sucesivos vencimientos y/o fracciones de pago.\n¿",
+      "section": "pagos",
+      "section_title": "Cuándo y cómo tengo que efectuar los pagos",
+      "start_position": 5237,
+      "end_position": 5483
+    },
+    {
+      "text": "Cuándo comienza y finaliza la cobertura?\nLa cobertura empieza el día de la formalización del contrato. La duración del contrato será anual y se\ndetermina en las condiciones particulares de la póliza. Cada año, salvo casos especiales, la póliza vence y se\nprorroga de forma automática, a menos que el tomador se oponga notificándolo al Asegurador, al menos,\ncon un mes de anticipación al vencimiento o al menos que el Asegurador se oponga notificándolo al tomador,\nal menos, con dos meses de anticipación al vencimiento.\n¿",
+      "section": "vigencia",
+      "section_title": "Cuándo comienza y finaliza la cobertura",
+      "start_position": 5483,
+      "end_position": 6004
+    },
+    {
+      "text": "Cómo puedo rescindir el contrato?\nMediante comunicación escrita a la Aseguradora, al menos, con un mes de anticipación al vencimiento.",
+      "section": "rescindir",
+      "section_title": "Cómo puedo rescindir el contrato",
+      "start_position": 6004,
+      "end_position": 6138
     }
   ]
 }

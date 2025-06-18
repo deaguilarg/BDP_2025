@@ -9,12 +9,12 @@ import plotly.express as px
 import plotly.graph_objects as go
 from pathlib import Path
 import json
+import logging
 from typing import Dict, Any, List, Tuple
 from sklearn.decomposition import PCA
 import umap
 
 from src.retrieval.search_engine import SearchEngine
-from src.monitoring.logger import RAGLogger
 
 # Configuración de la página
 st.set_page_config(
@@ -63,109 +63,72 @@ st.markdown("""
 def load_searcher() -> SearchEngine:
     """
     Carga el motor de búsqueda (cacheado).
+    Usa el índice FAISS optimizado en lugar de archivos .npy individuales.
     """
-    return SearchEngine(top_k=10)  # Aumentamos el número de resultados
+    try:
+        return SearchEngine(top_k=20)  # Aumentamos para incluir más resultados
+    except Exception as e:
+        st.error(f"Error cargando SearchEngine: {str(e)}")
+        raise
 
 @st.cache_data
 def load_embeddings_data() -> Tuple[np.ndarray, List[Dict[str, Any]]]:
     """
-    Carga los embeddings y metadatos (cacheado).
+    Carga los embeddings y metadatos desde el índice FAISS optimizado.
+    NUEVA VERSIÓN: Usa el mismo índice FAISS que SearchEngine para consistencia.
     """
-    embeddings_dir = Path("data/embeddings")
-    if not embeddings_dir.exists():
-        st.error("No se encontró el directorio de embeddings")
-        return np.array([]), []
-    
-    all_embeddings = []
-    all_metadata = []
-    
-    # Cargar metadatos generales
-    metadata_path = Path("models/processed_documents.json")
-    if not metadata_path.exists():
-        st.error("No se encontró el archivo de metadatos")
-        return np.array([]), []
-    
-    with open(metadata_path, 'r', encoding='utf-8') as f:
-        documents_metadata = json.load(f)
-    
-    # Crear diccionario de metadatos por filename
-    metadata_dict = {doc['filename']: doc['metadata'] for doc in documents_metadata}
-    
-    # Cargar embeddings y metadatos individuales
-    for npy_file in embeddings_dir.glob("*.npy"):
-        try:
-            # Cargar embeddings
-            embeddings = np.load(npy_file)
-            
-            # Verificar que embeddings sea un array numpy
-            if not isinstance(embeddings, np.ndarray):
-                st.warning(f"El archivo {npy_file.name} no contiene un array numpy válido")
-                continue
+    try:
+        # Cargar SearchEngine que tiene el índice FAISS
+        searcher = SearchEngine()
+        
+        if not hasattr(searcher, 'id_mapping') or not searcher.id_mapping:
+            st.error("No se encontró el índice FAISS. Por favor, ejecute rebuild_index.py")
+            return np.array([]), []
+        
+        if not hasattr(searcher, 'index') or searcher.index is None:
+            st.error("Índice FAISS no cargado correctamente")
+            return np.array([]), []
+        
+        # Extraer embeddings del índice FAISS
+        total_vectors = searcher.index.ntotal
+        if total_vectors == 0:
+            st.error("El índice FAISS está vacío")
+            return np.array([]), []
+        
+        # Obtener todos los embeddings del índice FAISS
+        all_embeddings = searcher.index.reconstruct_n(0, total_vectors)
+        
+        # Crear metadata list en el mismo orden que los embeddings
+        all_metadata = []
+        for i in range(total_vectors):
+            if str(i) in searcher.id_mapping:  # Convertir a string para la clave
+                metadata = searcher.id_mapping[str(i)].copy()
+                filename = metadata.get('filename', f'chunk_{i}')
                 
-            # Asegurarnos de que embeddings tenga la forma correcta
-            if len(embeddings.shape) == 1:
-                embeddings = embeddings.reshape(1, -1)
-            
-            # Cargar metadatos correspondientes
-            metadata_file = npy_file.with_suffix('.json')
-            if metadata_file.exists():
-                with open(metadata_file, 'r', encoding='utf-8') as f:
-                    doc_metadata = json.load(f)
-                
-                # Manejar tanto listas como diccionarios en el JSON
-                if isinstance(doc_metadata, list):
-                    # Si es una lista, asumimos que cada elemento tiene su propio texto y metadatos
-                    for i, chunk_data in enumerate(doc_metadata):
-                        if i >= len(embeddings):
-                            break
-                            
-                        chunk_metadata = chunk_data.get('metadata', {})
-                        if not isinstance(chunk_metadata, dict):
-                            chunk_metadata = {}
-                            
-                        # Obtener metadatos generales
-                        filename = npy_file.stem
-                        general_metadata = metadata_dict.get(filename, {})
-                        
-                        # Combinar metadatos
-                        combined_metadata = {**general_metadata, **chunk_metadata}
-                        
-                        all_embeddings.append(embeddings[i])
-                        all_metadata.append({
-                            'filename': filename,
-                            'chunk': f"Chunk {i+1}",
-                            'metadata': combined_metadata
-                        })
-                elif isinstance(doc_metadata, dict):
-                    # Si es un diccionario, usamos el formato anterior
-                    filename = doc_metadata.get('filename', npy_file.stem)
-                    general_metadata = metadata_dict.get(filename, {})
-                    doc_metadata_dict = doc_metadata.get('metadata', {})
-                    if not isinstance(doc_metadata_dict, dict):
-                        doc_metadata_dict = {}
-                    
-                    combined_metadata = {**general_metadata, **doc_metadata_dict}
-                    
-                    for i in range(len(embeddings)):
-                        all_embeddings.append(embeddings[i])
-                        all_metadata.append({
-                            'filename': filename,
-                            'chunk': f"Chunk {i+1}",
-                            'metadata': combined_metadata
-                        })
-                else:
-                    st.warning(f"El archivo {metadata_file.name} no tiene un formato JSON válido")
-                    continue
-                
-        except Exception as e:
-            st.warning(f"Error cargando {npy_file.name}: {str(e)}")
-            continue
-    
-    if not all_embeddings:
-        st.error("No se encontraron embeddings para visualizar")
+                all_metadata.append({
+                    'filename': filename,
+                    'chunk': f"Chunk {i+1}",
+                    'metadata': metadata,
+                    'text': metadata.get('text', ''),  # Incluir texto si está disponible
+                    'faiss_id': i
+                })
+            else:
+                # Metadata por defecto para IDs faltantes
+                all_metadata.append({
+                    'filename': f'unknown_{i}',
+                    'chunk': f"Chunk {i+1}",
+                    'metadata': {},
+                    'text': '',
+                    'faiss_id': i
+                })
+        
+        st.success(f"✅ Cargados {total_vectors} embeddings desde índice FAISS")
+        return all_embeddings, all_metadata
+        
+    except Exception as e:
+        st.error(f"Error cargando desde índice FAISS: {str(e)}")
+        st.info("💡 Consejo: Ejecute 'python rebuild_index.py' para reconstruir el índice")
         return np.array([]), []
-    
-    return np.array(all_embeddings), all_metadata
 
 @st.cache_data
 def reduce_dimensions(embeddings: np.ndarray, method: str = "pca") -> np.ndarray:
@@ -221,11 +184,17 @@ def plot_embeddings(embeddings_2d: np.ndarray, metadata: List[Dict[str, Any]], c
 def render_result_card(result: Dict[str, Any]) -> None:
     """
     Renderiza una tarjeta de resultado con información detallada.
+    Ahora usa datos del índice FAISS que incluye el texto real.
     """
-    # Intentar obtener el texto del chunk
+    # Obtener el texto del resultado (ya viene del índice FAISS)
     chunk_text = result.get('text', '')
     if not chunk_text:
-        chunk_text = result.get('metadata', {}).get('text', '')
+        chunk_text = result.get('metadata', {}).get('text', 'Texto no disponible')
+    
+    # Truncar texto si es muy largo para la visualización
+    if len(chunk_text) > 500:
+        chunk_text = chunk_text[:500] + "..."
+        
     with st.container():
         st.markdown(f"""
         <div class="result-card">
@@ -248,14 +217,38 @@ def main():
     
     st.title("🔬 Debug - Visualización de Embeddings")
     
-    # Inicializar componentes
-    searcher = load_searcher()
-    embeddings, metadata = load_embeddings_data()
-    logger = RAGLogger()
-    
-    if len(embeddings) == 0:
-        st.error("No se encontraron embeddings para visualizar. Por favor, ejecute primero el generador de embeddings.")
+    try:
+        # Inicializar componentes
+        searcher = load_searcher()
+        embeddings, metadata = load_embeddings_data()
+        logger = logging.getLogger("debug_interface")
+        
+        if len(embeddings) == 0:
+            st.error("No se encontraron embeddings para visualizar.")
+            st.info("💡 Posibles soluciones:")
+            st.code("python -c \"import sys; sys.path.append('src'); from embeddings.embed_documents import DocumentEmbedder; embedder = DocumentEmbedder(); embedder.process_documents()\"")
+            st.code("python rebuild_index.py")
+            return
+            
+    except Exception as e:
+        st.error(f"Error inicializando la aplicación: {str(e)}")
+        st.info("💡 Intente reiniciar la aplicación o reconstruir el índice FAISS")
         return
+    
+    # Información del sistema (NUEVA)
+    st.sidebar.markdown("### 🔧 Estado del Sistema")
+    st.sidebar.metric("Total de chunks", len(embeddings))
+    st.sidebar.metric("Fuente de datos", "Índice FAISS")
+    
+    # Contar documentos de moto
+    moto_count = len([m for m in metadata if 'moto' in m['filename'].lower() or 'ciclomotor' in m['filename'].lower()])
+    st.sidebar.metric("Documentos de moto", moto_count)
+    
+    if hasattr(searcher, 'index') and searcher.index:
+        st.sidebar.success("✅ Índice FAISS cargado")
+        st.sidebar.metric("Vectores en FAISS", searcher.index.ntotal)
+    else:
+        st.sidebar.error("❌ Índice FAISS no cargado")
     
     # Tabs para diferentes funcionalidades
     tab1, tab2, tab3 = st.tabs([
@@ -328,20 +321,32 @@ def main():
         
         # Mostrar chunks del documento seleccionado
         doc_chunks = [
-            (i, m['chunk']) for i, m in enumerate(metadata)
+            (i, m) for i, m in enumerate(metadata)
             if m['filename'] == selected_file
         ]
         
-        for i, chunk in doc_chunks:
-            with st.expander(f"Chunk {i + 1}"):
-                st.markdown(f"""
-                <div class="chunk-viewer">
-                {chunk}
-                </div>
-                """, unsafe_allow_html=True)
+        if doc_chunks:
+            st.success(f"Encontrados {len(doc_chunks)} chunks para {selected_file}")
+            
+            for i, chunk_data in doc_chunks:
+                chunk_text = chunk_data.get('text', 'Texto no disponible')
+                if not chunk_text:
+                    chunk_text = f"Chunk {i + 1} - Contenido no disponible"
                 
-                # Mostrar metadatos del chunk
-                st.json(metadata[i]['metadata'])
+                with st.expander(f"Chunk {i + 1} (ID FAISS: {chunk_data.get('faiss_id', i)})"):
+                    st.markdown(f"""
+                    <div class="chunk-viewer">
+                    {chunk_text[:1000]}{'...' if len(chunk_text) > 1000 else ''}
+                    </div>
+                    """, unsafe_allow_html=True)
+                    
+                    # Mostrar metadatos del chunk
+                    if chunk_data.get('metadata'):
+                        st.json(chunk_data['metadata'])
+                    else:
+                        st.info("Metadatos no disponibles para este chunk")
+        else:
+            st.warning(f"No se encontraron chunks para {selected_file}")
     
     # Tab 3: Pruebas de Búsqueda
     with tab3:
@@ -384,11 +389,24 @@ def main():
         if st.button("Buscar", type="primary"):
             if query:
                 try:
-                    # Realizar búsqueda
-                    results = searcher.search(query, filters=filter_params if filter_params else None)
+                    # Realizar búsqueda usando el mismo motor que los tests exitosos
+                    # El parámetro filters no está implementado en SearchEngine.search()
+                    results = searcher.search(query=query)
                     
-                    # Mostrar resultados
+                    # Mostrar estadísticas
                     st.markdown(f"#### 📄 Resultados ({len(results)})")
+                    
+                    # Contar documentos de moto en resultados
+                    moto_results = 0
+                    for result in results:
+                        filename = result['metadata'].get('filename', '')
+                        if 'moto' in filename.lower() or 'ciclomotor' in filename.lower():
+                            moto_results += 1
+                    
+                    if moto_results > 0:
+                        st.success(f"🏍️ {moto_results} documentos de moto encontrados!")
+                    else:
+                        st.warning("❌ No se encontraron documentos de moto en los resultados")
                     
                     # Agrupar resultados por documento
                     grouped_results = {}
@@ -400,62 +418,84 @@ def main():
                     
                     # Mostrar resultados agrupados
                     for filename, doc_results in grouped_results.items():
-                        with st.expander(f"📄 {filename} ({len(doc_results)} chunks)"):
+                        # Destacar documentos de moto
+                        is_moto = 'moto' in filename.lower() or 'ciclomotor' in filename.lower()
+                        icon = "🏍️" if is_moto else "📄"
+                        
+                        with st.expander(f"{icon} {filename} ({len(doc_results)} chunks)"):
                             for result in doc_results:
                                 render_result_card(result)
                     
                     # Visualizar embedding de la consulta junto con los resultados
                     st.markdown("#### 📊 Visualización de la consulta")
                     
-                    # Generar embedding de la consulta
-                    query_embedding = searcher.process_query(query)
+                    try:
+                        # Generar embedding de la consulta
+                        query_embedding_2d = searcher.process_query(query)
+                        
+                        # Convertir de 2D a 1D para la visualización
+                        if query_embedding_2d.ndim > 1:
+                            query_embedding = query_embedding_2d.flatten()
+                        else:
+                            query_embedding = query_embedding_2d
+                        
+                        # Verificar que las dimensiones coincidan
+                        if query_embedding.shape[0] != embeddings.shape[1]:
+                            st.warning(f"Dimensiones no coinciden: query={query_embedding.shape[0]}, embeddings={embeddings.shape[1]}")
+                        else:
+                            # Combinar embeddings
+                            combined_embeddings = np.vstack([
+                                embeddings,
+                                query_embedding.reshape(1, -1)
+                            ])
+                            
+                            # Reducir dimensionalidad
+                            combined_2d = reduce_dimensions(combined_embeddings)
+                            
+                            # Crear gráfico
+                            fig = go.Figure()
+                            
+                            # Plotear embeddings existentes
+                            fig.add_trace(go.Scatter(
+                                x=combined_2d[:-1, 0],
+                                y=combined_2d[:-1, 1],
+                                mode='markers',
+                                name='Documentos',
+                                marker=dict(
+                                    color='blue',
+                                    size=8,
+                                    opacity=0.5
+                                ),
+                                hovertemplate='Documento: %{text}<extra></extra>',
+                                text=[m['filename'] for m in metadata]
+                            ))
+                            
+                            # Plotear consulta
+                            fig.add_trace(go.Scatter(
+                                x=[combined_2d[-1, 0]],
+                                y=[combined_2d[-1, 1]],
+                                mode='markers',
+                                name='Consulta',
+                                marker=dict(
+                                    color='red',
+                                    size=15,
+                                    symbol='star'
+                                ),
+                                hovertemplate=f'Consulta: {query}<extra></extra>'
+                            ))
+                            
+                            fig.update_layout(
+                                title="Visualización de la consulta en el espacio de embeddings",
+                                showlegend=True,
+                                width=800,
+                                height=600
+                            )
+                            
+                            st.plotly_chart(fig)
                     
-                    # Combinar embeddings
-                    combined_embeddings = np.vstack([
-                        embeddings,
-                        query_embedding
-                    ])
-                    
-                    # Reducir dimensionalidad
-                    combined_2d = reduce_dimensions(combined_embeddings)
-                    
-                    # Crear gráfico
-                    fig = go.Figure()
-                    
-                    # Plotear embeddings existentes
-                    fig.add_trace(go.Scatter(
-                        x=combined_2d[:-1, 0],
-                        y=combined_2d[:-1, 1],
-                        mode='markers',
-                        name='Documentos',
-                        marker=dict(
-                            color='blue',
-                            size=8,
-                            opacity=0.5
-                        )
-                    ))
-                    
-                    # Plotear consulta
-                    fig.add_trace(go.Scatter(
-                        x=[combined_2d[-1, 0]],
-                        y=[combined_2d[-1, 1]],
-                        mode='markers',
-                        name='Consulta',
-                        marker=dict(
-                            color='red',
-                            size=12,
-                            symbol='star'
-                        )
-                    ))
-                    
-                    fig.update_layout(
-                        title="Visualización de la consulta en el espacio de embeddings",
-                        showlegend=True,
-                        width=800,
-                        height=600
-                    )
-                    
-                    st.plotly_chart(fig)
+                    except Exception as e:
+                        st.error(f"Error en visualización: {str(e)}")
+                        st.info("La visualización de la consulta no está disponible en este momento.")
                     
                 except Exception as e:
                     st.error(f"Error al realizar la búsqueda: {str(e)}")

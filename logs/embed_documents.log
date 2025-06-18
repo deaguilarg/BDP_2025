@@ -1,0 +1,293 @@
+2025-06-16 17:19:44,805 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-06-16 17:19:52,652 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750108792.6529353
+2025-06-16 17:19:52,652 - DocumentEmbedder - INFO - Inicializado DocumentEmbedder - Model: paraphrase-multilingual-mpnet-base-v2, Device: cpu, Chunk size: 512
+2025-06-16 17:19:52,691 - DocumentEmbedder - INFO - Metadatos cargados exitosamente - Total documentos: 51, Columnas: ['filename', 'producto', 'insurance_type', 'file_path', 'coverage_type', 'num_pages', 'keywords', 'chunks']
+2025-06-16 17:19:52,716 - DocumentEmbedder - INFO - Ignorando archivo de glosario: GLOSARIO DE TÉRMINOS DE SEGUROS.txt
+2025-06-16 17:19:57,395 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 4.628s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:20:03,347 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 5.936s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:20:11,093 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 7.729s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:20:17,556 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.449s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:20:23,929 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.363s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:20:30,505 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.559s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:20:36,716 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.193s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:20:43,065 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.332s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:20:51,718 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 8.636s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:20:58,196 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.460s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:21:04,498 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.287s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:21:11,584 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 7.070s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:21:17,903 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.301s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:21:24,167 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.251s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:21:30,835 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.652s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:21:37,136 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.285s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:21:44,002 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.850s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:21:52,021 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 8.006s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:21:59,426 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 7.381s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:22:05,845 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.397s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:22:12,500 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.639s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:22:18,157 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 5.644s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:22:24,794 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.621s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:22:31,110 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.289s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:22:37,553 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.442s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:22:43,846 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.280s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:22:51,857 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 7.981s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:22:58,212 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.332s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:23:03,993 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 5.762s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:23:10,937 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.928s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:23:17,236 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.280s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:23:23,577 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.323s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:23:30,451 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.858s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 17:23:37,917 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 7.444s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 17:23:44,408 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.456s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 17:23:50,834 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.410s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 17:23:59,683 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 8.833s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 17:24:06,008 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.302s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 17:24:12,494 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.468s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 17:24:18,817 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.306s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 17:24:26,048 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 7.217s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 17:24:32,720 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.656s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 17:24:39,715 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.974s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 17:24:46,962 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 7.232s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 17:24:55,262 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 8.283s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:25:02,564 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 7.286s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 17:25:09,580 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 7.001s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:25:17,442 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 7.845s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:25:24,409 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.919s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:25:34,693 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 10.252s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:25:44,229 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 9.502s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 17:25:44,296 - DocumentEmbedder - INFO - Archivo processed_documents.json generado exitosamente - Total documentos: 51
+2025-06-16 18:03:00,730 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-06-16 18:03:04,070 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750111384.070812
+2025-06-16 18:03:04,072 - DocumentEmbedder - INFO - Inicializado DocumentEmbedder - Model: paraphrase-multilingual-mpnet-base-v2, Device: cpu, Chunk size: 512
+2025-06-16 18:03:04,093 - DocumentEmbedder - INFO - Metadatos cargados exitosamente - Total documentos: 51, Columnas: ['filename', 'producto', 'insurance_type', 'file_path', 'coverage_type', 'num_pages', 'keywords', 'chunks']
+2025-06-16 18:03:04,100 - DocumentEmbedder - INFO - Ignorando archivo de glosario: GLOSARIO DE TÉRMINOS DE SEGUROS.txt
+2025-06-16 18:03:08,479 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 4.327s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 18:03:16,391 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 7.895s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 18:03:21,066 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 4.667s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:03:26,864 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 5.787s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 18:03:34,216 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 7.328s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 18:03:41,466 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 7.226s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 18:03:48,021 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.539s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 18:03:53,161 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 5.113s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 18:03:59,038 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 5.864s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 18:04:04,485 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 5.431s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 18:04:10,478 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 5.978s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 18:04:18,259 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 7.764s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 18:04:24,821 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.545s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 18:04:30,972 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.132s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 18:04:37,143 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.156s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 18:04:43,127 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 5.970s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 18:04:49,087 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 5.944s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 18:04:54,941 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 5.836s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 18:05:00,423 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 5.462s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 18:05:06,636 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.197s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 18:05:13,702 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 7.050s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 18:05:20,684 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.957s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 18:05:25,197 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 4.513s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:05:30,981 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 5.779s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:05:35,869 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 4.871s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:05:40,199 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 4.314s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:05:45,336 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 5.128s | Memory: 6.3% | CPU: 0.0%
+2025-06-16 18:05:51,298 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 5.946s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:05:56,666 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 5.351s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:06:02,321 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 5.639s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:06:05,939 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 3.602s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:06:11,096 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 5.145s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:06:18,534 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 7.418s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:06:25,441 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.896s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:06:31,261 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 5.795s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:06:35,585 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 4.299s | Memory: 6.5% | CPU: 0.0%
+2025-06-16 18:06:41,561 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 5.967s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:06:45,826 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 4.249s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:06:51,382 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 5.528s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:06:56,961 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 5.563s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:07:02,030 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 5.054s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:07:08,295 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.253s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:07:14,345 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.031s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:07:19,803 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 5.442s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:07:26,096 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.283s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:07:30,324 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 4.215s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:07:34,796 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 4.471s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:07:39,175 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 4.367s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:07:43,595 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 4.388s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:07:49,240 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 5.621s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:07:55,275 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 6.022s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:07:55,315 - DocumentEmbedder - INFO - Archivo processed_documents.json generado exitosamente - Total documentos: 51
+2025-06-16 18:40:09,389 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-06-16 18:40:09,390 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-06-16 18:40:09,391 - faiss.loader - INFO - Loading faiss.
+2025-06-16 18:40:09,427 - faiss.loader - INFO - Successfully loaded faiss.
+2025-06-16 18:40:09,732 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-06-16 18:40:13,539 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750113613.5398962
+2025-06-16 18:40:13,539 - DocumentEmbedder - INFO - Inicializado DocumentEmbedder - Model: paraphrase-multilingual-mpnet-base-v2, Device: cpu, Chunk size: 512
+2025-06-16 18:46:20,676 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-06-16 18:46:26,559 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750113986.5599818
+2025-06-16 18:46:26,559 - DocumentEmbedder - INFO - Inicializado DocumentEmbedder - Model: paraphrase-multilingual-mpnet-base-v2, Device: cpu, Chunk size: 512
+2025-06-16 18:46:26,626 - DocumentEmbedder - INFO - Metadatos cargados exitosamente - Total documentos: 52, Columnas: ['filename', 'producto', 'insurance_type', 'file_path', 'coverage_type', 'num_pages', 'keywords', 'chunks']
+2025-06-16 18:46:26,626 - DocumentEmbedder - WARNING - No se encontraron metadatos para auto-plus-basico.pdf
+2025-06-16 18:46:26,626 - DocumentEmbedder - WARNING - No se encontraron metadatos para auto-plus-franquicia1.pdf
+2025-06-16 18:46:26,626 - DocumentEmbedder - WARNING - No se encontraron metadatos para auto-plus-franquicia2.pdf
+2025-06-16 18:46:26,626 - DocumentEmbedder - WARNING - No se encontraron metadatos para auto-plus-robo-incendio.pdf
+2025-06-16 18:46:26,642 - DocumentEmbedder - WARNING - No se encontraron metadatos para auto-plus-terceros.pdf
+2025-06-16 18:46:26,642 - DocumentEmbedder - WARNING - No se encontraron metadatos para auto-plus-tr-sin-franquicia.pdf
+2025-06-16 18:46:26,666 - DocumentEmbedder - WARNING - No se encontraron metadatos para autocar-danos-estructura-ipid.pdf
+2025-06-16 18:46:26,668 - DocumentEmbedder - WARNING - No se encontraron metadatos para autocar-incendio-ipid.pdf
+2025-06-16 18:46:26,671 - DocumentEmbedder - WARNING - No se encontraron metadatos para camion-basico-ipid.pdf
+2025-06-16 18:46:26,671 - DocumentEmbedder - WARNING - No se encontraron metadatos para camion-basico-robo-ipid.pdf
+2025-06-16 18:46:26,676 - DocumentEmbedder - WARNING - No se encontraron metadatos para camion-perdida-total-ipid.pdf
+2025-06-16 18:46:26,677 - DocumentEmbedder - WARNING - No se encontraron metadatos para camion-todo-riesgo-franquicia-ipid.pdf
+2025-06-16 18:46:26,679 - DocumentEmbedder - WARNING - No se encontraron metadatos para camion-todo-riesgo-ipid.pdf
+2025-06-16 18:46:26,681 - DocumentEmbedder - WARNING - No se encontraron metadatos para camion-tractor-basico-ipid.pdf
+2025-06-16 18:46:26,682 - DocumentEmbedder - WARNING - No se encontraron metadatos para camion-tractor-basico-robo-ipid.pdf
+2025-06-16 18:46:26,683 - DocumentEmbedder - WARNING - No se encontraron metadatos para camion-tractor-perdida-total-ipid.pdf
+2025-06-16 18:46:26,685 - DocumentEmbedder - WARNING - No se encontraron metadatos para camion-tractor-todo-riesgo-franquicia-ipid.pdf
+2025-06-16 18:46:26,688 - DocumentEmbedder - WARNING - No se encontraron metadatos para camion-tractor-todo-riesgo-ipid.pdf
+2025-06-16 18:46:26,691 - DocumentEmbedder - WARNING - No se encontraron metadatos para GLOSARIO DE TÉRMINOS DE SEGUROS.pdf
+2025-06-16 18:46:26,692 - DocumentEmbedder - WARNING - No se encontraron metadatos para ipid-ampliado.pdf
+2025-06-16 18:46:26,693 - DocumentEmbedder - WARNING - No se encontraron metadatos para ipid-basico.pdf
+2025-06-16 18:46:26,695 - DocumentEmbedder - WARNING - No se encontraron metadatos para ipid-ciclomotor-seguro-basico.pdf
+2025-06-16 18:46:26,697 - DocumentEmbedder - WARNING - No se encontraron metadatos para ipid-extra.pdf
+2025-06-16 18:46:26,698 - DocumentEmbedder - WARNING - No se encontraron metadatos para ipid-furgoneta-basico.pdf
+2025-06-16 18:46:26,699 - DocumentEmbedder - WARNING - No se encontraron metadatos para ipid-furgoneta-perdida-total.pdf
+2025-06-16 18:46:26,701 - DocumentEmbedder - WARNING - No se encontraron metadatos para ipid-furgoneta-robo-incendio.pdf
+2025-06-16 18:46:26,704 - DocumentEmbedder - WARNING - No se encontraron metadatos para ipid-furgoneta-td-sin-franquicia.pdf
+2025-06-16 18:46:26,706 - DocumentEmbedder - WARNING - No se encontraron metadatos para ipid-moto-perdida-total.pdf
+2025-06-16 18:46:26,708 - DocumentEmbedder - WARNING - No se encontraron metadatos para ipid-moto-robo.pdf
+2025-06-16 18:46:26,709 - DocumentEmbedder - WARNING - No se encontraron metadatos para ipid-moto-seguro-basico.pdf
+2025-06-16 18:46:26,711 - DocumentEmbedder - WARNING - No se encontraron metadatos para ipid-moto-seguro-franquicia.pdf
+2025-06-16 18:46:26,713 - DocumentEmbedder - WARNING - No se encontraron metadatos para ipid-moto-todo-riesgo-sin-franquicia.pdf
+2025-06-16 18:46:26,714 - DocumentEmbedder - WARNING - No se encontraron metadatos para ipid-optimo.pdf
+2025-06-16 18:46:26,715 - DocumentEmbedder - WARNING - No se encontraron metadatos para ipid-tr-con-franquicia.pdf
+2025-06-16 18:46:26,717 - DocumentEmbedder - WARNING - No se encontraron metadatos para maquinaria-basico-ipid.pdf
+2025-06-16 18:46:26,719 - DocumentEmbedder - WARNING - No se encontraron metadatos para maquinaria-terceros-ipid.pdf
+2025-06-16 18:46:26,722 - DocumentEmbedder - WARNING - No se encontraron metadatos para remolque-basico-ipid.pdf
+2025-06-16 18:46:26,725 - DocumentEmbedder - WARNING - No se encontraron metadatos para remolque-basico-robo-ipid.pdf
+2025-06-16 18:46:26,726 - DocumentEmbedder - WARNING - No se encontraron metadatos para remolque-perdida-total-ipid.pdf
+2025-06-16 18:46:26,727 - DocumentEmbedder - WARNING - No se encontraron metadatos para remolque-todo-riesgo-franquicia-ipid.pdf
+2025-06-16 18:46:26,729 - DocumentEmbedder - WARNING - No se encontraron metadatos para remolque-todo-riesgo-ipid.pdf
+2025-06-16 18:46:26,731 - DocumentEmbedder - WARNING - No se encontraron metadatos para semirremolque-basico-ipid.pdf
+2025-06-16 18:46:26,732 - DocumentEmbedder - WARNING - No se encontraron metadatos para semirremolque-basico-robo-ipid.pdf
+2025-06-16 18:46:26,733 - DocumentEmbedder - WARNING - No se encontraron metadatos para semirremolque-perdida-total-ipid.pdf
+2025-06-16 18:46:26,735 - DocumentEmbedder - WARNING - No se encontraron metadatos para semirremolque-todo-riesgo-franquicia-ipid.pdf
+2025-06-16 18:46:26,738 - DocumentEmbedder - WARNING - No se encontraron metadatos para semirremolque-todo-riesgo-ipid.pdf
+2025-06-16 18:46:26,741 - DocumentEmbedder - WARNING - No se encontraron metadatos para turismo-comercial-basico-ipid.pdf
+2025-06-16 18:46:26,742 - DocumentEmbedder - WARNING - No se encontraron metadatos para turismo-comercial-basico-robo-ipid.pdf
+2025-06-16 18:46:26,743 - DocumentEmbedder - WARNING - No se encontraron metadatos para turismo-comercial-perdida-total-ipid.pdf
+2025-06-16 18:46:26,745 - DocumentEmbedder - WARNING - No se encontraron metadatos para turismo-comercial-todo-riesgo-franquicia-ipid.pdf
+2025-06-16 18:46:26,747 - DocumentEmbedder - WARNING - No se encontraron metadatos para turismo-comercial-todo-riesgo-ipid.pdf
+2025-06-16 18:46:26,748 - DocumentEmbedder - ERROR - Error procesando documentos: No se pudieron cargar documentos válidos
+2025-06-16 18:46:26,748 - __main__ - ERROR - Error en la ejecución principal: No se pudieron cargar documentos válidos
+2025-06-16 18:47:25,141 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-06-16 18:47:30,513 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750114050.513668
+2025-06-16 18:47:30,514 - DocumentEmbedder - INFO - Inicializado DocumentEmbedder - Model: paraphrase-multilingual-mpnet-base-v2, Device: cpu, Chunk size: 512
+2025-06-16 18:47:30,532 - DocumentEmbedder - INFO - Metadatos cargados exitosamente - Total documentos: 52, Columnas: ['filename', 'producto', 'insurance_type', 'file_path', 'coverage_type', 'num_pages', 'keywords', 'chunks']
+2025-06-16 18:47:30,532 - DocumentEmbedder - WARNING - No se encontraron metadatos para auto-plus-basico.pdf
+2025-06-16 18:47:30,532 - DocumentEmbedder - WARNING - No se encontraron metadatos para auto-plus-franquicia1.pdf
+2025-06-16 18:47:30,532 - DocumentEmbedder - WARNING - No se encontraron metadatos para auto-plus-franquicia2.pdf
+2025-06-16 18:47:30,546 - DocumentEmbedder - WARNING - No se encontraron metadatos para auto-plus-robo-incendio.pdf
+2025-06-16 18:47:30,546 - DocumentEmbedder - WARNING - No se encontraron metadatos para auto-plus-terceros.pdf
+2025-06-16 18:47:30,547 - DocumentEmbedder - WARNING - No se encontraron metadatos para auto-plus-tr-sin-franquicia.pdf
+2025-06-16 18:47:30,557 - DocumentEmbedder - WARNING - No se encontraron metadatos para autocar-danos-estructura-ipid.pdf
+2025-06-16 18:47:30,558 - DocumentEmbedder - WARNING - No se encontraron metadatos para autocar-incendio-ipid.pdf
+2025-06-16 18:47:30,559 - DocumentEmbedder - WARNING - No se encontraron metadatos para camion-basico-ipid.pdf
+2025-06-16 18:47:30,559 - DocumentEmbedder - WARNING - No se encontraron metadatos para camion-basico-robo-ipid.pdf
+2025-06-16 18:47:30,559 - DocumentEmbedder - WARNING - No se encontraron metadatos para camion-perdida-total-ipid.pdf
+2025-06-16 18:47:30,560 - DocumentEmbedder - WARNING - No se encontraron metadatos para camion-todo-riesgo-franquicia-ipid.pdf
+2025-06-16 18:47:30,560 - DocumentEmbedder - WARNING - No se encontraron metadatos para camion-todo-riesgo-ipid.pdf
+2025-06-16 18:47:30,560 - DocumentEmbedder - WARNING - No se encontraron metadatos para camion-tractor-basico-ipid.pdf
+2025-06-16 18:47:30,560 - DocumentEmbedder - WARNING - No se encontraron metadatos para camion-tractor-basico-robo-ipid.pdf
+2025-06-16 18:47:30,560 - DocumentEmbedder - WARNING - No se encontraron metadatos para camion-tractor-perdida-total-ipid.pdf
+2025-06-16 18:47:30,560 - DocumentEmbedder - WARNING - No se encontraron metadatos para camion-tractor-todo-riesgo-franquicia-ipid.pdf
+2025-06-16 18:47:30,560 - DocumentEmbedder - WARNING - No se encontraron metadatos para camion-tractor-todo-riesgo-ipid.pdf
+2025-06-16 18:47:30,561 - DocumentEmbedder - WARNING - No se encontraron metadatos para GLOSARIO DE TÉRMINOS DE SEGUROS.pdf
+2025-06-16 18:47:30,561 - DocumentEmbedder - WARNING - No se encontraron metadatos para ipid-ampliado.pdf
+2025-06-16 18:47:30,561 - DocumentEmbedder - WARNING - No se encontraron metadatos para ipid-basico.pdf
+2025-06-16 18:47:30,561 - DocumentEmbedder - WARNING - No se encontraron metadatos para ipid-ciclomotor-seguro-basico.pdf
+2025-06-16 18:47:30,561 - DocumentEmbedder - WARNING - No se encontraron metadatos para ipid-extra.pdf
+2025-06-16 18:47:30,561 - DocumentEmbedder - WARNING - No se encontraron metadatos para ipid-furgoneta-basico.pdf
+2025-06-16 18:47:30,561 - DocumentEmbedder - WARNING - No se encontraron metadatos para ipid-furgoneta-perdida-total.pdf
+2025-06-16 18:47:30,562 - DocumentEmbedder - WARNING - No se encontraron metadatos para ipid-furgoneta-robo-incendio.pdf
+2025-06-16 18:47:30,562 - DocumentEmbedder - WARNING - No se encontraron metadatos para ipid-furgoneta-td-sin-franquicia.pdf
+2025-06-16 18:47:30,563 - DocumentEmbedder - WARNING - No se encontraron metadatos para ipid-moto-perdida-total.pdf
+2025-06-16 18:47:30,563 - DocumentEmbedder - WARNING - No se encontraron metadatos para ipid-moto-robo.pdf
+2025-06-16 18:47:30,564 - DocumentEmbedder - WARNING - No se encontraron metadatos para ipid-moto-seguro-basico.pdf
+2025-06-16 18:47:30,564 - DocumentEmbedder - WARNING - No se encontraron metadatos para ipid-moto-seguro-franquicia.pdf
+2025-06-16 18:47:30,565 - DocumentEmbedder - WARNING - No se encontraron metadatos para ipid-moto-todo-riesgo-sin-franquicia.pdf
+2025-06-16 18:47:30,565 - DocumentEmbedder - WARNING - No se encontraron metadatos para ipid-optimo.pdf
+2025-06-16 18:47:30,566 - DocumentEmbedder - WARNING - No se encontraron metadatos para ipid-tr-con-franquicia.pdf
+2025-06-16 18:47:30,566 - DocumentEmbedder - WARNING - No se encontraron metadatos para maquinaria-basico-ipid.pdf
+2025-06-16 18:47:30,567 - DocumentEmbedder - WARNING - No se encontraron metadatos para maquinaria-terceros-ipid.pdf
+2025-06-16 18:47:30,567 - DocumentEmbedder - WARNING - No se encontraron metadatos para remolque-basico-ipid.pdf
+2025-06-16 18:47:30,568 - DocumentEmbedder - WARNING - No se encontraron metadatos para remolque-basico-robo-ipid.pdf
+2025-06-16 18:47:30,570 - DocumentEmbedder - WARNING - No se encontraron metadatos para remolque-perdida-total-ipid.pdf
+2025-06-16 18:47:30,571 - DocumentEmbedder - WARNING - No se encontraron metadatos para remolque-todo-riesgo-franquicia-ipid.pdf
+2025-06-16 18:47:30,573 - DocumentEmbedder - WARNING - No se encontraron metadatos para remolque-todo-riesgo-ipid.pdf
+2025-06-16 18:47:30,574 - DocumentEmbedder - WARNING - No se encontraron metadatos para semirremolque-basico-ipid.pdf
+2025-06-16 18:47:30,575 - DocumentEmbedder - WARNING - No se encontraron metadatos para semirremolque-basico-robo-ipid.pdf
+2025-06-16 18:47:30,576 - DocumentEmbedder - WARNING - No se encontraron metadatos para semirremolque-perdida-total-ipid.pdf
+2025-06-16 18:47:30,577 - DocumentEmbedder - WARNING - No se encontraron metadatos para semirremolque-todo-riesgo-franquicia-ipid.pdf
+2025-06-16 18:47:30,577 - DocumentEmbedder - WARNING - No se encontraron metadatos para semirremolque-todo-riesgo-ipid.pdf
+2025-06-16 18:47:30,577 - DocumentEmbedder - WARNING - No se encontraron metadatos para turismo-comercial-basico-ipid.pdf
+2025-06-16 18:47:30,577 - DocumentEmbedder - WARNING - No se encontraron metadatos para turismo-comercial-basico-robo-ipid.pdf
+2025-06-16 18:47:30,578 - DocumentEmbedder - WARNING - No se encontraron metadatos para turismo-comercial-perdida-total-ipid.pdf
+2025-06-16 18:47:30,578 - DocumentEmbedder - WARNING - No se encontraron metadatos para turismo-comercial-todo-riesgo-franquicia-ipid.pdf
+2025-06-16 18:47:30,578 - DocumentEmbedder - WARNING - No se encontraron metadatos para turismo-comercial-todo-riesgo-ipid.pdf
+2025-06-16 18:47:30,578 - DocumentEmbedder - ERROR - Error procesando documentos: No se pudieron cargar documentos válidos
+2025-06-16 18:47:30,578 - __main__ - ERROR - Error en la ejecución principal: No se pudieron cargar documentos válidos
+2025-06-16 18:48:27,591 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-06-16 18:48:31,112 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750114111.1126006
+2025-06-16 18:48:31,113 - DocumentEmbedder - INFO - Inicializado DocumentEmbedder - Model: paraphrase-multilingual-mpnet-base-v2, Device: cpu, Chunk size: 512
+2025-06-16 18:48:31,130 - DocumentEmbedder - INFO - Metadatos cargados exitosamente - Total documentos: 52, Columnas: ['filename', 'producto', 'insurance_type', 'file_path', 'coverage_type', 'num_pages', 'keywords', 'chunks']
+2025-06-16 18:48:32,559 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.409s | Memory: 6.5% | CPU: 0.0%
+2025-06-16 18:48:33,850 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.288s | Memory: 6.5% | CPU: 0.0%
+2025-06-16 18:48:35,180 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.330s | Memory: 6.5% | CPU: 0.0%
+2025-06-16 18:48:36,482 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.299s | Memory: 6.5% | CPU: 0.0%
+2025-06-16 18:48:37,684 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.197s | Memory: 6.5% | CPU: 0.0%
+2025-06-16 18:48:38,933 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.233s | Memory: 6.5% | CPU: 0.0%
+2025-06-16 18:48:40,500 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.567s | Memory: 6.5% | CPU: 0.0%
+2025-06-16 18:48:41,815 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.315s | Memory: 6.5% | CPU: 0.0%
+2025-06-16 18:48:43,083 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.265s | Memory: 6.5% | CPU: 0.0%
+2025-06-16 18:48:45,013 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.913s | Memory: 6.5% | CPU: 0.0%
+2025-06-16 18:48:46,569 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.550s | Memory: 6.5% | CPU: 0.0%
+2025-06-16 18:48:47,834 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.265s | Memory: 6.5% | CPU: 0.0%
+2025-06-16 18:48:49,084 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.250s | Memory: 6.5% | CPU: 0.0%
+2025-06-16 18:48:50,410 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.326s | Memory: 6.5% | CPU: 0.0%
+2025-06-16 18:48:51,700 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.287s | Memory: 6.5% | CPU: 0.0%
+2025-06-16 18:48:52,884 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.184s | Memory: 6.5% | CPU: 0.0%
+2025-06-16 18:48:56,252 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 3.368s | Memory: 6.5% | CPU: 0.0%
+2025-06-16 18:48:59,535 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 3.266s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:49:02,218 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 2.683s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:49:02,552 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 0.333s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:49:05,066 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 2.514s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:49:07,435 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 2.362s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:49:09,852 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 2.417s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:49:11,705 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.854s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:49:13,752 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 2.041s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:49:15,547 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.795s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:49:17,273 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.720s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:49:19,088 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.809s | Memory: 6.4% | CPU: 0.0%
+2025-06-16 18:49:20,533 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.438s | Memory: 6.5% | CPU: 0.0%
+2025-06-16 18:49:21,954 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.418s | Memory: 6.5% | CPU: 0.0%
+2025-06-16 18:49:23,536 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.582s | Memory: 6.5% | CPU: 0.0%
+2025-06-16 18:49:24,948 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.413s | Memory: 6.5% | CPU: 0.0%
+2025-06-16 18:49:26,290 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.338s | Memory: 6.5% | CPU: 0.0%
+2025-06-16 18:49:27,725 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.418s | Memory: 6.6% | CPU: 0.0%
+2025-06-16 18:49:29,426 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.696s | Memory: 6.6% | CPU: 0.0%
+2025-06-16 18:49:30,869 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.440s | Memory: 6.6% | CPU: 0.0%
+2025-06-16 18:49:32,355 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.485s | Memory: 6.6% | CPU: 0.0%
+2025-06-16 18:49:33,990 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.629s | Memory: 6.6% | CPU: 0.0%
+2025-06-16 18:49:35,375 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.382s | Memory: 6.6% | CPU: 0.0%
+2025-06-16 18:49:36,820 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.440s | Memory: 6.6% | CPU: 0.0%
+2025-06-16 18:49:38,275 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.438s | Memory: 6.6% | CPU: 0.0%
+2025-06-16 18:49:39,772 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.493s | Memory: 6.6% | CPU: 0.0%
+2025-06-16 18:49:41,170 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.395s | Memory: 6.6% | CPU: 0.0%
+2025-06-16 18:49:42,587 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.416s | Memory: 6.6% | CPU: 0.0%
+2025-06-16 18:49:44,054 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.451s | Memory: 6.6% | CPU: 0.0%
+2025-06-16 18:49:46,120 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 2.067s | Memory: 6.6% | CPU: 0.0%
+2025-06-16 18:49:47,688 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.568s | Memory: 6.6% | CPU: 0.0%
+2025-06-16 18:49:48,992 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.304s | Memory: 6.6% | CPU: 0.0%
+2025-06-16 18:49:50,389 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.382s | Memory: 6.6% | CPU: 0.0%
+2025-06-16 18:49:51,704 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.312s | Memory: 6.6% | CPU: 0.0%
+2025-06-16 18:49:53,173 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.469s | Memory: 6.6% | CPU: 0.0%
+2025-06-16 18:49:54,671 - PerformanceMonitor - INFO - Component: embedding_generation | Operation: generate_embeddings | Duration: 1.483s | Memory: 6.6% | CPU: 0.0%
+2025-06-16 18:49:54,687 - DocumentEmbedder - INFO - Archivo processed_documents.json generado exitosamente - Total documentos: 52

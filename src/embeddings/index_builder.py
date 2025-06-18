@@ -10,7 +10,6 @@ from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 from datetime import datetime
 
-from src.monitoring.logger import RAGLogger
 from src.monitoring.performance import PerformanceMonitor
 
 class FAISSIndexBuilder:
@@ -41,8 +40,11 @@ class FAISSIndexBuilder:
         self.dimension = dimension
         self.index_type = index_type
         
-        # Inicializar logger y monitor
-        self.logger = RAGLogger()
+        # Configurar logging simple
+        self.logger = logging.getLogger("FAISSIndexBuilder")
+        self.logger.setLevel(logging.INFO)
+        
+        # Inicializar monitor de rendimiento
         self.performance_monitor = PerformanceMonitor()
         
         # Mapeo de IDs a metadatos
@@ -101,24 +103,46 @@ class FAISSIndexBuilder:
                 with open(metadata_file, 'r', encoding='utf-8') as f:
                     metadata = json.load(f)
                 
-                # Agregar embeddings y metadatos
+                # Agregar embeddings
                 all_embeddings.append(embeddings)
                 
-                # Crear entrada de metadatos para cada embedding
+                # Obtener chunks del metadata
+                chunks = metadata.get("chunks", [])
+                base_metadata = metadata.get("metadata", {})
+                
+                # Crear entrada de metadatos para cada embedding/chunk
                 num_embeddings = len(embeddings)
                 for i in range(num_embeddings):
-                    chunk_metadata = metadata.copy()
+                    # Combinar metadatos base con información del chunk específico
+                    chunk_metadata = base_metadata.copy()
                     chunk_metadata.update({
+                        "filename": metadata.get("filename", ""),
                         "chunk_index": i,
-                        "total_chunks": num_embeddings
+                        "total_chunks": num_embeddings,
+                        "embedding_dim": metadata.get("embedding_dim", embeddings.shape[1])
                     })
+                    
+                    # IMPORTANTE: Incluir el texto real del chunk
+                    if i < len(chunks):
+                        chunk_info = chunks[i]
+                        chunk_metadata.update({
+                            "text": chunk_info.get("text", ""),
+                            "section": chunk_info.get("section", "general"),
+                            "section_title": chunk_info.get("section_title", ""),
+                            "start_position": chunk_info.get("start_position", 0),
+                            "end_position": chunk_info.get("end_position", 0)
+                        })
+                    else:
+                        # Fallback si no hay información de chunk
+                        chunk_metadata["text"] = ""
+                        chunk_metadata["section"] = "general"
+                        
                     all_metadata.append(chunk_metadata)
                 
+                self.logger.info(f"Cargado: {emb_file.name} - {num_embeddings} chunks con texto")
+                
             except Exception as e:
-                self.logger.error(
-                    f"Error cargando embeddings de {emb_file}",
-                    error=str(e)
-                )
+                self.logger.error(f"Error cargando embeddings de {emb_file}: {str(e)}")
                 continue
         
         if not all_embeddings:
@@ -133,6 +157,11 @@ class FAISSIndexBuilder:
                 f"Dimensión de embeddings ({embeddings_matrix.shape[1]}) "
                 f"no coincide con la esperada ({self.dimension})"
             )
+        
+        self.logger.info(
+            f"Cargados {len(all_embeddings)} archivos, "
+            f"{embeddings_matrix.shape[0]} chunks totales con texto incluido"
+        )
         
         return embeddings_matrix, all_metadata
     
@@ -172,18 +201,12 @@ class FAISSIndexBuilder:
                 json.dump(self.id_to_metadata, f, ensure_ascii=False, indent=2)
             
             self.logger.info(
-                "Índice FAISS construido exitosamente",
-                index_file=str(index_file),
-                mapping_file=str(mapping_file),
-                num_vectors=self.current_id,
-                index_type=self.index_type
+                f"Índice FAISS construido exitosamente: {index_file}, "
+                f"Mapping: {mapping_file}, Vectores: {self.current_id}, Tipo: {self.index_type}"
             )
             
         except Exception as e:
-            self.logger.error(
-                "Error construyendo índice FAISS",
-                error=str(e)
-            )
+            self.logger.error(f"Error construyendo índice FAISS: {str(e)}")
             raise
     
     def load_index(

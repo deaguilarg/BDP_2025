@@ -423,3 +423,12 @@
 2025-06-16 19:01:23,396 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.000s | Memory: 4.4% | CPU: 0.0% - ERROR: SearchEngine.search() got an unexpected keyword argument 'filters'
 2025-06-18 15:27:58,501 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750274878.5010703
 2025-06-18 15:27:59,956 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750274879.9567506
+2025-06-18 15:47:16,004 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.160s | Memory: 6.4% | CPU: 0.0%
+2025-06-18 15:47:16,012 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.176s | Memory: 6.4% | CPU: 0.0%
+2025-06-18 15:47:21,356 - PerformanceMonitor - INFO - Component: answer_generation | Operation: generate_answer | Duration: 5.344s | Memory: 6.4% | CPU: 0.0%
+2025-06-18 15:48:29,309 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.128s | Memory: 6.5% | CPU: 0.0%
+2025-06-18 15:48:29,309 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.128s | Memory: 6.5% | CPU: 0.0%
+2025-06-18 15:48:36,834 - PerformanceMonitor - INFO - Component: answer_generation | Operation: generate_answer | Duration: 7.525s | Memory: 6.5% | CPU: 0.0%
+2025-06-18 15:52:18,466 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.080s | Memory: 7.0% | CPU: 0.0%
+2025-06-18 15:52:18,466 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.080s | Memory: 7.0% | CPU: 0.0%
+2025-06-18 15:52:18,546 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.064s | Memory: 7.0% | CPU: 0.0%

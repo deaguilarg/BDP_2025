@@ -432,3 +432,42 @@
 2025-06-18 15:52:18,466 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.080s | Memory: 7.0% | CPU: 0.0%
 2025-06-18 15:52:18,466 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.080s | Memory: 7.0% | CPU: 0.0%
 2025-06-18 15:52:18,546 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.064s | Memory: 7.0% | CPU: 0.0%
+2025-06-19 09:26:47,630 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750339607.6302752
+2025-06-19 09:26:51,965 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750339611.9652119
+2025-06-19 09:29:31,354 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750339771.3541327
+2025-06-19 09:29:32,437 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750339772.437542
+2025-06-19 09:30:21,373 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.173s | Memory: 6.4% | CPU: 0.0%
+2025-06-19 09:30:21,385 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.185s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 09:30:27,540 - PerformanceMonitor - INFO - Component: answer_generation | Operation: generate_answer | Duration: 6.154s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 09:31:01,480 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.117s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 09:31:01,482 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.119s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 09:31:04,894 - PerformanceMonitor - INFO - Component: answer_generation | Operation: generate_answer | Duration: 3.405s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 09:31:59,414 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.102s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 09:31:59,417 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.105s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 09:32:00,963 - PerformanceMonitor - INFO - Component: answer_generation | Operation: generate_answer | Duration: 1.545s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 09:36:16,914 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.113s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 09:36:16,914 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.113s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 09:36:19,259 - PerformanceMonitor - INFO - Component: answer_generation | Operation: generate_answer | Duration: 2.345s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 09:39:08,136 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.128s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 09:39:08,136 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.128s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 09:39:11,420 - PerformanceMonitor - INFO - Component: answer_generation | Operation: generate_answer | Duration: 3.273s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 10:01:08,374 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.167s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 10:01:08,374 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.167s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 10:01:09,710 - PerformanceMonitor - INFO - Component: answer_generation | Operation: generate_answer | Duration: 1.314s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 10:03:33,091 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.104s | Memory: 5.6% | CPU: 0.0%
+2025-06-19 10:03:33,101 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.115s | Memory: 5.6% | CPU: 0.0%
+2025-06-19 10:03:38,600 - PerformanceMonitor - INFO - Component: answer_generation | Operation: generate_answer | Duration: 5.499s | Memory: 5.6% | CPU: 0.0%
+2025-06-19 10:11:44,714 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.180s | Memory: 4.6% | CPU: 0.0%
+2025-06-19 10:11:44,720 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.186s | Memory: 4.6% | CPU: 0.0%
+2025-06-19 10:11:48,407 - PerformanceMonitor - INFO - Component: answer_generation | Operation: generate_answer | Duration: 3.685s | Memory: 4.6% | CPU: 0.0%
+2025-06-19 10:12:26,015 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.160s | Memory: 4.7% | CPU: 0.0%
+2025-06-19 10:12:26,019 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.164s | Memory: 4.7% | CPU: 0.0%
+2025-06-19 10:12:29,447 - PerformanceMonitor - INFO - Component: answer_generation | Operation: generate_answer | Duration: 3.427s | Memory: 4.7% | CPU: 0.0%
+2025-06-19 10:33:17,335 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750343597.3355293
+2025-06-19 10:33:18,024 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750343598.0240905
+2025-06-19 10:48:19,900 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.166s | Memory: 6.4% | CPU: 0.0%
+2025-06-19 10:48:19,903 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.173s | Memory: 6.4% | CPU: 0.0%
+2025-06-19 10:48:22,499 - PerformanceMonitor - INFO - Component: answer_generation | Operation: generate_answer | Duration: 2.594s | Memory: 6.4% | CPU: 0.0%
+2025-06-19 10:50:11,138 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.091s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 10:50:11,141 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.094s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 10:50:12,568 - PerformanceMonitor - INFO - Component: answer_generation | Operation: generate_answer | Duration: 1.426s | Memory: 6.5% | CPU: 0.0%

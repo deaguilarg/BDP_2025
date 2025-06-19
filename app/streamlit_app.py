@@ -17,10 +17,40 @@ load_dotenv()
 
 # Verificar la clave API
 api_key = os.getenv("OPENAI_API_KEY")
+
+# Configuración para deployment público
 if not api_key:
-    st.error("❌ No se encontró la variable de entorno OPENAI_API_KEY")
-    st.info("💡 Crea un archivo .env en la raíz del proyecto con: OPENAI_API_KEY=tu-clave-aqui")
+    st.error("🔑 **Configuración Requerida**")
+    st.markdown("""
+    Esta aplicación requiere una API key de OpenAI para funcionar.
+    
+    **Para administradores:**
+    1. Configure la variable de entorno `OPENAI_API_KEY` en Streamlit Cloud
+    2. O proporcione un sistema de autenticación para usuarios
+    
+    **Para usuarios:**
+    - Contacte al administrador del sistema para obtener acceso
+    """)
+    
+    # Opción para que usuarios ingresen su propia API key (para testing)
+    with st.expander("🧪 Modo de Prueba (Solo para Testing)"):
+        user_api_key = st.text_input(
+            "Ingresa tu propia API key de OpenAI:", 
+            type="password",
+            help="Esta key solo se usa durante esta sesión y no se almacena"
+        )
+        if user_api_key and user_api_key.startswith("sk-"):
+            st.session_state["user_api_key"] = user_api_key
+            st.success("✅ API key configurada para esta sesión")
+            st.rerun()
+        elif user_api_key:
+            st.error("❌ API key inválida (debe comenzar con 'sk-')")
+    
     st.stop()
+
+# Usar API key del usuario si existe, sino la del sistema
+if "user_api_key" in st.session_state:
+    api_key = st.session_state["user_api_key"]
 
 if not api_key.startswith("sk-"):
     st.error("❌ La clave API no tiene el formato correcto. Debe comenzar con 'sk-'")

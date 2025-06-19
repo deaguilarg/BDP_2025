@@ -151,3 +151,92 @@
 2025-06-18 15:48:36,834 - AnswerGenerator - INFO - Respuesta generada para consulta: 'Cuáles son las coberturas del seguro de moto? considera un uso diario y exhaustivo' | Tiempo: 7.525s | Documentos: 10 | Longitud respuesta: 1440 chars
 2025-06-18 15:48:36,834 - PerformanceMonitor - INFO - Component: answer_generation | Operation: generate_answer | Duration: 7.525s | Memory: 6.5% | CPU: 0.0%
 2025-06-18 15:48:36,858 - __main__ - INFO - Consulta procesada: 'Cuáles son las coberturas del seguro de moto? considera un uso diario y exhaustivo', Resultados: 11, Filtros: {}
+2025-06-19 09:29:24,537 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-06-19 09:29:24,537 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-06-19 09:29:31,354 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750339771.3541327
+2025-06-19 09:29:31,404 - SearchEngine - INFO - Índice FAISS cargado: models\faiss_index\faiss_index_20250616_180809.bin, Mapping: models\faiss_index\id_mapping_20250616_180809.json, Vectores: 504
+2025-06-19 09:29:32,437 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750339772.437542
+2025-06-19 09:29:32,464 - __main__ - INFO - Metadatos cargados exitosamente. Campos encontrados: ['filename', 'producto', 'insurance_type', 'file_path', 'coverage_type', 'num_pages', 'keywords']
+2025-06-19 09:30:21,373 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.173s | Memory: 6.4% | CPU: 0.0%
+2025-06-19 09:30:21,384 - SearchEngine - INFO - Búsqueda completada: query='Qué seguro de auto recomendarías para una mujer de 60 años?', candidates=13, filtered=13, vehicle_types=['auto', 'turismo']
+2025-06-19 09:30:21,385 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.185s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 09:30:27,540 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-19 09:30:27,540 - AnswerGenerator - INFO - Respuesta generada para consulta: 'Qué seguro de auto recomendarías para una mujer de 60 años?' | Tiempo: 6.154s | Documentos: 5 | Longitud respuesta: 1076 chars
+2025-06-19 09:30:27,540 - PerformanceMonitor - INFO - Component: answer_generation | Operation: generate_answer | Duration: 6.154s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 09:30:28,159 - __main__ - INFO - Consulta procesada: 'Qué seguro de auto recomendarías para una mujer de 60 años?', Resultados: 10, Filtros: {}
+2025-06-19 09:31:01,480 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.117s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 09:31:01,482 - SearchEngine - INFO - Búsqueda completada: query='Qué seguro de auto recomendarías para un hombre de 60 años?', candidates=14, filtered=14, vehicle_types=['auto', 'turismo']
+2025-06-19 09:31:01,482 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.119s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 09:31:04,860 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-19 09:31:04,888 - AnswerGenerator - INFO - Respuesta generada para consulta: 'Qué seguro de auto recomendarías para un hombre de 60 años?' | Tiempo: 3.405s | Documentos: 5 | Longitud respuesta: 1023 chars
+2025-06-19 09:31:04,894 - PerformanceMonitor - INFO - Component: answer_generation | Operation: generate_answer | Duration: 3.405s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 09:31:04,934 - __main__ - INFO - Consulta procesada: 'Qué seguro de auto recomendarías para un hombre de 60 años?', Resultados: 10, Filtros: {}
+2025-06-19 09:31:59,414 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.102s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 09:31:59,416 - SearchEngine - INFO - Búsqueda completada: query='Qué seguro de auto recomendarías para un hombre de 14 años?', candidates=14, filtered=14, vehicle_types=['auto', 'turismo']
+2025-06-19 09:31:59,417 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.105s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 09:32:00,963 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-19 09:32:00,963 - AnswerGenerator - INFO - Respuesta generada para consulta: 'Qué seguro de auto recomendarías para un hombre de 14 años?' | Tiempo: 1.545s | Documentos: 5 | Longitud respuesta: 520 chars
+2025-06-19 09:32:00,963 - PerformanceMonitor - INFO - Component: answer_generation | Operation: generate_answer | Duration: 1.545s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 09:32:00,985 - __main__ - INFO - Consulta procesada: 'Qué seguro de auto recomendarías para un hombre de 14 años?', Resultados: 10, Filtros: {}
+2025-06-19 09:36:16,914 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.113s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 09:36:16,914 - SearchEngine - INFO - Búsqueda completada: query='Cuál es la diferencia entre el seguro "auto plus todo riesgo" y "Allianz turismo comercial, todo riesgo"???', candidates=14, filtered=14, vehicle_types=['auto', 'turismo']
+2025-06-19 09:36:16,914 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.113s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 09:36:19,259 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-19 09:36:19,259 - AnswerGenerator - INFO - Respuesta generada para consulta: 'Cuál es la diferencia entre el seguro "auto plus todo riesgo" y "Allianz turismo comercial, todo riesgo"???' | Tiempo: 2.345s | Documentos: 5 | Longitud respuesta: 853 chars
+2025-06-19 09:36:19,259 - PerformanceMonitor - INFO - Component: answer_generation | Operation: generate_answer | Duration: 2.345s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 09:36:19,278 - __main__ - INFO - Consulta procesada: 'Cuál es la diferencia entre el seguro "auto plus todo riesgo" y "Allianz turismo comercial, todo riesgo"???', Resultados: 10, Filtros: {}
+2025-06-19 09:39:08,136 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.128s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 09:39:08,136 - SearchEngine - INFO - Búsqueda completada: query='Cuál es la diferencia entre el seguro "auto plus todo riesgo" y "Allianz turismo comercial, todo riesgo"???', candidates=56, filtered=56, vehicle_types=['auto', 'turismo']
+2025-06-19 09:39:08,136 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.128s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 09:39:11,420 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-19 09:39:11,420 - AnswerGenerator - INFO - Respuesta generada para consulta: 'Cuál es la diferencia entre el seguro "auto plus todo riesgo" y "Allianz turismo comercial, todo riesgo"???' | Tiempo: 3.273s | Documentos: 20 | Longitud respuesta: 1357 chars
+2025-06-19 09:39:11,420 - PerformanceMonitor - INFO - Component: answer_generation | Operation: generate_answer | Duration: 3.273s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 09:39:11,488 - __main__ - INFO - Consulta procesada: 'Cuál es la diferencia entre el seguro "auto plus todo riesgo" y "Allianz turismo comercial, todo riesgo"???', Resultados: 40, Filtros: {}
+2025-06-19 10:01:08,374 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.167s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 10:01:08,374 - SearchEngine - INFO - Búsqueda completada: query='Cuéntame las noticias más importantes del día en españa', candidates=200, filtered=200, vehicle_types=[]
+2025-06-19 10:01:08,374 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.167s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 10:01:09,692 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-19 10:01:09,708 - AnswerGenerator - INFO - Respuesta generada para consulta: 'Cuéntame las noticias más importantes del día en españa' | Tiempo: 1.312s | Documentos: 20 | Longitud respuesta: 208 chars
+2025-06-19 10:01:09,710 - PerformanceMonitor - INFO - Component: answer_generation | Operation: generate_answer | Duration: 1.314s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 10:01:09,737 - __main__ - INFO - Consulta procesada: 'Cuéntame las noticias más importantes del día en españa', Resultados: 40, Filtros: {}
+2025-06-19 10:03:33,091 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.104s | Memory: 5.6% | CPU: 0.0%
+2025-06-19 10:03:33,100 - SearchEngine - INFO - Búsqueda completada: query='Cuál es la diferencia entre el seguro auto todo riesgo plus y el comercial todo riesgo??', candidates=57, filtered=57, vehicle_types=['auto', 'turismo']
+2025-06-19 10:03:33,101 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.115s | Memory: 5.6% | CPU: 0.0%
+2025-06-19 10:03:38,600 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-19 10:03:38,600 - AnswerGenerator - INFO - Respuesta generada para consulta: 'Cuál es la diferencia entre el seguro auto todo riesgo plus y el comercial todo riesgo??' | Tiempo: 5.499s | Documentos: 20 | Longitud respuesta: 1957 chars
+2025-06-19 10:03:38,600 - PerformanceMonitor - INFO - Component: answer_generation | Operation: generate_answer | Duration: 5.499s | Memory: 5.6% | CPU: 0.0%
+2025-06-19 10:03:38,687 - __main__ - INFO - Consulta procesada: 'Cuál es la diferencia entre el seguro auto todo riesgo plus y el comercial todo riesgo??', Resultados: 40, Filtros: {}
+2025-06-19 10:11:44,714 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.180s | Memory: 4.6% | CPU: 0.0%
+2025-06-19 10:11:44,720 - SearchEngine - INFO - Búsqueda completada: query='Cuál es el mejor seguro para mi? Soy hombre de 30 años, vivo arrendando en un piso en Sants y trabajo en badalona', candidates=200, filtered=200, vehicle_types=[]
+2025-06-19 10:11:44,720 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.186s | Memory: 4.6% | CPU: 0.0%
+2025-06-19 10:11:48,396 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-19 10:11:48,406 - AnswerGenerator - INFO - Respuesta generada para consulta: 'Cuál es el mejor seguro para mi? Soy hombre de 30 años, vivo arrendando en un piso en Sants y trabajo en badalona' | Tiempo: 3.681s | Documentos: 20 | Longitud respuesta: 976 chars
+2025-06-19 10:11:48,407 - PerformanceMonitor - INFO - Component: answer_generation | Operation: generate_answer | Duration: 3.685s | Memory: 4.6% | CPU: 0.0%
+2025-06-19 10:11:48,469 - __main__ - INFO - Consulta procesada: 'Cuál es el mejor seguro para mi? Soy hombre de 30 años, vivo arrendando en un piso en Sants y trabajo en badalona', Resultados: 40, Filtros: {}
+2025-06-19 10:12:26,015 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.160s | Memory: 4.7% | CPU: 0.0%
+2025-06-19 10:12:26,018 - SearchEngine - INFO - Búsqueda completada: query='Cuál es el mejor seguro para mi? No tiene por qué ser un seguro de automóvil. Soy hombre de 30 años, vivo arrendando en un piso en Sants y trabajo en badalona', candidates=54, filtered=54, vehicle_types=['auto', 'turismo']
+2025-06-19 10:12:26,019 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.164s | Memory: 4.7% | CPU: 0.0%
+2025-06-19 10:12:29,440 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-19 10:12:29,445 - AnswerGenerator - INFO - Respuesta generada para consulta: 'Cuál es el mejor seguro para mi? No tiene por qué ser un seguro de automóvil. Soy hombre de 30 años, vivo arrendando en un piso en Sants y trabajo en badalona' | Tiempo: 3.423s | Documentos: 20 | Longitud respuesta: 1227 chars
+2025-06-19 10:12:29,447 - PerformanceMonitor - INFO - Component: answer_generation | Operation: generate_answer | Duration: 3.427s | Memory: 4.7% | CPU: 0.0%
+2025-06-19 10:12:29,514 - __main__ - INFO - Consulta procesada: 'Cuál es el mejor seguro para mi? No tiene por qué ser un seguro de automóvil. Soy hombre de 30 años, vivo arrendando en un piso en Sants y trabajo en badalona', Resultados: 40, Filtros: {}
+2025-06-19 10:33:13,102 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-06-19 10:33:13,102 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-mpnet-base-v2
+2025-06-19 10:33:17,335 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750343597.3355293
+2025-06-19 10:33:17,360 - SearchEngine - INFO - Índice FAISS cargado: models\faiss_index\faiss_index_20250616_180809.bin, Mapping: models\faiss_index\id_mapping_20250616_180809.json, Vectores: 504
+2025-06-19 10:33:18,024 - PerformanceMonitor - INFO - Monitor de rendimiento inicializado. Start time: 1750343598.0240905
+2025-06-19 10:33:18,033 - __main__ - INFO - Metadatos cargados exitosamente. Campos encontrados: ['filename', 'producto', 'insurance_type', 'file_path', 'coverage_type', 'num_pages', 'keywords']
+2025-06-19 10:48:19,900 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.166s | Memory: 6.4% | CPU: 0.0%
+2025-06-19 10:48:19,902 - SearchEngine - INFO - Búsqueda completada: query='Cuál es el mejor seguro d automóvil para un estudiante de 14 años?', candidates=17, filtered=17, vehicle_types=['auto', 'turismo']
+2025-06-19 10:48:19,903 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.173s | Memory: 6.4% | CPU: 0.0%
+2025-06-19 10:48:22,485 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-19 10:48:22,497 - AnswerGenerator - INFO - Respuesta generada para consulta: 'Cuál es el mejor seguro d automóvil para un estudiante de 14 años?' | Tiempo: 2.593s | Documentos: 5 | Longitud respuesta: 730 chars
+2025-06-19 10:48:22,499 - PerformanceMonitor - INFO - Component: answer_generation | Operation: generate_answer | Duration: 2.594s | Memory: 6.4% | CPU: 0.0%
+2025-06-19 10:48:22,606 - __main__ - INFO - Consulta procesada: 'Cuál es el mejor seguro d automóvil para un estudiante de 14 años?', Resultados: 10, Filtros: {}
+2025-06-19 10:50:11,138 - PerformanceMonitor - INFO - Component: query_processing | Operation: process_query | Duration: 0.091s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 10:50:11,140 - SearchEngine - INFO - Búsqueda completada: query='Cuáles son las principales noticias del día en españa?', candidates=50, filtered=50, vehicle_types=[]
+2025-06-19 10:50:11,141 - PerformanceMonitor - INFO - Component: search | Operation: search | Duration: 0.094s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 10:50:12,565 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-19 10:50:12,567 - AnswerGenerator - INFO - Respuesta generada para consulta: 'Cuáles son las principales noticias del día en españa?' | Tiempo: 1.425s | Documentos: 5 | Longitud respuesta: 226 chars
+2025-06-19 10:50:12,568 - PerformanceMonitor - INFO - Component: answer_generation | Operation: generate_answer | Duration: 1.426s | Memory: 6.5% | CPU: 0.0%
+2025-06-19 10:50:12,591 - __main__ - INFO - Consulta procesada: 'Cuáles son las principales noticias del día en españa?', Resultados: 10, Filtros: {}

@@ -412,7 +412,7 @@ def create_allianz_header():
             </div>
         </div>
         <div style="text-align: right;">
-            <div style="font-size: 0.9rem; opacity: 0.8;">🛡️ Siempre a tu lado</div>
+            <div style="font-size: 0.9rem; opacity: 0.8;">🛡️ Aseguramos tu futuro</div>
         </div>
     </div>
     """, unsafe_allow_html=True)

@@ -413,11 +413,11 @@ def create_allianz_header():
     <div class="allianz-header">
         <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
             <div style="display: flex; align-items: center; gap: 1.5rem;">
+                {logo_html}
                 <div style="text-align: left;">
                     <div class="allianz-title">Asistente de Seguros</div>
                     <div class="allianz-subtitle">Inteligencia Artificial para Documentos</div>
                 </div>
-                {logo_html}
             </div>
             <div style="text-align: right;">
                 <div style="font-size: 0.9rem; opacity: 0.8;">🛡️ Aseguramos tu futuro</div>

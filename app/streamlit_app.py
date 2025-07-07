@@ -477,8 +477,8 @@ def main():
     num_results = st.slider(
         "Número de documentos a consultar",
         min_value=1,
-        max_value=20,
-        value=5
+        max_value=52,
+        value=20
     )
     
     # Botón de búsqueda con estilo corporativo
@@ -616,7 +616,7 @@ def main():
         <div style="text-align: center; color: #666; font-size: 0.8rem;">
             <p>💼 <strong>Allianz Insurance</strong></p>
             <p>🔧 Sistema RAG v2.0</p>
-            <p>📅 Actualizado: Enero 2025</p>
+            <p>📅 Actualizado: Julio 2025</p>
         </div>
         """, unsafe_allow_html=True)
 

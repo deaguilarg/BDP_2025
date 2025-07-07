@@ -1,0 +1,17 @@
+# Dependencias del sistema para Streamlit Cloud
+# Este archivo especifica paquetes apt que se instalarán en el contenedor
+
+# Para procesamiento de PDF
+poppler-utils
+libgl1-mesa-glx
+libglib2.0-0
+
+# Para compilación de paquetes Python
+build-essential
+gcc
+g++
+python3-dev
+
+# Para operaciones de archivos
+libffi-dev
+libssl-dev 

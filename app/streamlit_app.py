@@ -2,14 +2,21 @@
 Interfaz principal de Streamlit para búsqueda en documentos de seguros.
 """
 
+import sys
+import os
+from pathlib import Path
+
+# Configurar el path para imports
+current_dir = Path(__file__).parent
+project_root = current_dir.parent
+sys.path.insert(0, str(project_root))
+
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
-from pathlib import Path
 import json
 from typing import Dict, Any, List
 import logging
-import os
 from dotenv import load_dotenv
 
 # Cargar variables de entorno desde .env

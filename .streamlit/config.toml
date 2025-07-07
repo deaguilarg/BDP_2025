@@ -1,17 +1,27 @@
 [server]
+# Configuración para deployment
 headless = true
 port = 8501
 enableCORS = false
 enableXsrfProtection = false
 
 [browser]
+# Configuración del navegador
 gatherUsageStats = false
+serverAddress = "0.0.0.0"
 
 [theme]
+# Tema personalizado para Allianz
 primaryColor = "#0066cc"
 backgroundColor = "#ffffff"
 secondaryBackgroundColor = "#f0f2f6"
 textColor = "#262730"
 
+[logger]
+# Configuración de logging
+level = "info"
+
 [client]
-showErrorDetails = false 
+# Configuración del cliente
+caching = true
+showErrorDetails = true 

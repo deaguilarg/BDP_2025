@@ -140,6 +140,31 @@ st.markdown("""
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     
+    /* Logo del sidebar */
+    .allianz-sidebar-logo-container {
+        text-align: center;
+        padding: 1rem 0;
+        margin-bottom: 1rem;
+        background: linear-gradient(135deg, var(--allianz-white) 0%, var(--allianz-gray) 100%);
+        border-radius: 0.5rem;
+        border: 2px solid var(--allianz-blue);
+    }
+    
+    .allianz-sidebar-logo {
+        height: 80px;
+        width: auto;
+        max-width: 100%;
+        filter: brightness(1.1) contrast(1.2);
+        border-radius: 6px;
+    }
+    
+    .allianz-sidebar-text {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: var(--allianz-blue);
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+    
     .allianz-title {
         font-size: 2.2rem;
         font-weight: bold;
@@ -386,7 +411,25 @@ def render_answer(answer: str) -> None:
 
 def create_allianz_header():
     """
-    Crea el header corporativo de Allianz con logo.
+    Crea el header corporativo de Allianz.
+    """
+    st.markdown(f"""
+    <div class="allianz-header">
+        <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="text-align: left;">
+                <div class="allianz-title">Asistente de Seguros</div>
+                <div class="allianz-subtitle">Inteligencia Artificial para Documentos</div>
+            </div>
+            <div style="text-align: right;">
+                <div style="font-size: 0.9rem; opacity: 0.8;">🛡️ Aseguramos tu futuro</div>
+            </div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+def create_sidebar_logo():
+    """
+    Crea el logo para el sidebar.
     """
     import base64
     
@@ -400,29 +443,19 @@ def create_allianz_header():
                 with open(logo_path, "rb") as f:
                     logo_bytes = f.read()
                     logo_base64 = base64.b64encode(logo_bytes).decode()
-                    logo_html = f'<img src="data:image/png;base64,{logo_base64}" class="allianz-logo" alt="Allianz Logo">'
+                    logo_html = f'<img src="data:image/png;base64,{logo_base64}" class="allianz-sidebar-logo" alt="Allianz Logo">'
                     break
         except Exception:
             continue
     
     # Si no hay logo, usar texto estilizado
     if not logo_html:
-        logo_html = '<div class="allianz-title">Allianz</div>'
+        logo_html = '<div class="allianz-sidebar-text">Allianz</div>'
     
+    # Mostrar el logo en el sidebar
     st.markdown(f"""
-    <div class="allianz-header">
-        <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
-            <div style="display: flex; align-items: center; gap: 1.5rem;">
-                {logo_html}
-                <div style="text-align: left;">
-                    <div class="allianz-title">Asistente de Seguros</div>
-                    <div class="allianz-subtitle">Inteligencia Artificial para Documentos</div>
-                </div>
-            </div>
-            <div style="text-align: right;">
-                <div style="font-size: 0.9rem; opacity: 0.8;">🛡️ Aseguramos tu futuro</div>
-            </div>
-        </div>
+    <div class="allianz-sidebar-logo-container">
+        {logo_html}
     </div>
     """, unsafe_allow_html=True)
 
@@ -573,6 +606,9 @@ def main():
     
     # Información adicional
     with st.sidebar:
+        # Logo del sidebar
+        create_sidebar_logo()
+        
         # Header del sidebar
         st.markdown("""
         <div style="background: linear-gradient(135deg, #0066cc 0%, #003366 100%); 

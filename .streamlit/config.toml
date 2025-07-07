@@ -23,5 +23,4 @@ level = "info"
 
 [client]
 # Configuración del cliente
-caching = true
 showErrorDetails = true 

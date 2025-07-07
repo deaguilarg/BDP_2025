@@ -90,54 +90,189 @@ logger = logging.getLogger(__name__)
 st.set_page_config(
     page_title="Asistente de Seguros Allianz",
     page_icon="🛡️",
-    layout="wide"
+    layout="wide",
+    initial_sidebar_state="expanded",
+    menu_items={
+        'Get Help': 'https://www.allianz.com/help',
+        'Report a bug': "https://www.allianz.com/support",
+        'About': """
+        # Asistente de Seguros Allianz
+        
+        **Versión:** 2.0  
+        **Desarrollado por:** Equipo BDP  
+        **Tecnología:** RAG (Retrieval-Augmented Generation)
+        
+        Sistema inteligente de búsqueda para documentos de seguros.
+        """
+    }
 )
 
-# Estilos CSS personalizados
+# Estilos CSS con branding de Allianz
 st.markdown("""
 <style>
+    /* Colores corporativos de Allianz */
+    :root {
+        --allianz-blue: #0066cc;
+        --allianz-dark-blue: #003366;
+        --allianz-light-blue: #e8f4ff;
+        --allianz-gray: #f8f9fa;
+        --allianz-white: #ffffff;
+    }
+    
+    /* Header personalizado */
+    .allianz-header {
+        background: linear-gradient(135deg, var(--allianz-blue) 0%, var(--allianz-dark-blue) 100%);
+        padding: 1rem 2rem;
+        border-radius: 0.5rem;
+        margin-bottom: 2rem;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .allianz-logo {
+        height: 60px;
+        width: auto;
+    }
+    
+    .allianz-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin: 0;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .allianz-subtitle {
+        font-size: 1.2rem;
+        margin: 0;
+        opacity: 0.9;
+    }
+    
+    /* Componentes principales */
     .main {
         padding: 2rem;
+        background-color: var(--allianz-white);
     }
+    
     .stTextInput > div > div > input {
         font-size: 1.2rem;
+        border: 2px solid var(--allianz-blue);
+        border-radius: 0.5rem;
+        padding: 0.75rem;
     }
+    
+    .stTextInput > div > div > input:focus {
+        border-color: var(--allianz-dark-blue);
+        box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+    }
+    
+    /* Tarjetas de resultados */
     .result-card {
-        background-color: #f8f9fa;
-        border-radius: 0.5rem;
-        padding: 1rem;
-        margin: 1rem 0;
-        border-left: 5px solid #0066cc;
-    }
-    .score-badge {
-        background-color: #0066cc;
-        color: white;
-        padding: 0.2rem 0.5rem;
-        border-radius: 1rem;
-        font-size: 0.8rem;
-    }
-    .metadata-tag {
-        background-color: #e9ecef;
-        padding: 0.2rem 0.5rem;
-        border-radius: 0.3rem;
-        margin-right: 0.5rem;
-        font-size: 0.8rem;
-    }
-    .answer-box {
-        background-color: #e8f4ff;
-        border-radius: 0.5rem;
+        background: linear-gradient(135deg, var(--allianz-white) 0%, var(--allianz-gray) 100%);
+        border-radius: 0.75rem;
         padding: 1.5rem;
         margin: 1rem 0;
-        border-left: 5px solid #0066cc;
+        border-left: 5px solid var(--allianz-blue);
+        box-shadow: 0 4px 6px rgba(0, 102, 204, 0.1);
+        transition: transform 0.2s ease;
     }
-    .disclaimer {
+    
+    .result-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 102, 204, 0.15);
+    }
+    
+    .score-badge {
+        background: linear-gradient(135deg, var(--allianz-blue) 0%, var(--allianz-dark-blue) 100%);
+        color: white;
+        padding: 0.3rem 0.8rem;
+        border-radius: 1.5rem;
+        font-size: 0.85rem;
+        font-weight: bold;
+        box-shadow: 0 2px 4px rgba(0, 102, 204, 0.2);
+    }
+    
+    .metadata-tag {
+        background-color: var(--allianz-light-blue);
+        color: var(--allianz-dark-blue);
+        padding: 0.3rem 0.6rem;
+        border-radius: 0.4rem;
+        margin-right: 0.5rem;
         font-size: 0.8rem;
-        color: #666;
+        font-weight: 500;
+        border: 1px solid var(--allianz-blue);
+    }
+    
+    /* Caja de respuestas */
+    .answer-box {
+        background: linear-gradient(135deg, var(--allianz-light-blue) 0%, var(--allianz-white) 100%);
+        border-radius: 0.75rem;
+        padding: 2rem;
+        margin: 1.5rem 0;
+        border-left: 5px solid var(--allianz-blue);
+        box-shadow: 0 4px 6px rgba(0, 102, 204, 0.1);
+    }
+    
+    .disclaimer {
+        font-size: 0.85rem;
+        color: var(--allianz-dark-blue);
         font-style: italic;
         margin-top: 1rem;
-        padding: 0.5rem;
-        background-color: #f8f9fa;
-        border-radius: 0.3rem;
+        padding: 0.75rem;
+        background-color: var(--allianz-gray);
+        border-radius: 0.4rem;
+        border-left: 3px solid var(--allianz-blue);
+    }
+    
+    /* Botones */
+    .stButton > button {
+        background: linear-gradient(135deg, var(--allianz-blue) 0%, var(--allianz-dark-blue) 100%);
+        color: white;
+        border: none;
+        border-radius: 0.5rem;
+        padding: 0.75rem 2rem;
+        font-weight: bold;
+        font-size: 1.1rem;
+        transition: all 0.2s ease;
+        box-shadow: 0 2px 4px rgba(0, 102, 204, 0.2);
+    }
+    
+    .stButton > button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0, 102, 204, 0.3);
+    }
+    
+    /* Sidebar */
+    .css-1d391kg {
+        background-color: var(--allianz-gray);
+        border-right: 3px solid var(--allianz-blue);
+    }
+    
+    /* Métricas */
+    .metric-card {
+        background: linear-gradient(135deg, var(--allianz-blue) 0%, var(--allianz-dark-blue) 100%);
+        padding: 1rem;
+        border-radius: 0.5rem;
+        color: white;
+        text-align: center;
+        margin: 0.5rem 0;
+    }
+    
+    /* Filtros */
+    .stMultiSelect > div > div {
+        border-color: var(--allianz-blue);
+    }
+    
+    .stSlider > div > div > div {
+        color: var(--allianz-blue);
+    }
+    
+    /* Expander */
+    .streamlit-expanderHeader {
+        background-color: var(--allianz-light-blue);
+        border: 1px solid var(--allianz-blue);
+        border-radius: 0.5rem;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -242,15 +377,63 @@ def render_answer(answer: str) -> None:
     </div>
     """, unsafe_allow_html=True)
 
+def create_allianz_header():
+    """
+    Crea el header corporativo de Allianz con logo.
+    """
+    import base64
+    
+    # Intentar cargar el logo
+    logo_html = ""
+    logo_paths = ["allianz-logo.png", "assets/allianz-logo.png", "assets/allianz_logo.png"]
+    
+    for logo_path in logo_paths:
+        try:
+            if Path(logo_path).exists():
+                with open(logo_path, "rb") as f:
+                    logo_bytes = f.read()
+                    logo_base64 = base64.b64encode(logo_bytes).decode()
+                    logo_html = f'<img src="data:image/png;base64,{logo_base64}" class="allianz-logo" alt="Allianz Logo">'
+                    break
+        except Exception:
+            continue
+    
+    # Si no hay logo, usar texto estilizado
+    if not logo_html:
+        logo_html = '<div class="allianz-title">Allianz</div>'
+    
+    st.markdown(f"""
+    <div class="allianz-header">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+            {logo_html}
+            <div>
+                <div class="allianz-title">Asistente de Seguros</div>
+                <div class="allianz-subtitle">Inteligencia Artificial para Documentos</div>
+            </div>
+        </div>
+        <div style="text-align: right;">
+            <div style="font-size: 0.9rem; opacity: 0.8;">🛡️ Siempre a tu lado</div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
 def main():
     """Función principal de la aplicación Streamlit"""
     
-    # Título y descripción
-    st.title("🛡️ Asistente de Seguros Allianz")
+    # Header corporativo con logo
+    create_allianz_header()
+    
+    # Descripción
     st.markdown("""
-    Bienvenido al Asistente de Seguros de Allianz. Este sistema te ayudará a encontrar información específica 
-    y generar recomendaciones personalizadas para tus clientes.
-    """)
+    <div style="text-align: center; margin-bottom: 2rem;">
+        <p style="font-size: 1.2rem; color: #003366; margin-bottom: 1rem;">
+            <strong>Sistema Inteligente de Búsqueda de Documentos de Seguros</strong>
+        </p>
+        <p style="color: #666; font-size: 1rem;">
+            Obtén información precisa y recomendaciones personalizadas para tus clientes
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
     
     # Inicializar componentes
     searcher, answer_generator = load_components()
@@ -298,11 +481,12 @@ def main():
         value=5
     )
     
-    # Botón de búsqueda
-    if st.button("Obtener Recomendación", type="primary"):
+    # Botón de búsqueda con estilo corporativo
+    if st.button("🎯 Obtener Recomendación", type="primary"):
         if query:
             try:
-                with st.spinner("Buscando información relevante..."):
+                # Mensajes de carga profesionales
+                with st.spinner("🔍 Analizando documentos de seguros..."):
                     # Realizar búsqueda
                     results = searcher.search(
                         query=query,
@@ -314,11 +498,25 @@ def main():
                         results = searcher.filter_by_metadata(results, filter_params)
                     
                     if results:
+                        # Mostrar progreso
+                        progress_bar = st.progress(0)
+                        status_text = st.empty()
+                        
+                        status_text.text("🤖 Generando recomendación personalizada...")
+                        progress_bar.progress(50)
+                        
                         # Generar respuesta
                         response = answer_generator.generate_answer(
                             query=query,
                             context_docs=results[:num_results]
                         )
+                        
+                        progress_bar.progress(100)
+                        status_text.text("✅ Recomendación generada exitosamente")
+                        
+                        # Limpiar elementos de progreso
+                        progress_bar.empty()
+                        status_text.empty()
                         
                         # Mostrar respuesta
                         st.markdown("### 💡 Recomendación")
@@ -366,24 +564,61 @@ def main():
     
     # Información adicional
     with st.sidebar:
-        st.markdown("### 📖 Guía de uso")
+        # Header del sidebar
         st.markdown("""
-        1. Escribe la consulta de tu cliente
-        2. Usa los filtros para refinar la búsqueda
-        3. Ajusta el número de documentos a consultar
-        4. Haz clic en "Obtener Recomendación"
+        <div style="background: linear-gradient(135deg, #0066cc 0%, #003366 100%); 
+                    padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem; color: white; text-align: center;">
+            <h3 style="margin: 0; color: white;">📖 Centro de Ayuda</h3>
+        </div>
+        """, unsafe_allow_html=True)
         
-        **Tipos de consultas sugeridas:**
-        - ¿Qué cubre el seguro de motocicleta?
-        - ¿Cuáles son las exclusiones del seguro de comunidad?
-        - ¿Cómo funciona la cobertura de responsabilidad civil?
+        st.markdown("### 🚀 Guía de uso")
+        st.markdown("""
+        **Pasos para obtener recomendaciones:**
+        1. 💬 Escribe la consulta de tu cliente
+        2. 🔍 Usa los filtros para refinar la búsqueda
+        3. ⚙️ Ajusta el número de documentos a consultar
+        4. 🎯 Haz clic en "Obtener Recomendación"
+        
+        **💡 Ejemplos de consultas:**
+        - *¿Qué cubre el seguro de motocicleta?*
+        - *¿Cuáles son las exclusiones del seguro de comunidad?*
+        - *¿Cómo funciona la cobertura de responsabilidad civil?*
+        - *¿Qué documentos necesito para una reclamación?*
         """)
         
-        st.markdown("### 🔍 Estadísticas")
-        st.metric(
-            "Documentos disponibles",
-            len(metadata_options.get('filename', []))
-        )
+        st.markdown("### 📊 Estadísticas del Sistema")
+        
+        # Métricas con estilo corporativo
+        st.markdown(f"""
+        <div class="metric-card">
+            <div style="font-size: 2rem; font-weight: bold;">{len(metadata_options.get('filename', []))}</div>
+            <div style="font-size: 0.9rem; opacity: 0.9;">Documentos Disponibles</div>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        # Información adicional
+        st.markdown("### ℹ️ Información")
+        st.info("""
+        **🤖 Tecnología IA:**
+        - Búsqueda semántica avanzada
+        - Generación de respuestas contextualizadas
+        - Procesamiento de documentos PDF
+        
+        **🔒 Seguridad:**
+        - Datos procesados localmente
+        - Acceso controlado por autenticación
+        """)
+        
+        # Footer del sidebar
+        st.markdown("---")
+        st.markdown("""
+        <div style="text-align: center; color: #666; font-size: 0.8rem;">
+            <p>💼 <strong>Allianz Insurance</strong></p>
+            <p>🔧 Sistema RAG v2.0</p>
+            <p>📅 Actualizado: Enero 2025</p>
+        </div>
+        """, unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main() 

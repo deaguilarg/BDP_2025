@@ -11,11 +11,12 @@ gatherUsageStats = false
 serverAddress = "0.0.0.0"
 
 [theme]
-# Tema personalizado para Allianz
+# Tema oficial de Allianz
 primaryColor = "#0066cc"
 backgroundColor = "#ffffff"
-secondaryBackgroundColor = "#f0f2f6"
-textColor = "#262730"
+secondaryBackgroundColor = "#f8f9fa"
+textColor = "#003366"
+font = "sans serif"
 
 [logger]
 # Configuración de logging

@@ -1,8 +1,18 @@
 # 🛡️ Asistente de Seguros Allianz
 
-**Sistema inteligente para consultar información de seguros de manera rápida y precisa**
+**Sistema inteligente con branding corporativo para consultar información de seguros**
 
-¿Necesitas información específica sobre los productos de seguros de Allianz? Este asistente te ayuda a encontrar respuestas precisas en segundos, consultando automáticamente toda la documentación disponible.
+¿Necesitas información específica sobre los productos de seguros de Allianz? Este asistente te ayuda a encontrar respuestas precisas en segundos, con el diseño corporativo oficial de Allianz y consultando automáticamente toda la documentación disponible.
+
+## 🎨 **NUEVO: Branding Corporativo**
+
+La aplicación ahora incluye:
+- ✅ **Colores oficiales de Allianz** (#0066cc, #003366)
+- ✅ **Logo corporativo** (coloca tu logo en `allianz-logo.png`)
+- ✅ **Interfaz profesional** con gradientes y estilos corporativos
+- ✅ **Experiencia de usuario mejorada** con animaciones y feedback visual
+
+📖 **Ver:** `LOGO_SETUP.md` para instrucciones del logo
 
 ## 🚀 Instalación Rápida (Para No Técnicos)
 
@@ -42,12 +52,19 @@
    ```
 
 ### Paso 5: ¡Usar el Asistente!
-1. Ejecuta `iniciar.bat` (doble clic) O abre terminal y ejecuta:
+
+**Método 1: Ejecutar localmente**
+1. Ejecuta `ejecutar_streamlit.bat` (doble clic) O abre terminal y ejecuta:
    ```
-   python run_app.py
+   streamlit run streamlit_app.py
    ```
 2. Se abrirá automáticamente en tu navegador web
 3. ¡Ya puedes hacer preguntas sobre seguros!
+
+**Método 2: Versión en línea (Streamlit Cloud)**
+1. Accede a la aplicación web directamente (sin instalación)
+2. Pide la URL al administrador del sistema
+3. Inicia sesión con las credenciales del equipo
 
 ---
 
@@ -164,4 +181,23 @@ Para actualizar el sistema:
 
 ---
 
-*Desarrollado por el Equipo BDP para Allianz - Versión 1.0* 
+---
+
+## 🌐 **Deployment & Branding**
+
+### **Archivos clave para deployment:**
+- `streamlit_app.py` - Aplicación principal con branding
+- `STREAMLIT_DEPLOYMENT.md` - Guía de deployment
+- `LOGO_SETUP.md` - Instrucciones para el logo
+- `packages.txt` - Dependencias del sistema
+- `.streamlit/config.toml` - Configuración corporativa
+
+### **Branding corporativo aplicado:**
+- 🎨 Colores oficiales de Allianz
+- 🖼️ Logo corporativo integrado
+- 🎯 Interfaz profesional y moderna
+- 📱 Experiencia de usuario optimizada
+
+---
+
+*Desarrollado por el Equipo BDP para Allianz - Versión 2.0 con Branding Corporativo* 

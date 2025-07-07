@@ -146,8 +146,7 @@ st.markdown("""
         padding: 1rem 0;
         margin-bottom: 1rem;
         background: linear-gradient(135deg, var(--allianz-white) 0%, var(--allianz-gray) 100%);
-        border-radius: 0.5rem;
-        border: 2px solid var(--allianz-blue);
+
     }
     
     .allianz-sidebar-logo {

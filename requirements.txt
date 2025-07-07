@@ -6,7 +6,7 @@ pandas==2.2.3
 
 # === EMBEDDINGS Y VECTORIZACIÓN ===
 #sentence-transformers==4.1.0
-#faiss-cpu==1.7.4
+faiss-cpu==1.7.4
 #transformers==4.51.3
 #torch==2.7.0
 #huggingface-hub==0.30.2

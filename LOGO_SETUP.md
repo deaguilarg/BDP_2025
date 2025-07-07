@@ -19,10 +19,11 @@ BDP_2025/
 - ✅ **SVG** (Para calidad vectorial)
 
 ### 3. **Especificaciones del Logo**
-- **Tamaño recomendado:** 200x80 píxeles
+- **Tamaño recomendado:** 150x60 píxeles (optimizado para header)
 - **Resolución:** 300 DPI (para calidad alta)
-- **Fondo:** Transparente (PNG) o blanco
+- **Fondo:** Transparente (PNG) recomendado
 - **Formato:** Horizontal preferible
+- **Contraste:** Automáticamente optimizado en la aplicación
 
 ### 4. **Nombres de Archivo Aceptados**
 La aplicación buscará automáticamente estos nombres:
@@ -33,8 +34,10 @@ La aplicación buscará automáticamente estos nombres:
 ### 5. **Verificación**
 Una vez colocado el logo, la aplicación:
 - ✅ Detectará automáticamente el archivo
-- ✅ Lo mostrará en el header corporativo
+- ✅ Lo mostrará en el header corporativo con posición optimizada
 - ✅ Aplicará el estilo corporativo de Allianz
+- ✅ Optimizará automáticamente el contraste y brillo
+- ✅ Posicionará el logo estratégicamente junto al título
 
 ### 6. **Fallback**
 Si no encuentra el logo:

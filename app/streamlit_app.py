@@ -122,31 +122,38 @@ st.markdown("""
     /* Header personalizado */
     .allianz-header {
         background: linear-gradient(135deg, var(--allianz-blue) 0%, var(--allianz-dark-blue) 100%);
-        padding: 1rem 2rem;
+        padding: 1.5rem 2rem;
         border-radius: 0.5rem;
         margin-bottom: 2rem;
         color: white;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        box-shadow: 0 4px 8px rgba(0, 102, 204, 0.2);
     }
     
     .allianz-logo {
-        height: 60px;
+        height: 50px;
         width: auto;
+        filter: brightness(1.1) contrast(1.1);
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     
     .allianz-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         font-weight: bold;
         margin: 0;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        line-height: 1.1;
     }
     
     .allianz-subtitle {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         margin: 0;
         opacity: 0.9;
+        line-height: 1.2;
+        margin-top: 0.2rem;
     }
     
     /* Componentes principales */
@@ -404,15 +411,17 @@ def create_allianz_header():
     
     st.markdown(f"""
     <div class="allianz-header">
-        <div style="display: flex; align-items: center; gap: 1rem;">
-            {logo_html}
-            <div>
-                <div class="allianz-title">Asistente de Seguros</div>
-                <div class="allianz-subtitle">Inteligencia Artificial para Documentos</div>
+        <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 1.5rem;">
+                <div style="text-align: left;">
+                    <div class="allianz-title">Asistente de Seguros</div>
+                    <div class="allianz-subtitle">Inteligencia Artificial para Documentos</div>
+                </div>
+                {logo_html}
             </div>
-        </div>
-        <div style="text-align: right;">
-            <div style="font-size: 0.9rem; opacity: 0.8;">🛡️ Aseguramos tu futuro</div>
+            <div style="text-align: right;">
+                <div style="font-size: 0.9rem; opacity: 0.8;">🛡️ Aseguramos tu futuro</div>
+            </div>
         </div>
     </div>
     """, unsafe_allow_html=True)

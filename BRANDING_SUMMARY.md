@@ -19,10 +19,11 @@
 ### 3. **Interfaz Rediseñada**
 
 #### **Header Corporativo:**
-- 🎨 Gradiente azul corporativo
-- 🏢 Logo de Allianz integrado
-- 📝 Título y subtítulo profesionales
-- 🛡️ Slogan "Siempre a tu lado"
+- 🎨 Gradiente azul corporativo con sombra
+- 🏢 Logo de Allianz posicionado estratégicamente
+- 📝 Título y subtítulo alineados a la izquierda
+- 🛡️ Slogan "Aseguramos tu futuro"
+- ✨ Contraste mejorado y diseño equilibrado
 
 #### **Elementos Estilizados:**
 - 🔍 **Barra de búsqueda** con bordes azules

@@ -25,7 +25,7 @@ load_dotenv()
 # Opcional: Agregar autenticación simple en streamlit_app.py
 if 'authenticated' not in st.session_state:
     password = st.text_input("Contraseña de equipo:", type="password")
-    if password == "allianz2024":  # Cambiar por tu contraseña
+    if password == "allianz2025":  # Cambiar por tu contraseña
         st.session_state.authenticated = True
         st.rerun()
     else:

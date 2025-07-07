@@ -160,8 +160,6 @@ st.markdown("""
     .allianz-sidebar-text {
         font-size: 1.8rem;
         font-weight: bold;
-        color: var(--allianz-blue);
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
     }
     
     .allianz-title {

@@ -1,5 +1,6 @@
 # Archivos de configuración sensibles
 .env
+.informe
 .env.local
 .env.production
 .env.staging

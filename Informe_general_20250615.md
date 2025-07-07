@@ -254,3 +254,21 @@ Se recomienda seguir un enfoque iterativo, priorizando las mejoras de seguridad 
 3. Optimizar índices FAISS
 4. Implementar sistema de feedback
 5. Mejorar monitoreo y alertas 
+
+---
+
+## 📋 NOTA DE ACTUALIZACIÓN
+
+**Fecha de actualización**: 17/01/2025
+
+**Estado**: Este informe ha sido **SUPERADO** por el nuevo informe actualizado `Informe_general_20250117.md`.
+
+**Progreso realizado**:
+- ✅ Problemas de seguridad **RESUELTOS** (API keys, autenticación)
+- ✅ Funcionalidad **COMPLETADA** (sistema funcional al 85%)
+- ✅ Performance **OPTIMIZADA** (índices FAISS funcionando)
+- ✅ Interfaces **IMPLEMENTADAS** (Streamlit con autenticación)
+
+**Nuevo estado**: El proyecto está **LISTO para deployment de pruebas** con un nivel de completitud del 85%.
+
+**Recomendación**: Consultar el nuevo informe para el estado actualizado del proyecto. 
